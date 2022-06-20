@@ -1,0 +1,34 @@
+- title: HOME
+  url: "/"
+  side: left
+
+- title: Getting Started
+  url: "/getting-started/"
+  side: left
+  dropdown:
+  - title: "Getting Started Archive"
+    url: "/getting-started/archive/"
+
+- title: "Infrastructure"
+  url: "/infrastructure/"
+  side: left
+
+- title: "Platform"
+  url: "/platform/"
+  side: left
+
+- title: "Database"
+  url: "/database/"
+  side: left
+
+- title: "AI/ML"
+  url: "/aiml/"
+  side: left
+
+- title: "Search"
+  url: "/search/"
+  side: right
+
+- title: "Contact"
+  url: "/contact/"
+  side: right
