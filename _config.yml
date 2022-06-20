@@ -42,7 +42,7 @@ urlimg: 'https://team-okitoki.github.io/images/'
 
 
 # Logo size is 600x80 pixels
-logo: "logo.png"
+logo: "okitoki-team-logo.png"
 
 # Plugins
 plugins:
