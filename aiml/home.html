@@ -1,11 +1,11 @@
 ---
 layout: default
-title: "Platform"
-teaser: "OCI Platform 관련 블로그 모음"
+title: "AI/ML"
+teaser: "OCI AI/ML 관련 블로그 모음"
 breadcrumb: true
 header:
-   image_fullwidth: platform/platform-header_3.png
-permalink: "platform/"
+   image_fullwidth: aiml/aiml-header_1.jpg
+permalink: "aiml/"
 ---
 <div id="blog-index" class="row">
 	<div class="small-12 columns t30">
@@ -14,7 +14,7 @@ permalink: "platform/"
 
 		<dl class="accordion" data-accordion>
 			{% assign counter = 1 %}
-			{% for post in site.categories.platform limit:1000 %}
+			{% for post in site.categories.infrastructure limit:1000 %}
 			<dd class="accordion-navigation">
 			<a href="#panel{{ counter }}"><span class="iconfont"></span> {% if post.subheadline %}{{ post.subheadline }} › {% endif %}<strong>{{ post.title }}</strong></a>
 				<div id="panel{{ counter }}" class="content">
