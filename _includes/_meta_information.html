@@ -19,16 +19,14 @@
 
 			{% if page.collection == "posts" %}
 			<div id="post-nav" class="row">
-				{% if page.categories[0] == 'getting-started' %}
-					{% if page.previous.url %}
-					<div class="medium-5 columns"><a class="button small radius prev" href="{{ site.url }}{{ site.baseurl }}{{page.previous.url}}">&laquo; {{page.previous.title}}</a></div><!-- /.small-4.columns -->
-					{% endif %}
-					<div class="medium-2 columns text-center"><a class="button small radius expand" href="{{ site.url }}{{ site.baseurl }}/blog/archive/" title="Blog {{ site.data.language.archive }}">{{ site.data.language.archive }}</a></div><!-- /.small-4.columns -->
-					{% if page.next.url %}
-					<div class="medium-5 columns text-right"><a class="button small radius next" href="{{ site.url }}{{ site.baseurl }}{{page.next.url}}">{{page.next.title}} &raquo;</a></div><!-- /.small-4.columns -->
-					{% else %}
-					<div class="medium-5 columns text-right"></div><!-- /.small-4.columns -->
-					{% endif %}
+				{% if page.previous.url %}
+				<div class="medium-5 columns"><a class="button small radius prev" href="{{ site.url }}{{ site.baseurl }}{{page.previous.url}}">&laquo; {{page.previous.title}}</a></div><!-- /.small-4.columns -->
+				{% endif %}
+				<div class="medium-2 columns text-center"><a class="button small radius expand" href="{{ site.url }}{{ site.baseurl }}/{{ page.categories[0] }}/" title="Blog {{ site.data.language.archive }}">{{ site.data.language.archive }}</a></div><!-- /.small-4.columns -->
+				{% if page.next.url %}
+				<div class="medium-5 columns text-right"><a class="button small radius next" href="{{ site.url }}{{ site.baseurl }}{{page.next.url}}">{{page.next.title}} &raquo;</a></div><!-- /.small-4.columns -->
+				{% else %}
+				<div class="medium-5 columns text-right"></div><!-- /.small-4.columns -->
 				{% endif %}
 			</div>
 			{% endif %}
