@@ -29,7 +29,7 @@ header: no
 ### 하나의 Free Trial 계정에서 두 개의 무료 옵션 제공
 Oracle Cloud Free Tier에서는 300달러(한달)의 무료 크레딧을 기본적으로 제공하며, 추가적으로 기간 제한없이 사용할 수 있는 여러개의 Always Free 서비스들을 포함해서 제공하고 있습니다.
 
-![](getting-started/freetrial.png " ")
+![](../../images/getting-started/freetrial.png " ")
 
 ### Free Trial 계정 생성하기
 
@@ -37,7 +37,7 @@ Oracle Cloud Free Tier에서는 300달러(한달)의 무료 크레딧을 기본�
 
    다음과 같은 등록 페이지를 볼 수 있습니다.
        ![](getting-started/cloud-infrastructure-ko.png " ")
-       
+
 2.  다음 정보를 입력합니다.
     * **국가/지역** 입력
     * **성/이름** 과 **이메일**
@@ -45,7 +45,7 @@ Oracle Cloud Free Tier에서는 300달러(한달)의 무료 크레딧을 기본�
 3. 유효한 이메일 주소를 입력한 후, **내 전자메일 확인** 버튼을 선택합니다.
        ![](getting-started/verify-email-ko.png " ")
 
-4. 다음과 같은 이메일을 수신하게되면, 본문의 **Verify email** 버튼을 클릭합니다.
+4. 다음과 같은 이메일을 수신하게 되면, 본문의 **Verify email** 버튼을 클릭합니다.
        ![](getting-started/verification-mail-ko.png " ")
 
 5. Oracle Cloud Free Tier 계정 생성을 위해서 다음과 같은 정보를 추가로 입력합니다.
@@ -85,6 +85,6 @@ Oracle Cloud Free Tier에서는 300달러(한달)의 무료 크레딧을 기본�
 
    ![](getting-started/cloud-login-tenant-single-sigon-ko.png " ")
 
-3. 이제 Oracle Cloud를 사용하실 수 있습니다. 만일 로그인 후 상단에 **Your account is currently being set up, and some features will be unavailable. You will receive an email after setup completes.** 라는 메시지가 보인다면, 아직 환경을 준비하는 상태라는 것을 의미합니다. 조금만 더 기다리면, 모든 준비가 완료되고 최종 메일을 받게됩니다.
+3. 이제 Oracle Cloud를 사용하실 수 있습니다. 만일 로그인 후 상단에 **Your account is currently being set up, and some features will be unavailable. You will receive an email after setup completes.** 라는 메시지가 보인다면, 아직 환경을 준비하는 상태, 프로비저닝이 진행중이라는 것을 의미합니다. 조금만 더 기다리면, 모든 과정이 완료되고 최종 완료 메일을 받게됩니다.
 
     ![](getting-started/oci-console-home-page-ko.png " ")
