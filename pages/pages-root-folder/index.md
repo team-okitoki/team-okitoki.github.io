@@ -6,7 +6,7 @@
 #
 layout: frontpage
 header:
-  image_fullwidth: home_header_2.jpg
+  image_fullwidth: home/home_header_2.jpg
 widget1:
   title: "OCI Documentation"
   url: 'https://docs.oracle.com/en-us/iaas/Content/home.htm'
