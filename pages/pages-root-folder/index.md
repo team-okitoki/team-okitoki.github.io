@@ -11,7 +11,7 @@ widget1:
   title: "OCI Documentation"
   url: 'https://docs.oracle.com/en-us/iaas/Content/home.htm'
   image: getting-started/oci-documentation-home.png
-  text: 'OCI Documentation Home에서는 OCI의 모든 제공 서비스에 대한 가이드 문서를 볼 수 있습니다. 각 서비스들에 대한 주요 컨셉 설명과 제공되는 튜토리얼을 통해 빠르게 서비스를 경험해 볼 수 있는 문서를 제공합니다. 또한 개발자를 위한 가이드(SDKs, CLI, Cloud Shell 등) 및 다양한 참조용 아키텍처도 제공되고 있으며, 새롭게 추가된 서비스나 기능에 대한 소식도 접해볼 수 있습니다.'
+  text: 'OCI Documentation Home에서는 OCI의 모든 제공 서비스에 대한 가이드 문서를 볼 수 있습니다. 각 서비스들에 대한 주요 컨셉 설명과 제공되는 튜토리얼을 통해 빠르게 서비스를 경험해 볼 수 있는 문서를 제공합니다. 또한 개발자를 위한 가이드(SDKs, CLI, Cloud Shell등) 및 다양한 참조용 아키텍처도 제공되고 있으며, 새롭게 추가된 서비스나 기능에 대한 소식도 접해볼 수 있습니다.'
 widget2:
   title: "OCI Pricing"
   url: 'https://www.oracle.com/kr/cloud/price-list.html'
