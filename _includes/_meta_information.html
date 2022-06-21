@@ -41,7 +41,10 @@
 				{% if prev_post %}
 				<div class="medium-5 columns"><a class="button small radius prev" href="{{ prev_post.url }}">&laquo; {{ prev_post.title }}</a></div><!-- /.small-4.columns -->
 				{% endif %}
-				<div class="medium-2 columns text-center"><a class="button small radius expand" href="{{ site.url }}{{ site.baseurl }}/{{ page.categories[0] }}/" title="Blog {{ site.data.language.archive }}">{{ site.data.language.archive }}</a></div><!-- /.small-4.columns -->
+
+
+				<div class="medium-2 columns text-center"><a class="button small radius expand" href="{{ site.url }}{{ site.baseurl }}/{{ page.categories[0] }}/" title="">BACK CATEGORY HOME</a></div><!-- /.small-4.columns -->
+				
 				{% if next_post %}
 				<div class="medium-5 columns text-right"><a class="button small radius next" href="{{ next_post.url }}">{{ next_post.title }} &raquo;</a></div><!-- /.small-4.columns -->
 				{% else %}
