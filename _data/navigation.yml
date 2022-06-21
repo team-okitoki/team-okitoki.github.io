@@ -5,9 +5,6 @@
 - title: Getting Started
   url: "/getting-started/"
   side: left
-  dropdown:
-  - title: "Getting Started Archive"
-    url: "/getting-started/archive/"
 
 - title: "Infrastructure"
   url: "/infrastructure/"
