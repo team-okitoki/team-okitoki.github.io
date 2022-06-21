@@ -9,12 +9,6 @@
 - title: "Infrastructure"
   url: "/infrastructure/"
   side: left
-  dropdown:
-  - title: "Infrastructure Release Notes"
-    url: "/infrastructure/release-notes/"
-    dropdown:
-    - title: "Infrastructure Release Notes2"
-      url: "/infrastructure/release-notes/"
 
 - title: "Platform"
   url: "/platform/"
