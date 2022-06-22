@@ -22,10 +22,19 @@
   url: "/aiml/"
   side: left
 
+- title: "Release Notes"
+  url: "/release-notes/"
+  side: left
+  dropdown:
+    - title: "Infrastructure"
+    - url: "/release-notes/infrastructure/"
+    - title: "Platform"
+    - url: "/release-notes/platform/"
+    - title: "Database"
+    - url: "/release-notes/database"
+    - title: "AI/ML"
+    - url: "/release-notes/aiml/"
+
 - title: "Search"
   url: "/search/"
-  side: right
-
-- title: "Contact"
-  url: "/contact/"
   side: right
