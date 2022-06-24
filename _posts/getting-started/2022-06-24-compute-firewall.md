@@ -71,7 +71,7 @@ VM Compute Instace를 하나 생성합니다. **Compute > Instances > Create Ins
 ![](/assets/img/getting-started/compute-firewall-6.png)
 
 ### Instance Firewall 설정
-iptables을 활용하여 관리할 수 있지만, Oracle Linux 7이상부터는 firewalld 라고 하는 데몬 서비스로 관리하며, 명령어는 firewall-cmd 명령어를 활용합니다.
+iptables을 활용하여 관리할 수 있지만, Oracle Linux 7이상부터는 ***firewalld*** 라고 하는 데몬 서비스로 관리하며, 명령어는 ***firewall-cmd*** 명령어를 활용합니다.
 
 우선 ssh로 해당 인스턴스에 접속합니다.
 
@@ -79,7 +79,7 @@ iptables을 활용하여 관리할 수 있지만, Oracle Linux 7이상부터는 
 $ ssh -i {ssh key} opc@{ip address}
 ```
 
-다음과 같이 Firewall을 설정합니다. 참고로 --permanent 옵션은 영구적으로 설정하는 옵션이지만, 반드시 --reload를 방화벽을 재시작해줘야 합니다.
+다음과 같이 Firewall을 설정합니다. 참고로 ***--permanent*** 옵션은 영구적으로 설정하는 옵션이지만, 반드시 ***--reload***를 방화벽을 재시작해줘야 합니다.
 ```
 $ sudo firewall-cmd --permanent --zone=public --add-port=8080/tcp
 $ sudo firewall-cmd --reload
@@ -118,12 +118,12 @@ $ sudo firewall-cmd --add-port=8080/tcp
 
 **포트 제거**
 ```
-$ sudo firewall-cmd --remove-port=8080/tcp (포트 제거)
+$ sudo firewall-cmd --remove-port=8080/tcp
 ```
 
 **서비스 추가**
 ```
-$ sudo firewall-cmd --add-service=ftp (서비스 추가)
+$ sudo firewall-cmd --add-service=ftp
 ```
 
 **서비스 제거**
@@ -133,17 +133,17 @@ $ sudo firewall-cmd --remove-service=ftp
 
 **존을 지정해서 추가**
 ```
-$ sudo firewall-cmd --zone=trusted --add-service=ftp (존을 지정해서 추가)
+$ sudo firewall-cmd --zone=trusted --add-service=ftp
 ```
 
 **permanent 옵션으로 서비스 추가 / 영구적으로 추가되나 --reload 옵션으로 방화벽 재시작 필요**
 ```
-$ sudo firewall-cmd --permanent --zone=public --add-service=ftp (permanent 옵션으로 추가)
+$ sudo firewall-cmd --permanent --zone=public --add-service=ftp
 ```
 
 **permanent 옵션으로 포트 추가 / 영구적으로 추가되나 --reload 옵션으로 방화벽 재시작 필요**
 ```
-$ sudo firewall-cmd --permanent --zone=public --add-port=8080/tcp (permanent 옵션으로 추가)
+$ sudo firewall-cmd --permanent --zone=public --add-port=8080/tcp
 ```
 
 방화벽을 완전히 해제하고 모든 포트를 오픈하는 경우에는 다음과 같이 명령어를 사용합니다.
