@@ -123,6 +123,11 @@ defaults:
       comments: false
       author: dankim     # Default author for posts
 
+  - 
+    scope:
+      path: "assets/img"
+    values:
+      image: true
 
 
 #       _   __            _             __  _
