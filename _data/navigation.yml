@@ -27,13 +27,13 @@
   side: left
   dropdown:
     - title: "Infrastructure"
-    - url: "/release-notes/infrastructure/"
+      url: "/release-notes/infrastructure/"
     - title: "Platform"
-    - url: "/release-notes/platform/"
+      url: "/release-notes/platform/"
     - title: "Database"
-    - url: "/release-notes/database"
+      url: "/release-notes/database"
     - title: "AI/ML"
-    - url: "/release-notes/aiml/"
+      url: "/release-notes/aiml/"
 
 - title: "Search"
   url: "/search/"
