@@ -40,7 +40,6 @@ improve_content: https://github.com/Phlow/feeling-responsive/edit/gh-pages
 #
 urlimg: 'https://team-okitoki.github.io/images/'
 
-
 # Logo size is 600x80 pixels
 logo: "okitoki-team-logo.png"
 
@@ -122,11 +121,6 @@ defaults:
       # sidebar:        # Possible values › left, right › by default there will be no sidebar
       comments: false
       author: dankim     # Default author for posts
-  - 
-    scope:
-      path: "assets/img"
-    values:
-      image: true
 
 
 #       _   __            _             __  _
