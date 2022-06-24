@@ -45,7 +45,7 @@ header: no
 ### Compute 생성
 VM Compute Instace를 하나 생성합니다. **Compute > Instances > Create Instances**를 클릭합니다.
 
-![](../../assets/img/getting-started/compute-firewall-1.png)
+![](../getting-started/images/compute-firewall-1.png)
 
 기본 선택화면에서 인스턴스 이름을 입력하고 이미지 (여기서는 Oracle Linux 8)를 선택하며, 인스턴스에서 사용하기 위한 VCN과 Subnet (Public)을 선택합니다.
 ![](/getting-started/images/compute-firewall-2.png)
