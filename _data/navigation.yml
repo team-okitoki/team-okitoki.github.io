@@ -22,7 +22,7 @@
     url: "/aiml/"
 
 - title: "Release Notes (2022)"
-  url: "/release-notes/"
+  url: "/release-notes-2022/"
   side: left
   dropdown:
     - title: "Infrastructure"
