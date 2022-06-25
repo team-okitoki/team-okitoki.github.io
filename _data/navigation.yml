@@ -34,6 +34,10 @@
     - title: "AI/ML"
       url: "/release-notes-2022/aiml/"
 
+- title: "Learning"
+  url: "/learning/"
+  side: right
+
 - title: "Search"
   url: "/search/"
   side: right
