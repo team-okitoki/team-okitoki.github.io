@@ -1,0 +1,49 @@
+{
+    "workshoptitle": "OCI Cloud Native Workshop",
+	"tutorials": [
+        {
+            "title": "소개",
+            "filename": "labs/introduction/intro.md"
+        },
+        {
+            "title": "Free Trial 계정으로 시작하기",
+            "filename": "labs/cloud-login/pre-register-free-tier-account.md"
+        },
+        {
+            "title": "Lab 1: OKE 클러스터 환경 준비",
+            "filename": "labs/lab-1/setup-cloud-env.md"
+        },
+        {
+            "title": "Lab 2: Microprofile 기반의 마이크로서비스 배포",
+            "filename": "labs/lab-2/microprofile-deploy.md"
+        },
+        {
+            "title": "Lab 3: OCI API Gateway",
+            "filename": "labs/lab-3/api-gateway.md"
+        },
+        {
+            "title": "Lab 4: (OPTIONAL) Polygrot 마이크로 서비스 애플리케이션 배포",
+            "filename": "labs/lab-4/msa-deploy.md"
+        },
+        {
+            "title": "Lab 5: 배포 모니터링",
+            "filename": "labs/lab-5/monitoring.md"
+        },
+        {
+            "title": "Functions 사전준비",
+            "filename": "labs/functions-prerequisites/prereq.md"
+        },
+        {
+            "title": "Lab 6: Functions: Hello Java Function",
+            "filename": "labs/lab-6/func1.md"
+        },
+        {
+            "title": "Lab 7: Functions (OPTIONAL): Functions for ETL (Object Storage to ADW) #1",
+            "filename": "labs/lab-7/oci.md"
+        },
+        {
+            "title": "Lab 8: Functions (OPTIONAL): Functions for ETL (Object Storage to ADW) #2",
+            "filename": "labs/lab-8/func2.md"
+        }
+    ]
+}
