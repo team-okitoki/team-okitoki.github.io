@@ -1,12 +1,12 @@
-- title: HOME
+- title: "HOME"
   url: "/"
   side: left
 
-- title: BLOG
+- title: "BLOG"
   url: "/blog"
   side: left
 
-- title: CATEGORIES
+- title: "CATEGORIES"
   url: "/getting-started/"
   side: left
   dropdown:
