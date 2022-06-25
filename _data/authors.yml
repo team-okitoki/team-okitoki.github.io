@@ -7,9 +7,26 @@
 # Resource › http://blog.sorryapp.com/blogging-with-jekyll/2014/02/06/adding-authors-to-your-jekyll-site.html
 dankim: # replace this with your info
   name: "DanKim"
-  siterole: "webmaster, developer, copywriter, designer"
-  uri: http://dankim.de/
+  siterole: "Cloud Engineer"
+  uri: 
   email:
-  twitter: "@dankim"
+
+lim: # replace this with your info
+  name: "Phillsoo Lim"
+  siterole: "Cloud Architecture"
+  uri: 
+  email:
+
+kskim: # replace this with your info
+  name: "Kisu Kim"
+  siterole: "Cloud Engineer"
+  uri: 
+  email:
+
+jo: # replace this with your info
+  name: "Younghwan Jo"
+  siterole: "Cloud Engineer"
+  uri: 
+  email:
 
 # you can add more authors here

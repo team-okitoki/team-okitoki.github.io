@@ -4,16 +4,16 @@ layout: page
 # Content
 #
 subheadline: "Release Notes"
-title: "5월 OCI Infrastructure 업데이트 소식"
-teaser: "2022년 5월 OCI Infrastructure 업데이트 소식입니다."
-author: kskim
+title: "5월 OCI Database 업데이트 소식"
+teaser: "2022년 5월 OCI Database 업데이트 소식입니다."
+author: lim
 breadcrumb: true
 categories:
-  - release-notes-2022-infrastructure
+  - release-notes-2022-database
 tags:
   - oci-release-notes-2022
   - may-2022
-  - Infrastructure
+  - DATABASE
 #
 # Styling
 #
