@@ -9,7 +9,7 @@ teaser: "매달 새롭게 추가되는 OCI의 Infrastructure 관련 릴리즈 �
 author: dankim
 breadcrumb: true
 categories:
-  - release-notes-infrastructure
+  - release-notes-2022-infrastructure
 tags:
   - oci_release_notes
   - may-2022

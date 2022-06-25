@@ -1,11 +1,11 @@
 ---
 layout: default
-title: "OCI Release Notes"
-teaser: "OCI Release Notes"
+title: "OCI Release Notes 2022"
+teaser: "2022년 OCI 업데이트 소식 모음입니다."
 breadcrumb: true
 header:
-   image_fullwidth: infrastructure/infrastructure-header_2.png
-permalink: "release-notes/"
+   image_fullwidth: release-notes/release-notes-header_1.png
+permalink: "release-notes-2022/"
 ---
 <div id="blog-index" class="row">
 	<div class="small-12 columns t30">
@@ -15,7 +15,7 @@ permalink: "release-notes/"
 		<h2>Infrastructure</h2>
 		<dl class="accordion" data-accordion>
 			{% assign counter = 1 %}
-			{% for post in site.categories.release-notes-infrastructure limit:1000 %}
+			{% for post in site.categories.release-notes-2022-infrastructure limit:1000 %}
 			<dd class="accordion-navigation">
 			<a href="#panel{{ counter }}"><span class="iconfont"></span> {% if post.subheadline %}{{ post.subheadline }} › {% endif %}<strong>{{ post.title }}</strong></a>
 				<div id="panel{{ counter }}" class="content">
@@ -30,7 +30,37 @@ permalink: "release-notes/"
 		<h2>Platform</h2>
 		<dl class="accordion" data-accordion>
 			{% assign counter = 1 %}
-			{% for post in site.categories.release-notes-platform limit:1000 %}
+			{% for post in site.categories.release-notes-2022-platform limit:1000 %}
+			<dd class="accordion-navigation">
+			<a href="#panel{{ counter }}"><span class="iconfont"></span> {% if post.subheadline %}{{ post.subheadline }} › {% endif %}<strong>{{ post.title }}</strong></a>
+				<div id="panel{{ counter }}" class="content">
+					{% if post.meta_description %}{{ post.meta_description | strip_html | escape }}{% elsif post.teaser %}{{ post.teaser | strip_html | escape }}{% endif %}
+					<a href="{{ site.url }}{{ site.baseurl }}{{ post.url }}" title="Read {{ post.title | escape_once }}"><strong>{{ site.data.language.read_more }}</strong></a><br><br>
+				</div>
+			</dd>
+			{% assign counter=counter | plus:1 %}
+			{% endfor %}
+		</dl>
+
+		<h2>Database</h2>
+		<dl class="accordion" data-accordion>
+			{% assign counter = 1 %}
+			{% for post in site.categories.release-notes-2022-database limit:1000 %}
+			<dd class="accordion-navigation">
+			<a href="#panel{{ counter }}"><span class="iconfont"></span> {% if post.subheadline %}{{ post.subheadline }} › {% endif %}<strong>{{ post.title }}</strong></a>
+				<div id="panel{{ counter }}" class="content">
+					{% if post.meta_description %}{{ post.meta_description | strip_html | escape }}{% elsif post.teaser %}{{ post.teaser | strip_html | escape }}{% endif %}
+					<a href="{{ site.url }}{{ site.baseurl }}{{ post.url }}" title="Read {{ post.title | escape_once }}"><strong>{{ site.data.language.read_more }}</strong></a><br><br>
+				</div>
+			</dd>
+			{% assign counter=counter | plus:1 %}
+			{% endfor %}
+		</dl>
+
+		<h2>AI/ML</h2>
+		<dl class="accordion" data-accordion>
+			{% assign counter = 1 %}
+			{% for post in site.categories.release-notes-2022-aiml limit:1000 %}
 			<dd class="accordion-navigation">
 			<a href="#panel{{ counter }}"><span class="iconfont"></span> {% if post.subheadline %}{{ post.subheadline }} › {% endif %}<strong>{{ post.title }}</strong></a>
 				<div id="panel{{ counter }}" class="content">
