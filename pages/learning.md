@@ -2,9 +2,9 @@
 layout: page
 show_meta: false
 title: "Learning"
-subheadline: "Layouts of Feeling Responsive"
+subheadline: "OCI Hands-on"
 header:
-   image_fullwidth: "header_unsplash_5.jpg"
+   image_fullwidth: "learning/learning-header_1.jpg"
 permalink: "/learning/"
 ---
 
