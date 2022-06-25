@@ -2,25 +2,24 @@
   url: "/"
   side: left
 
-- title: Getting Started
+- title: BLOG
+  url: "/blog"
+  side: left
+
+- title: CATEGORIES
   url: "/getting-started/"
   side: left
-
-- title: "Infrastructure"
-  url: "/infrastructure/"
-  side: left
-
-- title: "Platform"
-  url: "/platform/"
-  side: left
-
-- title: "Database"
-  url: "/database/"
-  side: left
-
-- title: "AI/ML"
-  url: "/aiml/"
-  side: left
+  dropdown:
+  - title: "Getting Started"
+    url: "/getting-started/"
+  - title: "Infrastructure"
+    url: "/infrastructure/"
+  - title: "Platform"
+    url: "/platform/"
+  - title: "Database"
+    url: "/database/"
+  - title: "AI/ML"
+    url: "/aiml/"
 
 - title: "Release Notes (2022)"
   url: "/release-notes/"
