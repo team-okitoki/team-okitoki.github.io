@@ -37,4 +37,30 @@ header: no
 # ------------------------------------------
 ---
 
-### 5월 OCI 업데이트 소식
+### Application Dependency Management service is now available
+* Services: Application Dependency Management
+* Release Date: May 3, 2022
+* Documentation: https://docs.oracle.com/en-us/iaas/Content/application-dependency-management/home.htm
+
+#### 서비스 소개
+어떤 서비스인지 소개
+
+***Unordered List 사용 방법***
+* Item 1
+  * Item 2
+    * Item 3
+
+***Ordered List 사용 방법***
+
+1. Item 1
+  1. Item 2
+    1. Item 3
+
+#### 그외 자유롭게 추가하고 싶은 내용 추가
+
+이미지는 다음과 같이 추가
+```
+![](/assets/img/platform/2022-05/adm-home.png)
+```
+![](/assets/img/platform/2022-05/adm-home.png)
+
