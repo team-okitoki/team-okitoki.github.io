@@ -48,9 +48,9 @@ header: no
 그외 글자 관련 서식은 HTML 형태로 작성하여 표현 가능하며 아래 링크 참조
 [Typography](https://phlow.github.io/feeling-responsive/design/typography/typography/) 
 
-> Quotation
+> Quotation 표현
 
-Code Displaying
+Code 표현
 ```
 $ cd helloworld
 ```
