@@ -4,7 +4,7 @@ show_meta: false
 title: "Learning"
 subheadline: "OCI Hands-on"
 header:
-   image_fullwidth: "learning/learning-header_1.jpg"
+   image_fullwidth: "learning/learning-header_1.png"
 permalink: "/learning/"
 ---
 
