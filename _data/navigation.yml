@@ -26,13 +26,13 @@
   side: left
   dropdown:
     - title: "Infrastructure"
-      url: "/release-notes-2022/infrastructure/"
+      url: "/release-notes-2022-infrastructure/"
     - title: "Platform"
-      url: "/release-notes-2022/platform/"
+      url: "/release-notes-2022-platform/"
     - title: "Database"
-      url: "/release-notes-2022/database"
+      url: "/release-notes-2022-database"
     - title: "AI/ML"
-      url: "/release-notes-2022/aiml/"
+      url: "/release-notes-2022-aiml/"
 
 - title: "Learning"
   url: "/learning/"
