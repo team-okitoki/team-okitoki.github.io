@@ -1,22 +1,22 @@
 - name: GitHub
-  url: http://github.com/phlow
+  url: http://github.com/team-okitoki
   class: icon-github
   title: Code und mehr...
 
 - name: YouTube
-  url: http://www.youtube.com/PhlowMedia
+  url: 
   class: icon-youtube
-  title: "Videos, Video-Anleitungen und Filme von Phlow auf YouTube"
+  title: ""
 
 - name: Twitter
   url: http://twitter.com/phlow
   class: icon-twitter
-  title: "Immer das Neuste von Phlow gibt es auf Twitter"
+  title: ""
 
-- name: Mixcloud
-  url: http://www.mixcloud.com/phlow/
+- name: Oracle Cloud
+  url: cloud.oracle.com
   class: icon-cloud
-  title: "Mixe, was sonst?"
+  title: ""
 
 # - name: Facebook
 #   url: http://www.facebook.com/
