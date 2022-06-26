@@ -64,15 +64,17 @@ $ cd helloworld
 
 ***Ordered List 사용 방법***
 
-1. Item 1
- 2. Item 2
- 3. Item 3
-   1. Item 1
-   2. Item 2
-   3. Item 3
-     1. Item 1
-     2. Item 2
-     3. Item 3
+1. Ordered List
+1. Second List Item
+1. Third List Item
+    1. Second Level First Item
+    1. Second Level Second Item
+    1. Second Level Third Item
+        1. And a third level First Item
+        1. And a third level Second Item
+        1. And a third level Third Item
+1. Fourth List Item
+1. Fifth List Item
 
 이미지는 다음과 같이 추가
 ```
