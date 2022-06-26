@@ -3,7 +3,7 @@ layout: page
 #
 # Content
 #
-subheadline: "Release Notes 2022"
+subheadline: "OCI Release Notes 2022"
 title: "5월 OCI Platform 업데이트 소식"
 teaser: "2022년 5월 OCI Platform 업데이트 소식입니다."
 author: dankim
@@ -38,15 +38,15 @@ header: no
 ---
 
 ### Application Dependency Management service is now available
-* Services: Application Dependency Management
-* Release Date: May 3, 2022
-* Documentation: https://docs.oracle.com/en-us/iaas/Content/application-dependency-management/home.htm
+* **Services:** Application Dependency Management
+* **Release Date:** May 3, 2022
+* **Documentation:** [https://docs.oracle.com/en-us/iaas/Content/application-dependency-management/home.htm](https://docs.oracle.com/en-us/iaas/Content/application-dependency-management/home.htm){:target="_blank" rel="noopener"}
 
 #### 서비스 소개
 어떤 서비스인지 소개... **굵은 글씨**, ***굵고 이탤릭***, ```코드 표현```
 
 그외 글자 관련 서식은 HTML 형태로 작성하여 표현 가능하며 아래 링크 참조
-[Typography](https://phlow.github.io/feeling-responsive/design/typography/typography/) 
+[Typography](https://phlow.github.io/feeling-responsive/design/typography/typography/){:target="_blank" rel="noopener"}
 
 > Quotation 표현
 
@@ -82,6 +82,6 @@ $ cd helloworld
 
 링크는 다음과 같이 추가
 ```
-[SignUp](https://signup.cloud.oracle.com) 
+[SignUp](https://signup.cloud.oracle.com){:target="_blank" rel="noopener"}
 ```
-[SignUp](https://signup.cloud.oracle.com) 
+[SignUp](https://signup.cloud.oracle.com){:target="_blank" rel="noopener"}
