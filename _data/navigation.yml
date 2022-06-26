@@ -7,7 +7,7 @@
   side: left
 
 - title: "CATEGORIES"
-  url: "/getting-started/"
+  url: "/categories/"
   side: left
   dropdown:
   - title: "Getting Started"
