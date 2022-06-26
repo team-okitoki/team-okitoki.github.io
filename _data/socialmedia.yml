@@ -4,19 +4,19 @@
   title: Code und mehr...
 
 - name: YouTube
-  url: 
+  url:  https://www.youtube.com/channel/UC60OcDzeEtn194-UPYNJs8A
   class: icon-youtube
-  title: ""
+  title: "OCI Youtube"
 
 - name: Twitter
-  url: http://twitter.com/phlow
+  url:  https://twitter.com/oraclecloud
   class: icon-twitter
-  title: ""
+  title: "OCI Twitter"
 
 - name: Oracle Cloud
-  url: cloud.oracle.com
+  url:  http://cloud.oracle.com
   class: icon-cloud
-  title: ""
+  title: "OCI Home"
 
 # - name: Facebook
 #   url: http://www.facebook.com/
