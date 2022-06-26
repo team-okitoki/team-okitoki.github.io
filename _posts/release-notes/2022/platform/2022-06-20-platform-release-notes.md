@@ -43,7 +43,19 @@ header: no
 * Documentation: https://docs.oracle.com/en-us/iaas/Content/application-dependency-management/home.htm
 
 #### 서비스 소개
-어떤 서비스인지 소개
+어떤 서비스인지 소개... **굵은 글씨**, ***굵고 이탤릭***, ```코드 표현```
+
+그외 글자 관련 서식은 HTML 형태로 작성하여 표현 가능하며 아래 링크 참조
+[Typography](https://phlow.github.io/feeling-responsive/design/typography/typography/) 
+
+> Quotation
+
+Code Displaying
+```
+$ cd helloworld
+```
+
+#### 그외 자유롭게 추가하고 싶은 내용 추가
 
 ***Unordered List 사용 방법***
 * Item 1
@@ -53,10 +65,14 @@ header: no
 ***Ordered List 사용 방법***
 
 1. Item 1
-  1. Item 2
-    1. Item 3
-
-#### 그외 자유롭게 추가하고 싶은 내용 추가
+ 2. Item 2
+ 3. Item 3
+   1. Item 1
+   2. Item 2
+   3. Item 3
+     1. Item 1
+     2. Item 2
+     3. Item 3
 
 이미지는 다음과 같이 추가
 ```
@@ -64,3 +80,8 @@ header: no
 ```
 ![](/assets/img/platform/2022-05/adm-home.png)
 
+링크는 다음과 같이 추가
+```
+[SignUp](https://signup.cloud.oracle.com) 
+```
+[SignUp](https://signup.cloud.oracle.com) 
