@@ -24,16 +24,6 @@ header: no
 #     caption: Photo by Corey Blaz
 #     caption_url: https://blaz.photography/
 # mediaplayer: true
-
-# -------------- 내용 필독 -------------------
-# 작성할 내용은 아래부터 작성
-# 작성 방법
-# 각 챕터별 제목은 "###"로 시작한다.
-# 하위 제목은 "####"로 시작한다.
-# 이미지는 images 폴더안에 Category(getting-started, infrastructure, platform, database, aiml)에 넣고 사용 시 "../../images/카테고리명/이미지" 형태로 참조한다.
-# Bold는 **글자**
-# Bold + Italic은 ***글자***
-# ------------------------------------------
 ---
 
 ### VCN 생성
