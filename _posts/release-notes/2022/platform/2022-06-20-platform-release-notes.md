@@ -41,7 +41,7 @@ header: no
 1. ㄴㄹㄴㅇㄹ
 
 
-![](/assets/img/platform/2022-05/oke-provisioning-1.png)
+![](/assets/img/platform/2022/oke-provisioning-1.png)
 
 
 
@@ -84,7 +84,7 @@ $ cd helloworld
 ```
 ![](/assets/img/platform/2022-05/adm-home.png)
 ```
-![](/assets/img/platform/2022-05/adm-home.png)
+![](/assets/img/platform/2022/adm-home.png)
 
 링크는 다음과 같이 추가
 ```

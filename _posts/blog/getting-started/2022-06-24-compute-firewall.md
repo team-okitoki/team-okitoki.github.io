@@ -35,30 +35,30 @@ header: no
 ### Compute 생성
 VM Compute Instace를 하나 생성합니다. **Compute > Instances > Create Instances**를 클릭합니다.
 
-![](/assets/img/getting-started/2020-06/compute-firewall-1.png)
+![](/assets/img/getting-started/2022/compute-firewall-1.png)
 
 기본 선택화면에서 인스턴스 이름을 입력하고 이미지 (여기서는 Oracle Linux 8)를 선택하며, 인스턴스에서 사용하기 위한 VCN과 Subnet (Public)을 선택합니다.
-![](/assets/img/getting-started/2020-06/compute-firewall-2.png)
+![](/assets/img/getting-started/2022/compute-firewall-2.png)
 
 인스턴스에 접속하기 위해서는 SSH 키가 필요합니다. 사용하고 있는 키가 있다면, 해당 Public Key를 Copy & Paste하고, 그렇지 않은 경우 **Generate a key pair for me**를 선택하여 키를 다운로드 받습니다. 마지막으로 **Create** 버튼을 클릭하여 인스턴스를 생성합니다.
 
-![](/assets/img/getting-started/2020-06/compute-firewall-3.png)
+![](/assets/img/getting-started/2022/compute-firewall-3.png)
 
 ### Security List 설정
 특정 포트를 오픈하기 위해서는 OCI에서 관리하는 Security List와 Instance의 OS에서 관리하는 Firewall 두 부분에 모두 추가해줘야 합니다. 우선 Security List에 오픈하기 위한 포트를 추가하여야 하는데, 인스턴스를 생성할 때 선택한 Subnet을 선택한 후 Security List를 선택합니다. (VCN Wizard를 통해 생성한 경우 Private Subnet을 위한 Security List와 Public Subnet을 위한 Security List 두 개가 생성되며, 네이밍이 **Default Security List for {VCN명}**으로 생성된 것이 Public Subnet의 Security List입니다.)
 
-![](/assets/img/getting-started/2020-06/compute-firewall-4.png)
+![](/assets/img/getting-started/2022/compute-firewall-4.png)
 
 **Add Ingress Rules**을 선택합니다.
 
-![](/assets/img/getting-started/2020-06/compute-firewall-5.png)
+![](/assets/img/getting-started/2022/compute-firewall-5.png)
 
 다음과 같이 **Source CIDR**와 **Destination Port Range**를 입력합니다.
 
 - Source CIDR: 0.0.0.0/0 (모든 IP를 허용)
 - Destination Port Range: 8080 (인스턴스에서 오픈할 포트)
 
-![](/assets/img/getting-started/2020-06/compute-firewall-6.png)
+![](/assets/img/getting-started/2022/compute-firewall-6.png)
 
 ### Instance Firewall 설정
 iptables을 활용하여 관리할 수 있지만, Oracle Linux 7이상부터는 ***firewalld*** 라고 하는 데몬 서비스로 관리하며, 명령어는 ***firewall-cmd*** 명령어를 활용합니다.
