@@ -33,7 +33,21 @@ header: no
 * **Documentation:** [https://docs.oracle.com/en-us/iaas/Content/application-dependency-management/home.htm](https://docs.oracle.com/en-us/iaas/Content/application-dependency-management/home.htm){:target="_blank" rel="noopener"}
 
 ### 서비스 소개
-어떤 서비스인지 소개... **굵은 글씨**, ***굵고 이탤릭***, ```코드 표현```
+블ㅏ블라....
+
+
+
+### 프로비저닝 순서
+1. ㄴㄹㄴㅇㄹ
+
+
+![](/assets/img/platform/2022-05/oke-provisioning-1.png)
+
+
+
+
+
+```코드 표현```
 
 그외 글자 관련 서식은 HTML 형태로 작성하여 표현 가능하며 아래 링크 참조
 [Typography](https://phlow.github.io/feeling-responsive/design/typography/typography/){:target="_blank" rel="noopener"}
