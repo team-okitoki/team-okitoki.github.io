@@ -36,4 +36,4 @@ OCI 업데이트 소식 테스트입니다.
 ![](/images/database/database-header_1.jpg)
 
 ### 두번째 테스트입니다.
-Database Cloud Service 소식
+Database Cloud Service 소식 업데이트
