@@ -28,3 +28,12 @@ header: no
 ---
 
 ### 5월 OCI 업데이트 소식
+
+
+### 테스트입니다.
+OCI 업데이트 소식 테스트입니다.
+
+![](/images/database/database-header_1.jpg)
+
+### 두번째 테스트입니다.
+Database Cloud Service 소식
