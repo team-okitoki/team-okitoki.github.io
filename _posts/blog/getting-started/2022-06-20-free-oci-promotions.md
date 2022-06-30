@@ -120,11 +120,11 @@ Oracle Cloud Free Tier에서는 300달러(한달)의 무료 크레딧을 기본�
 ![](/assets/img/getting-started/2022/oci-subscription-5.png " ")
 
 ### 비용 분석하기
-좀 더 상세히 사용 비용 분석을 위해 비용 분석(Cost Analysis) 기능을 제공하고 있습니다. **Billing & Cost Management > Cost Analysis**를 클릭합니다.
+상세한 비용 분석(Cost Analysis) 기능도 제공되고 있습니다. **Billing & Cost Management > Cost Analysis**를 클릭합니다.
 
 ![](/assets/img/getting-started/2022/oci-cost-analytics-1.png " ")
 
-비용 분석 (Cost Analysis)에서는 여러 조건과 필터 및 그룹핑 기능을 통해서 날짜, 사용 서비스, 지역등 다양한 항목으로 그룹핑하여 사용 비용을 검색 및 분석할 수 있습니다.
+비용 분석 (Cost Analysis)에서는 여러 조건과 필터를 통해 검색하고, 날짜 및 사용 서비스, 지역등 다양한 항목으로 그룹핑하여 비용을 분석할 수 있습니다.
 ![](/assets/img/getting-started/2022/oci-cost-analytics-2.png " ")
 
 ![](/assets/img/getting-started/2022/oci-cost-analytics-3.png " ")
