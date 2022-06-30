@@ -6,7 +6,7 @@ layout: page
 subheadline: "Release Notes 2022"
 title: "5월 OCI AI/ML 업데이트 소식"
 teaser: "2022년 5월 OCI AI/ML 업데이트 소식입니다."
-author: jo
+author: yhcho
 breadcrumb: true
 categories:
   - release-notes-2022-aiml

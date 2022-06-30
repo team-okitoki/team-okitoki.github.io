@@ -3,7 +3,7 @@ layout: page
 #
 # Content
 #
-subheadline: "Release Notes"
+subheadline: "Release Notes 2022"
 title: "5월 OCI Infrastructure 업데이트 소식"
 teaser: "2022년 5월 OCI Infrastructure 업데이트 소식입니다."
 author: kskim
