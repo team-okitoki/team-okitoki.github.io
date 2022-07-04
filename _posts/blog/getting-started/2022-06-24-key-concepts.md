@@ -41,9 +41,8 @@ header: no
 ---
 
 ### 주요 개념 및 용어
-Oracle Cloud Infrastructure(OCI) 를 시작하기 전에 먼저 주요 개념과 용어를 이해하면 OCI를 시작하는데 도움이 됩니다.
-이 포스트에서는 주요 개념 및 용어에 대한 간단한 설명을 제공하고 있으며, 자세한 내용은 추후 제공될 포스트를 참고 바랍니다.
-
+Oracle Cloud Infrastructure(OCI)를 시작하려는 사용자에게 도움이 되는 OCI의 주요 개념과 용어에 대한 설명입니다.
+이 포스트에서는 주요 개념 및 용어에 대한 간단한 설명만 제공하고 있습니다.
 
 #### Tenancy
 Oracle Cloud Infrastructure(OCI) 에 등록하면 Oracle이 고객을 위한 Tenancy(테넌트)를 생성합니다.
