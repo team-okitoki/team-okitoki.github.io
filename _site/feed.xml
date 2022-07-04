@@ -9,519 +9,19 @@
 		<atom:link href="http://localhost:4000//feed.xml" rel="self" type="application/rss+xml" />
 		
 			<item>
-				<title>OCI 주요 컨셉 및 용어 정리</title>
-				<link>http://localhost:4000//getting-started/key-concepts/</link>
+				<title>OCI에서 VCN Wizard를 활용하여 빠르게 VCN 생성하기</title>
+				<link>http://localhost:4000//getting-started/create-vcn/</link>
 				<pubDate>Fri, 24 Jun 2022 00:00:00 +0900</pubDate>
 				<description>&lt;div class=&quot;panel radius&quot;&gt;
   &lt;p id=&quot;toc&quot;&gt;&lt;strong&gt;Table of Contents&lt;/strong&gt;&lt;/p&gt;
 &lt;ul id=&quot;markdown-toc&quot;&gt;
-  &lt;li&gt;&lt;a href=&quot;#주요-개념-및-용어&quot; id=&quot;markdown-toc-주요-개념-및-용어&quot;&gt;주요 개념 및 용어&lt;/a&gt;    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;#tenancy&quot; id=&quot;markdown-toc-tenancy&quot;&gt;Tenancy&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#instance&quot; id=&quot;markdown-toc-instance&quot;&gt;Instance&lt;/a&gt;        &lt;ul&gt;
-          &lt;li&gt;&lt;a href=&quot;#types-of-compute-instances&quot; id=&quot;markdown-toc-types-of-compute-instances&quot;&gt;Types Of Compute Instances&lt;/a&gt;&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#shape&quot; id=&quot;markdown-toc-shape&quot;&gt;Shape&lt;/a&gt;        &lt;ul&gt;
-          &lt;li&gt;&lt;a href=&quot;#types-of-shape-load-balancing&quot; id=&quot;markdown-toc-types-of-shape-load-balancing&quot;&gt;Types of Shape (Load Balancing)&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href=&quot;#types-of-shape-compute&quot; id=&quot;markdown-toc-types-of-shape-compute&quot;&gt;Types of Shape (Compute)&lt;/a&gt;&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#regions-and-availability-domainsad&quot; id=&quot;markdown-toc-regions-and-availability-domainsad&quot;&gt;Regions and Availability Domains(AD)&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#fault-domains&quot; id=&quot;markdown-toc-fault-domains&quot;&gt;Fault Domains&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#console&quot; id=&quot;markdown-toc-console&quot;&gt;Console&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#oracle-cloud-identifierocid&quot; id=&quot;markdown-toc-oracle-cloud-identifierocid&quot;&gt;Oracle Cloud Identifier(OCID)&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#compartments&quot; id=&quot;markdown-toc-compartments&quot;&gt;Compartments&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#security-zones&quot; id=&quot;markdown-toc-security-zones&quot;&gt;Security Zones&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#virtual-cloud-network-vcn&quot; id=&quot;markdown-toc-virtual-cloud-network-vcn&quot;&gt;Virtual Cloud Network (VCN)&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#image&quot; id=&quot;markdown-toc-image&quot;&gt;Image&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#key-pair&quot; id=&quot;markdown-toc-key-pair&quot;&gt;Key Pair&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#block-volume&quot; id=&quot;markdown-toc-block-volume&quot;&gt;Block Volume&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#object-storage&quot; id=&quot;markdown-toc-object-storage&quot;&gt;Object Storage&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#bucket&quot; id=&quot;markdown-toc-bucket&quot;&gt;Bucket&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#vcn-생성&quot; id=&quot;markdown-toc-vcn-생성&quot;&gt;VCN 생성&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#vcn-정보-및-리소스-확인&quot; id=&quot;markdown-toc-vcn-정보-및-리소스-확인&quot;&gt;VCN 정보 및 리소스 확인&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;/div&gt;
 
-&lt;h3 id=&quot;주요-개념-및-용어&quot;&gt;주요 개념 및 용어&lt;/h3&gt;
-&lt;p&gt;Oracle Cloud Infrastructure(OCI)를 시작하려는 사용자에게 도움이 되는 OCI의 주요 개념과 용어에 대한 설명입니다.
-이 포스트에서는 주요 개념 및 용어에 대한 간단한 설명만 제공하고 있습니다.&lt;/p&gt;
-
-&lt;h4 id=&quot;tenancy&quot;&gt;Tenancy&lt;/h4&gt;
-&lt;p&gt;Oracle Cloud Infrastructure(OCI) 에 등록하면 Oracle이 고객을 위한 Tenancy(테넌트)를 생성합니다.
-이 테넌트는 클라우드 리소스를 생성, 구성 및 관리할 수 있는 Oracle Cloud Infrastructure(OCI) 내의 안전한 격리된 파티션입니다.&lt;/p&gt;
-
-&lt;h4 id=&quot;instance&quot;&gt;Instance&lt;/h4&gt;
-&lt;p&gt;Instance(인스턴스)는 클라우드에서 실행되는 컴퓨팅 호스트입니다.
-Oracle Cloud Infrastructure(OCI) 컴퓨팅 인스턴스를 사용하면 기존의 소프트웨어 기반 가상 시스템이 아닌 호스팅된 물리적 하드웨어를 활용하여 높은 수준의 보안 및 성능을 보장할 수 있습니다.&lt;/p&gt;
-
-&lt;h5 id=&quot;types-of-compute-instances&quot;&gt;Types Of Compute Instances&lt;/h5&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;Bare Metal Instance&lt;/strong&gt; : Oracle Cloud Infrastructure는 물리적 호스트(“bare metal”) 시스템을 제어할 수 있도록 지원합니다. Bare Metal Instance(BM)는 물리적인 서버를 하이퍼바이저 없이 &lt;strong&gt;단일 사용자(테넌트)에게 전용으로 사용할 수 있는 컴퓨팅 환경을 제공합니다&lt;/strong&gt;. 물리적 CPU, 메모리 및 NIC(네트워크 인터페이스 카드)를 단독으로 제어할 수 있기 때문에 서버자원의 성능을 100% 사용할 수 있어서 높은 성능을 제공합니다.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Virtual Machine Instance&lt;/strong&gt; : Virtual Machine Instance(VM)는 물리적인 서버위에 하이퍼바이저에 의해 가상화된 환경을 통해 컴퓨팅 환경을 제공하며, &lt;strong&gt;단일 사용자가 아닌 다중 사용자가 환경을 공유 합니다&lt;/strong&gt;. 하이퍼바이저에 의해 가상화된 계층에서 컴퓨팅 자원이 실행되기 때문에 Bare Metal 보다 상대적으로 낮은 성능을 제공합니다.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Dedicated VM Host&lt;/strong&gt; : Dedicated VM Host는 BM과 VM의 조합입니다. 일반적인 VM과는 달리 단일 사용자에게 할당된 Bare Metal 서버위에 VM 환경이 제공되기 때문에 공유 인프라를 사용하지 못하도록 하는 격리에 대한 규정 준수 및 관련 요구사항을 충족할 수 있습니다. 하지만 VM에 비교하여 지원하는 Shape이 제한적이고, 인스턴스와 관련된 기능 중 자동확장,인스턴스 구성,인스턴스 풀 등 일부 기능을 지원하지 않습니다.
-&lt;img src=&quot;/assets/img/getting-started/2022/oci-compute-types.png&quot; alt=&quot;OCI Compute Types&quot; title=&quot; &quot; /&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;shape&quot;&gt;Shape&lt;/h4&gt;
-&lt;p&gt;Compute 리소스 또는 Load Balancing 리소스에 대한 사양을 구성하는 조합입니다.
-Compute 에 대한 Shape는 인스턴스에 할당된 CPU 수와 메모리 양을 지정하고, Load Balancing에 대한 Shape는 수신 트래픽과 송신 트래픽에 대해 로드 밸런서의 사전 프로비저닝된 총 최대 용량(bandwidth)을 결정합니다.&lt;/p&gt;
-
-&lt;h5 id=&quot;types-of-shape-load-balancing&quot;&gt;Types of Shape (Load Balancing)&lt;/h5&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;Fixed Shape (Dynamic)&lt;/strong&gt; : Load Balancer의 네트워크 대역폭이 100Mbps, 400Mbps, 8,000Mbps 크기로 고정되어있는 Shape 입니다. &lt;mark style=&quot;background-color:#fff5b1&quot;&gt;현재는 일부 레거시 사용자의 Tenancy 에서만 제한적으로 생성이 가능하고, &lt;b&gt;2023년 5월 11일부터는 새로운 고정형태의 LB를 생성할 수 없습니다.&lt;/b&gt;&lt;/mark&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Flexible Shape&lt;/strong&gt; : Load Balancer의 네트워크 대역폭을 최소 대역폭과 최대 대역폭을 직접 지정하여 LB의 네트워크 대역폭을 지정하는 유연한 형태의 Shape 입니다. 고정형태와 동일하게 사용하고 싶은 경우 최소,최대 대역폭을 동일하게 지정하여 사용이 가능합니다.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h5 id=&quot;types-of-shape-compute&quot;&gt;Types of Shape (Compute)&lt;/h5&gt;
-&lt;p&gt;Compute Shape는 인스턴스에 할당할 CPU, Memory, Storage의 조합입니다. Oracle Infrastructure에서는 여러가지 미리 정의된 Shape을 제공합니다. 자세한 내용은 &lt;a href=&quot;https://docs.oracle.com/en-us/iaas/Content/Compute/References/computeshapes.htm&quot;&gt;컴퓨트 Shapes&lt;/a&gt;를 참조하세요.&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;Standard Shape&lt;/strong&gt; : 일반적인 워크로드에 적합한 Shape으로써 CPU 코어, Memory, 네트워크 리소스의 균형적인 사양을 제공합니다. Intel 및 AMD 프로세서에서 사용할 수 있습니다.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;DenseIO Shape&lt;/strong&gt; : DenseIO Shape에는 NVMe기반 SSD로 구성된 Storage를 포함하고 있기 때문에, 고성능 Storage가 필요한 Big Data, 대용량 Database등 워크로드에 적합합니다.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;GPU Shape&lt;/strong&gt; : CPU와 GPU 조합으로 하드웨어 가속(hardware acceleration)이 필요한 워크로드에 적합한 사양을 제공합니다. GPU Shape에는 Intel CPU와 NVIDIA GPU가 포함됩니다.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;High-perfomance Computing (HPC) Shapes&lt;/strong&gt; : 높은 사양의 CPU 와 대규모 병렬 HPC 워크로드를 위한 Cluster Networking이 필요한 고성능 워크로드에 적합한 사양을 제공합니다. HPC Shape는 Bare Metal Instance 에서만 제공합니다.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;regions-and-availability-domainsad&quot;&gt;Regions and Availability Domains(AD)&lt;/h4&gt;
-&lt;p&gt;Oracle Cloud Infrastructure(OCI) 는 Regions 및 Availability Domains(AD)에서 물리적으로 호스팅됩니다. 
-Regions은 지리적 영역이며 Avalability Domains(AD)은 특정 Regions 내에 위치한 데이터 센터입니다. 각각의 Regions은 하나 이상의 가용성 도메인(AD)으로 구성되어 있습니다.&lt;/p&gt;
-
-&lt;p&gt;Avalability Domain은 동시에 장애가 발생하거나, 다른 Avalability Domain의 영향으로 장애가 발생할 가능성이 매우 낮도록 설계되어있습니다. 
-따라서 클라우드 서비스를 구성할 때 고가용성(HA)을 보장하고 리소스 장애를 방지하기 위해서는 Regions의 여러 가용성 도메인(AD)을 사용해야 합니다. 
-다만 컴퓨트 인스턴스 및 인스턴스에 연결된 스토리지 볼륨과 같은 일부 리소스는 동일한 가용성 도메인(AD) 내에서 생성되어야 하기 때문에 서비스 구성시 이 부분을 고려야해 합니다.
-자세한 내용은 &lt;a href=&quot;https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm#top&quot;&gt;지역 및 가용성 도메인&lt;/a&gt; 을 참조하십시오.&lt;/p&gt;
-
-&lt;details&gt;
-&lt;summary&gt;&lt;b style=&quot;color:blue;&quot;&gt;Oracle Cloud Infrastructure Commercial Regions 목록 보기 (클릭)&lt;/b&gt;&lt;/summary&gt;
-&lt;div&gt;
-    &lt;table class=&quot;table vl-table-bordered vl-table-divider-col&quot; summary=&quot;This table summarizes basic information about each region&quot;&gt;&lt;caption&gt;&lt;/caption&gt;&lt;colgroup&gt;&lt;col /&gt;&lt;col /&gt;&lt;col /&gt;&lt;col /&gt;&lt;col /&gt;&lt;col /&gt;&lt;/colgroup&gt;&lt;thead class=&quot;thead&quot;&gt;
-      &lt;tr class=&quot;row&quot;&gt;
-      &lt;th class=&quot;entry&quot; id=&quot;About__entry__1&quot;&gt;Region Name&lt;/th&gt;
-      &lt;th class=&quot;entry&quot; id=&quot;About__entry__2&quot;&gt;Region Identifier&lt;/th&gt;
-      &lt;th class=&quot;entry&quot; id=&quot;About__entry__3&quot;&gt;Region Location&lt;/th&gt;
-      &lt;th class=&quot;entry&quot; id=&quot;About__entry__4&quot;&gt;Region Key&lt;/th&gt;
-      &lt;th class=&quot;entry&quot; id=&quot;About__entry__5&quot;&gt;Realm  Key&lt;/th&gt;
-      &lt;th class=&quot;entry&quot; id=&quot;About__entry__6&quot;&gt;Availability Domains&lt;/th&gt;
-      &lt;/tr&gt;
-      &lt;/thead&gt;&lt;tbody class=&quot;tbody&quot;&gt;
-      &lt;tr class=&quot;row&quot;&gt;
-      &lt;td class=&quot;entry&quot; headers=&quot;About__entry__1&quot;&gt;&lt;span class=&quot;ph&quot;&gt;Australia East (Sydney)&lt;/span&gt;
-      &lt;/td&gt;
-      &lt;td class=&quot;entry&quot; headers=&quot;About__entry__2&quot;&gt;&lt;span class=&quot;ph&quot;&gt;ap-sydney-1&lt;/span&gt;
-      &lt;/td&gt;
-      &lt;td class=&quot;entry&quot; headers=&quot;About__entry__3&quot;&gt;Sydney, Australia&lt;/td&gt;
-      &lt;td class=&quot;entry&quot; headers=&quot;About__entry__4&quot;&gt;&lt;span class=&quot;ph&quot;&gt;SYD&lt;/span&gt;
-      &lt;/td&gt;
-      &lt;td class=&quot;entry&quot; headers=&quot;About__entry__5&quot;&gt;OC1&lt;/td&gt;
-      &lt;td class=&quot;entry&quot; headers=&quot;About__entry__6&quot;&gt;1&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr class=&quot;row&quot;&gt;
-      &lt;td class=&quot;entry&quot; headers=&quot;About__entry__1&quot;&gt;&lt;span class=&quot;ph&quot;&gt;Australia Southeast (Melbourne)&lt;/span&gt;
-      &lt;/td&gt;
-      &lt;td class=&quot;entry&quot; headers=&quot;About__entry__2&quot;&gt;&lt;span class=&quot;ph&quot;&gt;ap-melbourne-1&lt;/span&gt;
-      &lt;/td&gt;
-      &lt;td class=&quot;entry&quot; headers=&quot;About__entry__3&quot;&gt;Melbourne, Australia&lt;/td&gt;
-      &lt;td class=&quot;entry&quot; headers=&quot;About__entry__4&quot;&gt;&lt;span class=&quot;ph&quot;&gt;MEL&lt;/span&gt;
-      &lt;/td&gt;
-      &lt;td class=&quot;entry&quot; headers=&quot;About__entry__5&quot;&gt;OC1&lt;/td&gt;
-      &lt;td class=&quot;entry&quot; headers=&quot;About__entry__6&quot;&gt;1&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr class=&quot;row&quot;&gt;
-      &lt;td class=&quot;entry&quot; headers=&quot;About__entry__1&quot;&gt;&lt;span class=&quot;ph&quot;&gt;Brazil East (Sao Paulo)&lt;/span&gt;
-      &lt;/td&gt;
-      &lt;td class=&quot;entry&quot; headers=&quot;About__entry__2&quot;&gt;&lt;span class=&quot;ph&quot;&gt;sa-saopaulo-1&lt;/span&gt;
-      &lt;/td&gt;
-      &lt;td class=&quot;entry&quot; headers=&quot;About__entry__3&quot;&gt;Sao Paulo, Brazil&lt;/td&gt;
-      &lt;td class=&quot;entry&quot; headers=&quot;About__entry__4&quot;&gt;&lt;span class=&quot;ph&quot;&gt;GRU&lt;/span&gt;
-      &lt;/td&gt;
-      &lt;td class=&quot;entry&quot; headers=&quot;About__entry__5&quot;&gt;OC1&lt;/td&gt;
-      &lt;td class=&quot;entry&quot; headers=&quot;About__entry__6&quot;&gt;1&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr class=&quot;row&quot;&gt;
-      &lt;td class=&quot;entry&quot; headers=&quot;About__entry__1&quot;&gt;&lt;span class=&quot;ph&quot;&gt;Brazil Southeast (Vinhedo)&lt;/span&gt;
-      &lt;/td&gt;
-      &lt;td class=&quot;entry&quot; headers=&quot;About__entry__2&quot;&gt;&lt;span class=&quot;ph&quot;&gt;sa-vinhedo-1&lt;/span&gt;
-      &lt;/td&gt;
-      &lt;td class=&quot;entry&quot; headers=&quot;About__entry__3&quot;&gt;Vinhedo, Brazil&lt;/td&gt;
-      &lt;td class=&quot;entry&quot; headers=&quot;About__entry__4&quot;&gt;&lt;span class=&quot;ph&quot;&gt;VCP&lt;/span&gt;
-      &lt;/td&gt;
-      &lt;td class=&quot;entry&quot; headers=&quot;About__entry__5&quot;&gt;OC1&lt;/td&gt;
-      &lt;td class=&quot;entry&quot; headers=&quot;About__entry__6&quot;&gt;1&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr class=&quot;row&quot;&gt;
-      &lt;td class=&quot;entry&quot; headers=&quot;About__entry__1&quot;&gt;&lt;span class=&quot;ph&quot;&gt;Canada Southeast (Montreal)&lt;/span&gt;
-      &lt;/td&gt;
-      &lt;td class=&quot;entry&quot; headers=&quot;About__entry__2&quot;&gt;&lt;span class=&quot;ph&quot;&gt;ca-montreal-1&lt;/span&gt;
-      &lt;/td&gt;
-      &lt;td class=&quot;entry&quot; headers=&quot;About__entry__3&quot;&gt;Montreal, Canada&lt;/td&gt;
-      &lt;td class=&quot;entry&quot; headers=&quot;About__entry__4&quot;&gt;&lt;span class=&quot;ph&quot;&gt;YUL&lt;/span&gt;
-      &lt;/td&gt;
-      &lt;td class=&quot;entry&quot; headers=&quot;About__entry__5&quot;&gt;OC1&lt;/td&gt;
-      &lt;td class=&quot;entry&quot; headers=&quot;About__entry__6&quot;&gt;1&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr class=&quot;row&quot;&gt;
-      &lt;td class=&quot;entry&quot; headers=&quot;About__entry__1&quot;&gt;&lt;span class=&quot;ph&quot;&gt;Canada Southeast (Toronto)&lt;/span&gt;
-      &lt;/td&gt;
-      &lt;td class=&quot;entry&quot; headers=&quot;About__entry__2&quot;&gt;&lt;span class=&quot;ph&quot;&gt;ca-toronto-1&lt;/span&gt;
-      &lt;/td&gt;
-      &lt;td class=&quot;entry&quot; headers=&quot;About__entry__3&quot;&gt;Toronto, Canada&lt;/td&gt;
-      &lt;td class=&quot;entry&quot; headers=&quot;About__entry__4&quot;&gt;&lt;span class=&quot;ph&quot;&gt;YYZ&lt;/span&gt;
-      &lt;/td&gt;
-      &lt;td class=&quot;entry&quot; headers=&quot;About__entry__5&quot;&gt;OC1&lt;/td&gt;
-      &lt;td class=&quot;entry&quot; headers=&quot;About__entry__6&quot;&gt;1&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr class=&quot;row&quot;&gt;
-      &lt;td class=&quot;entry&quot; headers=&quot;About__entry__1&quot;&gt;&lt;span class=&quot;ph&quot;&gt;Chile (Santiago)&lt;/span&gt;
-      &lt;/td&gt;
-      &lt;td class=&quot;entry&quot; headers=&quot;About__entry__2&quot;&gt;&lt;span class=&quot;ph&quot;&gt;sa-santiago-1&lt;/span&gt;
-      &lt;/td&gt;
-      &lt;td class=&quot;entry&quot; headers=&quot;About__entry__3&quot;&gt;Santiago, Chile&lt;/td&gt;
-      &lt;td class=&quot;entry&quot; headers=&quot;About__entry__4&quot;&gt;&lt;span class=&quot;ph&quot;&gt;SCL&lt;/span&gt;
-      &lt;/td&gt;
-      &lt;td class=&quot;entry&quot; headers=&quot;About__entry__5&quot;&gt;OC1&lt;/td&gt;
-      &lt;td class=&quot;entry&quot; headers=&quot;About__entry__6&quot;&gt;1&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr class=&quot;row&quot;&gt;
-      &lt;td class=&quot;entry&quot; headers=&quot;About__entry__1&quot;&gt;&lt;span class=&quot;ph&quot;&gt;France Central (Paris)&lt;/span&gt;
-      &lt;/td&gt;
-      &lt;td class=&quot;entry&quot; headers=&quot;About__entry__2&quot;&gt;&lt;span class=&quot;ph&quot;&gt;eu-paris-1&lt;/span&gt;
-      &lt;/td&gt;
-      &lt;td class=&quot;entry&quot; headers=&quot;About__entry__3&quot;&gt;Paris, France&lt;/td&gt;
-      &lt;td class=&quot;entry&quot; headers=&quot;About__entry__4&quot;&gt;&lt;span class=&quot;ph&quot;&gt;CDG&lt;/span&gt;
-      &lt;/td&gt;
-      &lt;td class=&quot;entry&quot; headers=&quot;About__entry__5&quot;&gt;OC1&lt;/td&gt;
-      &lt;td class=&quot;entry&quot; headers=&quot;About__entry__6&quot;&gt;1&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr class=&quot;row&quot;&gt;
-      &lt;td class=&quot;entry&quot; headers=&quot;About__entry__1&quot;&gt;&lt;span class=&quot;ph&quot;&gt;France South (Marseille)&lt;/span&gt;
-      &lt;/td&gt;
-      &lt;td class=&quot;entry&quot; headers=&quot;About__entry__2&quot;&gt;&lt;span class=&quot;ph&quot;&gt;eu-marseille-1&lt;/span&gt;
-      &lt;/td&gt;
-      &lt;td class=&quot;entry&quot; headers=&quot;About__entry__3&quot;&gt;Marseille, France&lt;/td&gt;
-      &lt;td class=&quot;entry&quot; headers=&quot;About__entry__4&quot;&gt;&lt;span class=&quot;ph&quot;&gt;MRS&lt;/span&gt;
-      &lt;/td&gt;
-      &lt;td class=&quot;entry&quot; headers=&quot;About__entry__5&quot;&gt;OC1&lt;/td&gt;
-      &lt;td class=&quot;entry&quot; headers=&quot;About__entry__6&quot;&gt;1&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr class=&quot;row&quot;&gt;
-      &lt;td class=&quot;entry&quot; headers=&quot;About__entry__1&quot;&gt;&lt;span class=&quot;ph&quot;&gt;Germany Central (Frankfurt)&lt;/span&gt;
-      &lt;/td&gt;
-      &lt;td class=&quot;entry&quot; headers=&quot;About__entry__2&quot;&gt;&lt;span class=&quot;ph&quot;&gt;eu-frankfurt-1&lt;/span&gt;
-      &lt;/td&gt;
-      &lt;td class=&quot;entry&quot; headers=&quot;About__entry__3&quot;&gt;Frankfurt, Germany&lt;/td&gt;
-      &lt;td class=&quot;entry&quot; headers=&quot;About__entry__4&quot;&gt;&lt;span class=&quot;ph&quot;&gt;FRA&lt;/span&gt;
-      &lt;/td&gt;
-      &lt;td class=&quot;entry&quot; headers=&quot;About__entry__5&quot;&gt;OC1&lt;/td&gt;
-      &lt;td class=&quot;entry&quot; headers=&quot;About__entry__6&quot;&gt;3&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr class=&quot;row&quot;&gt;
-      &lt;td class=&quot;entry&quot; headers=&quot;About__entry__1&quot;&gt;&lt;span class=&quot;ph&quot;&gt;India South (Hyderabad)&lt;/span&gt;
-      &lt;/td&gt;
-      &lt;td class=&quot;entry&quot; headers=&quot;About__entry__2&quot;&gt;&lt;span class=&quot;ph&quot;&gt;ap-hyderabad-1&lt;/span&gt;
-      &lt;/td&gt;
-      &lt;td class=&quot;entry&quot; headers=&quot;About__entry__3&quot;&gt;Hyderabad, India&lt;/td&gt;
-      &lt;td class=&quot;entry&quot; headers=&quot;About__entry__4&quot;&gt;&lt;span class=&quot;ph&quot;&gt;HYD&lt;/span&gt;
-      &lt;/td&gt;
-      &lt;td class=&quot;entry&quot; headers=&quot;About__entry__5&quot;&gt;OC1 &lt;/td&gt;
-      &lt;td class=&quot;entry&quot; headers=&quot;About__entry__6&quot;&gt;1&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr class=&quot;row&quot;&gt;
-      &lt;td class=&quot;entry&quot; headers=&quot;About__entry__1&quot;&gt;&lt;span class=&quot;ph&quot;&gt;India West (Mumbai)&lt;/span&gt;
-      &lt;/td&gt;
-      &lt;td class=&quot;entry&quot; headers=&quot;About__entry__2&quot;&gt;&lt;span class=&quot;ph&quot;&gt;ap-mumbai-1&lt;/span&gt;
-      &lt;/td&gt;
-      &lt;td class=&quot;entry&quot; headers=&quot;About__entry__3&quot;&gt;Mumbai, India&lt;/td&gt;
-      &lt;td class=&quot;entry&quot; headers=&quot;About__entry__4&quot;&gt;&lt;span class=&quot;ph&quot;&gt;BOM&lt;/span&gt;
-      &lt;/td&gt;
-      &lt;td class=&quot;entry&quot; headers=&quot;About__entry__5&quot;&gt;OC1 &lt;/td&gt;
-      &lt;td class=&quot;entry&quot; headers=&quot;About__entry__6&quot;&gt;1&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr class=&quot;row&quot;&gt;
-      &lt;td class=&quot;entry&quot; headers=&quot;About__entry__1&quot;&gt;&lt;span class=&quot;ph&quot;&gt;Israel Central (Jerusalem)&lt;/span&gt;&lt;/td&gt;
-      &lt;td class=&quot;entry&quot; headers=&quot;About__entry__2&quot;&gt;&lt;span class=&quot;ph&quot;&gt;il-jerusalem-1&lt;/span&gt;&lt;/td&gt;
-      &lt;td class=&quot;entry&quot; headers=&quot;About__entry__3&quot;&gt;Jerusalem, Israel&lt;/td&gt;
-      &lt;td class=&quot;entry&quot; headers=&quot;About__entry__4&quot;&gt;&lt;span class=&quot;ph&quot;&gt;MTZ&lt;/span&gt;&lt;/td&gt;
-      &lt;td class=&quot;entry&quot; headers=&quot;About__entry__5&quot;&gt;OC1&lt;/td&gt;
-      &lt;td class=&quot;entry&quot; headers=&quot;About__entry__6&quot;&gt;1&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr class=&quot;row&quot;&gt;
-      &lt;td class=&quot;entry&quot; headers=&quot;About__entry__1&quot;&gt;&lt;span class=&quot;ph&quot;&gt;Italy Northwest (Milan)&lt;/span&gt;
-      &lt;/td&gt;
-      &lt;td class=&quot;entry&quot; headers=&quot;About__entry__2&quot;&gt;&lt;span class=&quot;ph&quot;&gt;eu-milan-1&lt;/span&gt;
-      &lt;/td&gt;
-      &lt;td class=&quot;entry&quot; headers=&quot;About__entry__3&quot;&gt;Milan, Italy&lt;/td&gt;
-      &lt;td class=&quot;entry&quot; headers=&quot;About__entry__4&quot;&gt;&lt;span class=&quot;ph&quot;&gt;LIN&lt;/span&gt;
-      &lt;/td&gt;
-      &lt;td class=&quot;entry&quot; headers=&quot;About__entry__5&quot;&gt;OC1&lt;/td&gt;
-      &lt;td class=&quot;entry&quot; headers=&quot;About__entry__6&quot;&gt;1&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr class=&quot;row&quot;&gt;
-      &lt;td class=&quot;entry&quot; headers=&quot;About__entry__1&quot;&gt;&lt;span class=&quot;ph&quot;&gt;Japan Central (Osaka)&lt;/span&gt;
-      &lt;/td&gt;
-      &lt;td class=&quot;entry&quot; headers=&quot;About__entry__2&quot;&gt;&lt;span class=&quot;ph&quot;&gt;ap-osaka-1&lt;/span&gt;
-      &lt;/td&gt;
-      &lt;td class=&quot;entry&quot; headers=&quot;About__entry__3&quot;&gt;Osaka, Japan&lt;/td&gt;
-      &lt;td class=&quot;entry&quot; headers=&quot;About__entry__4&quot;&gt;&lt;span class=&quot;ph&quot;&gt;KIX&lt;/span&gt;
-      &lt;/td&gt;
-      &lt;td class=&quot;entry&quot; headers=&quot;About__entry__5&quot;&gt;OC1&lt;/td&gt;
-      &lt;td class=&quot;entry&quot; headers=&quot;About__entry__6&quot;&gt;1&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr class=&quot;row&quot;&gt;
-      &lt;td class=&quot;entry&quot; headers=&quot;About__entry__1&quot;&gt;&lt;span class=&quot;ph&quot;&gt;Japan East (Tokyo)&lt;/span&gt;
-      &lt;/td&gt;
-      &lt;td class=&quot;entry&quot; headers=&quot;About__entry__2&quot;&gt;&lt;span class=&quot;ph&quot;&gt;ap-tokyo-1&lt;/span&gt;
-      &lt;/td&gt;
-      &lt;td class=&quot;entry&quot; headers=&quot;About__entry__3&quot;&gt;Tokyo, Japan&lt;/td&gt;
-      &lt;td class=&quot;entry&quot; headers=&quot;About__entry__4&quot;&gt;&lt;span class=&quot;ph&quot;&gt;NRT&lt;/span&gt;
-      &lt;/td&gt;
-      &lt;td class=&quot;entry&quot; headers=&quot;About__entry__5&quot;&gt;OC1&lt;/td&gt;
-      &lt;td class=&quot;entry&quot; headers=&quot;About__entry__6&quot;&gt;1&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr class=&quot;row&quot;&gt;
-      &lt;td class=&quot;entry&quot; headers=&quot;About__entry__1&quot;&gt;&lt;span class=&quot;ph&quot;&gt;Netherlands Northwest (Amsterdam)&lt;/span&gt;
-      &lt;/td&gt;
-      &lt;td class=&quot;entry&quot; headers=&quot;About__entry__2&quot;&gt;&lt;span class=&quot;ph&quot;&gt;eu-amsterdam-1&lt;/span&gt;
-      &lt;/td&gt;
-      &lt;td class=&quot;entry&quot; headers=&quot;About__entry__3&quot;&gt;Amsterdam, Netherlands&lt;/td&gt;
-      &lt;td class=&quot;entry&quot; headers=&quot;About__entry__4&quot;&gt;&lt;span class=&quot;ph&quot;&gt;AMS&lt;/span&gt;
-      &lt;/td&gt;
-      &lt;td class=&quot;entry&quot; headers=&quot;About__entry__5&quot;&gt;OC1&lt;/td&gt;
-      &lt;td class=&quot;entry&quot; headers=&quot;About__entry__6&quot;&gt;1&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr class=&quot;row&quot;&gt;
-      &lt;td class=&quot;entry&quot; headers=&quot;About__entry__1&quot;&gt;&lt;span class=&quot;ph&quot;&gt;Saudi Arabia West (Jeddah)&lt;/span&gt;
-      &lt;/td&gt;
-      &lt;td class=&quot;entry&quot; headers=&quot;About__entry__2&quot;&gt;&lt;span class=&quot;ph&quot;&gt;me-jeddah-1&lt;/span&gt;
-      &lt;/td&gt;
-      &lt;td class=&quot;entry&quot; headers=&quot;About__entry__3&quot;&gt;Jeddah, Saudi Arabia&lt;/td&gt;
-      &lt;td class=&quot;entry&quot; headers=&quot;About__entry__4&quot;&gt;&lt;span class=&quot;ph&quot;&gt;JED&lt;/span&gt;
-      &lt;/td&gt;
-      &lt;td class=&quot;entry&quot; headers=&quot;About__entry__5&quot;&gt;OC1&lt;/td&gt;
-      &lt;td class=&quot;entry&quot; headers=&quot;About__entry__6&quot;&gt;1&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr class=&quot;row&quot;&gt;
-      &lt;td class=&quot;entry&quot; headers=&quot;About__entry__1&quot;&gt;&lt;span class=&quot;ph&quot;&gt;Singapore (Singapore)&lt;/span&gt;
-      &lt;/td&gt;
-      &lt;td class=&quot;entry&quot; headers=&quot;About__entry__2&quot;&gt;&lt;span class=&quot;ph&quot;&gt;ap-singapore-1&lt;/span&gt;
-      &lt;/td&gt;
-      &lt;td class=&quot;entry&quot; headers=&quot;About__entry__3&quot;&gt;Singapore,Singapore&lt;/td&gt;
-      &lt;td class=&quot;entry&quot; headers=&quot;About__entry__4&quot;&gt;&lt;span class=&quot;ph&quot;&gt;SIN&lt;/span&gt;
-      &lt;/td&gt;
-      &lt;td class=&quot;entry&quot; headers=&quot;About__entry__5&quot;&gt;OC1&lt;/td&gt;
-      &lt;td class=&quot;entry&quot; headers=&quot;About__entry__6&quot;&gt;1&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr class=&quot;row&quot;&gt;
-      &lt;td class=&quot;entry&quot; headers=&quot;About__entry__1&quot;&gt;&lt;span class=&quot;ph&quot;&gt;South Africa Central (Johannesburg)&lt;/span&gt;
-      &lt;/td&gt;
-      &lt;td class=&quot;entry&quot; headers=&quot;About__entry__2&quot;&gt;&lt;span class=&quot;ph&quot;&gt;af-johannesburg-1&lt;/span&gt;
-      &lt;/td&gt;
-      &lt;td class=&quot;entry&quot; headers=&quot;About__entry__3&quot;&gt;Johannesburg, South Africa&lt;/td&gt;
-      &lt;td class=&quot;entry&quot; headers=&quot;About__entry__4&quot;&gt;&lt;span class=&quot;ph&quot;&gt;JNB&lt;/span&gt;
-      &lt;/td&gt;
-      &lt;td class=&quot;entry&quot; headers=&quot;About__entry__5&quot;&gt;OC1&lt;/td&gt;
-      &lt;td class=&quot;entry&quot; headers=&quot;About__entry__6&quot;&gt;1&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr class=&quot;row&quot;&gt;
-      &lt;td class=&quot;entry&quot; headers=&quot;About__entry__1&quot;&gt;&lt;span class=&quot;ph&quot;&gt;South Korea Central (Seoul)&lt;/span&gt;
-      &lt;/td&gt;
-      &lt;td class=&quot;entry&quot; headers=&quot;About__entry__2&quot;&gt;&lt;span class=&quot;ph&quot;&gt;ap-seoul-1&lt;/span&gt;
-      &lt;/td&gt;
-      &lt;td class=&quot;entry&quot; headers=&quot;About__entry__3&quot;&gt;Seoul, South Korea&lt;/td&gt;
-      &lt;td class=&quot;entry&quot; headers=&quot;About__entry__4&quot;&gt;&lt;span class=&quot;ph&quot;&gt;ICN&lt;/span&gt;
-      &lt;/td&gt;
-      &lt;td class=&quot;entry&quot; headers=&quot;About__entry__5&quot;&gt;OC1&lt;/td&gt;
-      &lt;td class=&quot;entry&quot; headers=&quot;About__entry__6&quot;&gt;1&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr class=&quot;row&quot;&gt;
-      &lt;td class=&quot;entry&quot; headers=&quot;About__entry__1&quot;&gt;&lt;span class=&quot;ph&quot;&gt;South Korea North (Chuncheon)&lt;/span&gt;
-      &lt;/td&gt;
-      &lt;td class=&quot;entry&quot; headers=&quot;About__entry__2&quot;&gt;&lt;span class=&quot;ph&quot;&gt;ap-chuncheon-1&lt;/span&gt;
-      &lt;/td&gt;
-      &lt;td class=&quot;entry&quot; headers=&quot;About__entry__3&quot;&gt;Chuncheon, South Korea&lt;/td&gt;
-      &lt;td class=&quot;entry&quot; headers=&quot;About__entry__4&quot;&gt;&lt;span class=&quot;ph&quot;&gt;YNY&lt;/span&gt;
-      &lt;/td&gt;
-      &lt;td class=&quot;entry&quot; headers=&quot;About__entry__5&quot;&gt;OC1&lt;/td&gt;
-      &lt;td class=&quot;entry&quot; headers=&quot;About__entry__6&quot;&gt;1&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr class=&quot;row&quot;&gt;
-      &lt;td class=&quot;entry&quot; headers=&quot;About__entry__1&quot;&gt;&lt;span class=&quot;ph&quot;&gt;Sweden Central (Stockholm)&lt;/span&gt;
-      &lt;/td&gt;
-      &lt;td class=&quot;entry&quot; headers=&quot;About__entry__2&quot;&gt;&lt;span class=&quot;ph&quot;&gt;eu-stockholm-1&lt;/span&gt;
-      &lt;/td&gt;
-      &lt;td class=&quot;entry&quot; headers=&quot;About__entry__3&quot;&gt;Stockholm, Sweden&lt;/td&gt;
-      &lt;td class=&quot;entry&quot; headers=&quot;About__entry__4&quot;&gt;&lt;span class=&quot;ph&quot;&gt;ARN&lt;/span&gt;
-      &lt;/td&gt;
-      &lt;td class=&quot;entry&quot; headers=&quot;About__entry__5&quot;&gt;OC1&lt;/td&gt;
-      &lt;td class=&quot;entry&quot; headers=&quot;About__entry__6&quot;&gt;1&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr class=&quot;row&quot;&gt;
-      &lt;td class=&quot;entry&quot; headers=&quot;About__entry__1&quot;&gt;&lt;span class=&quot;ph&quot;&gt;Switzerland North (Zurich)&lt;/span&gt;
-      &lt;/td&gt;
-      &lt;td class=&quot;entry&quot; headers=&quot;About__entry__2&quot;&gt;&lt;span class=&quot;ph&quot;&gt;eu-zurich-1&lt;/span&gt;
-      &lt;/td&gt;
-      &lt;td class=&quot;entry&quot; headers=&quot;About__entry__3&quot;&gt;Zurich, Switzerland&lt;/td&gt;
-      &lt;td class=&quot;entry&quot; headers=&quot;About__entry__4&quot;&gt;&lt;span class=&quot;ph&quot;&gt;ZRH&lt;/span&gt;
-      &lt;/td&gt;
-      &lt;td class=&quot;entry&quot; headers=&quot;About__entry__5&quot;&gt;OC1&lt;/td&gt;
-      &lt;td class=&quot;entry&quot; headers=&quot;About__entry__6&quot;&gt;1&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr class=&quot;row&quot;&gt;
-      &lt;td class=&quot;entry&quot; headers=&quot;About__entry__1&quot;&gt;&lt;span class=&quot;ph&quot;&gt;UAE Central (Abu Dhabi)&lt;/span&gt;
-      &lt;/td&gt;
-      &lt;td class=&quot;entry&quot; headers=&quot;About__entry__2&quot;&gt;&lt;span class=&quot;ph&quot;&gt;me-abudhabi-1&lt;/span&gt;
-      &lt;/td&gt;
-      &lt;td class=&quot;entry&quot; headers=&quot;About__entry__3&quot;&gt;Abu Dhabi, UAE&lt;/td&gt;
-      &lt;td class=&quot;entry&quot; headers=&quot;About__entry__4&quot;&gt;&lt;span class=&quot;ph&quot;&gt;AUH&lt;/span&gt;
-      &lt;/td&gt;
-      &lt;td class=&quot;entry&quot; headers=&quot;About__entry__5&quot;&gt;OC1&lt;/td&gt;
-      &lt;td class=&quot;entry&quot; headers=&quot;About__entry__6&quot;&gt;1&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr class=&quot;row&quot;&gt;
-      &lt;td class=&quot;entry&quot; headers=&quot;About__entry__1&quot;&gt;&lt;span class=&quot;ph&quot;&gt;UAE East (Dubai)&lt;/span&gt;
-      &lt;/td&gt;
-      &lt;td class=&quot;entry&quot; headers=&quot;About__entry__2&quot;&gt;&lt;span class=&quot;ph&quot;&gt;me-dubai-1&lt;/span&gt;
-      &lt;/td&gt;
-      &lt;td class=&quot;entry&quot; headers=&quot;About__entry__3&quot;&gt;Dubai, UAE&lt;/td&gt;
-      &lt;td class=&quot;entry&quot; headers=&quot;About__entry__4&quot;&gt;&lt;span class=&quot;ph&quot;&gt;DXB&lt;/span&gt;
-      &lt;/td&gt;
-      &lt;td class=&quot;entry&quot; headers=&quot;About__entry__5&quot;&gt;OC1&lt;/td&gt;
-      &lt;td class=&quot;entry&quot; headers=&quot;About__entry__6&quot;&gt;1&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr class=&quot;row&quot;&gt;
-      &lt;td class=&quot;entry&quot; headers=&quot;About__entry__1&quot;&gt;&lt;span class=&quot;ph&quot;&gt;UK South (London)&lt;/span&gt;
-      &lt;/td&gt;
-      &lt;td class=&quot;entry&quot; headers=&quot;About__entry__2&quot;&gt;&lt;span class=&quot;ph&quot;&gt;uk-london-1&lt;/span&gt;
-      &lt;/td&gt;
-      &lt;td class=&quot;entry&quot; headers=&quot;About__entry__3&quot;&gt;London, United Kingdom&lt;/td&gt;
-      &lt;td class=&quot;entry&quot; headers=&quot;About__entry__4&quot;&gt;&lt;span class=&quot;ph&quot;&gt;LHR&lt;/span&gt;
-      &lt;/td&gt;
-      &lt;td class=&quot;entry&quot; headers=&quot;About__entry__5&quot;&gt;OC1&lt;/td&gt;
-      &lt;td class=&quot;entry&quot; headers=&quot;About__entry__6&quot;&gt;3&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr class=&quot;row&quot;&gt;
-      &lt;td class=&quot;entry&quot; headers=&quot;About__entry__1&quot;&gt;&lt;span class=&quot;ph&quot;&gt;UK West (Newport)&lt;/span&gt;
-      &lt;/td&gt;
-      &lt;td class=&quot;entry&quot; headers=&quot;About__entry__2&quot;&gt;&lt;span class=&quot;ph&quot;&gt;uk-cardiff-1&lt;/span&gt;
-      &lt;/td&gt;
-      &lt;td class=&quot;entry&quot; headers=&quot;About__entry__3&quot;&gt;Newport, United Kingdom&lt;/td&gt;
-      &lt;td class=&quot;entry&quot; headers=&quot;About__entry__4&quot;&gt;&lt;span class=&quot;ph&quot;&gt;CWL&lt;/span&gt;
-      &lt;/td&gt;
-      &lt;td class=&quot;entry&quot; headers=&quot;About__entry__5&quot;&gt;OC1&lt;/td&gt;
-      &lt;td class=&quot;entry&quot; headers=&quot;About__entry__6&quot;&gt;1&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr class=&quot;row&quot;&gt;
-      &lt;td class=&quot;entry&quot; headers=&quot;About__entry__1&quot;&gt;&lt;span class=&quot;ph&quot;&gt;US East (Ashburn)&lt;/span&gt;
-      &lt;/td&gt;
-      &lt;td class=&quot;entry&quot; headers=&quot;About__entry__2&quot;&gt;&lt;span class=&quot;ph&quot;&gt;us-ashburn-1&lt;/span&gt;
-      &lt;/td&gt;
-      &lt;td class=&quot;entry&quot; headers=&quot;About__entry__3&quot;&gt;Ashburn, VA&lt;/td&gt;
-      &lt;td class=&quot;entry&quot; headers=&quot;About__entry__4&quot;&gt;&lt;span class=&quot;ph&quot;&gt;IAD&lt;/span&gt;
-      &lt;/td&gt;
-      &lt;td class=&quot;entry&quot; headers=&quot;About__entry__5&quot;&gt;OC1&lt;/td&gt;
-      &lt;td class=&quot;entry&quot; headers=&quot;About__entry__6&quot;&gt;3&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr class=&quot;row&quot;&gt;
-      &lt;td class=&quot;entry&quot; headers=&quot;About__entry__1&quot;&gt;&lt;span class=&quot;ph&quot;&gt;US West (Phoenix)&lt;/span&gt;
-      &lt;/td&gt;
-      &lt;td class=&quot;entry&quot; headers=&quot;About__entry__2&quot;&gt;&lt;span class=&quot;ph&quot;&gt;us-phoenix-1&lt;/span&gt;
-      &lt;/td&gt;
-      &lt;td class=&quot;entry&quot; headers=&quot;About__entry__3&quot;&gt;Phoenix, AZ &lt;/td&gt;
-      &lt;td class=&quot;entry&quot; headers=&quot;About__entry__4&quot;&gt;&lt;span class=&quot;ph&quot;&gt;PHX&lt;/span&gt;
-      &lt;/td&gt;
-      &lt;td class=&quot;entry&quot; headers=&quot;About__entry__5&quot;&gt;OC1&lt;/td&gt;
-      &lt;td class=&quot;entry&quot; headers=&quot;About__entry__6&quot;&gt;3&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr class=&quot;row&quot;&gt;
-      &lt;td class=&quot;entry&quot; headers=&quot;About__entry__1&quot;&gt;&lt;span class=&quot;ph&quot;&gt;US West (San Jose)&lt;/span&gt;
-      &lt;/td&gt;
-      &lt;td class=&quot;entry&quot; headers=&quot;About__entry__2&quot;&gt;&lt;span class=&quot;ph&quot;&gt;us-sanjose-1&lt;/span&gt;
-      &lt;/td&gt;
-      &lt;td class=&quot;entry&quot; headers=&quot;About__entry__3&quot;&gt;San Jose, CA &lt;/td&gt;
-      &lt;td class=&quot;entry&quot; headers=&quot;About__entry__4&quot;&gt;&lt;span class=&quot;ph&quot;&gt;SJC&lt;/span&gt;
-      &lt;/td&gt;
-      &lt;td class=&quot;entry&quot; headers=&quot;About__entry__5&quot;&gt;OC1&lt;/td&gt;
-      &lt;td class=&quot;entry&quot; headers=&quot;About__entry__6&quot;&gt;1&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;/tbody&gt;
-&lt;/table&gt;
-  &lt;/div&gt;
-&lt;/details&gt;
-
-&lt;h4 id=&quot;fault-domains&quot;&gt;Fault Domains&lt;/h4&gt;
-&lt;p&gt;Fault Domain은 Avalability Domain에 구성되어있는 하드웨어와 Infrastructure의 그룹입니다. 
-하나의 Availability Domain에는 각 3개의 Fault Domain으로 구성되어 있으며, Availability Domain에서 발생할 수 있는 하드웨어 장애나 계획된 유지보수 작업을 수행할 때 서비스에 영향을 주지 않기 위해서 구성할 때 사용합니다.&lt;/p&gt;
-
-&lt;h4 id=&quot;console&quot;&gt;Console&lt;/h4&gt;
-&lt;p&gt;Oracle Cloud Infrastructure에 액세스하고 관리하는 데 사용할 수 있는 간단하고 직관적인 웹 기반 사용자 인터페이스입니다.&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;OCI Console 화면 예시 : &lt;strong&gt;Get Started&lt;/strong&gt;
-  &lt;img src=&quot;/assets/img/getting-started/2022/oci-console-getting-started.png&quot; alt=&quot;OCI Console 화면&quot; title=&quot; &quot; /&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;OCI Console 화면 예시 : &lt;strong&gt;Dash Board&lt;/strong&gt;
-  &lt;img src=&quot;/assets/img/getting-started/2022/oci-console-dashboard.png&quot; alt=&quot;OCI Console Dashboard&quot; title=&quot; &quot; /&gt;&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;oracle-cloud-identifierocid&quot;&gt;Oracle Cloud Identifier(OCID)&lt;/h4&gt;
-&lt;p&gt;모든 오라클 클라우드 인프라 리소스에는 오라클 OCID(Oracle Cloud Identifier)라는 오라클이 할당한 고유 ID가 있습니다. 이 ID는 콘솔 및 API에서 리소스 정보의 일부로 포함됩니다.
-OCID 구문에 대한 자세한 내용은 &lt;a href=&quot;https://docs.oracle.com/en-us/iaas/Content/General/Concepts/identifiers.htm#Resource_Identifiers&quot;&gt;리소스 식별자&lt;/a&gt; 를 참조하십시오.&lt;/p&gt;
-
-&lt;h4 id=&quot;compartments&quot;&gt;Compartments&lt;/h4&gt;
-&lt;p&gt;Compartments(구획)는 OCI 리소스를 관리하기 위한 논리적인 그룹입니다. 일반적으로 서비스 별로 구획을 구분하거나, 조직별로 구획을 구분하여 클라우드 리소스에 대한 액세스를 쉽게 구성하고 제어할 수 있을 뿐만 아니라 OCI Console에서 리소스 작업을 시작하면 구획이 사용자가 보고 있는 리소스에 대한 필터 역할을 합니다. 
-사용자의 테넌트가 구성되면 최초 Root Compartment가 자동으로 생성되고 클라우드 관리자가 Root Compartment 하위로 새로운 Compartment를 생성할 수 있습니다. (생성한 구획 하위에 추가로 중첩하여 생성도 가능합니다.)
-생성한 Compartment에 정책을 생성하여 사용자들이 접근할 수 있는 리소스를 제한하도록 관리할 수 있습니다.&lt;/p&gt;
-
-&lt;h4 id=&quot;security-zones&quot;&gt;Security Zones&lt;/h4&gt;
-&lt;p&gt;Security Zones(보안 영역)은 Compartments(구획)과 연결됩니다. Security Zones(보안 영역)에 클라우드 리소스를 생성하고 업데이트하면 Oracle Cloud Infrastructure(OCI)는 해당 리소스가 보안 영역 정책에 부합하는지에 대해 검증하는 작업을 실행합니다. 
-만약, 생성하려는 리소스가 정책을 위반하면 작업은 거부됩니다. 보안 영역을 사용하면 리소스가 OCI 보안 원칙이나 사용자가 정의한 정책을 준수하고 있다는 것을 확신할 수 있습니다.&lt;/p&gt;
-
-&lt;h4 id=&quot;virtual-cloud-network-vcn&quot;&gt;Virtual Cloud Network (VCN)&lt;/h4&gt;
-&lt;p&gt;Virtual Cloud Network(가상 클라우드 네트워크)는 인스턴스가 실행되는 Subnet, Route Table 및 Gateway를 포함한 기존 네트워크의 가상 버전입니다. 
-클라우드 네트워크는 단일 Region 내에 있지만 모든 Region 의 Availability Domains(가용성 도메인)을 포함합니다. 
-클라우드 네트워크에서 정의하는 각 서브넷은 단일 가용성 도메인(AD)에 있거나 해당 영역의 모든 가용성 도메인(AD)에 걸쳐 있을 수 있습니다(모든 가용성 도메인에 설정하는것을 권장합니다). 
-OCI 에서 Compute Instance를 시작하려면 클라우드 네트워크를 하나 이상 설정해야 합니다. 
-Public Traffic을 처리할 선택적 인터넷 게이트웨이와 On-Premises 네트워크를 안전하게 확장하기 위한 IPSec Connection 또는 FastConnect를 사용하여 클라우드 네트워크를 구성할 수 있습니다.&lt;/p&gt;
-
-&lt;h4 id=&quot;image&quot;&gt;Image&lt;/h4&gt;
-&lt;p&gt;Image(이미지)는 운영 체제 및 오라클 리눅스 등의 다른 소프트웨어를 정의하는 가상 하드 드라이브의 템플릿입니다. 
-인스턴스를 실행할 때 이미지를 선택하여 인스턴스 특성을 정의할 수 있습니다. Oracle은 사용할 수 있는 플랫폼 이미지 집합을 제공합니다. 
-또한 템플릿으로 사용하도록 이미 구성한 인스턴스에서 이미지를 저장하여 동일한 소프트웨어 및 사용자 정의로 더 많은 인스턴스를 실행할 수도 있습니다.&lt;/p&gt;
-
-&lt;h4 id=&quot;key-pair&quot;&gt;Key Pair&lt;/h4&gt;
-&lt;p&gt;Key Pair(키 쌍)는 Oracle Cloud Infrastructure(OCI)에서 사용하는 인증 메커니즘입니다. 키 쌍은 Private Key(개인 키) 파일과 Public Key(공용 키) 파일로 구성됩니다. 공개 키는 Oracle Cloud Infrastructure에 업로드합니다. Private Key(개인 키)는 컴퓨터에 안전하게 보관합니다. 개인 키는 비밀번호와 같이 개인만 알고, 보관해야 할 키입니다.&lt;/p&gt;
-
-&lt;p&gt;Key Pair(키 쌍)는 서로 다른 사양에 따라 생성될 수 있습니다. Oracle Cloud Infrastructure(OCI)는 특정 목적을 위해 두 가지 유형의 키 쌍을 사용합니다.&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;인스턴스 SSH 키 쌍: 이 키 쌍은 인스턴스에 대한 보안 셸(SSH) 연결을 설정하는 데 사용됩니다. 인스턴스를 프로비저닝할 때 공용 키를 제공하면 인스턴스의 인증된 키 파일에 저장됩니다. 인스턴스에 로그온하려면 공용 키로 확인된 개인 키를 제공해야 합니다.&lt;/li&gt;
-  &lt;li&gt;API 서명 키 쌍: 이 키 쌍은 PEM 형식으로 API 요청을 제출할 때 사용자를 인증하는 데 사용됩니다. API를 통해 Oracle Cloud Infrastructure에 액세스할 사용자만 이 키 쌍이 필요합니다.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;이러한 키 쌍에 대한 요구 사항에 대한 자세한 내용은 &lt;a href=&quot;https://docs.oracle.com/en-us/iaas/Content/General/Concepts/credentials.htm#Security_Credentials&quot;&gt;보안 자격 증명&lt;/a&gt; 을 참조하십시오.&lt;/p&gt;
-
-&lt;h4 id=&quot;block-volume&quot;&gt;Block Volume&lt;/h4&gt;
-&lt;p&gt;블록 볼륨은 Oracle Cloud Infrastructure 인스턴스에 영구 블록 스토리지 공간을 제공하는 가상 디스크입니다. 
-예를 들어 데이터 및 응용 프로그램을 저장하기 위해 컴퓨터의 실제 하드 드라이브와 마찬가지로 블록 볼륨을 사용합니다. 
-한 인스턴스에서 볼륨을 분리하여 데이터 손실 없이 다른 인스턴스에 연결할 수 있습니다.&lt;/p&gt;
-
-&lt;h4 id=&quot;object-storage&quot;&gt;Object Storage&lt;/h4&gt;
-&lt;p&gt;Object Storage는 데이터를 객체로 저장하고 관리할 수 있는 스토리지 아키텍처입니다. 저장할 수 있는 최대 데이터 파일의 크기는 최대 10TB 이며 업로드된 데이터는 어디에서나 엑세스할 수 있습니다. 
-자주 변경되지 않거나 접근하지 않는 데이터는 Archive 옵션을 선택하게 되면 매우 많은 양의 데이터를 합리적인 가격으로 저장할 수 있습니다.
-오브젝트 스토리지의 일반적인 사용 사례로는 데이터 백업, 파일 공유, 로그 및 센서 생성 데이터와 같은 비정형 데이터 저장등의 용도로 사용됩니다.&lt;/p&gt;
-
-&lt;h4 id=&quot;bucket&quot;&gt;Bucket&lt;/h4&gt;
-&lt;p&gt;버킷은 개체 저장소에서 데이터와 파일을 저장하기 위해 사용하는 논리적 컨테이너입니다. 버킷에는 개체를 무제한으로 포함할 수 있습니다.&lt;/p&gt;
-</description>
-				<guid isPermaLink="true">http://localhost:4000//getting-started/key-concepts/</guid>
-			</item>
-		
-			<item>
-				<title>OCI에서 VCN Wizard를 활용하여 빠르게 VCN 생성하기</title>
-				<link>http://localhost:4000//getting-started/create-vcn/</link>
-				<pubDate>Fri, 24 Jun 2022 00:00:00 +0900</pubDate>
-				<description>&lt;h3 id=&quot;vcn-생성&quot;&gt;VCN 생성&lt;/h3&gt;
+&lt;h3 id=&quot;vcn-생성&quot;&gt;VCN 생성&lt;/h3&gt;
 &lt;p&gt;VCN 생성 Wizard를 활용하여 간단하게 VCN을 하나 구성합니다. 아래와 같이 Networking &amp;gt; Virtual Cloud Networks를 선택한 후 &lt;strong&gt;Start VCN Wizard&lt;/strong&gt;를 클릭합니다.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/assets/img/getting-started/2022/create-vcn-1.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
@@ -559,7 +59,18 @@ Public Traffic을 처리할 선택적 인터넷 게이트웨이와 On-Premises �
 				<title>OCI Oracle Linux 7이상에서 방화벽 설정하기</title>
 				<link>http://localhost:4000//getting-started/compute-firewall/</link>
 				<pubDate>Fri, 24 Jun 2022 00:00:00 +0900</pubDate>
-				<description>&lt;h3 id=&quot;vcn-생성&quot;&gt;VCN 생성&lt;/h3&gt;
+				<description>&lt;div class=&quot;panel radius&quot;&gt;
+  &lt;p id=&quot;toc&quot;&gt;&lt;strong&gt;Table of Contents&lt;/strong&gt;&lt;/p&gt;
+&lt;ul id=&quot;markdown-toc&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#vcn-생성&quot; id=&quot;markdown-toc-vcn-생성&quot;&gt;VCN 생성&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#compute-생성&quot; id=&quot;markdown-toc-compute-생성&quot;&gt;Compute 생성&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#security-list-설정&quot; id=&quot;markdown-toc-security-list-설정&quot;&gt;Security List 설정&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#instance-firewall-설정&quot; id=&quot;markdown-toc-instance-firewall-설정&quot;&gt;Instance Firewall 설정&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;/div&gt;
+
+&lt;h3 id=&quot;vcn-생성&quot;&gt;VCN 생성&lt;/h3&gt;
 &lt;p&gt;우선 VCN을 준비합니다. VCN 생성은 아래 포스팅을 참고합니다.&lt;/p&gt;
 
 &lt;blockquote&gt;
@@ -870,9 +381,272 @@ $ sudo systemctl disable firewalld.service
 			</item>
 		
 			<item>
+				<title>OCI 비용과 사용량 분석하기</title>
+				<link>http://localhost:4000//getting-started/expenses-usage/</link>
+				<pubDate>Sat, 04 Jun 2022 09:00:00 +0900</pubDate>
+				<description>&lt;div class=&quot;panel radius&quot;&gt;
+  &lt;p id=&quot;toc&quot;&gt;&lt;strong&gt;Table of Contents&lt;/strong&gt;&lt;/p&gt;
+&lt;ul id=&quot;markdown-toc&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#oci에서-제공하는-비용-관련-도구들&quot; id=&quot;markdown-toc-oci에서-제공하는-비용-관련-도구들&quot;&gt;OCI에서 제공하는 비용 관련 도구들&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#비용-분석-cost-analysis&quot; id=&quot;markdown-toc-비용-분석-cost-analysis&quot;&gt;비용 분석 (Cost Analysis)&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#날짜별로-비용을-필터링-하려면&quot; id=&quot;markdown-toc-날짜별로-비용을-필터링-하려면&quot;&gt;날짜별로 비용을 필터링 하려면&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#태그별로-비용을-필터링하려면&quot; id=&quot;markdown-toc-태그별로-비용을-필터링하려면&quot;&gt;태그별로 비용을 필터링하려면&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#구획별로-비용을-필터링하려면&quot; id=&quot;markdown-toc-구획별로-비용을-필터링하려면&quot;&gt;구획별로 비용을 필터링하려면&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#위에서-적용한-필터를-제거하려면&quot; id=&quot;markdown-toc-위에서-적용한-필터를-제거하려면&quot;&gt;위에서 적용한 필터를 제거하려면&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;/div&gt;
+
+&lt;h3 id=&quot;oci에서-제공하는-비용-관련-도구들&quot;&gt;OCI에서 제공하는 비용 관련 도구들&lt;/h3&gt;
+&lt;p&gt;OCI Console에서는 다음과 같은 비용 및 사용량에 대한 모니터링 도구들을 제공하고 있습니다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;예산 (Budgets)&lt;/li&gt;
+  &lt;li&gt;비용 분석 (Cost Analysis)&lt;/li&gt;
+  &lt;li&gt;비용 및 사용 보고서 (Cost and Usage Reports)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;그 외 간략히 요약된 비용 정보를 확인하고자 할때는 구독(Subscriptions) 페이지에서 확인이 가능합니다. 구독 (Subscriptions)에서 비용을 확인하는 방법은 아래 포스트를 참고합니다.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;a href=&quot;http://localhost:4000//getting-started/free-oci-promotions/#%EA%B5%AC%EB%8F%85-%EC%A0%95%EB%B3%B4-%EB%B0%8F-%EC%82%AC%EC%9A%A9-%EB%B9%84%EC%9A%A9-%ED%99%95%EC%9D%B8%ED%95%98%EA%B8%B0&quot;&gt;OCI 무료 계정 생성 및 관리하기 - 구독 정보 및 사용 비용 확인하기&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;비용-분석-cost-analysis&quot;&gt;비용 분석 (Cost Analysis)&lt;/h3&gt;
+&lt;p&gt;비용 분석 (Cost Analysis)은 OCI에서 사용한 비용을 다양한 필터와 그룹항목으로 집계한 후 이를 차트 및 표 형태로 제공합니다. 또한 이렇게 집계된 비용 데이터를 CSV 파일로 다운로드 받아볼 수 있습니다. 비용 분석 화면은 다음 경로를 통해 확인할 수 있습니다.&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;청구 및 비용 관리 (Billing &amp;amp; Cost Management) &amp;gt; 비용 분석 (Cost Analysis)&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/getting-started/2022/oci-expense-cost-1.png&quot; alt=&quot;&quot; title=&quot; &quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;일반적으로 비용 분석 페이지를 처음 오픈하게 되면, 서비스별로 사용한 비용에 대한 보고서를 보여줍니다. 여기서 아래와 같은 &lt;strong&gt;조건&lt;/strong&gt;, &lt;strong&gt;필터&lt;/strong&gt;, &lt;strong&gt;그룹화&lt;/strong&gt; 기능을 활용하여 비용 보고서를 생성할 수 있습니다. 가령 기간, 일 및 월 단위 집계, 비용 혹은 사용량 검색과 함께 서비스에 적용한 특정 태그, 구획, 지역, 서비스등으로 필터링을 할 수 있으며, 마찬가지로 그룹화를 선택하여 비용을 확인할 수 있습니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/getting-started/2022/oci-expense-cost-2.png&quot; alt=&quot;&quot; title=&quot; &quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;이제 몇 가지 간단한 비용 필터링 하는 방법을 보겠습니다.&lt;/p&gt;
+&lt;h4 id=&quot;날짜별로-비용을-필터링-하려면&quot;&gt;날짜별로 비용을 필터링 하려면&lt;/h4&gt;
+&lt;p&gt;메뉴에서 &lt;strong&gt;청구 및 비용 관리 (Billing &amp;amp; Cost Management) &amp;gt; 비용 분석 (Cost Analysis)&lt;/strong&gt;을 클릭합니다. 아래와 같이 기본적으로 제공되는 보고서를 선택할 수 있습니다. 여기서는 &lt;strong&gt;서비스별 비용&lt;/strong&gt;을 선택한 후 시작 날짜와 종료 날짜를 선택하고 적용 버튼을 선택합니다.&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;보고서는 사용자가 별도로 정의하여 저장할 수 있습니다. 사용자가 원하는 조건이나 필터, 그룹을 선택하면 &lt;strong&gt;새 보고서 저장&lt;/strong&gt; 버튼이 활성화 되면서 새로운 보고서로 저장할 수 있습니다.
+시작 날짜와 종료 날짜는 UTC(협정 세계시)입니다. (서울 표준시: UTC+09:00)&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/getting-started/2022/oci-expense-cost-3.png&quot; alt=&quot;&quot; title=&quot; &quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;다음과 같이 조건 및 필터가 적용된 결과를 차트와 표로 확인할 수 있습니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/getting-started/2022/oci-expense-cost-4.png&quot; alt=&quot;&quot; title=&quot; &quot; /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;태그별로-비용을-필터링하려면&quot;&gt;태그별로 비용을 필터링하려면&lt;/h4&gt;
+&lt;p&gt;마찬가지로 메뉴에서 &lt;strong&gt;청구 및 비용 관리 (Billing &amp;amp; Cost Management) &amp;gt; 비용 분석 (Cost Analysis)&lt;/strong&gt;을 클릭합니다. 보고서는 마찬가지로 &lt;strong&gt;서비스별 비용&lt;/strong&gt;을 선택한 후 &lt;strong&gt;필터&lt;/strong&gt;에서 &lt;strong&gt;태그&lt;/strong&gt;를 선택합니다. &lt;strong&gt;태그 네임스페이스&lt;/strong&gt; 및 &lt;strong&gt;태그 키&lt;/strong&gt; 에서 &lt;strong&gt;태그 지정 필터 옵션&lt;/strong&gt;을 선택 및 &lt;strong&gt;태그 값 (다음 중에서 임의 항목 일치 선택시)&lt;/strong&gt;을 입력한 후 &lt;strong&gt;적용&lt;/strong&gt;을 클릭합니다.&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;태그는 모든 리소스들이 기본적으로 OCI에서 제공되는 기본 &lt;strong&gt;태그 네임스페이스&lt;/strong&gt; 및 &lt;strong&gt;태그 키&lt;/strong&gt;를 갖고 있지만, 사용자가 임의로 &lt;strong&gt;태그 네임스페이스&lt;/strong&gt; 및 &lt;strong&gt;태그 키&lt;/strong&gt;를 생성하여 리소스에 할당이 가능합니다. ex) 태그 네임스페이스: mycompany, 태그 키: devteam, 태그 값: mydevteam&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/getting-started/2022/oci-expense-cost-5.png&quot; alt=&quot;&quot; title=&quot; &quot; /&gt;
+&lt;img src=&quot;/assets/img/getting-started/2022/oci-expense-cost-6.png&quot; alt=&quot;&quot; title=&quot; &quot; /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;구획별로-비용을-필터링하려면&quot;&gt;구획별로 비용을 필터링하려면&lt;/h4&gt;
+&lt;p&gt;메뉴에서 &lt;strong&gt;청구 및 비용 관리 (Billing &amp;amp; Cost Management) &amp;gt; 비용 분석 (Cost Analysis)&lt;/strong&gt;을 클릭합니다. 보고서는 동일하게 &lt;strong&gt;서비스별 비용&lt;/strong&gt;을 선택한 후 &lt;strong&gt;필터&lt;/strong&gt;에서 &lt;strong&gt;구획&lt;/strong&gt;을 선택합니다. 구획 필터링의 경우 &lt;strong&gt;구획 이름&lt;/strong&gt;, &lt;strong&gt;구획 OCID&lt;/strong&gt;, &lt;strong&gt;구획 경로&lt;/strong&gt;를 이용해서 필터링할 수 있습니다. &lt;strong&gt;구획 필터링 옵션&lt;/strong&gt;을 선택 및 &lt;strong&gt;필터링&lt;/strong&gt; 값을 입력한 후 &lt;strong&gt;적용&lt;/strong&gt; 버튼을 클릭하면 해당 구획에 생성된 리소스에 대한 비용에 대한 보고서가 생성됩니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/getting-started/2022/oci-expense-cost-7.png&quot; alt=&quot;&quot; title=&quot; &quot; /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;위에서-적용한-필터를-제거하려면&quot;&gt;위에서 적용한 필터를 제거하려면&lt;/h4&gt;
+&lt;p&gt;비용을 필터링하면 추가된 필터의 앞에 &lt;strong&gt;X&lt;/strong&gt;아이콘과 함께 적용된 필터가 표시됩니다. 여기서 각 필터를 제거하려면 필터에 표기된 &lt;strong&gt;X&lt;/strong&gt; 아이콘을 클릭하고, 모든 필터를 제거하려면 우측의 &lt;strong&gt;모든 필터 지우기&lt;/strong&gt;를 클릭합니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/getting-started/2022/oci-expense-cost-8.png&quot; alt=&quot;&quot; title=&quot; &quot; /&gt;&lt;/p&gt;
+</description>
+				<guid isPermaLink="true">http://localhost:4000//getting-started/expenses-usage/</guid>
+			</item>
+		
+			<item>
+				<title>OCI 무료 계정 생성 및 관리하기</title>
+				<link>http://localhost:4000//getting-started/free-oci-promotions/</link>
+				<pubDate>Thu, 02 Jun 2022 09:00:00 +0900</pubDate>
+				<description>&lt;div class=&quot;panel radius&quot;&gt;
+  &lt;p id=&quot;toc&quot;&gt;&lt;strong&gt;Table of Contents&lt;/strong&gt;&lt;/p&gt;
+&lt;ul id=&quot;markdown-toc&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#하나의-free-trial-계정에서-두-개의-무료-옵션-제공&quot; id=&quot;markdown-toc-하나의-free-trial-계정에서-두-개의-무료-옵션-제공&quot;&gt;하나의 Free Trial 계정에서 두 개의 무료 옵션 제공&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#free-trial-계정-생성하기&quot; id=&quot;markdown-toc-free-trial-계정-생성하기&quot;&gt;Free Trial 계정 생성하기&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#오라클-클라우드에-사인인-하기&quot; id=&quot;markdown-toc-오라클-클라우드에-사인인-하기&quot;&gt;오라클 클라우드에 사인인 하기&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#구독-정보-및-사용-비용-확인하기&quot; id=&quot;markdown-toc-구독-정보-및-사용-비용-확인하기&quot;&gt;구독 정보 및 사용 비용 확인하기&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#비용-분석하기&quot; id=&quot;markdown-toc-비용-분석하기&quot;&gt;비용 분석하기&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#예산-설정하기&quot; id=&quot;markdown-toc-예산-설정하기&quot;&gt;예산 설정하기&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;/div&gt;
+
+&lt;h3 id=&quot;하나의-free-trial-계정에서-두-개의-무료-옵션-제공&quot;&gt;하나의 Free Trial 계정에서 두 개의 무료 옵션 제공&lt;/h3&gt;
+&lt;p&gt;Oracle Cloud Free Tier에서는 300달러(한달)의 무료 크레딧을 기본적으로 제공하며, 추가적으로 기간 제한없이 사용할 수 있는 여러개의 Always Free 서비스들을 포함해서 제공하고 있습니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/getting-started/2022/freetrial.png&quot; alt=&quot;&quot; title=&quot; &quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;free-trial-계정-생성하기&quot;&gt;Free Trial 계정 생성하기&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;Oracle Cloud 어카운트 생성을 위해서 &lt;a href=&quot;https://signup.cloud.oracle.com&quot;&gt;SignUp&lt;/a&gt; 폼을 오픈합니다.&lt;/p&gt;
+
+    &lt;p&gt;다음과 같은 등록 페이지를 볼 수 있습니다.
+    &lt;img src=&quot;/assets/img/getting-started/2022/cloud-infrastructure-ko.png&quot; alt=&quot;&quot; title=&quot; &quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;다음 정보를 입력합니다.
+    &lt;ul&gt;
+      &lt;li&gt;&lt;strong&gt;국가/지역&lt;/strong&gt; 입력&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;성/이름&lt;/strong&gt; 과 &lt;strong&gt;이메일&lt;/strong&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;유효한 이메일 주소를 입력한 후, &lt;strong&gt;내 전자메일 확인&lt;/strong&gt; 버튼을 선택합니다.
+    &lt;img src=&quot;/assets/img/getting-started/2022/verify-email-ko.png&quot; alt=&quot;&quot; title=&quot; &quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;다음과 같은 이메일을 수신하게 되면, 본문의 &lt;strong&gt;Verify email&lt;/strong&gt; 버튼을 클릭합니다.
+    &lt;img src=&quot;/assets/img/getting-started/2022/verification-mail-ko.png&quot; alt=&quot;&quot; title=&quot; &quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Oracle Cloud Free Tier 계정 생성을 위해서 다음과 같은 정보를 추가로 입력합니다.
+    &lt;ul&gt;
+      &lt;li&gt;&lt;strong&gt;패스워드&lt;/strong&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;회사 이름&lt;/strong&gt;&lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;&lt;strong&gt;클라우드 계정 이름&lt;/strong&gt;은 생성하는 클라우드를 대표하는 이름으로 처음엔 자동으로 생성되어 있지만, 변경이 가능합니다. 클라우드에 로그인을 위해 꼭 필요한 정보이며, 추후 변경이 가능합니다.&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;Home Region&lt;/strong&gt;은 클라우드 로그인 시 기본적으로 선택되는 리전입니다. 처음 등록후에는 변경할 수 없습니다.&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;계속&lt;/strong&gt; 클릭
+ &lt;img src=&quot;/assets/img/getting-started/2022/account-info-ko.png&quot; alt=&quot;&quot; title=&quot; &quot; /&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;주소 정보를 입력합니다.
+&lt;img src=&quot;/assets/img/getting-started/2022/free-tier-address-ko.png&quot; alt=&quot;&quot; title=&quot; &quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;휴대폰 번로를 입력한 후  &lt;strong&gt;계속&lt;/strong&gt; 버튼을 클릭합니다.
+&lt;img src=&quot;/assets/img/getting-started/2022/free-tier-address-2-ko.png&quot; alt=&quot;&quot; title=&quot; &quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;지급 검증 방법 추가&lt;/strong&gt; 버튼을 클릭한 후 유효한 지불정보를 입력합니다.
+ &lt;img src=&quot;/assets/img/getting-started/2022/free-tier-payment-1-ko.png&quot; alt=&quot;&quot; title=&quot; &quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;지불 정보 검증이 완료되면 아래와 같은 화면을 볼 수 있습니다.
+ &lt;img src=&quot;/assets/img/getting-started/2022/free-tier-payment-2-ko.png&quot; alt=&quot;&quot; title=&quot; &quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;계약&lt;/strong&gt;을 검토하고 동의 체크 후 &lt;strong&gt;내 무료 체험판 시작하기&lt;/strong&gt; 버튼을 클릭합니다.
+&lt;img src=&quot;/assets/img/getting-started/2022/free-tier-agreement-ko.png&quot; alt=&quot;&quot; title=&quot; &quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;프로비저닝이 완료되면 아래와 같은 메일을 수신하게 됩니다. 
+&lt;img src=&quot;/assets/img/getting-started/2022/account-provisioned-ko.png&quot; alt=&quot;&quot; title=&quot; &quot; /&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;오라클-클라우드에-사인인-하기&quot;&gt;오라클 클라우드에 사인인 하기&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;브라우저를 통해서 &lt;a href=&quot;https://cloud.oracle.com&quot;&gt;cloud.oracle.com&lt;/a&gt;로 접속합니다. 클라우드 계정 이름을 입력하고 &lt;strong&gt;Next&lt;/strong&gt; 버튼을 클릭합니다.&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/assets/img/getting-started/2022/cloud-oracle-ko.png&quot; alt=&quot;&quot; title=&quot; &quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;사용자 이름과 비밀번호를 입력한 후 &lt;strong&gt;사인인&lt;/strong&gt; 버튼을 클릭합니다.&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/assets/img/getting-started/2022/cloud-login-tenant-single-sigon-ko.png&quot; alt=&quot;&quot; title=&quot; &quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;이제 Oracle Cloud를 사용하실 수 있습니다. 만일 로그인 후 상단에 &lt;strong&gt;Your account is currently being set up, and some features will be unavailable. You will receive an email after setup completes.&lt;/strong&gt; 라는 메시지가 보인다면, 아직 환경을 준비하는 상태, 프로비저닝이 진행중이라는 것을 의미합니다. 조금만 더 기다리면, 모든 과정이 완료되고 최종 완료 메일을 받게됩니다.&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/assets/img/getting-started/2022/oci-console-home-page-ko.png&quot; alt=&quot;&quot; title=&quot; &quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;구독-정보-및-사용-비용-확인하기&quot;&gt;구독 정보 및 사용 비용 확인하기&lt;/h3&gt;
+&lt;p&gt;우선 사용 비용을 모니터링 하는 방법을 알아보도록 하겠습니다. OCI Console을 통해서 기본적으로 얼마의 크레딧이 있고, 얼마의 크레딧을 사용하고 있는지 모니터링 할 수 있습니다.&lt;/p&gt;
+
+&lt;p&gt;우선 구독한 정보를 확인하고 간단히 사용 비용에 대한 요약된 페이지를 확인해보도록 하겠습니다. OCI Console 메뉴에서 &lt;strong&gt;Billing &amp;amp; Cost Management &amp;gt; Subscriptions&lt;/strong&gt;를 선택합니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/getting-started/2022/oci-subscription-1.png&quot; alt=&quot;&quot; title=&quot; &quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;다음과 같이 구독 목록을 볼 수 있습니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/getting-started/2022/oci-subscription-2.png&quot; alt=&quot;&quot; title=&quot; &quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;해당 구독을 클릭하면 구독에 대한 상세 정보와 함께  얼마의 비용을 사용하고 있으며, 사용하고 있는 서비스는 몇개이고, 몇개의 리전에서 사용중인지를 간단히 확인할 수 있습니다.
+&lt;img src=&quot;/assets/img/getting-started/2022/oci-subscription-3.png&quot; alt=&quot;&quot; title=&quot; &quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;또한 다음과 같이 날짜별로 사용된 금액을 확인할 수 있습니다.
+&lt;img src=&quot;/assets/img/getting-started/2022/oci-subscription-4.png&quot; alt=&quot;&quot; title=&quot; &quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;각 일자별로 우측의 아이콘을 클릭하면 상세하게 어떤 서비스에 대한 비용이 발생했는지 확인 가능합니다.
+&lt;img src=&quot;/assets/img/getting-started/2022/oci-subscription-5.png&quot; alt=&quot;&quot; title=&quot; &quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;비용-분석하기&quot;&gt;비용 분석하기&lt;/h3&gt;
+&lt;p&gt;상세한 비용 분석(Cost Analysis) 기능도 제공되고 있습니다. &lt;strong&gt;Billing &amp;amp; Cost Management &amp;gt; Cost Analysis&lt;/strong&gt;를 클릭합니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/getting-started/2022/oci-cost-analytics-1.png&quot; alt=&quot;&quot; title=&quot; &quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;비용 분석 (Cost Analysis)에서는 여러 조건과 필터를 통해 검색하고, 날짜 및 사용 서비스, 지역등 다양한 항목으로 그룹핑하여 비용을 분석할 수 있습니다.
+&lt;img src=&quot;/assets/img/getting-started/2022/oci-cost-analytics-2.png&quot; alt=&quot;&quot; title=&quot; &quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/getting-started/2022/oci-cost-analytics-3.png&quot; alt=&quot;&quot; title=&quot; &quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;예산-설정하기&quot;&gt;예산 설정하기&lt;/h3&gt;
+&lt;p&gt;OCI Console에서는 예산을 미리 책정하여 사용량에 대한 한도를 설정하고, 예산을 초과하는 시기를 미리 알림 받을 수 있도록 설정할 수 있는 기능도 제공하고 있습니다. 예산 설정을 위해서 &lt;strong&gt;Billing &amp;amp; Cost Management &amp;gt; Budget&lt;/strong&gt;을 클릭합니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/getting-started/2022/oci-budget-1.png&quot; alt=&quot;&quot; title=&quot; &quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Create Budget&lt;/strong&gt;을 클릭합니다.
+&lt;img src=&quot;/assets/img/getting-started/2022/oci-budget-2.png&quot; alt=&quot;&quot; title=&quot; &quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;예산에 대한 설정을 합니다. 아래과 같이 입력하고 &lt;strong&gt;Create&lt;/strong&gt; 버튼을 클릭하여 예산을 생성합니다.&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;예산 범위 (Budget Scope):
+    &lt;ul&gt;
+      &lt;li&gt;Compartments: 특정 구획에 대해서 예산을 설정할 수 있습니다.&lt;/li&gt;
+      &lt;li&gt;Cost-Tracking Tag: OCI에서 Compute나 스토리지와 같은 리소스를 생성할 때 사용자가 임의의 Tag를 추가할 수 있습니다. 여기서는 사용자가 설정한 특정 Tag 값을 갖는 리소스에 대해서만 예산을 적용할 수 있습니다.
+        &lt;blockquote&gt;
+          &lt;p&gt;Tag 예시) myproduct.dev.database=TRUE&lt;/p&gt;
+        &lt;/blockquote&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;예산 스케쥴 및 예산 처리를 시작할 일자 및 예산 금액 선택&lt;/li&gt;
+  &lt;li&gt;예산 경보 규칙
+    &lt;ul&gt;
+      &lt;li&gt;임계치 매트릭(Threshold Metric):
+        &lt;ul&gt;
+          &lt;li&gt;Actual Spend (실제 지출 비용): 실제 사용 금액을 모니터링&lt;/li&gt;
+          &lt;li&gt;Forecast Spend (지출 예측): 리소스 사용량을 관찰하고 예산을 초과할지를 예측 (예측 알고리즘은 최소 3일 이상의 사용된 데이터가 필요)&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;임계치 유형 (Threshold Type):
+        &lt;ul&gt;
+          &lt;li&gt;예산 비율(Percentage of Budget): 월 예산 비율&lt;/li&gt;
+          &lt;li&gt;절대 금액(Absolute Amount): 고정된 금액 (예, 100만원)&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;이메일 수신자 및 메시지
+        &lt;ul&gt;
+          &lt;li&gt;이메일은 쉼표, 세미콜론, 공백, 탭 또는 새 줄을 사용하여 구분할 수 있습니다.&lt;/li&gt;
+          &lt;li&gt;메시지는 1000자를 초과할 수 없습니다.&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/getting-started/2022/oci-budget-3.png&quot; alt=&quot;&quot; title=&quot; &quot; /&gt;&lt;/p&gt;
+</description>
+				<guid isPermaLink="true">http://localhost:4000//getting-started/free-oci-promotions/</guid>
+			</item>
+		
+			<item>
 				<title>제목</title>
 				<link>http://localhost:4000//security/%EC%A0%9C%EB%AA%A9/</link>
-				<pubDate>Mon, 20 Jun 2022 00:00:00 +0900</pubDate>
+				<pubDate>Wed, 01 Jun 2022 09:00:00 +0900</pubDate>
 				<description>&lt;h3 id=&quot;큰제목-1&quot;&gt;큰제목 1&lt;/h3&gt;
 &lt;p&gt;내용 1&lt;/p&gt;
 
@@ -882,21 +656,6 @@ $ sudo systemctl disable firewalld.service
 &lt;p&gt;내용 2&lt;/p&gt;
 </description>
 				<guid isPermaLink="true">http://localhost:4000//security/%EC%A0%9C%EB%AA%A9/</guid>
-			</item>
-		
-			<item>
-				<title>제목</title>
-				<link>http://localhost:4000//infrastructure/%EC%A0%9C%EB%AA%A9/</link>
-				<pubDate>Mon, 20 Jun 2022 00:00:00 +0900</pubDate>
-				<description>&lt;h3 id=&quot;큰제목-1&quot;&gt;큰제목 1&lt;/h3&gt;
-&lt;p&gt;내용 1&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/aiml/2020-06/이미지.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;큰제목-2&quot;&gt;큰제목 2&lt;/h3&gt;
-&lt;p&gt;내용 2&lt;/p&gt;
-</description>
-				<guid isPermaLink="true">http://localhost:4000//infrastructure/%EC%A0%9C%EB%AA%A9/</guid>
 			</item>
 		
 	</channel>

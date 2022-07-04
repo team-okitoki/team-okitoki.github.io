@@ -1,0 +1,75 @@
+I"P<div class="panel radius">
+  <p id="toc"><strong>Table of Contents</strong></p>
+<ul id="markdown-toc">
+  <li><a href="#oci에서-제공하는-비용-관련-도구들" id="markdown-toc-oci에서-제공하는-비용-관련-도구들">OCI에서 제공하는 비용 관련 도구들</a></li>
+  <li><a href="#비용-분석-cost-analysis" id="markdown-toc-비용-분석-cost-analysis">비용 분석 (Cost Analysis)</a>    <ul>
+      <li><a href="#날짜별로-비용을-필터링-하려면" id="markdown-toc-날짜별로-비용을-필터링-하려면">날짜별로 비용을 필터링 하려면</a></li>
+      <li><a href="#태그별로-비용을-필터링하려면" id="markdown-toc-태그별로-비용을-필터링하려면">태그별로 비용을 필터링하려면</a></li>
+      <li><a href="#구획별로-비용을-필터링하려면" id="markdown-toc-구획별로-비용을-필터링하려면">구획별로 비용을 필터링하려면</a></li>
+      <li><a href="#위에서-적용한-필터를-제거하려면" id="markdown-toc-위에서-적용한-필터를-제거하려면">위에서 적용한 필터를 제거하려면</a></li>
+    </ul>
+  </li>
+</ul>
+
+</div>
+
+<h3 id="oci에서-제공하는-비용-관련-도구들">OCI에서 제공하는 비용 관련 도구들</h3>
+<p>OCI Console에서는 다음과 같은 비용 및 사용량에 대한 모니터링 도구들을 제공하고 있습니다.</p>
+
+<ul>
+  <li>예산 (Budgets)</li>
+  <li>비용 분석 (Cost Analysis)</li>
+  <li>비용 및 사용 보고서 (Cost and Usage Reports)</li>
+</ul>
+
+<p>그 외 간략히 요약된 비용 정보를 확인하고자 할때는 구독(Subscriptions) 페이지에서 확인이 가능합니다. 구독 (Subscriptions)에서 비용을 확인하는 방법은 아래 포스트를 참고합니다.</p>
+
+<blockquote>
+  <p><a href="http://localhost:4000//getting-started/free-oci-promotions/#%EA%B5%AC%EB%8F%85-%EC%A0%95%EB%B3%B4-%EB%B0%8F-%EC%82%AC%EC%9A%A9-%EB%B9%84%EC%9A%A9-%ED%99%95%EC%9D%B8%ED%95%98%EA%B8%B0">OCI 무료 계정 생성 및 관리하기 - 구독 정보 및 사용 비용 확인하기</a></p>
+</blockquote>
+
+<h3 id="비용-분석-cost-analysis">비용 분석 (Cost Analysis)</h3>
+<p>비용 분석 (Cost Analysis)은 OCI에서 사용한 비용을 다양한 필터와 그룹항목으로 집계한 후 이를 차트 및 표 형태로 제공합니다. 또한 이렇게 집계된 비용 데이터를 CSV 파일로 다운로드 받아볼 수 있습니다. 비용 분석 화면은 다음 경로를 통해 확인할 수 있습니다.</p>
+<blockquote>
+  <p>청구 및 비용 관리 (Billing &amp; Cost Management) &gt; 비용 분석 (Cost Analysis)</p>
+</blockquote>
+
+<p><img src="/assets/img/getting-started/2022/oci-expense-cost-1.png" alt="" title=" " /></p>
+
+<p>일반적으로 비용 분석 페이지를 처음 오픈하게 되면, 서비스별로 사용한 비용에 대한 보고서를 보여줍니다. 여기서 아래와 같은 <strong>조건</strong>, <strong>필터</strong>, <strong>그룹화</strong> 기능을 활용하여 비용 보고서를 생성할 수 있습니다. 가령 기간, 일 및 월 단위 집계, 비용 혹은 사용량 검색과 함께 서비스에 적용한 특정 태그, 구획, 지역, 서비스등으로 필터링을 할 수 있으며, 마찬가지로 그룹화를 선택하여 비용을 확인할 수 있습니다.</p>
+
+<p><img src="/assets/img/getting-started/2022/oci-expense-cost-2.png" alt="" title=" " /></p>
+
+<p>이제 몇 가지 간단한 비용 필터링 하는 방법을 보겠습니다.</p>
+<h4 id="날짜별로-비용을-필터링-하려면">날짜별로 비용을 필터링 하려면</h4>
+<p>메뉴에서 <strong>청구 및 비용 관리 (Billing &amp; Cost Management) &gt; 비용 분석 (Cost Analysis)</strong>을 클릭합니다. 아래와 같이 기본적으로 제공되는 보고서를 선택할 수 있습니다. 여기서는 <strong>서비스별 비용</strong>을 선택한 후 시작 날짜와 종료 날짜를 선택하고 적용 버튼을 선택합니다.</p>
+<blockquote>
+  <p>보고서는 사용자가 별도로 정의하여 저장할 수 있습니다. 사용자가 원하는 조건이나 필터, 그룹을 선택하면 <strong>새 보고서 저장</strong> 버튼이 활성화 되면서 새로운 보고서로 저장할 수 있습니다.
+시작 날짜와 종료 날짜는 UTC(협정 세계시)입니다. (서울 표준시: UTC+09:00)</p>
+</blockquote>
+
+<p><img src="/assets/img/getting-started/2022/oci-expense-cost-3.png" alt="" title=" " /></p>
+
+<p>다음과 같이 조건 및 필터가 적용된 결과를 차트와 표로 확인할 수 있습니다.</p>
+
+<p><img src="/assets/img/getting-started/2022/oci-expense-cost-4.png" alt="" title=" " /></p>
+
+<h4 id="태그별로-비용을-필터링하려면">태그별로 비용을 필터링하려면</h4>
+<p>마찬가지로 메뉴에서 <strong>청구 및 비용 관리 (Billing &amp; Cost Management) &gt; 비용 분석 (Cost Analysis)</strong>을 클릭합니다. 보고서는 마찬가지로 <strong>서비스별 비용</strong>을 선택한 후 <strong>필터</strong>에서 <strong>태그</strong>를 선택합니다. <strong>태그 네임스페이스</strong> 및 <strong>태그 키</strong> 에서 <strong>태그 지정 필터 옵션</strong>을 선택 및 <strong>태그 값 (다음 중에서 임의 항목 일치 선택시)</strong>을 입력한 후 <strong>적용</strong>을 클릭합니다.</p>
+<blockquote>
+  <p>태그는 모든 리소스들이 기본적으로 OCI에서 제공되는 기본 <strong>태그 네임스페이스</strong> 및 <strong>태그 키</strong>를 갖고 있지만, 사용자가 임의로 <strong>태그 네임스페이스</strong> 및 <strong>태그 키</strong>를 생성하여 리소스에 할당이 가능합니다. ex) 태그 네임스페이스: mycompany, 태그 키: devteam, 태그 값: mydevteam</p>
+</blockquote>
+
+<p><img src="/assets/img/getting-started/2022/oci-expense-cost-5.png" alt="" title=" " />
+<img src="/assets/img/getting-started/2022/oci-expense-cost-6.png" alt="" title=" " /></p>
+
+<h4 id="구획별로-비용을-필터링하려면">구획별로 비용을 필터링하려면</h4>
+<p>메뉴에서 <strong>청구 및 비용 관리 (Billing &amp; Cost Management) &gt; 비용 분석 (Cost Analysis)</strong>을 클릭합니다. 보고서는 동일하게 <strong>서비스별 비용</strong>을 선택한 후 <strong>필터</strong>에서 <strong>구획</strong>을 선택합니다. 구획 필터링의 경우 <strong>구획 이름</strong>, <strong>구획 OCID</strong>, <strong>구획 경로</strong>를 이용해서 필터링할 수 있습니다. <strong>구획 필터링 옵션</strong>을 선택 및 <strong>필터링</strong> 값을 입력한 후 <strong>적용</strong> 버튼을 클릭하면 해당 구획에 생성된 리소스에 대한 비용에 대한 보고서가 생성됩니다.</p>
+
+<p><img src="/assets/img/getting-started/2022/oci-expense-cost-7.png" alt="" title=" " /></p>
+
+<h4 id="위에서-적용한-필터를-제거하려면">위에서 적용한 필터를 제거하려면</h4>
+<p>비용을 필터링하면 추가된 필터의 앞에 <strong>X</strong>아이콘과 함께 적용된 필터가 표시됩니다. 여기서 각 필터를 제거하려면 필터에 표기된 <strong>X</strong> 아이콘을 클릭하고, 모든 필터를 제거하려면 우측의 <strong>모든 필터 지우기</strong>를 클릭합니다.</p>
+
+<p><img src="/assets/img/getting-started/2022/oci-expense-cost-8.png" alt="" title=" " /></p>
+:ET

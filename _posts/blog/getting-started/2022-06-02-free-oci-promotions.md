@@ -7,6 +7,7 @@ subheadline: "Cloud Account"
 title: "OCI 무료 계정 생성 및 관리하기"
 teaser: "Oracle Cloud Infrastructure (이하 OCI)는 한달동안 300달러 상당의 무료 크레딧을 제공하는 무료 계정을 제공합니다. 이번 포스팅을 통해서 OCI 무료 계정을 생성하는 방법과 계정 관리 방법에 대해서 알아봅니다."
 author: dankim
+date: 2022-06-02 00:00:00
 breadcrumb: true
 categories:
   - getting-started
@@ -35,6 +36,13 @@ header: no
 # Bold + Italic은 ***글자***
 # ------------------------------------------
 ---
+
+<div class="panel radius" markdown="1">
+**Table of Contents**
+{: #toc }
+*  TOC
+{:toc}
+</div>
 
 ### 하나의 Free Trial 계정에서 두 개의 무료 옵션 제공
 Oracle Cloud Free Tier에서는 300달러(한달)의 무료 크레딧을 기본적으로 제공하며, 추가적으로 기간 제한없이 사용할 수 있는 여러개의 Always Free 서비스들을 포함해서 제공하고 있습니다.

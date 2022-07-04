@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: page-fullwidth
 #
 # Content
 #
@@ -7,6 +7,7 @@ subheadline: "Concepts"
 title: "OCI 주요 컨셉 및 용어 정리"
 teaser: "Oracle Cloud Infrastructure 를 시작하는데 도움이 되는 주요 개념과 용어의 간단한 설명을 제공합니다."
 author: yhcho
+date: 2022-06-01 00:00:00
 breadcrumb: true
 categories:
   - getting-started

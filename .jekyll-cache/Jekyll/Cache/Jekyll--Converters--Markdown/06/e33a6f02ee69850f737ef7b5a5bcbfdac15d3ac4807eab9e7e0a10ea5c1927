@@ -1,4 +1,13 @@
-I"�<h3 id="vcn-생성">VCN 생성</h3>
+I"<div class="panel radius">
+  <p id="toc"><strong>Table of Contents</strong></p>
+<ul id="markdown-toc">
+  <li><a href="#vcn-생성" id="markdown-toc-vcn-생성">VCN 생성</a></li>
+  <li><a href="#vcn-정보-및-리소스-확인" id="markdown-toc-vcn-정보-및-리소스-확인">VCN 정보 및 리소스 확인</a></li>
+</ul>
+
+</div>
+
+<h3 id="vcn-생성">VCN 생성</h3>
 <p>VCN 생성 Wizard를 활용하여 간단하게 VCN을 하나 구성합니다. 아래와 같이 Networking &gt; Virtual Cloud Networks를 선택한 후 <strong>Start VCN Wizard</strong>를 클릭합니다.</p>
 
 <p><img src="/assets/img/getting-started/2022/create-vcn-1.png" alt="" /></p>
