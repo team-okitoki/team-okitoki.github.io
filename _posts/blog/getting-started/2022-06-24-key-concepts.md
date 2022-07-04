@@ -40,6 +40,13 @@ header: no
 # ------------------------------------------
 ---
 
+<div class="panel radius" markdown="1">
+**Table of Contents**
+{: #toc }
+*  TOC
+{:toc}
+</div>
+
 ### 주요 개념 및 용어
 Oracle Cloud Infrastructure(OCI)를 시작하려는 사용자에게 도움이 되는 OCI의 주요 개념과 용어에 대한 설명입니다.
 이 포스트에서는 주요 개념 및 용어에 대한 간단한 설명만 제공하고 있습니다.
@@ -52,18 +59,21 @@ Oracle Cloud Infrastructure(OCI) 에 등록하면 Oracle이 고객을 위한 Ten
 Instance(인스턴스)는 클라우드에서 실행되는 컴퓨팅 호스트입니다.
 Oracle Cloud Infrastructure(OCI) 컴퓨팅 인스턴스를 사용하면 기존의 소프트웨어 기반 가상 시스템이 아닌 호스팅된 물리적 하드웨어를 활용하여 높은 수준의 보안 및 성능을 보장할 수 있습니다.
 
-#### Types Of Compute Instances
+##### Types Of Compute Instances
 - **Bare Metal Instance** : Oracle Cloud Infrastructure는 물리적 호스트("bare metal") 시스템을 제어할 수 있도록 지원합니다. Bare Metal Instance(BM)는 물리적인 서버를 하이퍼바이저 없이 **단일 사용자(테넌트)에게 전용으로 사용할 수 있는 컴퓨팅 환경을 제공합니다**. 물리적 CPU, 메모리 및 NIC(네트워크 인터페이스 카드)를 단독으로 제어할 수 있기 때문에 서버자원의 성능을 100% 사용할 수 있어서 높은 성능을 제공합니다.
 - **Virtual Machine Instance** : Virtual Machine Instance(VM)는 물리적인 서버위에 하이퍼바이저에 의해 가상화된 환경을 통해 컴퓨팅 환경을 제공하며, **단일 사용자가 아닌 다중 사용자가 환경을 공유 합니다**. 하이퍼바이저에 의해 가상화된 계층에서 컴퓨팅 자원이 실행되기 때문에 Bare Metal 보다 상대적으로 낮은 성능을 제공합니다.
 - **Dedicated VM Host** : Dedicated VM Host는 BM과 VM의 조합입니다. 일반적인 VM과는 달리 단일 사용자에게 할당된 Bare Metal 서버위에 VM 환경이 제공되기 때문에 공유 인프라를 사용하지 못하도록 하는 격리에 대한 규정 준수 및 관련 요구사항을 충족할 수 있습니다. 하지만 VM에 비교하여 지원하는 Shape이 제한적이고, 인스턴스와 관련된 기능 중 자동확장,인스턴스 구성,인스턴스 풀 등 일부 기능을 지원하지 않습니다.
-
 ![OCI Compute Types](/assets/img/getting-started/2022/oci-compute-types.png " ")
 
 #### Shape
 Compute 리소스 또는 Load Balancing 리소스에 대한 사양을 구성하는 조합입니다.
-Compute 에 대한 Shape는 인스턴스에 할당된 CPU 수와 메모리 양을 지정하고, Load Balancing에 대한 Shape는 수신 트래픽과 송신 트래픽에 대해 로드 밸런서의 사전 프로비저닝된 총 최대 용량(bandwidth)을 결정합니다.(***사용 가능한 셰이프는 100Mbps, 400Mbps 및 8000Mbps 입니다.***)
+Compute 에 대한 Shape는 인스턴스에 할당된 CPU 수와 메모리 양을 지정하고, Load Balancing에 대한 Shape는 수신 트래픽과 송신 트래픽에 대해 로드 밸런서의 사전 프로비저닝된 총 최대 용량(bandwidth)을 결정합니다.
 
-#### Types of Shape (Compute)
+##### Types of Shape (Load Balancing)
+- **Fixed Shape (Dynamic)** : Load Balancer의 네트워크 대역폭이 100Mbps, 400Mbps, 8,000Mbps 크기로 고정되어있는 Shape 입니다. <mark style="background-color:#fff5b1">현재는 일부 레거시 사용자의 Tenancy 에서만 제한적으로 생성이 가능하고, <b>2023년 5월 11일부터는 새로운 고정형태의 LB를 생성할 수 없습니다.</b></mark>
+- **Flexible Shape** : Load Balancer의 네트워크 대역폭을 최소 대역폭과 최대 대역폭을 직접 지정하여 LB의 네트워크 대역폭을 지정하는 유연한 형태의 Shape 입니다. 고정형태와 동일하게 사용하고 싶은 경우 최소,최대 대역폭을 동일하게 지정하여 사용이 가능합니다.
+
+##### Types of Shape (Compute)
 Compute Shape는 인스턴스에 할당할 CPU, Memory, Storage의 조합입니다. Oracle Infrastructure에서는 여러가지 미리 정의된 Shape을 제공합니다. 자세한 내용은 [컴퓨트 Shapes](https://docs.oracle.com/en-us/iaas/Content/Compute/References/computeshapes.htm)를 참조하세요.
 - **Standard Shape** : 일반적인 워크로드에 적합한 Shape으로써 CPU 코어, Memory, 네트워크 리소스의 균형적인 사양을 제공합니다. Intel 및 AMD 프로세서에서 사용할 수 있습니다. 
 - **DenseIO Shape** : DenseIO Shape에는 NVMe기반 SSD로 구성된 Storage를 포함하고 있기 때문에, 고성능 Storage가 필요한 Big Data, 대용량 Database등 워크로드에 적합합니다. 
