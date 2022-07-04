@@ -1,0 +1,78 @@
+I"�
+<h2 id="application-dependency-management-service-is-now-available">Application Dependency Management service is now available</h2>
+<ul>
+  <li><strong>Services:</strong> Application Dependency Management</li>
+  <li><strong>Release Date:</strong> May 3, 2022</li>
+  <li><strong>Documentation:</strong> <a href="https://docs.oracle.com/en-us/iaas/Content/application-dependency-management/home.htm" target="_blank" rel="noopener">https://docs.oracle.com/en-us/iaas/Content/application-dependency-management/home.htm</a></li>
+</ul>
+
+<h3 id="서비스-소개">서비스 소개</h3>
+<p>블ㅏ블라….</p>
+
+<h3 id="프로비저닝-순서">프로비저닝 순서</h3>
+<ol>
+  <li>ㄴㄹㄴㅇㄹ</li>
+</ol>
+
+<p><img src="/assets/img/platform/2022/oke-provisioning-1.png" alt="" /></p>
+
+<p><code class="language-plaintext highlighter-rouge">코드 표현</code></p>
+
+<p>그외 글자 관련 서식은 HTML 형태로 작성하여 표현 가능하며 아래 링크 참조
+<a href="https://phlow.github.io/feeling-responsive/design/typography/typography/" target="_blank" rel="noopener">Typography</a></p>
+
+<blockquote>
+  <p>Quotation 표현</p>
+</blockquote>
+
+<p>Code 표현</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ cd helloworld
+</code></pre></div></div>
+
+<h3 id="그외-자유롭게-추가하고-싶은-내용-추가">그외 자유롭게 추가하고 싶은 내용 추가</h3>
+
+<p><strong><em>Unordered List 사용 방법</em></strong></p>
+<ul>
+  <li>Item 1
+    <ul>
+      <li>Item 2
+        <ul>
+          <li>Item 3</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<p><strong><em>Ordered List 사용 방법</em></strong></p>
+
+<ol>
+  <li>Ordered List</li>
+  <li>Second List Item</li>
+  <li>Third List Item
+    <ol>
+      <li>Second Level First Item</li>
+      <li>Second Level Second Item</li>
+      <li>Second Level Third Item
+        <ol>
+          <li>And a third level First Item</li>
+          <li>And a third level Second Item</li>
+          <li>And a third level Third Item</li>
+        </ol>
+      </li>
+    </ol>
+  </li>
+  <li>Fourth List Item</li>
+  <li>Fifth List Item</li>
+</ol>
+
+<p>이미지는 다음과 같이 추가</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>![](/assets/img/platform/2022-05/adm-home.png)
+</code></pre></div></div>
+<p><img src="/assets/img/platform/2022/adm-home.png" alt="" /></p>
+
+<p>링크는 다음과 같이 추가</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[SignUp](https://signup.cloud.oracle.com){:target="_blank" rel="noopener"}
+</code></pre></div></div>
+<p><a href="https://signup.cloud.oracle.com" target="_blank" rel="noopener">SignUp</a></p>
+:ET

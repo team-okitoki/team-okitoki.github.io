@@ -1,0 +1,31 @@
+I"�<h3 id="vcn-생성">VCN 생성</h3>
+<p>VCN 생성 Wizard를 활용하여 간단하게 VCN을 하나 구성합니다. 아래와 같이 Networking &gt; Virtual Cloud Networks를 선택한 후 <strong>Start VCN Wizard</strong>를 클릭합니다.</p>
+
+<p><img src="/assets/img/getting-started/2022/create-vcn-1.png" alt="" /></p>
+
+<p><strong>Create VCN with Internet Connectivity</strong>를 선택한 후 <strong>Start VCN Wizard</strong>를 클릭합니다.</p>
+
+<p><img src="/assets/img/getting-started/2022/create-vcn-2.png" alt="" /></p>
+
+<p>VCN 이름을 입력한 후 <strong>Next</strong>를 선택합니다.</p>
+<ul>
+  <li>VCN Name: my-vcn</li>
+</ul>
+
+<p><img src="/assets/img/getting-started/2022/create-vcn-3.png" alt="" /></p>
+
+<p>생성되는 VCN 정보를 검토하고 <strong>Create</strong> 버튼을 클릭합니다.</p>
+
+<p><img src="/assets/img/getting-started/2022/create-vcn-4.png" alt="" /></p>
+
+<p>VCN 관련 리소스들이 정상적으로 생성이 완료된 것을 확인할 수 있습니다.</p>
+
+<p><img src="/assets/img/getting-started/2022/create-vcn-5.png" alt="" /></p>
+
+<h3 id="vcn-정보-및-리소스-확인">VCN 정보 및 리소스 확인</h3>
+<p>위의 생성된 VCN 리소스 화면에서 <strong>View Virtual Cloud Network</strong>을 선택하거나 <strong>Networking &gt; Virtual Cloud Networks &gt; 생성한 VCN</strong>을 선택하여 VCN Detail 화면으로 이동합니다.</p>
+
+<p>다음과 같이 VCN내에 생성된 리소스 (Subnet, Route Tables, Internet Gateway, NAT Gateway, Security List 등)가 생성된 것을 확인할 수 있으며, VCN에 대한 상세 정보도 같이 확인할 수 있습니다.</p>
+
+<p><img src="/assets/img/getting-started/2022/create-vcn-6.png" alt="" /></p>
+:ET

@@ -1,0 +1,33 @@
+I"�<h3 id="oci-실습">OCI 실습</h3>
+
+<table class="styled-table">
+  <thead>
+    <tr>
+      <th style="text-align: left">제목</th>
+      <th style="text-align: left">내용</th>
+      <th style="text-align: center">소요시간</th>
+      <th style="text-align: center">업데이트</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left"><a href="https://team-okitoki.github.io/learning-library/oci-library/intro-cloud-native/livelabs/index.html" target="_blank">Cloud Native</a></td>
+      <td style="text-align: left">Oracle Cloud Native 서비스 활용 실습</td>
+      <td style="text-align: center">3 시간</td>
+      <td style="text-align: center">2022-02-16</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><a href="https://team-okitoki.github.io/learning-library/oci-library/oke-with-rancher/livelabs/index.html" target="_blank">OKE with Rancher </a></td>
+      <td style="text-align: left">OKE와 Rancher 연동 실습</td>
+      <td style="text-align: center">2 시간</td>
+      <td style="text-align: center">2022-02-25</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><a href="https://team-okitoki.github.io/learning-library/oci-library/oci-devops/livelabs/index.html" target="_blank">OCI DevOps Service </a></td>
+      <td style="text-align: left">OCI DevOps Service 실습</td>
+      <td style="text-align: center">3 시간</td>
+      <td style="text-align: center">2022-04-29</td>
+    </tr>
+  </tbody>
+</table>
+:ET

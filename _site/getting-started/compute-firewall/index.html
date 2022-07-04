@@ -1,0 +1,577 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>OCI Oracle Linux 7이상에서 방화벽 설정하기</title>
+
+    <link rel="stylesheet" type="text/css" href="http://localhost:4000//assets/css/styles_feeling_responsive.css">
+
+  
+
+	<script src="http://localhost:4000//assets/js/modernizr.min.js"></script>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/webfont/1.5.18/webfont.js"></script>
+	<script>
+		WebFont.load({
+			google: {
+				families: [ 'Lato:400,700,400italic:latin', 'Volkhov::latin' ]
+			}
+		});
+	</script>
+
+	<noscript>
+		<link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic%7CVolkhov' rel='stylesheet' type='text/css'>
+	</noscript>
+
+
+	<!-- Search Engine Optimization -->
+	<meta name="description" content="OCI에서 제공하는 여러 이미지중에서 Oracle Linux 7이상 버전에 대한 방화벽 구성하는 방법에 대해서 알아봅니다.">
+	<meta name="google-site-verification" content="Vk0IOJ2jwG_qEoG7fuEXYqv0m2rLa8P778Fi_GrsgEQ">
+	<meta name="msvalidate.01" content="0FB4C028ABCF07C908C54386ABD2D97F" >
+	
+	
+	
+	<link rel="canonical" href="http://localhost:4000//getting-started/compute-firewall/">
+
+
+	<!-- Facebook Open Graph -->
+	<meta property="og:title" content="OCI Oracle Linux 7이상에서 방화벽 설정하기">
+	<meta property="og:description" content="OCI에서 제공하는 여러 이미지중에서 Oracle Linux 7이상 버전에 대한 방화벽 구성하는 방법에 대해서 알아봅니다.">
+	<meta property="og:url" content="http://localhost:4000//getting-started/compute-firewall/">
+	<meta property="og:locale" content="en_EN">
+	<meta property="og:type" content="website">
+	<meta property="og:site_name" content="OKITOKI's Technical Blog">
+	
+	<meta property="article:author" content="https://www.facebook.com/phlow.media">
+
+
+	
+	<!-- Twitter -->
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:site" content="phlow">
+	<meta name="twitter:creator" content="phlow">
+	<meta name="twitter:title" content="OCI Oracle Linux 7이상에서 방화벽 설정하기">
+	<meta name="twitter:description" content="OCI에서 제공하는 여러 이미지중에서 Oracle Linux 7이상 버전에 대한 방화벽 구성하는 방법에 대해서 알아봅니다.">
+	
+	
+
+	<link type="text/plain" rel="author" href="http://localhost:4000//humans.txt">
+
+	
+
+	
+
+	<link rel="icon" sizes="32x32" href="http://localhost:4000/assets/img/favicon-32x32.png">
+
+	<link rel="icon" sizes="192x192" href="http://localhost:4000/assets/img/touch-icon-192x192.png">
+
+	<link rel="apple-touch-icon-precomposed" sizes="180x180" href="http://localhost:4000/assets/img/apple-touch-icon-180x180-precomposed.png">
+
+	<link rel="apple-touch-icon-precomposed" sizes="152x152" href="http://localhost:4000/assets/img/apple-touch-icon-152x152-precomposed.png">
+
+	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://localhost:4000/assets/img/apple-touch-icon-144x144-precomposed.png">
+
+	<link rel="apple-touch-icon-precomposed" sizes="120x120" href="http://localhost:4000/assets/img/apple-touch-icon-120x120-precomposed.png">
+
+	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="http://localhost:4000/assets/img/apple-touch-icon-114x114-precomposed.png">
+
+	
+	<link rel="apple-touch-icon-precomposed" sizes="76x76" href="http://localhost:4000/assets/img/apple-touch-icon-76x76-precomposed.png">
+
+	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="http://localhost:4000/assets/img/apple-touch-icon-72x72-precomposed.png">
+
+	<link rel="apple-touch-icon-precomposed" href="http://localhost:4000/assets/img/apple-touch-icon-precomposed.png">	
+
+	<meta name="msapplication-TileImage" content="http://localhost:4000/assets/img/msapplication_tileimage.png">
+
+	<meta name="msapplication-TileColor" content="#fabb00">
+
+
+	
+
+	
+
+
+</head>
+<body id="top-of-page" class="page-fullwidth">
+	
+	
+<div id="navigation" class="sticky">
+  <nav class="top-bar" role="navigation" data-topbar data-options="scrolltop: false">
+    <ul class="title-area">
+      <li class="name">
+      <h1 class="hide-for-large-up"><a href="http://localhost:4000/" class="icon-tree"> OKITOKI's Technical Blog</a></h1>
+    </li>
+       <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+      <li class="toggle-topbar toggle-topbar-click menu-icon"><a><span>Nav</span></a></li>
+    </ul>
+    <section class="top-bar-section">
+
+      <ul class="left">
+        
+
+              
+
+          
+          
+
+            
+            
+              <li><a  href="http://localhost:4000//">HOME</a></li>
+              <li class="divider"></li>
+
+            
+            
+          
+        
+
+              
+
+          
+          
+
+            
+            
+              <li><a  href="http://localhost:4000//blog">BLOG</a></li>
+              <li class="divider"></li>
+
+            
+            
+          
+        
+
+              
+
+          
+          
+
+            
+            
+
+              <li class="has-dropdown">
+                <a  href="http://localhost:4000//categories/">CATEGORIES</a>
+
+                  <ul class="dropdown">
+                    
+
+                      
+
+                      <li><a  href="http://localhost:4000//getting-started/">Getting Started</a></li>
+                    
+
+                      
+
+                      <li><a  href="http://localhost:4000//infrastructure/">Infrastructure</a></li>
+                    
+
+                      
+
+                      <li><a  href="http://localhost:4000//cloudnative/">Cloud Native</a></li>
+                    
+
+                      
+
+                      <li><a  href="http://localhost:4000//database/">Database</a></li>
+                    
+
+                      
+
+                      <li><a  href="http://localhost:4000//aiml/">AI/ML</a></li>
+                    
+
+                      
+
+                      <li><a  href="http://localhost:4000//security/">Security</a></li>
+                    
+                  </ul>
+
+              </li>
+              <li class="divider"></li>
+            
+          
+        
+
+              
+
+          
+          
+
+            
+            
+
+              <li class="has-dropdown">
+                <a  href="http://localhost:4000//release-notes-2022/">Release Notes (2022)</a>
+
+                  <ul class="dropdown">
+                    
+
+                      
+
+                      <li><a  href="http://localhost:4000//release-notes-2022-infrastructure/">Infrastructure</a></li>
+                    
+
+                      
+
+                      <li><a  href="http://localhost:4000//release-notes-2022-cloudnative/">Cloud Native</a></li>
+                    
+
+                      
+
+                      <li><a  href="http://localhost:4000//release-notes-2022-database">Database</a></li>
+                    
+
+                      
+
+                      <li><a  href="http://localhost:4000//release-notes-2022-aiml/">AI/ML</a></li>
+                    
+
+                      
+
+                      <li><a  href="http://localhost:4000//release-notes-2022-security/">Security</a></li>
+                    
+                  </ul>
+
+              </li>
+              <li class="divider"></li>
+            
+          
+        
+
+              
+
+          
+          
+        
+
+              
+
+          
+          
+        
+        
+      </ul>
+      
+      
+
+      <ul class="right">
+        
+
+              
+
+
+
+          
+          
+        
+
+              
+
+
+
+          
+          
+        
+
+              
+
+
+
+          
+          
+        
+
+              
+
+
+
+          
+          
+        
+
+              
+
+
+
+          
+          
+            
+            
+              <li class="divider"></li>
+              <li><a  href="http://localhost:4000//learning/">Learning</a></li>
+
+            
+            
+          
+        
+
+              
+
+
+
+          
+          
+            
+            
+              <li class="divider"></li>
+              <li><a  href="http://localhost:4000//search/">Search</a></li>
+
+            
+            
+          
+        
+        
+      </ul>
+     
+    </section>
+  </nav>
+</div><!-- /#navigation -->
+
+	
+
+	
+
+
+
+
+<nav class="breadcrumbs" role="menubar" aria-label="breadcrumbs">
+ <a href="http://localhost:4000/">HOME</a>
+ 
+   
+    
+        <a href="http://localhost:4000//getting-started/">getting started</a>
+    
+  
+    
+        <a class="current">OCI Oracle Linux 7이상에서 방화벽 설정하기</a>
+    
+  
+</nav>
+
+
+
+
+	
+
+
+<div class="row t30">
+	<div class="medium-12 columns">
+		<article>
+			<header>
+				<p class="subheadline">Compute</p>
+				<h1>OCI Oracle Linux 7이상에서 방화벽 설정하기</h1>
+			</header>
+
+			
+			<p class="teaser">
+				OCI에서 제공하는 여러 이미지중에서 Oracle Linux 7이상 버전에 대한 방화벽 구성하는 방법에 대해서 알아봅니다.
+			</p>
+			
+
+			<h3 id="vcn-생성">VCN 생성</h3>
+<p>우선 VCN을 준비합니다. VCN 생성은 아래 포스팅을 참고합니다.</p>
+
+<blockquote>
+  <p><a href="https://team-okitoki.github.io/getting-started/create-vcn/">OCI에서 VCN Wizard를 활용하여 빠르게 VCN 생성하기</a></p>
+</blockquote>
+
+<h3 id="compute-생성">Compute 생성</h3>
+<p>VM Compute Instace를 하나 생성합니다. <strong>Compute &gt; Instances &gt; Create Instances</strong>를 클릭합니다.</p>
+
+<p><img src="/assets/img/getting-started/2022/compute-firewall-1.png" alt="" /></p>
+
+<p>기본 선택화면에서 인스턴스 이름을 입력하고 이미지 (여기서는 Oracle Linux 8)를 선택하며, 인스턴스에서 사용하기 위한 VCN과 Subnet (Public)을 선택합니다.
+<img src="/assets/img/getting-started/2022/compute-firewall-2.png" alt="" /></p>
+
+<p>인스턴스에 접속하기 위해서는 SSH 키가 필요합니다. 사용하고 있는 키가 있다면, 해당 Public Key를 Copy &amp; Paste하고, 그렇지 않은 경우 <strong>Generate a key pair for me</strong>를 선택하여 키를 다운로드 받습니다. 마지막으로 <strong>Create</strong> 버튼을 클릭하여 인스턴스를 생성합니다.</p>
+
+<p><img src="/assets/img/getting-started/2022/compute-firewall-3.png" alt="" /></p>
+
+<h3 id="security-list-설정">Security List 설정</h3>
+<p>특정 포트를 오픈하기 위해서는 OCI에서 관리하는 Security List와 Instance의 OS에서 관리하는 Firewall 두 부분에 모두 추가해줘야 합니다. 우선 Security List에 오픈하기 위한 포트를 추가하여야 하는데, 인스턴스를 생성할 때 선택한 Subnet을 선택한 후 Security List를 선택합니다. (VCN Wizard를 통해 생성한 경우 Private Subnet을 위한 Security List와 Public Subnet을 위한 Security List 두 개가 생성되며, 네이밍이 <strong>Default Security List for {VCN명}</strong>으로 생성된 것이 Public Subnet의 Security List입니다.)</p>
+
+<p><img src="/assets/img/getting-started/2022/compute-firewall-4.png" alt="" /></p>
+
+<p><strong>Add Ingress Rules</strong>을 선택합니다.</p>
+
+<p><img src="/assets/img/getting-started/2022/compute-firewall-5.png" alt="" /></p>
+
+<p>다음과 같이 <strong>Source CIDR</strong>와 <strong>Destination Port Range</strong>를 입력합니다.</p>
+
+<ul>
+  <li>Source CIDR: 0.0.0.0/0 (모든 IP를 허용)</li>
+  <li>Destination Port Range: 8080 (인스턴스에서 오픈할 포트)</li>
+</ul>
+
+<p><img src="/assets/img/getting-started/2022/compute-firewall-6.png" alt="" /></p>
+
+<h3 id="instance-firewall-설정">Instance Firewall 설정</h3>
+<p>iptables을 활용하여 관리할 수 있지만, Oracle Linux 7이상부터는 <strong><em>firewalld</em></strong> 라고 하는 데몬 서비스로 관리하며, 명령어는 <strong><em>firewall-cmd</em></strong> 명령어를 활용합니다.</p>
+
+<p>우선 ssh로 해당 인스턴스에 접속합니다.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ ssh -i {ssh key} opc@{ip address}
+</code></pre></div></div>
+
+<p>다음과 같이 Firewall을 설정합니다. 참고로 <strong><em>–permanent</em></strong> 옵션은 영구적으로 설정하는 옵션이지만, 반드시 <strong><em>–reload</em></strong>를 방화벽을 재시작해줘야 합니다.</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ sudo firewall-cmd --permanent --zone=public --add-port=8080/tcp
+$ sudo firewall-cmd --reload
+</code></pre></div></div>
+
+<p>다음 명령어로 열린 포트를 확인합니다.</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ sudo firewall-cmd --list-all
+</code></pre></div></div>
+
+<p>이 외에 추가적으로 다음과 같은 명령어를 사용할 수 있습니다.</p>
+
+<p><strong>방화벽 실행 상태</strong></p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ sudo firewall-cmd --state 
+</code></pre></div></div>
+
+<p><strong>존 목록을 출력</strong></p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ sudo firewall-cmd --get-zones
+</code></pre></div></div>
+
+<p><strong>기본 존 출력</strong></p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ sudo firewall-cmd --get-active-zones
+</code></pre></div></div>
+
+<p><strong>zone을 지정해서 출력</strong></p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>firewall-cmd --zone=public --list-all
+</code></pre></div></div>
+<p><strong>임시로 포트 추가 / reload 없이 바로 반영되나 서버가 재부팅되면 설정도 사라짐</strong></p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ sudo firewall-cmd --add-port=8080/tcp
+</code></pre></div></div>
+
+<p><strong>포트 제거</strong></p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ sudo firewall-cmd --remove-port=8080/tcp
+</code></pre></div></div>
+
+<p><strong>서비스 추가</strong></p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ sudo firewall-cmd --add-service=ftp
+</code></pre></div></div>
+
+<p><strong>서비스 제거</strong></p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ sudo firewall-cmd --remove-service=ftp
+</code></pre></div></div>
+
+<p><strong>존을 지정해서 추가</strong></p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ sudo firewall-cmd --zone=trusted --add-service=ftp
+</code></pre></div></div>
+
+<p><strong>permanent 옵션으로 서비스 추가 / 영구적으로 추가되나 –reload 옵션으로 방화벽 재시작 필요</strong></p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ sudo firewall-cmd --permanent --zone=public --add-service=ftp
+</code></pre></div></div>
+
+<p><strong>permanent 옵션으로 포트 추가 / 영구적으로 추가되나 –reload 옵션으로 방화벽 재시작 필요</strong></p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ sudo firewall-cmd --permanent --zone=public --add-port=8080/tcp
+</code></pre></div></div>
+
+<p>방화벽을 완전히 해제하고 모든 포트를 오픈하는 경우에는 다음과 같이 명령어를 사용합니다.</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ sudo systemctl stop firewalld.service
+$ sudo systemctl disable firewalld.service
+</code></pre></div></div>
+
+			
+			
+						<div id="page-meta" class="t30">
+				<p>
+					<!-- Look the author details up from the site config. -->
+					
+					<!-- Output author details if some exist. -->
+					
+					<span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name" class="pr20 icon-edit"><a href="" target="_blank"> DanKim</a></span>
+				</span>
+				
+
+				
+				<time class="icon-calendar pr20" datetime="2022-06-24T00:00:00+09:00" itemprop="datePublished"> 2022-06-24</time>
+				
+
+				<span class="icon-archive pr20"> GETTING-STARTED</span>
+				<br />
+				<span class="pr20"><span class="icon-price-tag pr10"> oci</span> <span class="icon-price-tag pr10"> compute</span> <span class="icon-price-tag pr10"> firewall</span> </span>
+			</p>
+
+			
+			<div id="post-nav" class="row">
+				
+
+				
+				<div class="medium-5 columns"><a class="button small radius prev" href="/getting-started/free-oci-promotions/">&laquo; OCI 무료 계정 생성 및 관리하기</a></div><!-- /.small-4.columns -->
+				
+
+				<div class="medium-2 columns text-center"><a class="button small radius expand" href="http://localhost:4000//getting-started/" title="">BACK</a></div><!-- /.small-4.columns -->
+				
+				
+				<div class="medium-5 columns text-right"><a class="button small radius next" href="/getting-started/create-vcn/">OCI에서 VCN Wizard를 활용하여 빠르게 VCN 생성하기 &raquo;</a></div><!-- /.small-4.columns -->
+				
+			</div>
+			
+			</div><!--  /.page-meta -->
+
+			
+
+			
+
+		</article>
+	</div><!-- /.medium-12.columns -->
+</div><!-- /.row -->
+
+
+
+
+	
+	    <div id="up-to-top" class="row">
+      <div class="small-12 columns" style="text-align: right;">
+        <a class="iconfont" href="#top-of-page">&#xf108;</a>
+      </div><!-- /.small-12.columns -->
+    </div><!-- /.row -->
+
+
+    <footer id="footer-content" class="bg-grau">
+      
+      <div id="subfooter">
+        <nav class="row">
+          <section id="subfooter-left" class="small-12 medium-6 columns credits">
+            <p>Created with &hearts; by OKITOKI.</p>
+          </section>
+
+          <section id="subfooter-right" class="small-12 medium-6 columns">
+            <ul class="inline-list social-icons">
+            
+              <li><a href="http://github.com/team-okitoki" target="_blank" class="icon-github" title="Code und mehr..."></a></li>
+            
+              <li><a href="https://www.youtube.com/channel/UC60OcDzeEtn194-UPYNJs8A" target="_blank" class="icon-youtube" title="OCI Youtube"></a></li>
+            
+              <li><a href="https://twitter.com/oraclecloud" target="_blank" class="icon-twitter" title="OCI Twitter"></a></li>
+            
+              <li><a href="http://cloud.oracle.com" target="_blank" class="icon-cloud" title="OCI Home"></a></li>
+            
+            </ul>
+          </section>
+        </nav>
+      </div><!-- /#subfooter -->
+    </footer>
+
+	
+
+	
+
+
+<script src="http://localhost:4000//assets/js/javascript.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
+
