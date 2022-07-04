@@ -4,7 +4,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 	<id>http://localhost:4000//</id>
 	<title>OKITOKI&apos;s Technical Blog</title>
-	<updated>2022-07-04T23:16:52+09:00</updated>
+	<updated>2022-07-04T23:19:13+09:00</updated>
 
 	<subtitle>»Feeling Responsive« is a responsive theme for Jekyll based on the fabulous foundation framework with beautiful typography and a bright color palette.</subtitle>
 
@@ -603,7 +603,7 @@ $ sudo systemctl disable firewalld.service
 &lt;/div&gt;
 
 &lt;h3 id=&quot;oci에서-제공하는-비용-관련-도구들&quot;&gt;OCI에서 제공하는 비용 관련 도구들&lt;/h3&gt;
-&lt;p&gt;OCI Console에서는 다음과 같은 비용 및 사용량에 대한 모니터링 도구들을 제공하고 있습니다.&lt;/p&gt;
+&lt;p&gt;OCI Console에서는 다음과 같은 비용 및 사용량에 대한 모니터링 도구들을 제공하고 있습니다. 이번 포스팅에서는 사용량과 비용을 분석할 수 있는 도구인 &lt;strong&gt;비용 분석 (Cost Analysis)&lt;/strong&gt;에 대해서 알아봅니다.&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;예산 (Budgets)&lt;/li&gt;
