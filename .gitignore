@@ -26,4 +26,7 @@ Thumbs.db:encryptable
 ehthumbs.db
 ehthumbs_vista.db
 
+### Custom ###
+run_jekyll.sh
+
 # End of https://www.toptal.com/developers/gitignore/api/intellij,macos,windows,jekyll,visualstudiocode
