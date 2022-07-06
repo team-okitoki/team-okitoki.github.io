@@ -31,6 +31,9 @@ header: no
 **OCI Python SDK 예제 모음:**  
 [https://github.com/oracle/oci-python-sdk/tree/master/examples](https://github.com/oracle/oci-python-sdk/tree/master/examples)
 
+**OCI Java SDK 예제 모음:**  
+[https://github.com/oracle/oci-java-sdk/tree/master/bmc-examples](https://github.com/oracle/oci-java-sdk/tree/master/bmc-examples)
+
 **OCI OKE (Oracle Kubernetes Engine), OKE Cluster Autoscaler Function 예제:**  
 [https://gitlab.com/byteQualia/oke-autoscaler/-/tree/master/](https://gitlab.com/byteQualia/oke-autoscaler/-/tree/master/)
 
