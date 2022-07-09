@@ -35,7 +35,7 @@ header: no
 ![](/assets/img/infrastructure/2022/oci-recovery-sshkey-1.png)
 
 ### 콘솔 접속 실행 (Console Connection)
-생성된 인스턴스 상세 화면 좌측 **리소스(Resources)** 메뉴에서 **콘솔 접속(Console Connection)**을 선택한 후 **로컬 접속 생성(Create local connection)** 버튼을 클릭한 후 팝업창에서 **전용 키 저장**을 클릭하여 저장합니다. **콘솔 접속 생성(Create console connection)** 버튼을 클릭하여 **로컬 접속**을 생성합니다.
+생성된 인스턴스 상세 화면 좌측 **리소스(Resources)** 메뉴에서 **콘솔 접속(Console Connection)**을 선택합니다. **콘솔 접속(Console Connection)** 화면에서 **로컬 접속 생성(Create local connection)** 버튼을 클릭한 후 팝업창에서 **전용 키 저장**을 클릭하여 저장합니다. 그리고 **콘솔 접속 생성(Create console connection)** 버튼을 클릭하여 **로컬 접속**을 생성합니다.
 ![](/assets/img/infrastructure/2022/oci-recovery-sshkey-2.png)
 
 다운로드 받은 ssh의 Permission을 변경합니다.
@@ -74,12 +74,12 @@ For more information about troubleshooting your instance using a console connect
 재부팅을 하면 **콘솔 접속**한 터미널 화면에서 **Power Down**이라는 메세지가 보이는데, 이 때부터 **ESC키** 혹은 **F5키**를 연속으로 클릭합니다.
 ![](/assets/img/infrastructure/2022/oci-recovery-sshkey-3-1.png)
 
-이제 다음과 같이 **Boot Manager**를 화면을 볼 수 있습니다. 
+이제 다음과 같이 **Boot Manager** UI를 볼 수 있습니다. 
 ![](/assets/img/infrastructure/2022/oci-recovery-sshkey-5.png)
 
-> Boot Manager 화면에 접속한 상태에서 OCI Console을 통해 인스턴스를 재시작 하는 경우 인스턴스가 영구적으로 멈출 수 있습니다. 이 경우 별도로 오라클의 서포트를 받아야 할 수 있으니, OCI Console에서 인스턴스 재부팅을 할 경우에는 반드시 Boot Manager에서 나온 상태에서 재부팅을 하여야 합니다..
+> Boot Manager 화면에 접속한 상태에서 OCI Console을 통해 인스턴스를 재시작 하는 경우 인스턴스가 영구적으로 멈출 수 있습니다. 이 경우 별도로 오라클의 서포트를 받아야 할 수 있으니, OCI Console에서 인스턴스 재부팅을 할 경우에는 반드시 Boot Manager를 빠져나온 후 재부팅을 하여야 합니다.
 
-Boot Manager 메뉴에서 **UEFI Oracle BlockVolume**을 선택하고 곧바로 **엔터**를 클릭한 후 바로 **ESC키** 혹은 **F5키**키를 연속으로 클릭하면 다음과 같은 **Boot Menu**를 볼 수 있습니다.
+Boot Manager 메뉴에서 **UEFI Oracle BlockVolume**을 선택하고 **엔터**를 클릭한 후 바로 **ESC키** 혹은 **F5키**키(바로 입력하여야 합니다.)를 연속으로 클릭하면 다음과 같은 **Boot Menu**를 볼 수 있습니다.
 
 ![](/assets/img/infrastructure/2022/oci-recovery-sshkey-6.png)
 
@@ -97,6 +97,7 @@ init=/bin/bash
 ![](/assets/img/infrastructure/2022/oci-recovery-sshkey-8.png)
 
 **CTRL+X**를 입력하여 인스턴스를 재부팅하면, 다음과 같이 **Bash 쉘 커맨드 라인**을 볼 수 있습니다.
+![](/assets/img/infrastructure/2022/oci-recovery-sshkey-9.png)
 
 ### SSH 키 추가 혹은 재설정
 SSH 키 추가 혹은 재설정을 위해서 다음 명령어들을 순서대로 실행합니다. 우선 SElinux 정책을 로드합니다.
