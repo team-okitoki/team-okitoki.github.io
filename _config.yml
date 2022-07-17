@@ -110,7 +110,7 @@ defaults:
     values:
       show_meta: false 	# Hide metadata for all pages
       # sidebar:    		# Possible values › left, right › by default there will be no sidebar
-      comments: false
+      comments: true
       author: dankim     # Default author for pages
   -
     scope:
@@ -119,7 +119,7 @@ defaults:
     values:
       show_meta: true   # Show metadata for all posts
       # sidebar:        # Possible values › left, right › by default there will be no sidebar
-      comments: false
+      comments: true
       author: dankim     # Default author for posts
 
 
@@ -203,8 +203,7 @@ socialmedia:
 #
 # used in _includes/comments
 
-# disqus_shortname: 
-
+disqus_shortname: team-okitoki-github-io
 
 #      _____
 #     / ___/____ ___________

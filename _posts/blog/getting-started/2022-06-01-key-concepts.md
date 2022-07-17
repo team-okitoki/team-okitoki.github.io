@@ -9,6 +9,7 @@ teaser: "Oracle Cloud Infrastructure 를 시작하는데 도움이 되는 주요
 author: yhcho
 date: 2022-06-01 00:00:00
 breadcrumb: true
+comments: true
 categories:
   - getting-started
 tags:
