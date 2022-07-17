@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: page-fullwidth
 #
 # Content
 #
@@ -27,67 +27,128 @@ header: no
 # mediaplayer: true
 ---
 
+<div class="panel radius" markdown="1">
+**Table of Contents**
+{: #toc }
+*  TOC
+{:toc}
+</div>
+
 ## Application Dependency Management service is now available
 * **Services:** Application Dependency Management
 * **Release Date:** May 3, 2022
 * **Documentation:** [https://docs.oracle.com/en-us/iaas/Content/application-dependency-management/home.htm](https://docs.oracle.com/en-us/iaas/Content/application-dependency-management/home.htm){:target="_blank" rel="noopener"}
 
 ### 서비스 소개
-블ㅏ블라....
+2021년 11월에 Apache Log4j 2에서 발생한 취약점(CVE-2021-44228, NVD)으로 인해 관련 소프트웨어를 패치하기 위해 분주했던 것을 기억합니다. 이러한 애플리케이션의 보안 취약점을 스캔하고 자동으로 패치할 수 있는 서비스가 OCI에 추가되었습니다.  
 
+Application Dependency Management (애플리케이션 종속성 관리, 이하 ADM)는 애플리케이션 종속성(Dependency)에서 보안 취약성을 감지하는 서비스입니다. 이 서비스는 OCI DevOps의 빌드 파이프라인에 취약성 감사 단계를 추가하여 만일 취성점이 감지되면 빌드가 실패되고, 개발자에게 취약성에 대한 경고를 전달할 수 있는 기능을 제공합니다.
 
+주된 내용은 다음과 같습니다.
+1. ADM은 소프트웨어 취약점의 특성 및 심각도를 전달하기 위한 개방형 프레임워크인 Common Vulnerability Scoring System(CVSS)에서 제공하는 점수에 의존
+2. CVSS는 National Vulnerability Database (NVD)에서 소프트웨어 취약점의 심각도를 0에서 10까지의 범위로 제공하는 것으로, 현재 NVD는 CVSS v2.0과 v3.X 표준을 지원
+3. ADM은 OCI DevOps 파이프라인의 "빌드" 단계에서 구성
+4. 현재 pom.xml 파일을 기반으로 한 Maven 종속성을 지원
+ 
+### DevOps 빌드 파이프라인에서 지원
 
-### 프로비저닝 순서
-1. ㄴㄹㄴㅇㄹ
+OCI DevOps의 빌드 파이프라인에서 Maven 프로젝트에 대한 취약성 감사 단계를 추가할 수 있습니다. 개발자는 최소 CVSS 점수를 설정할 수 있으며, 만약 패키지에서 해당 점수를 초과하는 CVE(공개적으로 알려진 보안 결함 목록)가 파이프라인에서 감지되면 빌드 실패와 함께 개발자에게 취약성에 대해 경고하고 패치하도록 합니다.
 
+![](/assets/img/cloudnative/2022/oci-security-release-notes-05-1.png)
 
-![](/assets/img/platform/2022/oke-provisioning-1.png)
+아래는 같이 OCI DevOps 빌드 파이프라인에 Vulnerability Audit(취약점 감사) 단계를 추가할 수 있습니다.
 
-
-
-
-
-```코드 표현```
-
-그외 글자 관련 서식은 HTML 형태로 작성하여 표현 가능하며 아래 링크 참조
-[Typography](https://phlow.github.io/feeling-responsive/design/typography/typography/){:target="_blank" rel="noopener"}
-
-> Quotation 표현
-
-Code 표현
 ```
-$ cd helloworld
+...
+- type: VulnerabilityAudit
+  name: "Vulnerability Audit Step"
+  configuration:
+    buildType: maven
+    pomFilePath: ${OCI_PRIMARY_SOURCE_DIR}/pom.xml
+  packagesToIgnore:
+      - org.apache.struts
+    maxPermissibleCvssV2Score: 6.0
+    maxPermissibleCvssV3Score: 8.1
+  knowledgeBaseId: ocid1...
+  vulnerabilityAuditCompartmentId: ocid1...
+  vulnerabilityAuditName: sample_va
+...
 ```
 
-### 그외 자유롭게 추가하고 싶은 내용 추가
+다음과 같이 개발자는 OCI DevOps의 빌드 실행 세부 정보에서 취약점 감사 결과를 확인할 수 있습니다.
 
-***Unordered List 사용 방법***
-* Item 1
-  * Item 2
-    * Item 3
+![](/assets/img/cloudnative/2022/oci-security-release-notes-05-2.png)
 
-***Ordered List 사용 방법***
+### 취약점 감사
+발견된 취약점으로 인해 DevOps 빌드 파이프라인이 실패하는 경우 개발자는 취약점 감사 결과를 보고 관련 CVE와 함께 전체 종속성 트리를 볼 수 있습니다. 개발자는 CVE 점수를 검사하여 문제를 이해한 다음 취약성을 포함하지 않는 버전에 대한 일부 종속성을 패치하는 등 필요한 변경을 수행할 수 있습니다.
 
-1. Ordered List
-1. Second List Item
-1. Third List Item
-    1. Second Level First Item
-    1. Second Level Second Item
-    1. Second Level Third Item
-        1. And a third level First Item
-        1. And a third level Second Item
-        1. And a third level Third Item
-1. Fourth List Item
-1. Fifth List Item
+![](/assets/img/cloudnative/2022/oci-security-release-notes-05-3.png)
 
-이미지는 다음과 같이 추가
+### 참고
+* https://blogs.oracle.com/cloud-infrastructure/post/security-scanning-for-maven-now-available-in-oci-devops
+
+--- 
+
+## Accelerate function start-ups using provisioned concurrency
+* **Services:** Functions
+* **Release Date:** May 4, 2022
+* **Documentation:** [https://docs.oracle.com/en-us/iaas/Content/Functions/Tasks/functionsusingprovisionedconcurrency.htm](https://docs.oracle.com/en-us/iaas/Content/Functions/Tasks/functionsusingprovisionedconcurrency.htm){:target="_blank" rel="noopener"}
+
+### 서비스 소개
+Function이 처음 호출될 때(**Cold Start** 라고 부름) Function 실행에 필요한 인프라를 프로비저닝합니다. 보통 Function을 성공적으로 호출하기 위한 기본 Compute와 Network 관련 리소스가 준비되는데, 이러한 이유로 처음 호출될 때 최소 몇 초 이상의 시간이 소요됩니다. 한번 호출된 후에는 이 후 호출부터 (**Hot or Warm Start** 라고 부름)는 이미 준비된 인프라 환경에서 호출이 되기 때문에 Cold Start 보다 월등히 빠르게 응답합니다. **Hot Start** 환경이 되더라도, 일정시간 Function이 사용되지 않으면 다시 관련 인프라 리소스가 정리되고, 이 후 다시 호출될 때 이전과 마찬가지로 **Cold Start**가 됩니다.
+
+이번에 추가된 기능은 이러한 초기 프로비저닝과 관련된 지연 시간을 최소화하고 처음부터 **Hot Start**를 보장하기 위한 기능으로 **프로비저닝된 동시성(provisioned concurrency)** 기능을 활성화 하여 적용할 수 있습니다.
+
+
+### 적용 방법
+프로비저닝된 동시성(provisioned concurrency)을 사용하기 위해서는 Function에 PCU (provisioned concurrency units)을 지정해야 합니다. PCU는 함수 OCICLI를 활용하여 Function을 생성하거나 업데이트 하는 시점에 다음과 같이 정하여 정의할 수 있습니다. 
+
 ```
-![](/assets/img/platform/2022-05/adm-home.png)
+oci fn function create --application-id ocid1.fnapp.oc1.phx.aaaaaaaaaf______r3ca --display-name helloworld-func --image phx.ocir.io/ansh81vru1zp/helloworld/helloworld-func:0.0.1 --memory-in-mbs 128 --provisioned-concurrency "{\"strategy\": \"CONSTANT\", \"count\": 40}"
 ```
-![](/assets/img/platform/2022/adm-home.png)
 
-링크는 다음과 같이 추가
-```
-[SignUp](https://signup.cloud.oracle.com){:target="_blank" rel="noopener"}
-```
-[SignUp](https://signup.cloud.oracle.com){:target="_blank" rel="noopener"}
+* **strategy:** 프로비저닝된 동시성(provisioned concurrency) 사용여부 나타내는 것으로 **CONSTANT(지정), NONE(미지정)** 중 하나를 입력합니다.
+* **count:** 함수가 동시에 얼마나 호출되는지에 대한 수를 입력합니다.
+
+--- 
+
+## OCI Search Service with OpenSearch is now available
+* **Services:** Oracle Cloud Infrastructure, Search Service with OpenSearch
+* **Release Date:** May 10, 2022
+* **Documentation:** [https://docs.oracle.com/en-us/iaas/Content/search-opensearch/home.htm](https://docs.oracle.com/en-us/iaas/Content/search-opensearch/home.htm){:target="_blank" rel="noopener"}
+
+### 서비스 소개
+인애플리케이션 검색 솔루션을 구축하는 데 사용할 수 있는 [OpenSearch](https://opensearch.org)를 기반으로 한 관리형 서비스로 대규모 데이터 세트를 검색하고 밀리초 내에 결과를 반환할 수 있도록 지원하는 서비스입니다. 
+
+### 주요 내용
+* OpenSearch 및 OpenDashboard는 2021년 Elasticsearch 및 Kibana(7.10.2)에서 분기
+* OCI Serach Service는 OpenSearch 관리형 서비스로 패치, 업데이트, 업그레이드, 백업 및 스케일링을 포함한 일반적인 유지 관리 유지관리 활동을 다운타임 없이 지원
+* Flex Shape을 기반으로 운영되기 때문에 처음에는 요구사항에 맞는 CPU, 메모리 및 스토리지 수를 지정하며, 확장이 필요한 경우 가동 중지 시간 없이 수평 또는 수직으로 즉시 크기를 조정
+* 현재 포스팅하는 시점에서 아직 OCI SDK 및 CLI는 미지원
+
+### 기본 개념
+* **Cluster:** OpenSearch 기능을 제공하는 Compute Instance를 담고 있으며, 각 Compute Instance는 클러스터의 노드가 됩니다. 각 클러스터는 하나 이상의 데이터 노드, 마스터 노드 및 OpenSearch 대시보드 노드로 구성됩니다.
+* **Data Node:** OpenSearch를 위한 데이터를 저장하고 데이터 검색, 관리 및 집계와 관련된 작업을 처리합니다. 클러스터의 데이터 노드를 구성할 때 노드당 필요한 최소 메모리는 8GB입니다.
+* **Master Node:** 클러스터 작업을 관리하고 노드 상태를 모니터링하며 클러스터에 대한 네트워크 트래픽을 라우팅하며, 인덱스 생성 또는 삭제, 노드 추적, 어떤 노드에 어떤 샤드를 할당할지 결정하는 것과 같은 클러스터 전반의 작업을 담당합니다. 최소 마스터 노드의 매모리는 16GB입니다.
+* **OpenSearch Dashboard Node:** 클러스터의 OpenSearch 대시보드를 관리하고 액세스를 제공합니다. 클러스터의 OpenSearch 대시보드를 구성할 때 노드당 필요한 최소 메모리는 8GB입니다.
+* **OpenSearch Dashboards:** OpenSearch 데이터를 위한 시각화 도구이며 일부 OpenSearch 플러그인의 사용자 인터페이스로도 사용할 수 있습니다. 실시간 데이터로 대화형 데이터 대시보드를 만들 수 있습니다.
+
+### 참고
+* [OCI Search Service를 간단히 따라서 해볼 수 있는 자료](https://docs.oracle.com/en/learn/oci-opensearch/index.html#introduction)
+* [TheKoguryo님 블로그: OCI Search 서비스를 사용한 로그 모니터링 (특히 OKE에서 OpenSearch로 로그를 보내는 방법에 대해서 아주 잘 정리되어 있습니다.)](https://thekoguryo.github.io/oracle-cloudnative/oci-services/logging/2.oci-opensearch/)
+
+--- 
+
+## New features for DevOps
+* **Services:** DevOps
+* **Release Date:** May 17, 2022
+* **Documentation:** [https://docs.oracle.com/en-us/iaas/Content/devops/using/create_connection.htm](https://docs.oracle.com/en-us/iaas/Content/devops/using/create_connection.htm){:target="_blank" rel="noopener"}, [https://docs.oracle.com/en-us/iaas/Content/devops/using/add-helmchart.htm](https://docs.oracle.com/en-us/iaas/Content/devops/using/add-helmchart.htm){:target="_blank" rel="noopener"}, [https://docs.oracle.com/en-us/iaas/Content/devops/using/scan-code.htm](https://docs.oracle.com/en-us/iaas/Content/devops/using/scan-code.htm){:target="_blank" rel="noopener"}
+
+### 기능 소개
+
+
+
+
+
+
+

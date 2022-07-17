@@ -27,6 +27,13 @@ header: no
 
 ---
 
+<div class="panel radius" markdown="1">
+**Table of Contents**
+{: #toc }
+*  TOC
+{:toc}
+</div>
+
 ### 실습을 위한 인스턴스 생성
 아래 가이드를 참고하여 OCI Compute Linux Instance를 하나 생성합니다.  
 [https://docs.oracle.com/en-us/iaas/Content/GSG/Reference/overviewworkflow.htm](https://docs.oracle.com/en-us/iaas/Content/GSG/Reference/overviewworkflow.htm)
