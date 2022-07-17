@@ -15,8 +15,6 @@ tags:
   - may-2022
   - Infrastructure
 
-youtubeId: _cn8mzVk-18
-
 #
 # Styling
 #
@@ -31,6 +29,3 @@ header: no
 ---
 
 ### 업데이트 주제
-
-
-{% include youtubePlayer.html id=page.youtubeId %}
