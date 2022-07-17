@@ -110,6 +110,9 @@ oci fn function create --application-id ocid1.fnapp.oc1.phx.aaaaaaaaaf______r3ca
 * **strategy:** 프로비저닝된 동시성(provisioned concurrency) 사용여부 나타내는 것으로 **CONSTANT(지정), NONE(미지정)** 중 하나를 입력합니다.
 * **count:** 함수가 동시에 얼마나 호출되는지에 대한 수를 입력합니다.
 
+### 가격
+프로비저닝된 동시성(provisioned concurrency)기능을 활성화 하는 경우 대기중에도 일정 자원을 보유 및 유지를 위한 비용이 추가되는데, 추가되는 비용은 사용되지 않을때도 기본 Function 실행 시간의 25%가 추가됩니다. 예를 들면, 하나의 Function을 100분동안 호출했고, 100분동안 Idle 상태였다면, 총 비용은 125분 동안 사용 비용이 청구됩니다.
+
 --- 
 
 ## OCI Search Service with OpenSearch is now available
