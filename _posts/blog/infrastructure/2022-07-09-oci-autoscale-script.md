@@ -213,7 +213,7 @@ Schedule 태그 네임스페이스와 태그 키를 활용하여 인스턴스 St
       <tr class="row">
       <td class="entry" headers="About__entry__1"><span class="ph">Schedule</span></td>
       <td class="entry" headers="About__entry__2"><span class="ph">AnyDay</span></td>
-      <td class="entry" headers="About__entry__3">*,1,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,1</td>
+      <td class="entry" headers="About__entry__3">*,0,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,1</td>
       <td class="entry" headers="About__entry__4"><span class="ph">매일 1시에 인스턴스를 정지, 24시에 인스턴스 가동</span></td>
       </tr>
       <tr class="row">
