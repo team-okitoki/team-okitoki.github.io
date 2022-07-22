@@ -148,7 +148,12 @@ oci fn function create --application-id ocid1.fnapp.oc1.phx.aaaaaaaaaf______r3ca
 * **Documentation:** [https://docs.oracle.com/en-us/iaas/Content/devops/using/create_connection.htm](https://docs.oracle.com/en-us/iaas/Content/devops/using/create_connection.htm){:target="_blank" rel="noopener"}, [https://docs.oracle.com/en-us/iaas/Content/devops/using/add-helmchart.htm](https://docs.oracle.com/en-us/iaas/Content/devops/using/add-helmchart.htm){:target="_blank" rel="noopener"}, [https://docs.oracle.com/en-us/iaas/Content/devops/using/scan-code.htm](https://docs.oracle.com/en-us/iaas/Content/devops/using/scan-code.htm){:target="_blank" rel="noopener"}
 
 ### 기능 소개
+OCI DevOps 서비스에 다음 3개의 기능이 신규 추가되었습니다.
 
+#### Bitbucket Cloud support
+**Bitbucket Cloud**는 Atlassian에서 서비스하는 소유한 Git 기반 소스 코드 저장소 호스팅 서비스 입니다. DevOps의 외부 저장소로 기존 **GitHub, GitLab**에 이어 **Bitbucket Cloud**도 외부 저장소로 연결할 수 있도록 지원합니다.
+
+![](/assets/img/cloudnative/2022/oci-security-release-notes-05-4.png)
 
 
 
