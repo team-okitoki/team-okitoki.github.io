@@ -40,7 +40,7 @@ header: no
 * **Documentation:** 관련 문서 링크
 
 ### 서비스 소개
-서비스 소개글
+데이터베이스 서비스에 대한 Relase Note
 
 ---
 
