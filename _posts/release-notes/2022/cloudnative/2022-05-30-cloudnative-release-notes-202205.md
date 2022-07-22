@@ -156,7 +156,59 @@ OCI DevOps 서비스에 다음 3개의 기능이 신규 추가되었습니다.
 ![](/assets/img/cloudnative/2022/oci-security-release-notes-05-4.png)
 
 
+#### Helm Chart support
+Helm은 Chart라고 불리는 패키징 포멧을 사용하여 쿠버네티스 리소스를 정의한 파일들(쿠버네티스 YAML manifest와 values.yaml 파일 포함)을 묶을 수 있습니다. 일종의 쿠버네티스를 위한 소프트웨어 패키지라고 볼 수 있습니다. 
 
+이번에 DevOps 서비스에서 OKE에 Helm Chart를 배포할 수 있는 기능이 추가되었습니다. 아래는 Helm Chart를 추가하기 위한 기본 필요 사항입니다.
 
+* 모든 차트는 기본적으로 [Semantic Versioning 2.0.0](https://semver.org/spec/v2.0.0.html)형식을 따르는 버전이 있어야 합니다.
+  * Example: nginx 1.2.1
+* Helm Chart를 배포 파이프라인에서 사용하기 전에 미리 OCI Container 레지스트리에 위치해 있어야 합니다.
+* Helm 차트가 포함된 저장소 위치를 가리키도록 Artifact 참조를 생성해야 합니다.
+  ![](/assets/img/cloudnative/2022/oci-security-release-notes-05-5.png)
 
+DevOps 배포 파이프라인에서 **Kubernetes 클러스터에 Helm 차트 설치(Install Helm chart to Kubernetes cluster)** 스테이지를 선택하여 OKE 클러스터에 Helm Chart 배치를 자동화 할 수 있습니다. 
+![](/assets/img/cloudnative/2022/oci-security-release-notes-05-6.png)
 
+#### DevOps provides vulnerability audit
+DevOps 빌드 파이프라인에서 Maven 프로젝트에서 사용하는 패키지의 취약점을 감지하는 기능이 포함되었습니다. 이 기능은 **Oracle Application Dependency Management (ADM)**의 취약점 지식 기반을 활용합니다. 자세한 내용은 **Application Dependency Management service is now available** 부분을 참고합니다.
+
+## Support for Kubernetes version 1.23.4
+* **Services:** Container Engine for Kubernetes
+* **Release Date:** May 18, 2022
+* **Documentation:** [https://docs.oracle.com/en-us/iaas/releasenotes/changes/82948243-0363-414d-ad28-72a7653a4f24/](https://docs.oracle.com/en-us/iaas/releasenotes/changes/82948243-0363-414d-ad28-72a7653a4f24/){:target="_blank" rel="noopener"}
+
+### 업데이트 내용
+이제 버전 1.22.5 및 1.21.5 외에도 Kubernetes 버전 1.23.4를 지원합니다. 관련하여 유의할 사항은 다음과 같습니다.
+
+* Kubernetes 버전 1.23.4에 대한 지원이 가능해짐에 따라 Kubernetes용 Container Engine은 2022년 7월 19일에 Kubernetes 버전 1.20.11에 대한 지원을 중단합니다. 결과적으로 더 이상 다음을 수행할 수 없습니다.
+  * Kubernetes 버전 1.20.11을 위한 새로운 클러스터를 생성할 수 없습니다.
+  * Kubernetes 버전 1.20.11을 실행하는 기존 클러스터에 새 노드 풀을 추가할 수 없습니다.
+
+## Usage plans to manage subscriber access to APIs
+* **Services:** API Gateway
+* **Release Date:** May 25, 2022
+* **Documentation:** [https://docs.oracle.com/en-us/iaas/Content/APIGateway/Tasks/apigatewaydefiningusageplans.htm](https://docs.oracle.com/en-us/iaas/Content/APIGateway/Tasks/apigatewaydefiningusageplans.htm){:target="_blank" rel="noopener"}
+
+### 기능 소개
+API Gateway를 생성하고 하나 이상의 Public API를 배포하여 운영하는 경우 관리자는 이와 관련하여 다음과 같은 기능이 필요할 수 있습니다.
+
+* API에 액세스하는 API 소비자 및 API 클라이언트에 대한 모니터링 및 관리
+* API를 소비하는 고객 별로 다른 액세스 계층을 설정하여 적용 
+  * 예시) GOLD 계층은 시간당 최대 1000개 요청을 수용, SILVER 계층은 최대 500개 요청 허용, BRONZE 계층은 최대 100개 허용, 모든 계층은 모두 초당 10개 요청으로 제한.
+
+API Management에서 사용 계획 (Usage Plans) 생성
+![](/assets/img/cloudnative/2022/oci-security-release-notes-05-7.png)
+
+**사용 계획**을 생성할 때 API 게이트웨이를 지정할 수 있으며, API Management에서 생성한 **구독자**별로 사용 계획을 적용할 수 있습니다.
+
+**사용 계획**을 생성할 때 API 게이트웨이를 지정
+![](/assets/img/cloudnative/2022/oci-security-release-notes-05-8.png)
+
+API Management에서 생성한 **구독자**별로 계획 지정
+![](/assets/img/cloudnative/2022/oci-security-release-notes-05-9.png)
+
+## Support for CSI metrics
+* **Services:** Container Engine for Kubernetes
+* **Release Date:** May 26, 2022
+* **Documentation:** [https://docs.oracle.com/en-us/iaas/Content/ContEng/Tasks/contengcreatingpersistentvolumeclaim.htm#Provisioning_Persistent_Volume_Claims_on_the_Block_Volume_Service](https://docs.oracle.com/en-us/iaas/Content/ContEng/Tasks/contengcreatingpersistentvolumeclaim.htm#Provisioning_Persistent_Volume_Claims_on_the_Block_Volume_Service){:target="_blank" rel="noopener"}
