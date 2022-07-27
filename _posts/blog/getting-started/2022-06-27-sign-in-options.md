@@ -7,7 +7,7 @@ subheadline: "Cloud Sign-In"
 title: "OCI의 로그인 옵션 살펴보기"
 teaser: "Oracle Cloud Infrastructure (OCI)에서 제공하는 2가지 로그인 옵션에 대해 알아봅니다."
 author: yhcho
-date: 2022-06-09 00:00:00
+date: 2022-06-27 00:00:00
 breadcrumb: true
 categories:
   - getting-started

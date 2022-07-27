@@ -7,7 +7,7 @@ subheadline: "Cloud Subscription"
 title: "Oracle Cloud 구독에 대한 이해와 구매방법"
 teaser: "Oracle Cloud Infrastructure(OCI)에서 제공하는 구독의 종류와 구매방법에 대해 알아봅니다."
 author: yhcho
-date: 2022-06-08 00:00:00
+date: 2022-06-29 00:00:00
 breadcrumb: true
 categories:
   - getting-started
