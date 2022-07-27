@@ -38,7 +38,7 @@ header: no
 * **Services:** Media Flow
 * **Release Date:** July 20, 2022
 * **Documentation:** 
-[https://docs.oracle.com/en-us/iaas/data-flow/using/home.htm](https://docs.oracle.com/en-us/iaas/data-flow/using/home.htm){:target="_blank" rel="noopener"}
+[https://docs.oracle.com/iaas/Content/dms-mediaflow/home.htm](https://docs.oracle.com/iaas/Content/dms-mediaflow/home.htm){:target="_blank" rel="noopener"}
 
 
 ### 서비스 소개
@@ -83,7 +83,7 @@ OCI Media Service 는 미디어(비디오) 소스 콘텐츠를 처리하기 위�
 * **Services:** Media Streams
 * **Release Date:** July 20, 2022
 * **Documentation:** 
-[https://docs.oracle.com/en-us/iaas/Content/dms-mediastream/home.htm](hhttps://docs.oracle.com/en-us/iaas/Content/dms-mediastream/home.htm){:target="_blank" rel="noopener"}
+[https://docs.oracle.com/iaas/Content/dms-mediastream/home.htm](https://docs.oracle.com/iaas/Content/dms-mediastream/home.htm){:target="_blank" rel="noopener"}
 
 
 ### 서비스 소개
