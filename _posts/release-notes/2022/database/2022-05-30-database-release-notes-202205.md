@@ -106,7 +106,8 @@ Worker Node 는 용량이 추가 증설이 필요할 경우, 노드를 추가하
 
 ![](/assets/img/database/2022/05/06_oci_database_releasenote_bigdata_cluster_2.png)
 
-***신규 버전(3.0.7) Big Data 서비스 반영 내용***
+
+### 신규 버전(3.0.7) Big Data 서비스 반영 내용
 * ODH 클러스터에서 수평(노드 추가 또는 제거) 및 수직(노드 모양 모양) 자동 크기 조정을 구성
 * 각 노드에 필요한 OCPU 및 메모리 수를 지정하려면 자동 크기 조정 중에 E4 Flex Shape 사용
 * 클러스터에 컴퓨팅 전용 Worker 노드 추가 기능
@@ -146,7 +147,7 @@ Data Integration 에 등록된 자산들을 기반으로 연계할 Data 의 흐�
 
 ![](/assets/img/database/2022/05/10_oci_data_integration_application_job.png)
 
-***신규 버전 Data Integration 서비스 반영 내용***
+### 신규 기능 반영 내용***
 * HDFS(Hadoop Distributed File System)를 데이터 소스 또는 타겟으로 연결
 * Data Loader Job 을 사용하여 새 대상 또는 기존 대상으로 로드할 스키마의 여러 데이터 엔터티에서 소스 데이터를 선택
 * Data Integration Application 프로그램을 Workspace 내의 다른 구획으로 이동
