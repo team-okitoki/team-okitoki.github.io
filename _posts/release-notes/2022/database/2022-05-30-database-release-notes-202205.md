@@ -73,14 +73,12 @@ Big Data Service는 가용성이 높은 전용 Hadoop 및 Spark Cluster를 온�
 * Hadoop 기술 Stack의 선택
   * **ODH (Apache Hadoop):** Apache Hadoop(ODH)을 포함한 Oracle Distribution 설치가 포함된 Hadoop 스택. ODH에는 Apache Ambari, Apache Hadoop, Apache HBase, Apache Hive, Apache Spark 및 빅 데이터 작업 및 보안을 위한 기타 서비스가 포함됩니다.
   * **CDH (Cloudera Hadoop):** Apache Hadoop(CDH)을 포함한 Cloudera Distribution의 전체 설치를 포함하는 Hadoop 스택. CDH에는 Cloudera Manager, Apache Flume, Apache Hadoop, Apache HBase, Apache Hive, Apache Hue, Apache Kafka, Apache Pig, Apache Sentry, Apache Solr, Apache Spark 및 빅 데이터 작업 및 보안을 위한 기타 서비스가 포함됩니다. Big Data Service의 현재 버전에는 CDH 6.3.3이 포함되어 있습니다.
-
 * ID 관리, 네트워킹, 컴퓨팅, 스토리지 및 모니터링을 포함한 Oracle Cloud Infrastructure 기능 및 리소스
 * 클러스터 생성 및 관리를 위한 REST API
 * bda-oss-admin 스토리지 제공자를 관리하기 위한 명령줄 인터페이스
 * 기본 Oracle Cloud Infrastructure 형태를 기반으로 모든 크기의 클러스터를 생성할 수 있는 기능 (ex: 유연한 가상 환경에서 작고 수명이 짧은 클러스터, 전용 하드웨어에서 매우 큰 장기 실행 클러스터 또는 이들의 조합)
 * Optional secure, high availablity (HA) 클러스터
-* Oracle Cloud SQL 통합 - Oracle SQL 쿼리 언어를 사용하여 Apache Hadoop, Apache Kafka, NoSQL 및 객체 저장소 전반에서 데이터를 분석
-* Oracle Cloud SQL 통합 - Oracle SQL 쿼리 언어를 사용하여 Apache Hadoop, Apache Kafka, NoSQL 및 객체 저장소 전반에서 데이터를 분석
+* Oracle Cloud SQL 통합 - Oracle SQL 쿼리 언어를 사용하여 Apache Hadoop, Apache Kafka, NoSQL 및 객체 저장소 전반에서 데이터 분석
 * Big Data Service 클러스터에 배포된 항목을 사용자 지정할 수 있는 전체 액세스 권한 제공
 
 ### Hadoop Ecosystem

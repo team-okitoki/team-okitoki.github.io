@@ -34,26 +34,30 @@ header: no
 {:toc}
 </div>
 
-## Operations Insights Demo Mode
-* **Services:** Operations Insights
-* **Release Date:** May 9, 2022
-* **Documentation:** https://docs.oracle.com/en-us/iaas/operations-insights/doc/get-started-operations-insights.html#GUID-047A36C7-D94E-4EF2-86BF-28A76E7AA926
+## Flexible Compute Shapes are now Available with Data Flow
+* **Services:** Data Flow
+* **Release Date:** June 1, 2022
+* **Documentation:** 
+[https://docs.oracle.com/en-us/iaas/data-flow/using/home.htm](https://docs.oracle.com/en-us/iaas/data-flow/using/home.htm){:target="_blank" rel="noopener"}
+
 
 ### 서비스 소개
-Operations Insights는 데이터베이스 및 호스트의 리소스 활용도와 용량에 대한 360도 통찰력을 제공합니다. CPU 및 스토리지 리소스를 쉽게 분석하고, 용량 문제를 예측하고, 데이터베이스 플릿 전체에서 SQL 성능 문제를 사전에 식별할 수 있습니다.
+Oracle Cloud Infrastructure Data Flow는 Apache Spark ™ 애플리케이션을 실행하기 위한 완전 관리형 서비스입니다. 개발자가 애플리케이션에 집중할 수 있도록 하고 이를 실행할 수 있는 쉬운 런타임 환경을 제공합니다. 애플리케이션 및 워크플로와의 통합을 위한 API 지원을 통해 쉽고 간단한 사용자 인터페이스를 제공합니다. 
 
-![](/assets/img/database/2022/05/oci_database_releasenote_operation_insights_main.png)
+![](/assets/img/database/2022/06/01_Data_Flow_Service_overview_1.png)
+
+Data Flow 는 Serverless 기반으로 작성된 Application 을 Spark Job 으로 생성하여 Job을 수행할 수가 있습니다. 아래 그림은 Spark Job 을 Serverless 로 수행하기 위한 절차입니다.
+
+![](/assets/img/database/2022/06/02_Data_Flow_Service_overview_2.png)
+
+Job 이 수행되고 난 후에는 Job 실행 결과를 확인하고 Log 를 분석하여 처리 결과를 확인하게 됩니다.
+
+![](/assets/img/database/2022/06/03_Data_Flow_Service_overview_3.png)
 
 ### 신규 기능
-데모 모드를 사용하면 모니터링되는 환경을 구성할 필요 없이 즉시 Operations Insights 기능을 탐색할 수 있습니다. 데모 모드가 활성화되면 Operations Insights는 리소스에 대한 복잡한 환경 설정없이 다양한 리소스 모니터링 및 분석 기능을 탐색할 수 있는 데이터들로 채워집니다.
-
-데모 모드를 활성화하려면 Operations Insights 개요 페이지로 이동하여 데모 모드 활성화를 클릭합니다.
-![](/assets/img/database/2022/05/demo_mode.png)
-
-데모 모드를 활성화를 클릭하면 다음과 같이 데모 모드 사용을 위한 필요 Policy 설정 적용 화면이 나타납니다. 
-![](/assets/img/database/2022/05/demo_mode_policy.png)
-
-데모 모드 Policy 설정이 완료되면 아래와 같이 별도의 복잡한 환경 설정 작업없이 아래와 같이 분석 기능들을 맛볼 수 있는 데모 모드가 나타납니다.
-![](/assets/img/database/2022/05/demo_mode_screen.png) 
+다음의 Flexible Compute Shape 들을 지원하게 되었습니다.
+* VM.Standard3.Flex (Intel)
+* VM.StandardE3.Flex (AMD)
+* VM.StandardE4.Flex (AMD)
 
 ---
