@@ -196,7 +196,7 @@ Web Application Acceleration(WAA)은 압축과 캐싱기능을 활용하여 Laye
 * text/plain
 * text/xml
 
-WAA를 구성 시 주의할 사항은 다음과 같습니다.
+WAA를 구성 시의 유의 사항은 다음과 같습니다.
 * 압축된 결과를 얻기 위해서는 반드시 요청 헤더에 **Accept-Encoding**이 포함되어야 합니다.
 * 응답 헤더에 **Cache-Control** 값으로 **Private** 또는 **no-store**가 포함된 경우에는 캐시를 지원하지 않습니다.
 
