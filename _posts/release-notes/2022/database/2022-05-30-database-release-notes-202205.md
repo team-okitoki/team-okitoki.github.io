@@ -71,25 +71,25 @@ Big Data Service는 가용성이 높은 전용 Hadoop 및 Spark Cluster를 온�
 
 ***Big Data Service 가 포함하고 있는 사항***
 
-**1. Hadoop 기술 Stack의 선택.** 
+* Hadoop 기술 Stack의 선택
   * **ODH (Apache Hadoop):** Apache Hadoop(ODH)을 포함한 Oracle Distribution 설치가 포함된 Hadoop 스택. ODH에는 Apache Ambari, Apache Hadoop, Apache HBase, Apache Hive, Apache Spark 및 빅 데이터 작업 및 보안을 위한 기타 서비스가 포함됩니다.
   * **CDH (Cloudera Hadoop):** Apache Hadoop(CDH)을 포함한 Cloudera Distribution의 전체 설치를 포함하는 Hadoop 스택. CDH에는 Cloudera Manager, Apache Flume, Apache Hadoop, Apache HBase, Apache Hive, Apache Hue, Apache Kafka, Apache Pig, Apache Sentry, Apache Solr, Apache Spark 및 빅 데이터 작업 및 보안을 위한 기타 서비스가 포함됩니다. Big Data Service의 현재 버전에는 CDH 6.3.3이 포함되어 있습니다.
 
-**2. ID 관리, 네트워킹, 컴퓨팅, 스토리지 및 모니터링을 포함한 Oracle Cloud Infrastructure 기능 및 리소스**
+* ID 관리, 네트워킹, 컴퓨팅, 스토리지 및 모니터링을 포함한 Oracle Cloud Infrastructure 기능 및 리소스**
 
-**3. 클러스터 생성 및 관리를 위한 REST API**
+* 클러스터 생성 및 관리를 위한 REST API**
 
-**4. bda-oss-admin 스토리지 제공자를 관리하기 위한 명령줄 인터페이스**
+* bda-oss-admin 스토리지 제공자를 관리하기 위한 명령줄 인터페이스**
 
-**5. 기본 Oracle Cloud Infrastructure 형태를 기반으로 모든 크기의 클러스터를 생성할 수 있는 기능 (ex: 유연한 가상 환경에서 작고 수명이 짧은 클러스터, 전용 하드웨어에서 매우 큰 장기 실행 클러스터 또는 이들의 조합)**
+* 기본 Oracle Cloud Infrastructure 형태를 기반으로 모든 크기의 클러스터를 생성할 수 있는 기능 (ex: 유연한 가상 환경에서 작고 수명이 짧은 클러스터, 전용 하드웨어에서 매우 큰 장기 실행 클러스터 또는 이들의 조합)**
 
-**6. Optional secure, high availablity (HA) 클러스터**
+* Optional secure, high availablity (HA) 클러스터**
 
-**7. Oracle Cloud SQL 통합 - Oracle SQL 쿼리 언어를 사용하여 Apache Hadoop, Apache Kafka, NoSQL 및 객체 저장소 전반에서 데이터를 분석**
+* Oracle Cloud SQL 통합 - Oracle SQL 쿼리 언어를 사용하여 Apache Hadoop, Apache Kafka, NoSQL 및 객체 저장소 전반에서 데이터를 분석**
 
-**8. Oracle Cloud SQL 통합 - Oracle SQL 쿼리 언어를 사용하여 Apache Hadoop, Apache Kafka, NoSQL 및 객체 저장소 전반에서 데이터를 분석**
+* Oracle Cloud SQL 통합 - Oracle SQL 쿼리 언어를 사용하여 Apache Hadoop, Apache Kafka, NoSQL 및 객체 저장소 전반에서 데이터를 분석**
 
-**9. Big Data Service 클러스터에 배포된 항목을 사용자 지정할 수 있는 전체 액세스 권한 제공**
+* Big Data Service 클러스터에 배포된 항목을 사용자 지정할 수 있는 전체 액세스 권한 제공
 
 ### Hadoop Ecosystem
 
@@ -208,6 +208,6 @@ Forecast Backtesting 을 사용하면 실제 데이터가 수집되는 기간에
 
 * 최근 7일 옵션은 이제 Fleet Summary 및 Managed Database Details 페이지의 Time Period 메뉴에서 사용할 수 있습니다. 지난 7일 옵션을 선택하여 집합 요약 페이지에서 데이터베이스 집합의 성능 및 구성 메트릭을 비교하거나 관리되는 데이터베이스 세부 정보 페이지의 요약 섹션에서 지난 7일 동안의 데이터베이스 성능 속성을 모니터링할 수 있습니다.
 * Managed Database Details 정보 페이지의 Summary 섹션에 있는 활동 차트가 상자 도표를 사용하여 CPU 사용률을 표시하도록 향상되었습니다. 상자 그림에서 마우스를 가져가면 CPU 사용률의 최대 및 최소 백분율과 같은 추가 세부 정보를 볼 수 있습니다. 마찬가지로 요약 섹션의 I/O 차트도 상자 플롯에 I/O 메트릭을 표시하도록 향상되었습니다.
-* 관리되는 데이터베이스 세부 정보 페이지의 사용자 섹션이 개선되어 사용자 계정의 상태와 사용자 계정이 만료되기까지 남은 일수를 시각적으로 표시합니다. 또한 사용자 세부 정보 페이지에서 리소스 아래의 왼쪽 창에 나열된 옵션을 사용하여 사용자 계정의 역할, 시스템 및 개체 권한과 같은 정보를 볼 수 있습니다. 리소스 아래의 각 옵션 옆에 숫자가 표시되며 이는 사용자 계정에 있는 역할 또는 권한의 수를 나타냅니다.
+* Managed Database Details 정보 페이지의 사용자 섹션이 개선되어 사용자 계정의 상태와 사용자 계정이 만료되기까지 남은 일수를 시각적으로 표시합니다. 또한 사용자 세부 정보 페이지에서 리소스 아래의 왼쪽 창에 나열된 옵션을 사용하여 사용자 계정의 역할, 시스템 및 개체 권한과 같은 정보를 볼 수 있습니다. 리소스 아래의 각 옵션 옆에 숫자가 표시되며 이는 사용자 계정에 있는 역할 또는 권한의 수를 나타냅니다.
 
 ---
