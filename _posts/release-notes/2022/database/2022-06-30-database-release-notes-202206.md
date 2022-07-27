@@ -139,7 +139,9 @@ Enterprise Manager(EM) Warehouse는 하나 이상의 Enterprise Manager 저장�
 
 ![](/assets/img/database/2022/06/08_em_wh_dataflow.png)
 
-    * Enterprise Manager Warehouse(EM Warehouse) 기능을 사용하려면 OCI Operations Insights Service 라이선스 구독이 필요합니다.
+   ※ Enterprise Manager Warehouse(EM Warehouse) 기능을 사용하려면 OCI Operations Insights Service 라이선스 구독 필요
+
+
 ---
 
 ## Spark Dynamic Allocation is now Available with Data Flow
@@ -154,14 +156,14 @@ Resource 를 절약하고 관리 시간을 줄이기 위해 이제 Data Flow 에
 
 데이터 처리를 위한 리소스 계획은 복잡한 작업입니다. 리소스 사용량은 데이터 볼륨의 함수입니다. 매일 데이터의 양은 다양할 수 있으며, 이는 계산 리소스에도 변경이 필요함을 의미합니다.
 
-고정된 수의 Executor 대신 Executor 범위를 기반으로 Data Flow Cluster 를 정의할 수 있습니다. Spark는 워크로드에 따라 애플리케이션이 차지하는 리소스를 동적으로 조정하는 메커니즘을 제공합니다. 애플리케이션은 더 이상 사용되지 않는 리소스를 포기하고 나중에 수요가 있을 때 리소스를 다시 요청할 수 있습니다. 청구는 애플리케이션에서 리소스를 사용하는 시간만 계산합니다. 반환된 리소스는 빌링되지 않습니다.
+고정된 수의 Executor 대신 Executor 범위를 기반으로 Data Flow Cluster 를 정의할 수 있습니다. Spark는 워크로드에 따라 애플리케이션이 차지하는 리소스를 동적으로 조정하는 메커니즘을 제공합니다. 애플리케이션은 더 이상 사용되지 않는 리소스를 포기하고 나중에 수요가 있을 때 리소스를 다시 요청할 수 있습니다. 빌링은 애플리케이션에서 리소스를 사용하는 시간만 계산합니다. 반환된 리소스는 빌링되지 않습니다.
 
 ### 신규 기능
 리소스를 절약하고 관리 시간을 줄이는 데 도움이 되도록 이제 Data Flow 에서 Spark 동적 할당이 활성화되었습니다. 고정된 수의 실행기 대신 실행기 범위를 기반으로 데이터 흐름 클러스터를 정의할 수 있습니다. Spark는 워크로드에 따라 애플리케이션이 차지하는 리소스를 동적으로 조정하는 메커니즘을 제공합니다.
 
 * Dynamic Allocation 기능을 사용하기 위해서는 아래 방법을 따릅니다.
  - 애플리케이션 생성 시 Autoscaling 활성화를 클릭
- - 기본 구성은 Spark 구성 속성에 채워짐
+ - 기본 구성은 Spark Configuration property 들에 populated 됨
  - 최소 executor 수는 spark.dynamicAllocation.minExecutors 속성값에 해당
  - 최대 executor 수는 spark.dynamicAllocation.maxnExecutors 속성값에 해당
  - spark.dynamicAllocation.executorIdleTimeout 및 spark.dynamicAllocation.schedulerBacklogTimeout 속성에 대해 다른 값을 입력
