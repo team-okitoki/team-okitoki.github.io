@@ -1,11 +1,11 @@
 ---
 layout: default
-title: "OCI Cloud Native Release Notes - 2022"
-teaser: "2022년 OCI Cloud Native 부분 업데이트 소식입니다."
+title: "OCI Cloud Native & Security Release Notes - 2022"
+teaser: "2022년 OCI Cloud Native & Security 부분 업데이트 소식입니다."
 breadcrumb: true
 header:
    image_fullwidth: release-notes/release-notes-header_2.png
-permalink: "release-notes-2022-cloudnative/"
+permalink: "release-notes-2022-cloudnative-security/"
 ---
 <div id="blog-index" class="row">
 	<div class="small-12 columns t30">
@@ -14,7 +14,7 @@ permalink: "release-notes-2022-cloudnative/"
 
 		<dl class="accordion" data-accordion>
 			{% assign counter = 1 %}
-			{% for post in site.categories.release-notes-2022-cloudnative limit:1000 %}
+			{% for post in site.categories.release-notes-2022-cloudnative-security limit:1000 %}
 			<dd class="accordion-navigation">
 			<a href="#panel{{ counter }}"><span class="iconfont"></span> {% if post.subheadline %}{{ post.subheadline }} › {% endif %}<strong>{{ post.title }}</strong></a>
 				<div id="panel{{ counter }}" class="content">

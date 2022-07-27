@@ -7,7 +7,7 @@ subheadline: "Identity & Security"
 title: "OCI 계정의 비밀번호 변경하기"
 teaser: "OCI 로그인하기 위한 계정 유형별 비밀번호 변경 방법에 대해 알아봅니다."
 author: yhcho
-date: 2022-06-14 00:00:00
+date: 2022-06-20 00:00:00
 breadcrumb: true
 categories:
   - getting-started

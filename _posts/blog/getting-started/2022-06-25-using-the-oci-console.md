@@ -7,7 +7,7 @@ subheadline: "Cloud Console"
 title: "OCI 콘솔에 대해 알아보기"
 teaser: "Oracle Cloud Infrastructure (OCI) Console UI 구성 및 기능을 알아봅니다."
 author: yhcho
-date: 2022-06-12 00:00:00
+date: 2022-06-25 00:00:00
 breadcrumb: true
 categories:
   - getting-started

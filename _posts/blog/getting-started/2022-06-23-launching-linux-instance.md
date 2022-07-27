@@ -7,7 +7,7 @@ subheadline: "Compute"
 title: "OCI에서 리눅스 인스턴스 생성 튜토리얼"
 teaser: "Oracle Cloud Infrastructure (OCI)에서 리눅스 인스턴스를 생성하는 과정을 설명합니다."
 author: dankim
-date: 2022-06-06 00:00:00
+date: 2022-06-23 00:00:00
 breadcrumb: true
 categories:
   - getting-started

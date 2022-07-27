@@ -7,7 +7,7 @@ subheadline: "Compute"
 title: "OCICLI 도구 설정하기"
 teaser: "OCI CLI 도구나 SDK를 활용하여 Oracle Cloud Infrastructure (OCI)를 제어하기 위해서는 OCI API를 사용하기 위한 기본 설정을 하여야 합니다. 이번 포스팅에서는 OCI CLI도구를 활용하여 OCI 연동하는 방법에 대해서 설명합니다."
 author: dankim
-date: 2022-06-07 00:00:00
+date: 2022-06-18 00:00:00
 breadcrumb: true
 categories:
   - getting-started

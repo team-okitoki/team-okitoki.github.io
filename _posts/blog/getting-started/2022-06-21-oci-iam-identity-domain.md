@@ -7,7 +7,7 @@ subheadline: "Identity & Security"
 title: "OCI IAM Identity Domain 에 대해 알아보기"
 teaser: "Oracle Cloud Infrastructure (OCI) IAM Identity Domain 에 대해 알아봅니다."
 author: yhcho
-date: 2022-06-11 00:00:00
+date: 2022-06-21 00:00:00
 breadcrumb: true
 categories:
   - getting-started

@@ -7,7 +7,7 @@ subheadline: "Cloud Sign-In"
 title: "OCI 콘솔 사용을 위한 기본 조건과 로그인 해보기"
 teaser: "Oracle Cloud Infrastructure (OCI) Console을 사용하기 위한 기본조건을 확인하고 로그인 절차에 대해 알아봅니다."
 author: yhcho
-date: 2022-06-10 00:00:00
+date: 2022-06-26 00:00:00
 breadcrumb: true
 categories:
   - getting-started
