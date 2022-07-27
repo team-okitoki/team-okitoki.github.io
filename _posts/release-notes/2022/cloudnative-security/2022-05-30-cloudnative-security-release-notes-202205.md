@@ -4,16 +4,17 @@ layout: page-fullwidth
 # Content
 #
 subheadline: "OCI Release Notes 2022"
-title: "5월 OCI Cloud Native 업데이트 소식"
-teaser: "2022년 5월 OCI Cloud Native 업데이트 소식입니다."
+title: "5월 OCI Cloud Native & Security 업데이트 소식"
+teaser: "2022년 5월 OCI Cloud Native & Security 업데이트 소식입니다."
 author: dankim
 breadcrumb: true
 categories:
-  - release-notes-2022-cloudnative
+  - release-notes-2022-cloudnative-security
 tags:
   - oci-release-notes-2022
   - may-2022
   - cloudnative
+  - security
 #
 # Styling
 #
@@ -54,7 +55,7 @@ Application Dependency Management (애플리케이션 종속성 관리, 이하 A
 
 OCI DevOps의 빌드 파이프라인에서 Maven 프로젝트에 대한 취약성 감사 단계를 추가할 수 있습니다. 개발자는 최소 CVSS 점수를 설정할 수 있으며, 만약 패키지에서 해당 점수를 초과하는 CVE(공개적으로 알려진 보안 결함 목록)가 파이프라인에서 감지되면 빌드 실패와 함께 개발자에게 취약성에 대해 경고하고 패치하도록 합니다.
 
-![](/assets/img/cloudnative/2022/oci-security-release-notes-05-1.png)
+![](/assets/img/cloudnative-security/2022/oci-cloudnative-security-release-notes-05-1.png)
 
 아래는 같이 OCI DevOps 빌드 파이프라인에 Vulnerability Audit(취약점 감사) 단계를 추가할 수 있습니다.
 
@@ -77,12 +78,12 @@ OCI DevOps의 빌드 파이프라인에서 Maven 프로젝트에 대한 취약�
 
 다음과 같이 개발자는 OCI DevOps의 빌드 실행 세부 정보에서 취약점 감사 결과를 확인할 수 있습니다.
 
-![](/assets/img/cloudnative/2022/oci-security-release-notes-05-2.png)
+![](/assets/img/cloudnative-security/2022/oci-cloudnative-security-release-notes-05-2.png)
 
 ### 취약점 감사
 발견된 취약점으로 인해 DevOps 빌드 파이프라인이 실패하는 경우 개발자는 취약점 감사 결과를 보고 관련 CVE와 함께 전체 종속성 트리를 볼 수 있습니다. 개발자는 CVE 점수를 검사하여 문제를 이해한 다음 취약성을 포함하지 않는 버전에 대한 일부 종속성을 패치하는 등 필요한 변경을 수행할 수 있습니다.
 
-![](/assets/img/cloudnative/2022/oci-security-release-notes-05-3.png)
+![](/assets/img/cloudnative-security/2022/oci-cloudnative-security-release-notes-05-3.png)
 
 ### 참고
 * https://blogs.oracle.com/cloud-infrastructure/post/security-scanning-for-maven-now-available-in-oci-devops
@@ -153,7 +154,7 @@ OCI DevOps 서비스에 다음 3개의 기능이 신규 추가되었습니다.
 #### Bitbucket Cloud support
 **Bitbucket Cloud**는 Atlassian에서 서비스하는 소유한 Git 기반 소스 코드 저장소 호스팅 서비스 입니다. DevOps의 외부 저장소로 기존 **GitHub, GitLab**에 이어 **Bitbucket Cloud**도 외부 저장소로 연결할 수 있도록 지원합니다.
 
-![](/assets/img/cloudnative/2022/oci-security-release-notes-05-4.png)
+![](/assets/img/cloudnative-security/2022/oci-cloudnative-security-release-notes-05-4.png)
 
 
 #### Helm Chart support
@@ -165,10 +166,10 @@ Helm은 Chart라고 불리는 패키징 포멧을 사용하여 쿠버네티스 �
   * Example: nginx 1.2.1
 * Helm Chart를 배포 파이프라인에서 사용하기 전에 미리 OCI Container 레지스트리에 위치해 있어야 합니다.
 * Helm 차트가 포함된 저장소 위치를 가리키도록 Artifact 참조를 생성해야 합니다.
-  ![](/assets/img/cloudnative/2022/oci-security-release-notes-05-5.png)
+  ![](/assets/img/cloudnative-security/2022/oci-cloudnative-security-release-notes-05-5.png)
 
 DevOps 배포 파이프라인에서 **Kubernetes 클러스터에 Helm 차트 설치(Install Helm chart to Kubernetes cluster)** 스테이지를 선택하여 OKE 클러스터에 Helm Chart 배치를 자동화 할 수 있습니다. 
-![](/assets/img/cloudnative/2022/oci-security-release-notes-05-6.png)
+![](/assets/img/cloudnative-security/2022/oci-cloudnative-security-release-notes-05-6.png)
 
 #### DevOps provides vulnerability audit
 DevOps 빌드 파이프라인에서 Maven 프로젝트에서 사용하는 패키지의 취약점을 감지하는 기능이 포함되었습니다. 이 기능은 **Oracle Application Dependency Management (ADM)**의 취약점 지식 기반을 활용합니다. 자세한 내용은 **Application Dependency Management service is now available** 부분을 참고합니다.
@@ -185,6 +186,8 @@ DevOps 빌드 파이프라인에서 Maven 프로젝트에서 사용하는 패키
   * Kubernetes 버전 1.20.11을 위한 새로운 클러스터를 생성할 수 없습니다.
   * Kubernetes 버전 1.20.11을 실행하는 기존 클러스터에 새 노드 풀을 추가할 수 없습니다.
 
+---
+
 ## Usage plans to manage subscriber access to APIs
 * **Services:** API Gateway
 * **Release Date:** May 25, 2022
@@ -198,17 +201,37 @@ API Gateway를 생성하고 하나 이상의 Public API를 배포하여 운영�
   * 예시) GOLD 계층은 시간당 최대 1000개 요청을 수용, SILVER 계층은 최대 500개 요청 허용, BRONZE 계층은 최대 100개 허용, 모든 계층은 모두 초당 10개 요청으로 제한.
 
 API Management에서 사용 계획 (Usage Plans) 생성
-![](/assets/img/cloudnative/2022/oci-security-release-notes-05-7.png)
+![](/assets/img/cloudnative-security/2022/oci-cloudnative-security-release-notes-05-7.png)
 
 **사용 계획**을 생성할 때 API 게이트웨이를 지정할 수 있으며, API Management에서 생성한 **구독자**별로 사용 계획을 적용할 수 있습니다.
 
 **사용 계획**을 생성할 때 API 게이트웨이를 지정
-![](/assets/img/cloudnative/2022/oci-security-release-notes-05-8.png)
+![](/assets/img/cloudnative-security/2022/oci-cloudnative-security-release-notes-05-8.png)
 
 API Management에서 생성한 **구독자**별로 계획 지정
-![](/assets/img/cloudnative/2022/oci-security-release-notes-05-9.png)
+![](/assets/img/cloudnative-security/2022/oci-cloudnative-security-release-notes-05-9.png)
+
+---
 
 ## Support for CSI metrics
 * **Services:** Container Engine for Kubernetes
 * **Release Date:** May 26, 2022
 * **Documentation:** [https://docs.oracle.com/en-us/iaas/Content/ContEng/Tasks/contengcreatingpersistentvolumeclaim.htm#Provisioning_Persistent_Volume_Claims_on_the_Block_Volume_Service](https://docs.oracle.com/en-us/iaas/Content/ContEng/Tasks/contengcreatingpersistentvolumeclaim.htm#Provisioning_Persistent_Volume_Claims_on_the_Block_Volume_Service){:target="_blank" rel="noopener"}
+
+### 기능 소개
+OKE에서는 CSI(Container Storage Interface) 볼륨 플러그인을 사용하여 OKE에서 생성한 클러스터에 Block Volume을 연결하여 Persistent Volume Claim (PVC)를 프로비저닝 할 수 있는 기능을 제공하고 있습니다. 이제 CSI 볼륨 플러그인을 사용하여 PVC를 생성하면 Prometheus (메트릭 모니터링 도구)를 사용하여 다음과 같은 CSI 용량 통계를 볼 수 있습니다.
+
+* kubelet_volume_stats_capacity_bytes
+  * PVC 별 전체 용량 (바이트)
+* kubelet_volume_stats_available_bytes
+  * PVC 별 사용 가능한 용량 (바이트)
+* kubelet_volume_stats_used_bytes
+  * PVC 별 사용된 용량 (바이트)
+* kubelet_volume_stats_inodes
+  * 볼륨의 최대 inode 수
+* kubelet_volume_stats_inodes_free
+  * 볼륨에서 사용 가능한 inode 수
+* kubelet_volume_stats_inodes_used
+  * 볼륨에서 사용되는 inode 수
+
+> Unix/Linux 파일시스템 상에서, 각 화일에 대한 정보(소유,허가,위치,크기,시기,종류 등)를 갖고 있는, 약 120 바이트의 고정 크기의 구조체(Structure)로써, 외부적으로는 번호로 표현됨. <cite>Source: http://www.ktword.co.kr/test/view/view.php?nav=2&no=1701&sh=inode (정보통신기술용어해설)</cite>

@@ -8,6 +8,7 @@ title: "OCI에서 VCN Wizard를 활용하여 빠르게 VCN 생성하기"
 teaser: "Oracle Cloud Infrastructure (이하 OCI)에서는 가상 클라우드 네트워크 (VCN)을 쉽게 생성할 수 있도록 도와주는 Quick Wizard를 제공합니다. 이번 포스팅에서는 Quick Wizard를 활용하여 빠르게 VCN을 생성하는 방법에 대해서 알아봅니다."
 author: dankim
 breadcrumb: true
+date: 2022-06-24 00:00:00
 categories:
   - getting-started
 tags:

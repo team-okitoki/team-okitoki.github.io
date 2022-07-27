@@ -7,7 +7,7 @@ subheadline: "Identity & Security"
 title: "OCI에서 사용자, 그룹, 정책 관리하기"
 teaser: "Oracle Cloud Infrastructure (OCI)에서의 사용자, 그룹, 정책을 생성하고 관리하는 방법에 대해서 알아봅니다."
 author: dankim
-date: 2022-06-05 00:00:00
+date: 2022-06-19 00:00:00
 breadcrumb: true
 categories:
   - getting-started

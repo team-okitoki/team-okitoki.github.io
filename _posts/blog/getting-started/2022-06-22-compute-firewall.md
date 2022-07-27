@@ -7,6 +7,7 @@ subheadline: "Compute"
 title: "OCI Oracle Linux 7이상에서 방화벽 설정하기"
 teaser: "OCI에서 제공하는 여러 이미지중에서 Oracle Linux 7이상 버전에 대한 방화벽 구성하는 방법에 대해서 알아봅니다."
 author: dankim
+date: 2022-06-22 00:00:00
 breadcrumb: true
 categories:
   - getting-started

@@ -7,7 +7,7 @@ subheadline: "Billing & Cost"
 title: "OCI 비용과 사용량 분석하기"
 teaser: "Oracle Cloud Infrastructure (OCI)에서 사용한 비용과 사용량을 모니터링 및 분석하는 방법에 대해서 알아봅니다."
 author: dankim
-date: 2022-06-04 00:00:00
+date: 2022-06-17 00:00:00
 breadcrumb: true
 categories:
   - getting-started
