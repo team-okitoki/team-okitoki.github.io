@@ -37,7 +37,7 @@ header: no
 ## Operations Insights Demo Mode
 * **Services:** Operations Insights
 * **Release Date:** May 9, 2022
-* **Documentation:** https://docs.oracle.com/en-us/iaas/operations-insights/doc/get-started-operations-insights.html#GUID-047A36C7-D94E-4EF2-86BF-28A76E7AA926
+* **Documentation:** [https://docs.oracle.com/en-us/iaas/operations-insights/doc/get-started-operations-insights.html#GUID-047A36C7-D94E-4EF2-86BF-28A76E7AA926](https://docs.oracle.com/en-us/iaas/operations-insights/doc/get-started-operations-insights.html#GUID-047A36C7-D94E-4EF2-86BF-28A76E7AA926){:target="_blank" rel="noopener"}
 
 ### 서비스 소개
 Operations Insights는 데이터베이스 및 호스트의 리소스 활용도와 용량에 대한 360도 통찰력을 제공합니다. CPU 및 스토리지 리소스를 쉽게 분석하고, 용량 문제를 예측하고, 데이터베이스 플릿 전체에서 SQL 성능 문제를 사전에 식별할 수 있습니다.
@@ -61,7 +61,7 @@ Operations Insights는 데이터베이스 및 호스트의 리소스 활용도�
 ## New release for Big Data
 * **Services:** Big Data, Oracle Cloud Infrastructure
 * **Release Date:** May 13, 2022
-* **Documentation:** https://docs.oracle.com/en-us/iaas/Content/bigdata/home.htm
+* **Documentation:** [https://docs.oracle.com/en-us/iaas/Content/bigdata/home.htm](https://docs.oracle.com/en-us/iaas/Content/bigdata/home.htm){:target="_blank" rel="noopener"}
 
 ### 서비스 소개
 Big Data Service는 가용성이 높은 전용 Hadoop 및 Spark Cluster를 온디맨드로 프로비저닝해 주는 서비스로써 안전하게 OCI 에서 관리되는 Managed Service 입니다. 작은 규모의 테스트 및 개발 클러스터에서부터 대규모 Production Cluster를 지원하는 다양한 Oracle Cloud Infrastructure 컴퓨팅 Shape들을 사용하여 빅 데이터 및 분석 워크로드에 맞게 클러스터를 확장하는 서비스입니다. Big Data Service 의 신규 버전이 반영되었습니다.
@@ -121,7 +121,8 @@ Worker Node 는 용량이 추가 증설이 필요할 경우, 노드를 추가하
 ## New release for Data Integration
 * **Services:** Data Integration, Oracle Cloud Infrastructure
 * **Release Date:** May 16, 2022
-* **Documentation:** https://docs.oracle.com/en-us/iaas/data-integration/home.htm
+* **Documentation:** [https://docs.oracle.com/en-us/iaas/data-integration/home.htm](https://docs.oracle.com/en-us/iaas/data-integration/home.htm){:target="_blank" rel="noopener"}
+
 
 ### 서비스 소개
 Data Integration 은 데이터 엔지니어와 ETL 개발자가 다양한 데이터 자산에서 데이터 수집과 같은 공통 ETL(추출, 변환 및 로드) 작업을 수행하는 데 도움이 되는 Fully Managed Multi tenant 서비스입니다. Integration 할 Source 의 데이터를 정리, 변환 및 재구성하고 Target 데이터 Asset에 효율적으로 로드해 주는 서비스입니다. 이번에 Data Integration 의 신규 버전이 반영되었습니다.
@@ -160,7 +161,7 @@ Data Integration 에 등록된 자산들을 기반으로 연계할 Data 의 흐�
 ## Forecast Backtesting
 * **Services:** Operations Insights
 * **Release Date:** May 17, 2022
-* **Documentation:** https://docs.oracle.com/en-us/iaas/operations-insights/doc/analyze-database-resources.html#GUID-27B819F2-F926-4ABD-A89B-BEC0DF5C1228__GUID-04481C49-4027-4F37-B476-0A37D7A39D0A
+* **Documentation:** [https://docs.oracle.com/en-us/iaas/operations-insights/doc/analyze-database-resources.html#GUID-27B819F2-F926-4ABD-A89B-BEC0DF5C1228__GUID-04481C49-4027-4F37-B476-0A37D7A39D0A](https://docs.oracle.com/en-us/iaas/operations-insights/doc/analyze-database-resources.html#GUID-27B819F2-F926-4ABD-A89B-BEC0DF5C1228__GUID-04481C49-4027-4F37-B476-0A37D7A39D0A){:target="_blank" rel="noopener"}
 
 ### 서비스 소개
 Forecast Backtesting 을 사용하면 실제 데이터가 수집되는 기간에 대한 과거 Forecast 를 비교하고 과거 추세와 예측 추세 간의 편차를 수량화할 수 있습니다. 이를 통해 다음을 수행하여 예측된 추세의 정확성을 쉽게 테스트하고 예측에 대한 확신을 가지실 수 있습니다.
