@@ -181,3 +181,33 @@ Forecast Backtesting 을 사용하면 실제 데이터가 수집되는 기간에
 기본적으로 Operations Insights는 Training 기간의 1/2에 해당하는 Forecasts 기간을 생성합니다. 이를 특정 일수(45, 90, 180 및 365)로 설정할 수 있습니다.
 
 ---
+
+## A new release for Database Management is now available!
+* **Services:** Database Management
+* **Release Date:** May 31, 2022
+* **Documentation:** [https://docs.oracle.com/en-us/iaas/operations-insights/doc/analyze-database-resources.html#GUID-27B819F2-F926-4ABD-A89B-BEC0DF5C1228__GUID-04481C49-4027-4F37-B476-0A37D7A39D0A](https://docs.oracle.com/en-us/iaas/operations-insights/doc/analyze-database-resources.html#GUID-27B819F2-F926-4ABD-A89B-BEC0DF5C1228__GUID-04481C49-4027-4F37-B476-0A37D7A39D0A){:target="_blank" rel="noopener"}
+
+### 서비스 소개
+
+데이터베이스 관리자는 Oracle Cloud Infrastructure Database Management 서비스를 사용하여 Oracle 데이터베이스를 모니터링하고 관리할 수 있습니다.
+
+데이터베이스 관리를 사용하여 컨테이너 데이터베이스(CDB), PDB 및 비컨테이너 데이터베이스(non-CDB)를 포함하는 단일 인스턴스 및 RAC 데이터베이스를 모니터링할 수 있습니다. 
+데이터베이스 관리는 Oracle 데이터베이스 버전 11.2.0.4 이상을 지원합니다. 
+
+![](/assets/img/database/2022/05/12_database_management_overview.png)
+
+다음은 Database Management 를 사용하여 수행할 수 있는 작업들입니다.
+
+* Oracle Database Fleet 의 주요 성능 및 구성 지표를 모니터링합니다. 또한 선택한 기간 동안 데이터베이스 Matric 을 비교하고 분석할 수 있습니다.
+* 성능 문제를 신속하게 진단할 수 있는 데이터베이스 성능의 단일 창 보기를 위해 Performance Hub를 사용할 수 있습니다.
+* AWR Explorer를 사용하여 AWR 스냅샷의 과거 성능 데이터를 해석하기 쉬운 차트로 시각화합니다.
+* 여러 구획에 상주하는 중요한 Oracle 데이터베이스를 데이터베이스 그룹으로 그룹화하고 모니터링합니다.
+* 단일 Oracle 데이터베이스 또는 데이터베이스 그룹에서 관리 작업을 수행하기 위해 SQL 작업을 생성하고 예약합니다.
+
+### 신규 기능
+
+* 최근 7일 옵션은 이제 Fleet Summary 및 Managed Database Details 페이지의 Time Period 메뉴에서 사용할 수 있습니다. 지난 7일 옵션을 선택하여 집합 요약 페이지에서 데이터베이스 집합의 성능 및 구성 메트릭을 비교하거나 관리되는 데이터베이스 세부 정보 페이지의 요약 섹션에서 지난 7일 동안의 데이터베이스 성능 속성을 모니터링할 수 있습니다.
+* Managed Database Details 정보 페이지의 Summary 섹션에 있는 활동 차트가 상자 도표를 사용하여 CPU 사용률을 표시하도록 향상되었습니다. 상자 그림에서 마우스를 가져가면 CPU 사용률의 최대 및 최소 백분율과 같은 추가 세부 정보를 볼 수 있습니다. 마찬가지로 요약 섹션의 I/O 차트도 상자 플롯에 I/O 메트릭을 표시하도록 향상되었습니다.
+* 관리되는 데이터베이스 세부 정보 페이지의 사용자 섹션이 개선되어 사용자 계정의 상태와 사용자 계정이 만료되기까지 남은 일수를 시각적으로 표시합니다. 또한 사용자 세부 정보 페이지에서 리소스 아래의 왼쪽 창에 나열된 옵션을 사용하여 사용자 계정의 역할, 시스템 및 개체 권한과 같은 정보를 볼 수 있습니다. 리소스 아래의 각 옵션 옆에 숫자가 표시되며 이는 사용자 계정에 있는 역할 또는 권한의 수를 나타냅니다.
+
+---
