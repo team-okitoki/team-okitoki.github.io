@@ -66,7 +66,6 @@ Operations Insights는 데이터베이스 및 호스트의 리소스 활용도�
 ### 서비스 소개
 Big Data Service는 가용성이 높은 전용 Hadoop 및 Spark Cluster를 온디맨드로 프로비저닝해 주는 서비스로써 안전하게 OCI 에서 관리되는 Managed Service 입니다. 작은 규모의 테스트 및 개발 클러스터에서부터 대규모 Production Cluster를 지원하는 다양한 Oracle Cloud Infrastructure 컴퓨팅 Shape들을 사용하여 빅 데이터 및 분석 워크로드에 맞게 클러스터를 확장하는 서비스입니다. Big Data Service 의 신규 버전이 반영되었습니다.
 
-
 ![](/assets/img/database/2022/05/05_oci_database_releasenote_bigdata_main.png)
 
 ***Big Data Service 가 포함하고 있는 사항***
