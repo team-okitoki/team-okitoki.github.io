@@ -59,7 +59,7 @@ OCI Media Service 는 미디어(비디오) 소스 콘텐츠를 처리하기 위�
 
 ![](/assets/img/database/2022/07/01_architecturediagram_medserv_1.png)
 
-## Key Capabilities
+### Key Capabilities
 
 * OCI Media Flow 를 사용하여 다양한 장치 유형 및 해상도에 대한 온디맨드 비디오 스트리밍에 적합한 다양한 출력 형식으로 비디오를 트랜스코딩합니다. Media Flow 는 소스 콘텐츠에서 스트리밍 형식을 만드는 프로세스를 단순화하고 복잡한 비디오 처리 인프라를 관리할 수 있도록 합니다. 트랜스코딩된 비디오에 대한 썸네일을 생성할 수도 있습니다.
 
@@ -67,7 +67,7 @@ OCI Media Service 는 미디어(비디오) 소스 콘텐츠를 처리하기 위�
 
 * OCI Media Flow 에는 ABR 스트림에 대한 대상 형식 변환 및 비디오 분할을 위한 패키징 기능이 포함되어 있습니다. 트랜스코딩된 콘텐츠를 Media Streams 로 직접 수집하거나 별도로 스트리밍할 수 있습니다. 
 
-## Media Flow Concepts
+### Media Flow Concepts
 * Media Flow : 미디어 콘텐츠를 처리하기 위한 사용자 정의 워크플로입니다. 미디어 워크플로에는 수행할 처리 작업을 정의하는 여러 미디어 워크플로 작업이 포함됩니다.
 * System Workflow : 사용할 수 있는 미리 정의된 미디어 워크플로.
 미디어 워크플로 작업: 유형에 따라 워크플로의 특정 지점에서 수행할 처리를 정의합니다.
@@ -93,7 +93,7 @@ OCI Media Streams는 HTTP 라이브 스트리밍(HLS)과 같은 형식으로 패
 
 ![](/assets/img/database/2022/07/01_architecturediagram_medserv_1.png)
 
-## Key Capabilities
+### Key Capabilities
 * Media Services에는 ABR (Adaptive Bit Rate) 스트림에 대한 대상 형식 변환, 암호화 및 비디오 분할을 위한 패키징 기능이 포함되어 있습니다. 또한 선도적인 CDN(Content Delivery Network) 파트너 생성 통합 또는 직접 서비스 에지 서비스를 사용하여 패키지된 ABR 콘텐츠의 안전하고 확장 가능한 배포를 제공합니다. Media Streams는 소스 콘텐츠에서 스트리밍 형식의 배포 및 패키징 프로세스를 단순화하고 복잡한 비디오 패키징 인프라의 원활한 관리를 가능하게 합니다.
 
 
@@ -102,7 +102,7 @@ OCI Media Streams는 HTTP 라이브 스트리밍(HLS)과 같은 형식으로 패
 
 
 
-## Media Streaming Concept
+### Media Streaming Concept
 
 * Stream Distribution Channel : 발신 및 패키징 구성의 사용자 정의 조합입니다.
   * OCI Edge Stream CDN 구성 : 특정 CDN(콘텐츠 전송 네트워크) 통합 없이 OCI 미디어 스트림 배포 채널에서 직접 패키지 비디오 콘텐츠를 스트리밍할 수 있는 non-configuration 콘텐츠 전송 네트워크입니다.
