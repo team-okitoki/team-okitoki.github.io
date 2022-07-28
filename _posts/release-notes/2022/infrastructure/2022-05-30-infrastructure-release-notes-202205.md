@@ -35,22 +35,38 @@ header: no
 {:toc}
 </div>
 
-## Release Title
-* **Services:** 관련 서비스명
-* **Release Date:** 날짜
-* **Documentation:** 관련 문서 링크
+## MySQL Database Service Support for MySQL Version 8.0.29
+* **Services:** MySQL Database
+* **Release Date:** May 4, 2022
+* **Documentation:** https://docs.oracle.com/en-us/iaas/releasenotes/changes/5ee4b464-b8cd-41fd-89e1-c9d1526e7024/
 
 ### 서비스 소개
-서비스 소개글
+OCI 내 MySQL 서비스로 MYSQL팀과 협력하며, 실제 MySQL 버전과 동일하게 지원되고 있습니다. 최신의 패치 및 서비스를 받을 수 있습니다. 
+
+MySQL 데이터베이스 서비스는 이제 MySQL 8.0.29를 지원합니다. 새로운 MySQL DB 시스템은 최신 MySQL Database 버전을 기반으로 합니다. 버전 8.0.28에서 8.0.29로 등 기존 DB 시스템에 대한 MySQL Server 업그레이드는 수동으로 수행해야 합니다.
 
 ---
 
-## Application Dependency Management service is now available
-* **Services:** Application Dependency Management
-* **Release Date:** May 3, 2022
-* **Documentation:** [https://docs.oracle.com/en-us/iaas/Content/application-dependency-management/home.htm](https://docs.oracle.com/en-us/iaas/Content/application-dependency-management/home.htm){:target="_blank" rel="noopener"}
+## MySQL Database Service: New E4 and Intel shapes are now available
+* **Services:** MySQL Database
+* **Release Date:** May 17, 2022
+* **Documentation:** https://docs.oracle.com/en-us/iaas/releasenotes/changes/c8c1ad10-030f-4e34-af07-38060069b8b2/
 
 ### 서비스 소개
-2021년 11월에 Apache Log4j 2에서 발생한 취약점(CVE-2021-44228, NVD)으로 인해 관련 소프트웨어를 패치하기 위해 분주했던 것을 기억합니다. 이러한 애플리케이션의 보안 취약점을 스캔하고 자동으로 패치할 수 있는 서비스가 OCI에 추가되었습니다.  
+OCI 내 MySQL 서비스로 MYSQL팀과 협력하며, 실제 MySQL 버전과 동일하게 지원되고 있습니다. 최신의 패치 및 서비스를 받을 수 있습니다.
+
+E4 Standard, Intel Standard 및 Intel Optimized 셰이프를 사용하여 MySQL DB 시스템을 프로비저닝할 수 있습니다. 
+새로운 형태 제품군은 이전 E3보다 성능이 우수합니다.
+
+---
+
+
+## You can now automatically connect to iSCSI-attached volumes
+* **Services:** Block Volume
+* **Release Date:** May 31, 2022
+* **Documentation:** https://docs.oracle.com/en-us/iaas/releasenotes/changes/4f1c804a-2045-47c8-a6a2-533839a59e02/
+
+### 서비스 소개
+블록볼륨을 연결은 기본적으로 반가상화 모드를 사용하였으나, iSCSI 연결 볼륨에 자동으로 연결하는 옵션을 선택 할 수 있습니다. 
 
 ---
