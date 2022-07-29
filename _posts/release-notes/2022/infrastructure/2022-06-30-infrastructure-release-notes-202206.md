@@ -12,7 +12,7 @@ categories:
   - release-notes-2022-infrastructure
 tags:
   - oci-release-notes-2022
-  - may-2022
+  - June-2022
   - Infrastructure
 
 #
