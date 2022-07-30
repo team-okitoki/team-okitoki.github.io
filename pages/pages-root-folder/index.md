@@ -20,7 +20,7 @@ widget2:
 widget3:
   title: "Oracle Github"
   url: 'https://github.com/oracle'
-  image: home/widget-github-303x182.jpg
+  image: home/widget-github-303x182.jpeg
   text: 'Oracle에서 운영하는 Github Repository입니다. Oracle에서 관리하는 다양한 오픈소스 프로젝트를 만나볼 수 있으며, OCI 환경에서 개발자가 빠르게 사용할 수 있는 다양한 예제 코드를 찾아볼 수 있습니다.'
 #
 # Use the call for action to show a button on the frontpage

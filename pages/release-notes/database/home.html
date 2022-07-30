@@ -12,7 +12,7 @@ permalink: "release-notes-2022-database/"
 		<h1>{{ page.title }}</h1>
 		{% if page.teaser %}<p class="teaser">{{ page.teaser }}</p>{% endif %}
 
-		<h2>Oracle Database</h2>
+		<h2>Oracle Database 관련</h2>
 		<dl class="accordion" data-accordion>
 			{% assign counter = 1 %}
 			{% for post in site.categories.release-notes-2022-database limit:1000 %}
@@ -26,7 +26,7 @@ permalink: "release-notes-2022-database/"
 			{% assign counter=counter | plus:1 %}
 			{% endfor %}
 		</dl>
-		<h2>MySQL Database Service(MDS)</h2>
+		<h2>MySQL Database Service (MDS)</h2>
 		<dl class="accordion" data-accordion>
 			{% assign counter = 1 %}
 			{% for post in site.categories.release-notes-2022-mds limit:1000 %}
