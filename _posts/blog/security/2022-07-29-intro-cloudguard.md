@@ -31,7 +31,7 @@ header: no
 
 ### Cloud Guard Concepts
 Cloud Guard를 사용하기 위해서는 우선 아래 구성과 4개의 용어를 기억해 둘 필요가 있습니다.
-![](/assets/img/security/2022/oci-cloudguard-1.png)
+![](/assets/img/cloudnative-security/2022/oci-cloudguard-1.png)
 
 #### TARGET
 Cloud Guard에서 모니터링 할 범위를 TARGET이라고 부릅니다. Oracle Cloud에서는 Compartment라고 부르는 여러 OCI의 리소스에 대한 그룹핑 및 접근관리등을 할 수있는 논리적인 개념의 구역이 존재하는데, 보통 Cloud Guard에서의 TARGET으로 특정 Compartment를 지정합니다.
@@ -56,26 +56,26 @@ Detector에서 감지된 결과, 즉 보안 문제들을 Problem이라고 합니
 ### Cloud Guard 활성화
 기본은 비활성화 되어 있습니다. Cloud Guard를 활성화 하기 위해서는 OCI Console > Identity & Security > Cloud Guard 로 이동한 후 Enable 버튼을 클릭하여 활성화 하여야 합니다. (기본으로 제공하는 무료 크래딧 300$로 체험할 수 있습니다. 단 Always Free에서는 사용할 수 없으며, 300$ 소진 후에는 유료 계정으로 업그레이드 해야 합니다.)
 
-![](/assets/img/security/2022/oci-cloudguard-2.png)
+![](/assets/img/cloudnative-security/2022/oci-cloudguard-2.png)
 
 Cloud Guard에서 여러 OCI 리소스에 접근을 허락해줘야 하기 때문에 기본적으로 필요한 Policy를 추가해 줘야 하는데, 활성화 과정에서 친절하게 한번에 추가할 수 있는 기능을 제공합니다.
-![](/assets/img/security/2022/oci-cloudguard-3.png)
+![](/assets/img/cloudnative-security/2022/oci-cloudguard-3.png)
 
 Cloud Guard에서 모니터링 할 TARGET을 지정합니다. Detector recipe의 경우에는 이 단계에서 선택해줘도 되지만, 활성화 한 이후에 따로 지정해줘도 상관 없습니다.
-![](/assets/img/security/2022/oci-cloudguard-4.png)
+![](/assets/img/cloudnative-security/2022/oci-cloudguard-4.png)
 
 활성화 되면 다음과 같은 Cloud Guard 대시보드를 볼 수 있습니다.
-![](/assets/img/security/2022/oci-cloudguard-5.png)
+![](/assets/img/cloudnative-security/2022/oci-cloudguard-5.png)
 
 ### User-managed detector, resopnder recipe
 기본은 아래와 같이 Oracle-managed recipe를 사용하지만, 수정이 불가능하기 때문에, Clone 버튼을 활용하여 해당 Recipe를 클론한 후에 사용합니다. 클론한 Recipe의 경우 사용자가 해당 규칙을 수정할 수 있게 됩니다.
-![](/assets/img/security/2022/oci-cloudguard-6.png)
+![](/assets/img/cloudnative-security/2022/oci-cloudguard-6.png)
 
 아래 그림은 Configuration detect recipe 목록으로, 현재 37개의 Rule을 제공하고 있습니다. 클론한 경우 Status(Disble, Enable), Risk Level (Minor, Low, Medium, High, Critical), Condition (발생 조건)등을 수정할 수 있습니다.
-![](/assets/img/security/2022/oci-cloudguard-7.png)
+![](/assets/img/cloudnative-security/2022/oci-cloudguard-7.png)
 
 Responder recipe rule의 경우 아래와 같이 제공되는데, 클론을 하게 되면 사용자가 내용을 수정할 수 있습니다.
-![](/assets/img/security/2022/oci-cloudguard-8.png)
+![](/assets/img/cloudnative-security/2022/oci-cloudguard-8.png)
 
 Responder Rule의 경우 Type이 NOTIFICATION과 REMEDIATION 2 가지 유형이 보이는데, NOTIFICATION의 경우 발생한 Problem에 대한 알림이 OCI Event와 Notification 서비스를 통해서 이메일이나 OCI Function등과 연동할 수 있는 유형이며, REMEDIATION은 Problem을 자동 혹은 관리자에 의해 문제를 보정할 수 있도록 해주는 유형입니다.  
 Responder Rules에 있는 내용에 따라서 관련 유형의 Respoder가 동작하게 됩니다.
@@ -86,23 +86,23 @@ NOTIFICATION 유형은 현재 Cloud Event Rule만 대상이며, 사용을 위해
 > https://docs.oracle.com/en-us/iaas/cloud-guard/using/export-notifs-config.htm
 
 각 Responder Rule에는 Rule Trigger를 설정할 수 있는데, "Ask me before executing rule"의 경우 관리자가 Problem에서 내용을 확인 한 후 액션을 취할 수 있으며, "Execute automatically" 관리자 개입 없이 시스템이 자동으로 보정처리 하게 됩니다. 예를 들면 Private Bucket만 허용하는데, Public Bucket으로 생성하게 되면 자동으로 Private Bucket으로 변경이 됩니다.
-![](/assets/img/security/2022/oci-cloudguard-9.png)
+![](/assets/img/cloudnative-security/2022/oci-cloudguard-9.png)
 
 ### 예시 - Cloud Guard 대상 (TARGET)에서 Public Bucket 생성
 간단히 Cloud Guard가 적요된 대상에서 Public Bucket을 하나 생성해 보도록 하겠습니다. 아래와 같이 Object Storage에서 Bucket 생성 후 Visibility를 Public으로 변경합니다.
-![](/assets/img/security/2022/oci-cloudguard-10.png)
+![](/assets/img/cloudnative-security/2022/oci-cloudguard-10.png)
 
 Cloud Guard 대시보드에서 Critical을 포함하여 Problem이 4개 생성된 것을 확인할 수 있습니다. Responder Status에도 1개의 Pending이 걸려 있는데, 앞서 관련된 Responder Rule의 Rule Trigger를 "Ask me before executing rule"로 설정해 놨기 때문에 관리자 액션이 있어야 하므로, Pending이 된 것입니다.
-![](/assets/img/security/2022/oci-cloudguard-11.png)
+![](/assets/img/cloudnative-security/2022/oci-cloudguard-11.png)
 
 Responder Activity 메뉴에서 Private 으로 변경에 대한 확인 요청이 생성 된 것을 볼 수 있습니다.
-![](/assets/img/security/2022/oci-cloudguard-12.png)
+![](/assets/img/cloudnative-security/2022/oci-cloudguard-12.png)
 
 Skip Execute 를 선택 하면 해당 Remediation 은 취소 되는데,Execute 를 클릭 해봅니다.
-![](/assets/img/security/2022/oci-cloudguard-13.png)
+![](/assets/img/cloudnative-security/2022/oci-cloudguard-13.png)
 
 Bucket의 Visibility가 다시 Private으로 변경된 것을 확인할 수 있습니다.
-![](/assets/img/security/2022/oci-cloudguard-14.png)
+![](/assets/img/cloudnative-security/2022/oci-cloudguard-14.png)
 
 ### 참고
 * https://docs.oracle.com/en-us/iaas/cloud-guard/using/index.htm

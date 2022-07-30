@@ -31,14 +31,14 @@ header: no
 OCI 클라우드 관리자가 아닌 일반 사용자에게 빌링 메뉴 접근 허용을 위한 정책을 생성하기 위해 정책 메뉴로 이동합니다.
 
 1. 햄버거 메뉴 클릭 후 "**ID & 보안**" → "**ID**" → "**정책**" 메뉴를 클릭 합니다.
-   ![](/assets/img/security/2022/oci-policy-menu.png)
+   ![](/assets/img/cloudnative-security/2022/oci-policy-menu.png)
 2. 이동한 화면에서 "정책생성" 버튼을 클릭하여 정책 생성 화면으로 이동합니다.
-   ![](/assets/img/security/2022/oci-policy-create.png)
+   ![](/assets/img/cloudnative-security/2022/oci-policy-create.png)
 3. 다음과 같이 입력 후 "**수동 편집기 표시**" 옵션을 활성화 합니다.
    - 이름 : **billing-policy**
    - 설명 : **빌링 메뉴 접근을 위한 정책 입니다.**
    - 구획 : **전체 테넌시에 적용하기 위해서 root compartment에 정책을 생성합니다.**
-   ![](/assets/img/security/2022/oci-policy-billing-create.png)
+   ![](/assets/img/cloudnative-security/2022/oci-policy-billing-create.png)
 4. 수동 편집기에 아래와 같이 입력합니다.
    - 특정 그룹에 대한 정책 생성 
     ```
