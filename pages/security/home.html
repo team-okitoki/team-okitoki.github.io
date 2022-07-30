@@ -1,11 +1,11 @@
 ---
 layout: default
-title: "Cloud Native"
-teaser: "OCI Cloud Native 관련 블로그 모음입니다."
+title: "Security"
+teaser: "OCI Security 관련 블로그 모음입니다."
 breadcrumb: true
 header:
-   image_fullwidth: cloudnative/cloudnative-header_1.png
-permalink: "cloudnative/"
+   image_fullwidth: security/security-header_1.png
+permalink: "security/"
 ---
 <div id="blog-index" class="row">
 	<div class="small-12 columns t30">
@@ -14,7 +14,7 @@ permalink: "cloudnative/"
 
 		<dl class="accordion" data-accordion>
 			{% assign counter = 1 %}
-			{% for post in site.categories.cloudnative limit:1000 %}
+			{% for post in site.categories.security limit:1000 %}
 			<dd class="accordion-navigation">
 			<a href="#panel{{ counter }}"><span class="iconfont"></span> {% if post.subheadline %}{{ post.subheadline }} › {% endif %}<strong>{{ post.title }}</strong></a>
 				<div id="panel{{ counter }}" class="content">
