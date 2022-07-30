@@ -4,8 +4,8 @@ layout: page-fullwidth
 # Content
 #
 subheadline: "Release Notes 2022"
-title: "6월 OCI Database 업데이트 소식"
-teaser: "2022년 6월 OCI Database 업데이트 소식입니다."
+title: "6월 OCI Oracle Database 관련 업데이트 소식"
+teaser: "2022년 6월 OCI Oracle Database 관련 업데이트 소식입니다."
 author: lim
 breadcrumb: true
 categories:
