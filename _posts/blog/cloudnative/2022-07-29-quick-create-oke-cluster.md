@@ -4,8 +4,8 @@ layout: page-fullwidth
 # Content
 #
 subheadline: "CloudNative"
-title: "OCI Container Engine for Kubernetes (OKE) Cluster 빠른 생성 (Quick Create)"
-teaser: "OCI에서 서비스하는 관리형 쿠버네티스 서비스인 OCI Container Engine for Kubernetes (OKE)의 Cluster를 빠르게 생성(Quick Create)하는 과정에 대해서 설명합니다."
+title: "OCI Container Engine for Kubernetes (OKE) Cluster를 Quick Create(빠르게 생성) 기능을 활용하여 빠르게 구성하기"
+teaser: "OCI에서 서비스하는 관리형 쿠버네티스 서비스인 OCI Container Engine for Kubernetes (OKE)의 Cluster를 Quick Create(빠르게 생성) 기능을 사용하여 빠르게 구성하는 방법을 설명합니다."
 author: dankim
 breadcrumb: true
 categories:
