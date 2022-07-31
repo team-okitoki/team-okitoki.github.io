@@ -5,7 +5,7 @@ layout: page-fullwidth
 #
 subheadline: "CloudNative"
 title: "OCI Container Engine for Kubernetes (OKE) Cluster 접속 방법"
-teaser: "OCI에서 서비스하는 관리형 쿠버네티스 서비스인 OCI Container Engine for Kubernetes (OKE)에 접속하는 방법을 소개합니다."
+teaser: "OCI에서 서비스하는 관리형 쿠버네티스 서비스인 OCI Container Engine for Kubernetes (OKE)에 접속하는 방법에 대해서 포스팅합니다."
 author: dankim
 breadcrumb: true
 categories:
@@ -29,7 +29,7 @@ header: no
 ### 실습을 위한 클러스터 생성
 먼저 OKE Cluster가 준비되어야 합니다. OKE Cluster 생성은 다음 포스트를 참고합니다.
 
-[OCI Container Engine for Kubernetes (OKE) Cluster 빠른 생성 (Quick Create)](https://team-okitoki.github.io/cloudnative/quick-create-oke-cluster/)
+[OCI Container Engine for Kubernetes (OKE) Cluster를 Quick Create(빠르게 생성) 기능을 활용하여 빠르게 구성하기](https://team-okitoki.github.io/cloudnative/quick-create-oke-cluster/)
 
 ### 준비사항
 OKE Cluster에 접속하기 위해서는 기본적으로 다음 두 개의 도구를 설치해야 합니다.
