@@ -43,7 +43,7 @@ OCI에 프로비저닝 리소스들은 다음과 같습니다.
 
 ### OCI용 테라폼 파일 다운로드
 테라폼 프로젝트는 아래 깃헙 저장소를 통해서 제공합니다.
-> https://github.com/team-okitoki/Infrastructure-as-Code/tree/master/oci/terraform
+[https://github.com/team-okitoki/Infrastructure-as-Code/tree/master/oci/terraform](https://github.com/team-okitoki/Infrastructure-as-Code/tree/master/oci/terraform)
 
 다운로드 받은 OCI용 테라폼 프로젝트의 디렉토리 구조는 다음과 같습니다.
 ```
@@ -117,7 +117,7 @@ OCI에 프로비저닝 리소스들은 다음과 같습니다.
 
 이제 다운로드 받은 프로젝트의 oci 폴더에서 workspace를 생성합니다.
 ```
-$ terraform workspace new danoci-ap-seoul-1
+$ terraform workspace new myocitenancy-ap-seoul-1
 ```
 
 생성한 workspace를 확인합니다. *가 붙은것은 현재 선택된 workspace를 의미합니다. 다른 workspace를 선택할 경우에는 terraform workspace select {workspace} 형태로 변경할 수 있습니다.
@@ -411,13 +411,13 @@ $ terraform init
 ### 테라폼 실행
 그럼 생성한 workspace를 선택하고 테라폼을 실행해보겠습니다. 먼저 workspace를 선택합니다.
 ```
-$ terraform workspace select danoci-ap-seoul-1
+$ terraform workspace select myocitenancy-ap-seoul-1
 ```
 
 현재 선택된 workspace를 보려면 다음과 같이 show 명령어를 사용합니다.
 ```
 $ terraform workspace show
-danoci-ap-seoul-1
+myocitenancy-ap-seoul-1
 ```
 
 테라폼 적용(apply)전에 plan을 실행해서 수행될 작업에 대한 계획을 확인합니다. 구성 파일에 대한 유효성 검사도 같이 진행하게 됩니다. tfvars 환경 구성파일의 경우 현재 workspace 이름과 같기 때문에 아래와 같이 실행하면 해당 tfvars 파일을 참조하게 됩니다.
