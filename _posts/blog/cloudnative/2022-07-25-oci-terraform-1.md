@@ -202,6 +202,6 @@ $ terraform workspace show # 현재 선택된 workspace 보기
 
 실제 테라폼 코드를 사용하여 OCI에 리소스를 프로비저닝하는 과정은 다음 포스트를 참고합니다.
 
-[Terraform을 활용하여 OCI 리소스 프로비저닝 방법](https://team-okitoki.github.io/cloudnative/2022-07-25-oci-terraform-2/)
+[Terraform을 활용하여 OCI 리소스 프로비저닝 방법](https://team-okitoki.github.io/cloudnative/oci-terraform-2/)
 
 
