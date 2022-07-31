@@ -46,7 +46,7 @@ header: no
 
 OCI Landing Zone은 CIS (Center for Internet Security) 벤치마크를 충족하는 문서를 참고합니다. 관련된 문서는 아래 링크를 참고하면 되고, OCI용 CIS 벤치마크 자료도 다운로드 받아볼 수 있습니다.
 
-> https://www.cisecurity.org/benchmark/oracle_cloud/
+[https://www.cisecurity.org/benchmark/oracle_cloud/](https://www.cisecurity.org/benchmark/oracle_cloud/)
 
 해당 문서에는 OCI에서 Landing Zone을 구성할 때 참고할 모범사례들이 각 영역별로 구분되어 잘 설명이 되어 있습니다. 또한 CIS 벤치마크를 기반으로 OCI에 Landing Zone을 자동으로 구성해주는 Terraform 모듈을 제공하고 있습니다. 관련 Terraform 모듈은 아래 GitHub 저장소를 참고합니다.
 
@@ -178,6 +178,6 @@ OCI에서는 Compartment를 활용하여 Langing Zone 환경을 구성한다고 
 또한 기존에 IAM(OCI Native 계정관리)과 Identity Cloud Service (PaaS형 계정관리 서비스)가 분리되어 있었는데, 이번에 ICI IAM이라는 이름으로 통합이 되면서 앞으로 Tenancy나 사용자, 그룹, Compartment등의 관리는 각각의 OCI IAM의 Identity Domain내에서 관리되기 때문에 Landing Zone 템플릿에도 이 이부분이 반영이 될 예정이라고 합니다.
 
 ### 참조
-https://docs.oracle.com/en/solutions/cis-oci-benchmark/index.html  
-https://www.ateam-oracle.com/post/cis-oci-landing-zone-quick-start-template  
-https://github.com/oracle-quickstart/oci-cis-landingzone-quickstart
+[https://docs.oracle.com/en/solutions/cis-oci-benchmark/index.html](https://docs.oracle.com/en/solutions/cis-oci-benchmark/index.html)  
+[https://www.ateam-oracle.com/post/cis-oci-landing-zone-quick-start-template](https://www.ateam-oracle.com/post/cis-oci-landing-zone-quick-start-template)  
+[https://github.com/oracle-quickstart/oci-cis-landingzone-quickstart](https://github.com/oracle-quickstart/oci-cis-landingzone-quickstart)
