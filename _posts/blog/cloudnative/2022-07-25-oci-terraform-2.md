@@ -4,7 +4,7 @@ layout: page-fullwidth
 # Content
 #
 subheadline: "CloudNative"
-title: "Terraform을 활용하여 OCI 리소스 프로비저닝 방법"
+title: "Terraform을 활용하여 OCI 리소스 프로비저닝 해보기"
 teaser: "테라폼(Terraform)은 Hashicorp에서 개발한 인프라스트럭처 관리를 위한 오픈소스 소프트웨어로 인프라스트럭처를 코드로서 관리 및 프로비저닝하는 개념인 Ifrastructure as Code (IaC)를 지향하는 도구입니다. AWS, Azure, GCP, OCI(Oracle Cloud Infrastructure)와 같은 다양한 클라우드 프로바이더를 지원하고 있는데, 그중에서 OCI 환경에서 테라폼을 사용하는 방법을 설명합니다."
 author: dankim
 breadcrumb: true

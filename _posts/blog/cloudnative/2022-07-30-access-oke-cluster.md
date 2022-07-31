@@ -4,7 +4,7 @@ layout: page-fullwidth
 # Content
 #
 subheadline: "CloudNative"
-title: "OCI Container Engine for Kubernetes (OKE) Cluster 접속 가이드"
+title: "OCI Container Engine for Kubernetes (OKE) Cluster 접속 방법"
 teaser: "OCI에서 서비스하는 관리형 쿠버네티스 서비스인 OCI Container Engine for Kubernetes (OKE)에 접속하는 방법을 소개합니다."
 author: dankim
 breadcrumb: true

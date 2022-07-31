@@ -4,7 +4,7 @@ layout: page-fullwidth
 # Content
 #
 subheadline: "CloudNative"
-title: "OCI에서 Terraform 사용"
+title: "IaC 도구인 Terraform 소개 (Feat. OCI)"
 teaser: "테라폼(Terraform)은 Hashicorp에서 개발한 인프라스트럭처 관리를 위한 오픈소스 소프트웨어로 인프라스트럭처를 코드로서 관리 및 프로비저닝하는 개념인 Ifrastructure as Code (IaC)를 지향하는 도구입니다. AWS, Azure, GCP, OCI(Oracle Cloud Infrastructure)와 같은 다양한 클라우드 프로바이더를 지원하고 있는데, 그중에서 OCI 환경에서 테라폼을 사용하는 방법을 설명합니다."
 author: dankim
 breadcrumb: true
@@ -44,11 +44,11 @@ header: no
 HCL에서는 생성할 자원들을 Resource라는 개념으로 정의하며, 이러한 Resource들을 그룹으로 묶어서 관리하는 Module이라는 개념이 있습니다. Module은 의무적으로 사용할 필요는 없고 특정 Resource들을 그룹으로 묶어서 관리하고자 할 경우 사용합니다. 
 
 #### Blocks
-HCL에서는 하나의 문장 단위를 Block이라 부릅니다. Block은 Block Type, Block Lable, Block Body (Identifier, Argument, expression)등으로 이뤄지는데, 보통 아래와 같이 작성합니다. 아래 예제는 aws에서 vpc 리소스를 생성하는 간단한 resource block입니다.
+HCL에서는 하나의 문장 단위를 Block이라 부릅니다. Block은 Block Type, Block Lable, Block Body (Identifier, Argument, expression)등으로 이뤄지는데, 보통 아래와 같이 작성합니다. 아래 예제는 OCI에서 Compute Instance를 생성하는 간단한 resource block입니다.
 
 ```terraform
-resource "aws_vpc" "main" {
-  cidr_block = var.base_cidr_block
+resource "oci_core_instance" "test_instance" {
+  availability_domain = var.instance_availability_domain
 }
 
 <BLOCK TYPE> "<BLOCK LABEL>" "<BLOCK LABEL>" {
@@ -97,7 +97,11 @@ provider "oci" {
 }
 ```
 
-여기선 oci provider를 정의했는데, 5개의 변수를 사용하고 있습니다. 각 변수 선언은 variable 이라는 Block Type을 사용해서 작성합니다. 파일 이름은 vars.tf로 만들어서 provider.tf와 같은 폴더 위치(프로젝트 폴더, 여기서는 terraform_test)에 저장합니다.
+여기선 oci provider를 정의했는데, 5개의 변수를 사용하고 있습니다. OCI Terraform Provider를 위해 필요한 값을 얻는 방법은 아래 포스트에서 확인할 수 있습니다.
+
+[OCICLI 도구 설정하기](https://team-okitoki.github.io/getting-started/ocicli-config/)
+
+각 변수 선언은 variable 이라는 Block Type을 사용해서 작성합니다. 파일 이름은 vars.tf로 만들어서 provider.tf와 같은 폴더 위치(프로젝트 폴더, 여기서는 terraform_test)에 저장합니다.
 > 테라폼은 특정 디렉토리에 있는 모든 .tf 파일을 읽어서 리소스를 생성, 수정, 삭제 작업을 진행합니다. 여러개의 .tf 파일이 존재하더라도 실행 순서를 따로 정의하지 않는데, 각 정의된 리소스가 서로 간접적으로 의존관계가 생기고, 이런 의존 관계를 바탕으로 실행 순서를 결정하게 됩니다.
 
 ```terraform
