@@ -87,7 +87,7 @@ OCI DevOps에서 제공되는 빌드 러너를 이용해서 빌드 및 테스트
 Compute Instance Group 점진적으로 롤링 업데이트를 수행하며, 한번에 오프라인이 될 수 있는 인스턴스의 수를 지정 가능하고 자동 롤백을 지원합니다.  
 참고로 인스턴스 그룹 환경 생성은 아래 링크 참고합니다.
 
-[https://docs.public.oneportal.content.oci.oraclecloud.com/en-us/iaas/Content/devops/using/create_instancegroup_environment.htm#create_instance_group_environment](https://docs.public.oneportal.content.oci.oraclecloud.com/en-us/iaas/Content/devops/using/create_instancegroup_environment.htm#create_instance_group_environment)
+  [https://docs.public.oneportal.content.oci.oraclecloud.com/en-us/iaas/Content/devops/using/create_instancegroup_environment.htm#create_instance_group_environment](https://docs.public.oneportal.content.oci.oraclecloud.com/en-us/iaas/Content/devops/using/create_instancegroup_environment.htm#create_instance_group_environment)
 
 * **Uses the built-in Functions update strategy:**  
 Functions 배포해주는 스테이지입니다.
