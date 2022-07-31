@@ -58,7 +58,8 @@ resource "oci_core_instance" "test_instance" {
 ```
 
 위에서 Block Type은 해당 Block이 어떤 역할을 하는지 구분해주는 것으로 블록의 역할에 따라 provider, resource, data, variable, output등 여러가지가 있습니다. expression은 해당 블록에 전달하기 위한 Argument를 표현하며, 다양한 수식과 문법, 타입을 제공합니다. Expression에 대한 자세한 내용은 아래 가이드를 참조하면 좋습니다. 다 알고 시작해야 하나 싶겠지만, 복잡한 코딩이 아니라서 하나하나 해보다 보면 금방 익숙해질 수 있습니다.
-> https://www.terraform.io/docs/configuration/expressions.html
+
+[https://www.terraform.io/docs/configuration/expressions.html](https://www.terraform.io/docs/configuration/expressions.html)
 
 ### .tfstate
 테라폼을 실행하면 인프라에 여러가지 리소스가 생성되는데, 이때 Terraform은 .tfstate 파일(테라폼 상태 파일)을 로컬에 생성합니다. 이 파일은 JSON 포멧으로 작성되어 있는데, 사용자가 작성한 테라폼 구성 내용을 실행해서 생성된 인프라의 리소스의 상태가 기록되어 있습니다. 테라폼을 실행할때마다 프로바이더의 최신 인프라 상태를 조회해서 .tfstate 파일을 업데이트 합니다. 이 상태 파일을 보면 특정 시점에서의 인프라의 상태를 알수 있습니다.
@@ -78,11 +79,11 @@ $ brew install terraform
 ```
 
 Windows에서의 설치는 아래 잘 정리된 블로그 페이지를 참조합니다. (내용이 길어서 여기선 링크로 대체)
-> https://www.vasos-koupparis.com/terraform-getting-started-install/
+[https://www.vasos-koupparis.com/terraform-getting-started-install/](https://www.vasos-koupparis.com/terraform-getting-started-install/)
 
 ### 테라폼 프로바이더와 환경 설정
 먼저 아무 위치에 폴더를 하나 생성 (예: erraform_test)하고, provider.tf 파일을 하나 만든 후 다음과 같이 가장 기본이 되는 Block Type인 provider를 정의합니다. 각 벤더별로 프로바이더 구성 방법이 다른데 자세한 내용은 아래 페이지를 참조합니다.
-> https://www.terraform.io/docs/providers/index.html
+[https://www.terraform.io/docs/providers/index.html](https://www.terraform.io/docs/providers/index.html)
 
 > 프로바이더 정의라고 해서 꼭 provider.tf라고 이름을 지을 필요는 없습니다. 테라폼은 파일내에 정의된 Block Type을 사용하지 파일의 이름을 가지고 구성 내용을 판단하지 않습니다. 하지만 파일의 확장자는 .tf로 지정해야 하고, 가시성을 위해서 어떤 동작을 하는지 알 수 있도록 파일 이름을 지정하는 것이 좋습니다.
 
@@ -127,7 +128,6 @@ $ source ~/.bas_profile
 ```
 
 .tfvars 라는 파일을 이용할수도 있는데 사용법은 다음과 같다. 우선 vars.tfvars 파일을 만든 후 다음과 같이 추가합니다.
-> tenancy_ocid, user_ocid, fingerprint, private_key_path, region등의 정보 획득은 [[Oracle Cloud] OCI-CLI 설치](https://mangdan.github.io/oci-cli-install/) 를 참고.
 
 ```terraform
 tenancy_ocid     = <value>

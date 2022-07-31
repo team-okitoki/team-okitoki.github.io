@@ -113,7 +113,7 @@ OCI에 프로비저닝 리소스들은 다음과 같습니다.
 * Tenancy : myocitenancy
 * Region : ap-seoul-1
 
-> 테라폼 설치가 되어 있어야 합니다. 테라폼 설치는 [여기](2019-12-24-terraform-with-oci-1.md)를 참고합니다.
+> 테라폼 설치가 되어 있어야 합니다. 테라폼 설치는 [여기](https://team-okitoki.github.io/cloudnative/oci-terraform-1/)를 참고합니다.
 
 이제 다운로드 받은 프로젝트의 oci 폴더에서 workspace를 생성합니다.
 ```
@@ -144,7 +144,8 @@ ssh_public_key   = "~/.ssh/id_rsa.pub
 ```
 
 tenancy_ocid, user_ocid, fingerprint, private_key, ssh_public_key, region등의 정보는 아래 포스트를 참고합니다.
-> [OCI-CLI 설치](2019-04-26-oci-cli-install.md)
+
+[OCICLI 도구 설정하기](https://team-okitoki.github.io/getting-started/ocicli-config/)
 
 ### 모듈 공통 구성 파일
 생성할 리소스들을 모듈화 했는데, 각 모듈에서 사용할 공통 구성 파일을 provider.tf, main.tf, vars.tf 3개의 파일로 구성했습니다.  
@@ -437,34 +438,34 @@ Apply complete! Resources: 30 added, 0 changed, 0 destroyed.
 OCI Console에 접속해서 실제 리소스가 생성된 것을 확인할 수 있습니다.
 
 **Group**
-![](../assets/images/oci-tf-groups.png)
+![](/assets/img/cloudnative-security/2022/oci-tf-groups.png)
 
 **Group**
-![](../assets/images/oci-tf-groups.png)
+![](/assets/img/cloudnative-security/2022/oci-tf-groups.png)
 
 **Compartment**
-![](../assets/images/oci-tf-compartments.png)
+![](/assets/img/cloudnative-security/2022/oci-tf-compartments.png)
 
 **Policy**
-![](../assets/images/oci-tf-policy.png)
+![](/assets/img/cloudnative-security/2022/oci-tf-policy.png)
 
 **Compute (2nodes, VM-Standard-2.1)**
-![](../assets/images/oci-tf-compute.png)
+![](/assets/img/cloudnative-security/2022/oci-tf-compute.png)
 
 **VCN**
-![](../assets/images/oci-tf-vcn.png)
+![](/assets/img/cloudnative-security/2022/oci-tf-vcn.png)
 
 **Function**
-![](../assets/images/oci-tf-function.png)
+![](/assets/img/cloudnative-security/2022/oci-tf-function.png)
 
 **Container (1node, VM-Standard-E2.1)**
-![](../assets/images/oci-tf-oke.png)
+![](/assets/img/cloudnative-security/2022/oci-tf-oke.png)
 
 **Autonomous Database**
-![](../assets/images/oci-tf-adb.png)
+![](/assets/img/cloudnative-security/2022/oci-tf-adb.png)
 
 **Autonomous Data Warehouse**
-![](../assets/images/oci-tf-adw.png)
+![](/assets/img/cloudnative-security/2022/oci-tf-adw.png)
 
 
 ### run_tf.sh
