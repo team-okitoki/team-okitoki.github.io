@@ -3,7 +3,7 @@ layout: page-fullwidth
 #
 # Content
 #
-subheadline: "Infrastructure"
+subheadline: "Compute"
 title: "OCI GPU 인코딩/디코딩 지원 리스트"
 teaser: "OCI GPU 인코딩/디코딩 지원 코덱에 대해서 알아보겠습니다."
 author: kisu.kim
@@ -30,10 +30,10 @@ header: no
 OCI 에서 지원하는 GPU 코어의 경우, A100, V100으로 나뉘며, 지원하는 인코딩 및 디코딩 영역에 다릅니다. 
 따라서 아래 표에서 지원하는 인코딩/디코딩 영역에 대해서 표로 전달합니다.
 
-### A100
+### v100
 ![](/assets/img/infrastructure/2022/08/gpu-encod-decode/A100.png)
 
-### V100
+### A100
 ![](/assets/img/infrastructure/2022/08/gpu-encod-decode/V100.png)
 
 
