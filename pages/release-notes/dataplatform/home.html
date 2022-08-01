@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "OCI Database Release Notes - 2022"
-teaser: "2022년 OCI Database 부분 업데이트 소식입니다."
+title: "OCI Data Platform Release Notes - 2022"
+teaser: "2022년 OCI Data Platform 부분 업데이트 소식입니다."
 breadcrumb: true
 header:
    image_fullwidth: release-notes/release-notes-header_2.png
@@ -12,10 +12,10 @@ permalink: "release-notes-2022-database/"
 		<h1>{{ page.title }}</h1>
 		{% if page.teaser %}<p class="teaser">{{ page.teaser }}</p>{% endif %}
 
-		<h2>Oracle Database 관련</h2>
+		<h2>OCI Data Platfrom</h2>
 		<dl class="accordion" data-accordion>
 			{% assign counter = 1 %}
-			{% for post in site.categories.release-notes-2022-database limit:1000 %}
+			{% for post in site.categories.release-notes-2022-dataplatform limit:1000 %}
 			<dd class="accordion-navigation">
 			<a href="#panel{{ counter }}"><span class="iconfont"></span> {% if post.subheadline %}{{ post.subheadline }} › {% endif %}<strong>{{ post.title }}</strong></a>
 				<div id="panel{{ counter }}" class="content">

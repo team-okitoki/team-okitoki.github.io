@@ -4,12 +4,12 @@ layout: page-fullwidth
 # Content
 #
 subheadline: "Release Notes 2022"
-title: "6월 OCI Oracle Database 관련 업데이트 소식"
-teaser: "2022년 6월 OCI Oracle Database 관련 업데이트 소식입니다."
+title: "6월 OCI Oracle Data Platform 관련 업데이트 소식"
+teaser: "2022년 6월 OCI Oracle Data Platform 관련 업데이트 소식입니다."
 author: lim
 breadcrumb: true
 categories:
-  - release-notes-2022-database
+  - release-notes-2022-dataplatform
 tags:
   - oci-release-notes-2022
   - June-2022

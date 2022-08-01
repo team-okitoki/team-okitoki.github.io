@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "DATABASE"
-teaser: "OCI DATABASE 관련 블로그 포스트 모음입니다."
+title: "Data Platform"
+teaser: "OCI Data Platform 관련 블로그 포스트 모음입니다."
 breadcrumb: true
 header:
    image_fullwidth: database/database-header_2.png
@@ -14,7 +14,7 @@ permalink: "database/"
 
 		<dl class="accordion" data-accordion>
 			{% assign counter = 1 %}
-			{% for post in site.categories.database limit:1000 %}
+			{% for post in site.categories.dataplatform limit:1000 %}
 			<dd class="accordion-navigation">
 			<a href="#panel{{ counter }}"><span class="iconfont"></span> {% if post.subheadline %}{{ post.subheadline }} › {% endif %}<strong>{{ post.title }}</strong></a>
 				<div id="panel{{ counter }}" class="content">

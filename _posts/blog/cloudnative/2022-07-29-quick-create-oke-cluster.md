@@ -46,7 +46,7 @@ OCI Console에 로그인하면, 왼쪽 상단의 햄버거 메뉴를 클릭하�
 
 ![](/assets/img/cloudnative-security/2022/quick-create-oke-cluster-1.png)
 
-왼쪽 구획(Compartment)를 선택한 후 **클러스터 생성(Create Cluster)** 버튼을 클릭합니다. **클러스터 생성 대화창**에서 **빠른 생성(Quick Create)**를 선택한 후 **제출(submit)**을 클릭합니다.
+왼쪽 구획(Compartment)을 선택한 후 **클러스터 생성(Create Cluster)** 버튼을 클릭합니다. **클러스터 생성 대화창**에서 **빠른 생성(Quick Create)**를 선택한 후 **제출(submit)**을 클릭합니다.
 
 ![](/assets/img/cloudnative-security/2022/quick-create-oke-cluster-2.png)
 
