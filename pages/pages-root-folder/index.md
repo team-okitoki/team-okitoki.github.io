@@ -16,7 +16,7 @@ widget2:
   title: "OCI Pricing"
   url: 'https://www.oracle.com/kr/cloud/price-list.html'
   image: home/oci-pricing.png
-  text: 'OCI는 타사에 비해 상대적으로 낮은 비용으로 서비스를 제공하고 있는데, 모든 서비스에 대한 가격 정보를 확인해 볼 수 있는 페이지입니다. 위 페이지에서는 실제 가격을 시뮬레이션 해 볼수 있는 <strong><em>Cost Estimator</em></strong>도 제공하고 있습니다.'
+  text: 'OCI에서 제공하는 모든 서비스에 대한 가격 정보를 확인해 볼 수 있는 페이지입니다. 위 페이지에서는 실제 가격을 시뮬레이션 해 볼수 있는 <strong><em>Cost Estimator</em></strong>도 제공하고 있습니다.'
 widget3:
   title: "Oracle Github"
   url: 'https://github.com/oracle'
