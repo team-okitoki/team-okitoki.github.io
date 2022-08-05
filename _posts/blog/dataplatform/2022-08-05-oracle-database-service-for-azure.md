@@ -26,23 +26,30 @@ header: no
 
 ---
 
+<div class="panel radius" markdown="1">
+**Table of Contents**
+{: #toc }
+*  TOC
+{:toc}
+</div>
 ### 서비스 소개
 Oracle Database Service for Microsoft Azure( 이하 'ODSA' )를 사용하면 Oracle Cloud Infrastructure 의 데이터베이스 서비스를 Azure 클라우드 환경 에 쉽게 통합할 수 있습니다. 
 ODSA 는 서비스 기반 접근 방식을 사용하여 기존의 복잡한 클라우드간 수동 배포를 통해 리소스를 생성하는 작업을 대체할 수 있는 편리한 대안입니다.
 
 #### 예상 Case 별 OCI 계정 생성 및 주의사항 예시
+
 **Case 1. Azure만 사용하는 고객이 Oracle Database 사용하려고 한다면?**
-- OCI 사용자 계정 생성 (ODSA 콘솔에서 계정 연동 과정에서 생성 가능 / PAYG or Free trial) 계정 생성링크
+- OCI 사용자 계정 생성이 필요합니다. (ODSA 콘솔에서 계정 연동 과정에서 생성 가능 / PAYG or Free trial)
+- OCI 무료 계정 생성은 [OCI 무료 계정 생성 및 관리하기](/getting-started/free-oci-promotions/){:target="_blank" rel="noopener"} 에서 확인 가능합니다.
 
 **Case 2. Azure만 사용하는 고객이 OCI UC 계약을 하는 경우에는?**
-- UC계약 하고 테넌시 생성 후 ODSA 콘솔 접속하여 계정 연동
+- 영업 담당자와 별도의 UC 계약을 체결 하고 테넌시 생성 후 ODSA 콘솔 접속하여 계정을 연동합니다.
 
 **Case 3. Azure를 사용하는 고객 중 OCI 계정이 있는 경우에는?**
-- OCI 계정이 IDCS 기반이 아닌 Identity Domain 적용되어 있는 계정만 연동 가능함. (만약 IDCS 기반인 경우 새로운 OCI 계정 생성 필요)
+- OCI 계정은 `IDCS` 기반이 아닌 `Identity Domain` 적용되어 있는 계정만 연동 가능함. (만약 IDCS 기반인 경우 새로운 OCI 계정 생성이 필요합니다.)
 
 #### 사용 가능한 Oracle 데이터베이스 시스템
 Azure용 Oracle Database Service 는 다음 제품을 제공합니다.
-
 - **Oracle Exadata Database** : 프로비저닝 후 언제든지 시스템에 데이터베이스 컴퓨팅 서버 및 스토리지 서버를 추가할 수 있는 유연한 Exadata 시스템을 프로비저닝할 수 있습니다.
 - **Shared Exadata Infra 의 Autonomous Database** : Autonomous Database 는 탄력적으로 확장되고 빠른 쿼리 성능을 제공하며 데이터베이스 관리가 필요 없는 사용하기 쉽고 완전 자율적인 데이터베이스를 제공합니다.
 - **기본 데이터베이스** : ODSA 를 사용하여 가상 머신 DB 시스템에 Oracle Enterprise Edition 또는 Oracle Standard Edition 2 데이터베이스를 배포할 수 있습니다. 단일 노드 시스템 또는 2노드 RAC 시스템을 배포할 수 있습니다.
@@ -72,7 +79,7 @@ git
    ![Create User #8](/assets/img/dataplatform/azure-ad-create-user-8.png)
 
 ### ODSA 포탈 접속 및 로그인
-ODSA 서비스를 사용하기 위해 [https://signup.multicloud.oracle.com/azure](https://signup.multicloud.oracle.com/azure) 링크를 클릭하여 접속 합니다.
+ODSA 서비스를 사용하기 위해 [https://signup.multicloud.oracle.com/azure](https://signup.multicloud.oracle.com/azure){:target="_blank" rel="noopener"} 링크를 클릭하여 접속 합니다.
 로그인시 사용할 ID는 전 단계에서 생성한 Azure 자체 도메인 사용자 계정 및 비밀번호를 입력합니다.
 1. Azure Portal에서 사용자 정보를 복사합니다.
    ![Signin to ODSA Console #1](/assets/img/dataplatform/oracle-odsa-signin-1.png)
