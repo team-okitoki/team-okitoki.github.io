@@ -30,12 +30,15 @@ header: no
 Oracle Database Service for Microsoft Azure( 이하 'ODSA' )를 사용하면 Oracle Cloud Infrastructure 의 데이터베이스 서비스를 Azure 클라우드 환경 에 쉽게 통합할 수 있습니다. 
 ODSA 는 서비스 기반 접근 방식을 사용하여 기존의 복잡한 클라우드간 수동 배포를 통해 리소스를 생성하는 작업을 대체할 수 있는 편리한 대안입니다.
 
-Case 1. Azure만 사용하는 고객이 Oracle Database 사용?
-   - OCI 사용자 계정 생성 (ODSA 콘솔에서 계정 연동 과정에서 생성 가능 / PAYG or Free trial) 계정 생성링크
-Case 2. Azure만 사용하는 고객이 OCI UC 계약을 하는 경우?
-   - UC계약 하고 테넌시 생성 후 ODSA 콘솔 접속하여 계정 연동
-Case 3. Azure를 사용하는 고객 중 OCI 계정이 있는 경우?
-   - OCI 계정이 IDCS 기반이 아닌 Identity Domain 적용되어 있는 계정만 연동 가능함. (만약 IDCS 기반인 경우 새로운 OCI 계정 생성 필요)
+#### 예상 Case 별 OCI 계정 생성 및 주의사항 예시
+**Case 1. Azure만 사용하는 고객이 Oracle Database 사용하려고 한다면?**
+- OCI 사용자 계정 생성 (ODSA 콘솔에서 계정 연동 과정에서 생성 가능 / PAYG or Free trial) 계정 생성링크
+
+**Case 2. Azure만 사용하는 고객이 OCI UC 계약을 하는 경우에는?**
+- UC계약 하고 테넌시 생성 후 ODSA 콘솔 접속하여 계정 연동
+
+**Case 3. Azure를 사용하는 고객 중 OCI 계정이 있는 경우에는?**
+- OCI 계정이 IDCS 기반이 아닌 Identity Domain 적용되어 있는 계정만 연동 가능함. (만약 IDCS 기반인 경우 새로운 OCI 계정 생성 필요)
 
 #### 사용 가능한 Oracle 데이터베이스 시스템
 Azure용 Oracle Database Service 는 다음 제품을 제공합니다.
