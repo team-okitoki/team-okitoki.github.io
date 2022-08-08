@@ -59,7 +59,7 @@ Azure용 Oracle Database Service 는 다음 제품을 제공합니다.
 ODSA를 이용하려면 먼저 Microsoft Azure 계정이 필요합니다. 계정 생성 후 Azure Active Directory 에서 자체 도메인 사용자를 생성하고, 해당 사용자에게 권한을 부여하여 ODSA 서비스를 사용할 수 있습니다.
 - Microsoft Azure 계정
 - Oracle OCI 계정 (계정이 없는 경우 진행과정에서 신규로 생성이 가능합니다)
-git
+
 #### Azure 도메인 사용자 생성 및 권한 부여
 1. Azure Active Directory 메뉴 이동 후 "User(사용자)" 메뉴를 클릭합니다.
    ![Create User #1](/assets/img/dataplatform/azure-ad-create-user-1.png)
