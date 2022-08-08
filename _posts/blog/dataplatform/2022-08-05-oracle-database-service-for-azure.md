@@ -53,7 +53,7 @@ Azure용 Oracle Database Service 는 다음 제품을 제공합니다.
 - **Oracle Exadata Database** : 프로비저닝 후 언제든지 시스템에 데이터베이스 컴퓨팅 서버 및 스토리지 서버를 추가할 수 있는 유연한 Exadata 시스템을 프로비저닝할 수 있습니다.
 - **Shared Exadata Infra 의 Autonomous Database** : Autonomous Database 는 탄력적으로 확장되고 빠른 쿼리 성능을 제공하며 데이터베이스 관리가 필요 없는 사용하기 쉽고 완전 자율적인 데이터베이스를 제공합니다.
 - **기본 데이터베이스** : ODSA 를 사용하여 가상 머신 DB 시스템에 Oracle Enterprise Edition 또는 Oracle Standard Edition 데이터베이스를 배포할 수 있습니다.<br> 
-(※ RAC 를 이용하여 2 node 데이터베이스를 구성하는 경우, Enterise Edition Extreme Performance 버전만 지원)
+(`※ RAC 를 이용하여 2 node 데이터베이스를 구성하는 경우, Enterise Edition Extreme Performance 버전만 지원`)
 
 ### 사전 요구 사항
 ODSA를 이용하려면 먼저 Microsoft Azure 계정이 필요합니다. 계정 생성 후 Azure Active Directory 에서 자체 도메인 사용자를 생성하고, 해당 사용자에게 권한을 부여하여 ODSA 서비스를 사용할 수 있습니다.
