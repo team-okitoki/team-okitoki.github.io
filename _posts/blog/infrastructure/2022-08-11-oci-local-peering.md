@@ -6,7 +6,7 @@ layout: page-fullwidth
 subheadline: "Networking"
 title: "OCI Local Peering - 동일 리전에서 서로 다른 VCN 연결하기"
 teaser: "OCI 동일 리전에서 서로 다른 VCN을 연결하는 Local Peering에 대해서 설명합니다."
-author: kisu.kim
+author: "dankim"
 breadcrumb: true
 categories:
   - infrastructure

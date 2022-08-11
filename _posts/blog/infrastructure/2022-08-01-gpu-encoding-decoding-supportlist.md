@@ -6,7 +6,7 @@ layout: page-fullwidth
 subheadline: "Compute"
 title: "OCI GPU 인코딩/디코딩 지원 리스트"
 teaser: "OCI GPU 인코딩/디코딩 지원 코덱에 대해서 알아보겠습니다."
-author: kisu.kim
+author: "kskim"
 breadcrumb: true
 categories:
   - infrastructure
