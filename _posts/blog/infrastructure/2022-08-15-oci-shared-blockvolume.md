@@ -30,7 +30,13 @@ header: no
 ---
 
 ### Shared Blockvolume
-하나의 block volume을 하나의 다수의 compute에 연결하여 HA 구성이 가능하며, NFS를 속도 이외의 더 높은 속도로를 제공할 수 있습니다. 
+OCI(Oracle Cloud Infrastructure)는 여러 Compute 인스턴스가 공유하는 Block Volume을 지원합니다. 1개의 Block Volume을 2개 이 이상의 Compute 인스턴스가 마운트할 수 있습니다. 여러 Compute 인스턴스가 1개 Block Volume을 읽기/쓰기 모드로 마운트할 경우, 쓰기 중복을 방지하기 위해서 여러 Compute 인스턴스의 파일 쓰기를 조정하는 중재 소프트웨어가 필요합니다. 이런 중재 소프트웨어를 Clusterware라고 합니다.
+
+OCI는 공유 볼륨은다음과 같은 3개 Clusterware를 지원합니다.
+
+- OCSF2(Oracle Cluster File System Version 2)
+- GlusterFS
+- IBM Spectrum Scale
 
 ![](/assets/img/infrastructure/shared-blockvolume/1.png)
 
