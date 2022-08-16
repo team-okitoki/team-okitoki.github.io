@@ -182,6 +182,8 @@ Congratulations! The cluster file system is mounted on /ocfs2 on both the Oracle
 
 ```
 
+
+
 영상을 아래 영상은 정상적으로 configuration 설정된 부분에 대해서 영상입니다. 
 {% include youtubePlayer.html id=page.youtubeId %}
 
