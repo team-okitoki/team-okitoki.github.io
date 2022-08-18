@@ -11,7 +11,7 @@ breadcrumb: true
 categories:
   - dataplatform
 tags:
-  - [oci, database, dbcs, exacc, exacs, autonomous]
+  - [oci, database, dbcs, exacs, autonomous]
 #
 # Styling
 #
@@ -61,9 +61,7 @@ Oracle 은 전통적으로 데이터 관리 솔루션인 Database 솔루션의 �
 #### * OCI 범용 Database Cloud Service - Base Database Cloud 서비스
 
 OCI 에서는 베어메탈 또는 가상 머신기반의 단일 노드 Base Database Cloud 서비스인 DB System 을 제공합니다. 
-
 2노드 RAC DB 시스템을 사용하려고 할 경우는 가상 머신 기반의 DB System 을 선택하셔야 합니다.
-
 이런 DB System 자원 생성을 위해 Cloud Console, API, Oracle Cloud Infrastructure CLI, 데이터베이스 CLI(DBCLI), Enterprise Manager 또는 SQL Developer를 사용하여 이러한 시스템을 관리하실 수 있습니다.
 
 #### * Base Database Service Support Edition
@@ -78,8 +76,7 @@ OCI 의 Oracle Base Database Cloud Service 는 모든 On-Prem Oracle Database �
 
 ![DB Editions](/assets/img/dataplatform/dbcs/03.blog-oracle-dbcs-option-versions.PNG)
 
-빨간색 박스로 표시된 부분이 Base Database Cloud Service 가 지원하는 버전 및 Edition, DBA Access 기능 지원하는 DB 용량, RAC, Backup 의 자동/수동 여부등이 요약되어 있습니다.
-
+빨간색 박스로 표시된 부분이 Base Database Cloud Service 가 지원하는 버전 및 Edition, DBA Access 기능 지원하는지의 여부, DB 용량, RAC, Backup 의 자동/수동 여부등이 요약되어 있습니다.
 Base Database Cloud 서비스를 이용하게 되면 OCI Console 및 CLI, Restful API 등을 통해 DB 시스템에 대한 운영이 가능하고 고객이 보유한 인프라와 손쉽게 연동이 가능합니다. 더불어 모든 운영 정책은 고객사의 보안 정책에 따라 조정하여 운영하실 수 있는 편리한 데이터베이스 클라우드 서비스입니다.
 
 OCI 의 Database Cloud 서비스를 이용했을때 아래와 같이 다양한 장점들이 있습니다.
@@ -106,6 +103,11 @@ Oracle Cloud 의 Database Cloud 서비스는 OCI Console 화면을 통해 원격
 - AD간 Region 간 Data Guard 구성
 - Primary 로부터 자동으로 Standby 구성
 - OCI Console UI 를 통해 Failover, Reinstate, Switchover 등의 기능 수행
+
+![DB DataGuard](/assets/img/dataplatform/dbcs/07.blog-oracle-dbcs-dg-button.PNG)
+
+
+![DB DataGuard](/assets/img/dataplatform/dbcs/08.blog-oracle-dbcs-dg-create.PNG)
 
 #### * Database Cloud Service Security
 Oracle Cloud 의 Database Cloud 서비스는 보안을 최우선으로 고려하였으며 다음과 같은 기능들이 적용됩니다.
