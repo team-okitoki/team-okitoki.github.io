@@ -34,8 +34,8 @@ header: no
 </div>
 
 ### 서비스 소개
-Oracle 은 전통적으로 데이터 관리 솔루션인 Database 솔루션의 강자였던 만큼 Oracle Cloud Infrastructure (OCI) 내에서도 다양한 Workload 의 유형 및 부하에 따라 다양한 Deployment 옵션들을 제공합니다.
-다양한 OCI Database Cloud Service 의 Deployment 옵션에 대해 알아보고 Oracle Database Cloud Service 가 가진 기능들에 대해 알아봅니다. 
+Oracle 은 전통적으로 데이터 관리 솔루션인 Database 솔루션의 강자였던 만큼 Oracle Cloud Infrastructure (OCI) 내에서도 Oracle Database 에 대해 최상의 성능을 보장하는 클라우드 기반의 데이터베이스 서비스들을 제공합니다. 
+이러한 Database Cloud Service 는 다양한 Workload 의 유형 및 부하에 따라 Deployment 옵션들을 선택할 수 있어서 고객에게 최적의 비용으로 Oracle Database Cloud Service 를 사용할 수 있도록 합니다.
 
 #### * 오라클 데이터베이스 Deployment Options
 
