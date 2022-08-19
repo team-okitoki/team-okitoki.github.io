@@ -127,7 +127,7 @@ VCN을 생성할 때 앞서 생성한 구획인 SandBox를 선택하여야 합�
 ![](/assets/img/getting-started/2022/oci-lanunch-linux-instance-6.png " ")
 
 
-### 인스턴스 접속을 위한 준비
+### 리눅스 인스턴스 접속을 위한 준비
 이제 실행중인 인스턴스에 SSH로 접속할 수 있습니다. 대부분의 리눅스 혹은 유닉스 시스템은 기본 SSH 클라이언트를 통해서 접속이 가능하지만, Windows 10 혹은 Windows 2019의 경우는 [Open SSH Client](https://docs.microsoft.com/windows-server/administration/openssh/openssh_install_firstuse)를 설치하여야 합니다. 그 외 윈도우 환경의 경우 무료 SSH 클라이언트 프로그램인 [Putty](http://www.putty.org)를 사용하여 접속할 수 있습니다.
 
 우선 인스턴스에 접속하기 위해서는 생성한 인스턴스의 공용 IP를 확인하여야 합니다. 생성한 인스턴스 목록에서 바로 공용 IP를 확인할 수 있습니다.
@@ -217,16 +217,16 @@ $ ssh -i <private_key_file> <username>@<public-ip-address>
 ![](/assets/img/getting-started/2022/oci-bv-2.png " ")
 ![](/assets/img/getting-started/2022/oci-bv-3.png " ")
 
-#### 인스턴스에 볼륨 연결 (Attach)
+#### 인스턴스에 볼륨 연결 (Attach & Connect)
 iSCSI 방식으로 볼륨을 인스턴스에 연결해보도록 하겠습니다. 메뉴에서 **컴퓨트 (Compute) > 인스턴스 (Instances)**를 차례로 선택한 후에 앞서 생성한 인스턴스를 선택합니다. 인스턴스 상세 페이지에서 아래와 같이 좌측 **리소스 (Resources)** 메뉴에서 **연결된 블록 볼륨 (Attached block volumes)**을 선택합니다.
 
 ![](/assets/img/getting-started/2022/oci-bv-4.png " ")
 
 **블록 볼륨 연결 (Attach block volume)**버튼을 클릭하고 다음과 같이 입력/선택 합니다.
-* 블록 볼륨 선택 (Select volume): 앞서 생성한 블록 볼륨을 선택합니다.
-* 장치 경로 (Device path): 목록중에서 하나를 선택합니다. (/dev/oracleoci/oraclevdb)
-* 연결 유형 (Attachment type): ISCSI
-* 액세스 (Access): Read/write
+* **블록 볼륨 선택 (Select volume):** 앞서 생성한 블록 볼륨을 선택합니다.
+* **장치 경로 (Device path):** 목록중에서 하나를 선택합니다. (/dev/oracleoci/oraclevdb)
+* **연결 유형 (Attachment type):** ISCSI
+* **액세스 (Access):** 읽기/쓰기(Read/write)
 
 ![](/assets/img/getting-started/2022/oci-bv-5.png " ")
 
