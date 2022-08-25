@@ -82,7 +82,7 @@ ODSA를 이용하려면 먼저 Microsoft Azure 와 Oracle Cloud Infrastructure�
 #### Oracle Cloud Infrastructure 준비사항
 - Oracle OCI 계정 (계정이 없는 경우 진행과정에서 신규로 생성이 가능합니다)
 - Identity Domain이 적용된 OCI Account
-- 해당 도메인에 관리 권한을 가지고 있는 OCI 사용자 계정
+- Cloud 관리 권한 및 연결해야 하는 도메인에 관리 권한을 가지고 있는 OCI 사용자 계정
 
 #### 사용가능한 OCI 및 Azure 데이터센터 지역
 ODSA 서비스는 OCI 와 Azure의 데이터센터가 Interconnect 되어있는 지역에서 지원하고 있습니다.
