@@ -35,21 +35,19 @@ header: no
 
 ### 서비스 소개
 On-Premise 기반의 Oracle Database 간의 SOURCE DB 와 TARGET DB 간의 실시간 복제 솔루션으로 강력한 Oracle GoldenGate 라는 솔루션이 있습니다. OGG(Oracle GoldenGate)는 Source System의 Database Redo/Archive Log에 접근해, 변경 된 데이터만 추출하여 Target System Database에 데이터를 동기화 하는 CDC 솔루션을 말합니다.
-
 OCI 에는 기존 On-Premise 기반의 Oracle GoldenGate (OGG) 솔루션이 OCI GoldenGate 라는 이름의 Managed 서비스가 추가가 되었습니다.
-
 OCI GoldenGate 는 타 Cloud Vendor 에서는 제공하지 않는 OCI 에서만 제공하는 CDC 솔루션입니다.
 
-이번 글에서는 OCI GoldenGate 서비스에 대한 DB 복제 구성을 실습해 보도록 합니다. 
-
 ![OCI GG Overview](/assets/img/dataplatform/2022/goldengate/00.oci-goldengate-overview.png)
+
+이번 글에서는 OCI GoldenGate 서비스에 대한 DB 복제 구성을 실습해 보도록 합니다. 
 
 <br>
 
 ### 사전 준비 사항
 OCI GoldenGate 서비스를 구성하려면 먼저 아래와 같은 사항들이 준비되어야 합니다.
 - DBCS 구성을 위한 Virtual Cloud Network (VCN) 구성 
-- Source Oracle DB (OCI DBCS 혹은 ADB) - (Oracle DB 11.2.0.4 버전 이상, 19.0.0.0 버전만 제외) - DBCS 생성 시  [DBCS 생성 퀵스타트 가이드 참고](/_posts/blog/dataplatform/2022-07-02-oracle-database-cloud-service-quickstart.md){:target="_blank" rel="noopener"} 
+- Source Oracle DB (OCI DBCS 혹은 ADB) - (Oracle DB 11.2.0.4 버전 이상, 19.0.0.0 버전만 제외) - DBCS 생성 시  [DBCS 생성 퀵스타트 가이드 참고](/dataplatform/oracle-database-cloud-service-quickstart/){:target="_blank" rel="noopener"} 
 - Target Oracle DB (OCI DBCS 혹은 ADB) - (Oracle DB 11.2.0.4 버전 이상, 19.0.0.0 버전만 제외)
 - SQL Developer 실행을 위한 Windows Instance (선택 사항)
 
@@ -100,7 +98,7 @@ Target DB 에 대해서도 동일한 방식으로 sys 사용자에 대해 Connec
 
 ![SQL Developer](/assets/img/dataplatform/2022/goldengate/07.oci-goldengate-sql-developer-connection-sys-2.png)
 
-Connection 을 클릭하여 제대로 접속해서 SQL 실행창이 나타나는지 확인합니다.
+Connection 을 클릭하여 설정한 SOURCE DB 로 연결이 잘 되는지 확인합니다.
 
 ![SQL Developer](/assets/img/dataplatform/2022/goldengate/08.oci-goldengate-sql-developer-connect-sql.png)
 
@@ -192,32 +190,32 @@ Connection 을 클릭하여 제대로 접속해서 SQL 실행창이 나타나는
 - Target DB 에도 아래의 SEED Data Load Script 를 수행합니다. SEED Data Load Script 는 [TARGET-SEED-DATA.SQL](/assets/files/ocigg-sql/TARGET-SEED-DATA.SQL) 를 다운받아 생성한 SRCMIRROR_OCIGGLL 사용자의 Connection 을 이용해 접속 후 SQL 실행창에 복사하여 붙여놓고 SQL 문장들을 실행합니다. (아래 내용은 해당 스크립트의 일부입니다.)
 
 
-  ``` 
-  GRANT UNLIMITED TABLESPACE TO SRCMIRROR_OCIGGLL;
+``` 
 
-  --------------------------------------------------------
-  --  File created - @dsgray 9-22-2020   
-  --------------------------------------------------------
-  --------------------------------------------------------
-  --  DDL for Table SRC_CITY
-  --------------------------------------------------------
+GRANT UNLIMITED TABLESPACE TO SRCMIRROR_OCIGGLL;
+--------------------------------------------------------
+--  File created - @dsgray 9-22-2020   
+--------------------------------------------------------
+--------------------------------------------------------
+--  DDL for Table SRC_CITY
+--------------------------------------------------------
+CREATE TABLE "SRCMIRROR_OCIGGLL"."SRC_CITY" 
+(	"CITY_ID" NUMBER(10,0), 
+"CITY" VARCHAR2(50 BYTE), 
+"REGION_ID" NUMBER(10,0), 
+"POPULATION" NUMBER(10,0)
+) SEGMENT CREATION IMMEDIATE 
+PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+NOCOMPRESS LOGGING
+STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+;
+------------
+..... 중략
+  
+```
 
-  CREATE TABLE "SRCMIRROR_OCIGGLL"."SRC_CITY" 
-   (	"CITY_ID" NUMBER(10,0), 
-	"CITY" VARCHAR2(50 BYTE), 
-	"REGION_ID" NUMBER(10,0), 
-	"POPULATION" NUMBER(10,0)
-   ) SEGMENT CREATION IMMEDIATE 
-  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
-  NOCOMPRESS LOGGING
-  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
-  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
-  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
-   ;
-  ------------
-   ..... 중략
-
-  ```
   아래 화면은 상기 SEED-DATA.SQL 스크립트를 실행한 결과입니다. SRCMIRROR_OCIGGLL 스키마에 SOURCE DB의 샘플테이블인 SRC_CITY, SRC_CUSTOMER, SRC_PRODUCT, SRC_REGION 등의 테이블과 데이터가  동일하게 입력이 되어 있는지 확인합니다.
     ![SEED User](/assets/img/dataplatform/2022/goldengate/14.oci-goldengate-sql-developer-target-seed-data.png)
 
