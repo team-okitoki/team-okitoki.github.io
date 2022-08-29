@@ -4,7 +4,7 @@ layout: page-fullwidth
 # Content
 #
 subheadline: "DataPlatform"
-title: "OCI GoldenGate Configuration Guide"
+title: "OCI GoldenGate Capture/Replication Configuration 실습"
 teaser: "OCI 의 GoldenGate 를 프로비저닝하고 Source Oracle DBCS 로부터 Traget Oracle DBCS 로 실시간 복제 구성을 실습합니다."
 author: lim
 breadcrumb: true
