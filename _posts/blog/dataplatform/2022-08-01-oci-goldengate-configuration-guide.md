@@ -414,11 +414,11 @@ OCI Console 에서 등록한 Database 들은 OCI GoldenGate 에서 조회가 가
   ![TRANDATA Info](/assets/img/dataplatform/2022/goldengate/40.oci-goldengate-trandata-information.png)
 
 
-- "+" 버튼을 클릭했을때, 나타나는 아래의 입력창의 Schema Name 란에 <PDB명>.SRC_OCIGGLL 을 입력하고 Submit 버튼을 클릭합니다.
+- "+" 버튼을 클릭했을때, 나타나는 아래의 입력창의 Schema Name 란에 PDB1.SRC_OCIGGLL 을 입력하고 Submit 버튼을 클릭합니다.
 
   ![TRANDATA SUBMIT](/assets/img/dataplatform/2022/goldengate/41.oci-goldengate-trandata-add-submit.png)
 
-- 추가한 TRANDATA 가 제대로 생성되었는지 확인하기 위해 아래 빨간색으로 표시된 입력창에 <PDB명>.SRC_OCIGGLL 을 입력하고 창 옆에 빨간색으로 표시된 돋보기 버튼을 클릭하면 생성된 TRANDATA 정보가 하단에 디스플레이 됩니다.
+- 추가한 TRANDATA 가 제대로 생성되었는지 확인하기 위해 아래 빨간색으로 표시된 입력창에 PDB1.SRC_OCIGGLL 을 입력하고 창 옆에 빨간색으로 표시된 돋보기 버튼을 클릭하면 생성된 TRANDATA 정보가 하단에 디스플레이 됩니다.
 
   ![TRANDATA SEARCH](/assets/img/dataplatform/2022/goldengate/42.oci-goldengate-trandata-check.png)
 
@@ -443,7 +443,7 @@ Capture / Replication 프로세스 설정을 하기 위해서는 TARGET DB 에 C
   ![CHECKPOINT CREATE](/assets/img/dataplatform/2022/goldengate/45.oci-goldengate-checkpoint-create.png)
 
 
-- Checkpoint Table 입력창에 "<TARGET DB 스키마명>"."CEHCKTABLE" 을 입력 후 Submit 버튼을 클릭합니다. (입력 예:"SRCMIRROR_OCIGGLL"."CHECKTABLE")
+- Checkpoint Table 입력창에 "SRCMIRROR_OCIGGLL"."CEHCKTABLE" 을 입력 후 Submit 버튼을 클릭합니다.
 
   ![CHECKPOINT CREATE-2](/assets/img/dataplatform/2022/goldengate/46.oci-goldengate-checkpoint-create-2.png)
 
