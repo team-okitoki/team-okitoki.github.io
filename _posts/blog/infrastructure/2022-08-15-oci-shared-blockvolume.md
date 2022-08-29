@@ -28,7 +28,7 @@ header: no
 # mediaplayer: true
 
 ---
-![](/assets/img/infrastructure/shared-blockvolume/9.jpeg)
+![](/assets/img/infrastructure/shared-blockvolume/SCR-20220823-k0g.png)
 
 ### Shared Blockvolume
 OCI(Oracle Cloud Infrastructure)는 여러 Compute 인스턴스가 공유하는 Block Volume을 지원합니다. 1개의 Block Volume을 2개 이 이상의 Compute 인스턴스가 마운트할 수 있습니다. 여러 Compute 인스턴스가 1개 Block Volume을 읽기/쓰기 모드로 마운트할 경우, 쓰기 중복을 방지하기 위해서 여러 Compute 인스턴스의 파일 쓰기를 조정하는 중재 소프트웨어가 필요합니다. 이런 중재 소프트웨어를 Clusterware라고 합니다.

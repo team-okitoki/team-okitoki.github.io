@@ -3,7 +3,7 @@ layout: page-fullwidth
 #
 # Content
 #
-subheadline: "DataPlatform"
+subheadline: "Multi Cloud"
 title: "Oracle Database Service for Azure 소개"
 teaser: "Microsoft Azure 에서 Oracle Database를 쉽게 활용할 수 있도록 구성된 Oracle Database Service for Azure에 대해 알아봅니다."
 author: yhcho
@@ -32,6 +32,7 @@ header: no
 *  TOC
 {:toc}
 </div>
+
 ### 서비스 소개
 Oracle Database Service for Microsoft Azure( 이하 'ODSA' )를 사용하면 Oracle Cloud Infrastructure 의 데이터베이스 서비스를 Azure 클라우드 환경 에 쉽게 통합할 수 있습니다. 
 ODSA 는 서비스 기반 접근 방식을 사용하여 기존의 복잡한 클라우드간 수동 배포를 통해 리소스를 생성하는 작업을 대체할 수 있는 편리한 대안입니다.
@@ -47,6 +48,7 @@ ODSA 는 서비스 기반 접근 방식을 사용하여 기존의 복잡한 클�
 
 **Case 3. Azure를 사용하는 고객 중 OCI 계정이 있는 경우에는?**
 - OCI 계정은 `IDCS` 기반이 아닌 `Identity Domain` 적용되어 있는 계정만 연동 가능함. (만약 IDCS 기반인 경우 새로운 OCI 계정 생성이 필요합니다.)
+  ![Diff IDCS vs Identity Domain #4](/assets/img/dataplatform/2022/oci-idcs-identity-domain-ui-diff.png)
 
 #### 사용 가능한 Oracle 데이터베이스 시스템
 Azure용 Oracle Database Service 는 다음 제품을 제공합니다.
@@ -55,12 +57,194 @@ Azure용 Oracle Database Service 는 다음 제품을 제공합니다.
 - **기본 데이터베이스** : ODSA 를 사용하여 가상 머신 DB 시스템에 Oracle Enterprise Edition 또는 Oracle Standard Edition 데이터베이스를 배포할 수 있습니다.<br> 
 (`※ RAC 를 이용하여 2 node 데이터베이스를 구성하는 경우, Enterise Edition Extreme Performance 버전만 지원`)
 
-### 사전 요구 사항
-ODSA를 이용하려면 먼저 Microsoft Azure 계정이 필요합니다. 계정 생성 후 Azure Active Directory 에서 자체 도메인 사용자를 생성하고, 해당 사용자에게 권한을 부여하여 ODSA 서비스를 사용할 수 있습니다.
-- Microsoft Azure 계정
-- Oracle OCI 계정 (계정이 없는 경우 진행과정에서 신규로 생성이 가능합니다)
+#### Azure용 Database Service(ODSA)와 OCI-Azure Interconnect의 차이점?
 
-#### Azure 도메인 사용자 생성 및 권한 부여
+| 항목 | Oracle Database Service for Azure (ODSA) | OCI-Azure interconnect    |
+|-----|--|----|
+| **기본 용도** | Azure 리소스를 OCI의 Oracle Databases에 연결하려는 Azure 고객 | 맞춤형 양방향 시나리오. 모든 OCI 및 Azure 리소스에서 사용할 수 있습니다. |
+| **서비스 요약** | 안내식으로 계정 연결, 사용자 자격을 자동화 및 간소화하고 Azure에 대한 포털을 제공하여 Azure 사용자에게 친숙한 UX 경험으로 OCI 데이터베이스 서비스를 관리할 수 있습니다. | Oracle FastConnect 및 Azure ExpressRoute에 구축된 OCI와 Azure 간의 직접 연결을 통해 Azure 및 OCI 간 통합 ID 및 액세스 관리를 활용하여 11개 지역에서 낮은 대기 시간, 높은 처리량 및 이중 연결을 생성합니다. |
+| **지원** | 협업 지원 모델(상호 연결과 동일) | 협업 지원 모델 |
+| **네트워크 비용** | 상호 연결 포트 요금이 부과되지 않습니다. OCI 데이터 수신/송신 요금 없음 | 상호 접속 포트(FastConnect 및 ExpressRoute) 데이터 수신/송신 비용 없음  |
+| **네트워크 확장** | 완전 관리형 | 고객 관리형 |
+| **모니터링** | Azure App Insights 및 Azure Log Analytics에서 소비되는 통합 측정 지표 및 이벤트 | 고객 관리형 |
+| **가격 책정** | <mark>Azure용 Oracle Database Service에는 비용이 들지 않습니다. 사용된 Azure 및 OCI 서비스에 대해서만 비용을 지불합니다.</mark> | 상호 연결 포트(FastConnect 및 ExpressRoute) 및 Azure 및 OCI 서비스 사용 |
+
+### ODSA를 사용하기 위한 전제조건
+ODSA를 이용하려면 먼저 Microsoft Azure 와 Oracle Cloud Infrastructure의 계정이 필요합니다.
+
+#### Microsoft Azure 준비사항
+- Microsoft Azure 계정
+- OCI 에 연결하려는 Azure 구독의 관리 권한 및 소유권이 있는 Azure 사용자 계정
+- OCI 에 연결하여는 Azure 계정에 Global Administrator(전역 관리자) 역할이 부여되어 있어야 함
+- ODSA 관련 리소스가 생성될 Resource Group
+- OCI이 VCN과 연결될 Azure Virtual Network 
+
+#### Oracle Cloud Infrastructure 준비사항
+- Oracle OCI 계정 (계정이 없는 경우 진행과정에서 신규로 생성이 가능합니다)
+- Identity Domain이 적용된 OCI Account
+- Cloud 관리 권한 및 연결해야 하는 도메인에 관리 권한을 가지고 있는 OCI 사용자 계정
+
+#### 사용가능한 OCI 및 Azure 데이터센터 지역
+ODSA 서비스는 OCI 와 Azure의 데이터센터가 Interconnect 되어있는 지역에서 지원하고 있습니다.
+한국에서는 현재 OCI South Korea Central(서울) 과 Azure Seoul 에서 ODSA를 사용하실 수 있습니다.<br>
+아래 내용은 [OCI 공식문서 페이지](https://docs.oracle.com/en-us/iaas/Content/multicloud/regions.htm){:target="_blank" rel="noopener"}에서도 확인할 수 있습니다.
+
+<section class="section">
+    <h4 class="title sectiontitle vl-no-in-page-toc">Asia Pacific (APAC)</h4>
+    <div class="uk-overflow-auto">
+        <table class="table vl-table-bordered vl-table-divider-col" summary="This table lists all pairs of Oracle and Azure regional locations in the Asia
+                    Pacific (APAC) market that share a cross cloud connection.">
+            <caption><span class="title"></span></caption>
+            <colgroup>
+                <col>
+                <col>
+            </colgroup>
+            <thead class="thead">
+                <tr class="row">
+                    <th class="entry" id="regional_availability__entry__1"><span class="ph">OCI</span> location</th>
+                    <th class="entry" id="regional_availability__entry__2">Azure location</th>
+                </tr>
+            </thead>
+            <tbody class="tbody">
+                <tr class="row">
+                    <td class="entry" headers="regional_availability__entry__1"><span class="ph">OCI</span>
+                        <span class="ph">Japan East (Tokyo)</span>
+                    </td>
+                    <td class="entry" headers="regional_availability__entry__2">Azure Tokyo</td>
+                </tr>
+                <tr class="row">
+                    <td class="entry" headers="regional_availability__entry__1"><span class="ph">OCI</span>
+                        <span class="ph">Singapore (Singapore)</span>
+                    </td>
+                    <td class="entry" headers="regional_availability__entry__2">Azure Singapore</td>
+                </tr>
+                <tr class="row">
+                    <td class="entry" headers="regional_availability__entry__1"><span class="ph">OCI</span>
+                        <span class="ph">South Korea Central (Seoul)</span>
+                    </td>
+                    <td class="entry" headers="regional_availability__entry__2">Azure Seoul</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+
+<section class="section">
+    <h4 class="title sectiontitle vl-no-in-page-toc">Europe, Middle East, Africa (EMEA)</h4>
+    <div class="uk-overflow-auto">
+        <table class="table vl-table-bordered vl-table-divider-col" summary="This table lists all pairs of Oracle and Azure regional locations in the
+                    Europe, Middle East, Africa (EMEA) market that share a cross cloud
+                    connection.">
+            <caption><span class="title"></span></caption>
+            <colgroup>
+                <col>
+                <col>
+            </colgroup>
+            <thead class="thead">
+                <tr class="row">
+                    <th class="entry" id="regional_availability__entry__9"><span class="ph">OCI</span> location</th>
+                    <th class="entry" id="regional_availability__entry__10">Azure location</th>
+                </tr>
+            </thead>
+            <tbody class="tbody">
+                <tr class="row">
+                    <td class="entry" headers="regional_availability__entry__9"><span class="ph">OCI</span>
+                        <span class="ph">Germany Central (Frankfurt)</span>
+                    </td>
+                    <td class="entry" headers="regional_availability__entry__10">Azure Frankfurt and Frankfurt2</td>
+                </tr>
+                <tr class="row">
+                    <td class="entry" headers="regional_availability__entry__9"><span class="ph">OCI</span>
+                        <span class="ph">Netherlands Northwest (Amsterdam)</span>
+                    </td>
+                    <td class="entry" headers="regional_availability__entry__10">Azure Amersterdam2</td>
+                </tr>
+                <tr class="row">
+                    <td class="entry" headers="regional_availability__entry__9"><span class="ph">OCI</span>
+                        <span class="ph">UK South (London)</span>
+                    </td>
+                    <td class="entry" headers="regional_availability__entry__10">Azure London</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+<section class="section">
+    <h4 class="title sectiontitle vl-no-in-page-toc">Latin America (LATAM)</h4>
+    <div class="uk-overflow-auto">
+        <table class="table vl-table-bordered vl-table-divider-col" summary="This table lists all pairs of Oracle and Azure regional locations in the Latin
+                        America (LATAM) market that share a cross cloud connection.">
+            <caption><span class="title"></span></caption>
+            <colgroup>
+                <col>
+                <col>
+            </colgroup>
+            <thead class="thead">
+                <tr class="row">
+                    <th class="entry" id="regional_availability__entry__17"><span class="ph">OCI</span> location</th>
+                    <th class="entry" id="regional_availability__entry__18">Azure location</th>
+                </tr>
+            </thead>
+            <tbody class="tbody">
+                <tr class="row">
+                    <td class="entry" headers="regional_availability__entry__17"><span class="ph">OCI</span>
+                        <span class="ph">Brazil Southeast (Vinhedo)</span>
+                    </td>
+                    <td class="entry" headers="regional_availability__entry__18">Azure Campinas</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+
+<section class="section">
+    <h4 class="title sectiontitle vl-no-in-page-toc">North America (NA)</h4>
+    <div class="uk-overflow-auto">
+        <table class="table vl-table-bordered vl-table-divider-col" summary="This table lists all pairs of Oracle and Azure regional locations in the North
+                            America (NA) market that share a cross cloud connection.">
+            <caption><span class="title"></span></caption>
+            <colgroup>
+                <col>
+                <col>
+            </colgroup>
+            <thead class="thead">
+                <tr class="row">
+                    <th class="entry" id="regional_availability__entry__21"><span class="ph">OCI</span> location</th>
+                    <th class="entry" id="regional_availability__entry__22">Azure location</th>
+                </tr>
+            </thead>
+            <tbody class="tbody">
+                <tr class="row">
+                    <td class="entry" headers="regional_availability__entry__21"><span class="ph">OCI</span>
+                        <span class="ph">Canada Southeast (Toronto)</span>
+                    </td>
+                    <td class="entry" headers="regional_availability__entry__22">Azure Canada Central</td>
+                </tr>
+                <tr class="row">
+                    <td class="entry" headers="regional_availability__entry__21"><span class="ph">OCI</span>
+                        <span class="ph">US East (Ashburn)</span>
+                    </td>
+                    <td class="entry" headers="regional_availability__entry__22">Azure Washington DC and Washington DC2
+                    </td>
+                </tr>
+                <tr class="row">
+                    <td class="entry" headers="regional_availability__entry__21"><span class="ph">OCI</span>
+                        <span class="ph">US West (Phoenix)</span>
+                    </td>
+                    <td class="entry" headers="regional_availability__entry__22">Azure Phoenix</td>
+                </tr>
+                <tr class="row">
+                    <td class="entry" headers="regional_availability__entry__21"><span class="ph">OCI</span>
+                        <span class="ph">US West (San Jose)</span>
+                    </td>
+                    <td class="entry" headers="regional_availability__entry__22">Azure Silicon Valley</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+
+### Azure 도메인 사용자 생성 및 권한 부여하기
 1. Azure Active Directory 메뉴 이동 후 "User(사용자)" 메뉴를 클릭합니다.
    ![Create User #1](/assets/img/dataplatform/2022/azure-ad-create-user-1.png)
 2. 이동된 화면에서 "New User" -> "Create New User" 버튼을 차례로 클릭합니다.
@@ -79,7 +263,7 @@ ODSA를 이용하려면 먼저 Microsoft Azure 계정이 필요합니다. 계정
 9. 우측 화면에서 새로 생성한 계정을 선택 후 추가하여 공동 관리자 등록을 완료합니다.
    ![Create User #8](/assets/img/dataplatform/2022/azure-ad-create-user-8.png)
 
-### ODSA 포탈 접속 및 로그인
+### ODSA 연결을 위한 포탈 접속 및 로그인
 ODSA 서비스를 사용하기 위해 [https://signup.multicloud.oracle.com/azure](https://signup.multicloud.oracle.com/azure){:target="_blank" rel="noopener"} 링크를 클릭하여 접속 합니다.
 로그인시 사용할 ID는 전 단계에서 생성한 Azure 자체 도메인 사용자 계정 및 비밀번호를 입력합니다.
 1. Azure Portal에서 사용자 정보를 복사합니다.
@@ -88,7 +272,7 @@ ODSA 서비스를 사용하기 위해 [https://signup.multicloud.oracle.com/azur
    ![Signin to ODSA Console #2](/assets/img/dataplatform/2022/oracle-odsa-signin-2.png)
 3. 암호를 입력합니다
    ![Signin to ODSA Console #3](/assets/img/dataplatform/2022/oracle-odsa-signin-3.png)
-4. ODSA 콘솔에 로그인 되었습니다.
+4. ODSA 설정을 위한 콘솔에 로그인 되었습니다.
    ![Signin to ODSA Console #4](/assets/img/dataplatform/2022/oracle-odsa-signin-4.png)
 
 ### ODSA 에서 Azure 계정과 OCI 계정 연동하기
@@ -105,46 +289,14 @@ ODSA 서비스를 사용하기 위해 [https://signup.multicloud.oracle.com/azur
 6. 선택 후 문제가 없다면 약 5분정도 기다린 후에 설정이 완료됩니다.
    ![ODSA Link account #6](/assets/img/dataplatform/2022/oracle-odsa-link-account-6.png)
 
-### ODSA 콘솔 확인 및 Autonomous Database 생성하기
-1. ODSA 콘솔에서 Autonomous Database 버튼을 클릭합니다.
-   ![ODSA Link account #6](/assets/img/dataplatform/2022/oracle-odsa-service-console-1.png)
-2. Autonomous Database 생성화면에서 Azure 구독과 리소스 그룹을 선택하고 인스턴스 이름, 리전을 선택합니다.
-   - Subscription, Resource Group, Name : 각자 계정 상황에 맞게 선택 및 입력합니다.
-   - Region : **Korea Central** 을 선택합니다.
-   - **"Next: Configuration"** 클릭
-   ![ODSA Link account #6](/assets/img/dataplatform/2022/oracle-odsa-service-console-2.png)
-3. 다음과 같이 선택 및 입력합니다.
-   - Workload Type : **Data Warehouse**
-   - OCPU Count : **1**
-   - OCPU Auto Scaling : **Check**
-   - Storage(TB) : **1**
-   - License Type : **License included**
-   - Database Version : **19C**
-   - Database Name : **DEMODB**
-   - **"Next: Networking"** 클릭
-   ![ODSA Link account #6](/assets/img/dataplatform/2022/oracle-odsa-service-console-3.png)
-4. 다음과 같이 선택 및 입력합니다.
-   - Access Type : **Secure Access from everywhere**
-   - **"Next: Security"** 클릭
-   ![ODSA Link account #6](/assets/img/dataplatform/2022/oracle-odsa-service-console-4.png)
-5. 다음화면에서 관리자 비밀번호를 설정합니다. (대문자+소문자+숫자+특수문자 조합필요)
-   - **"Review+Create"** 클릭
-   ![ODSA Link account #6](/assets/img/dataplatform/2022/oracle-odsa-service-console-5.png)
-6. 설정 정보를 확인하고 "Create" 버튼을 클릭합니다.
-   ![ODSA Link account #6](/assets/img/dataplatform/2022/oracle-odsa-service-console-6.png)
-7. 다음 화면에서 프로비전 상태를 확인합니다. (ODSA 콘솔)
-   ![ODSA Link account #6](/assets/img/dataplatform/2022/oracle-odsa-service-console-7.png)
-8. ODSA에서 프로비전하면 OCI에 자동으로 구획이 생성됩니다.
-   ![ODSA Link account #6](/assets/img/dataplatform/2022/oracle-odsa-service-console-8.png)
-   ![ODSA Link account #6](/assets/img/dataplatform/2022/oracle-odsa-service-console-9.png)
-9. 자동으로 생성된 구획 Autonomous Database 리소스를 확인해보면 정상적으로 생성되었음을 확인할 수 있습니다.
-   ![ODSA Link account #6](/assets/img/dataplatform/2022/oracle-odsa-service-console-10.png)
-   ![ODSA Link account #6](/assets/img/dataplatform/2022/oracle-odsa-service-console-11.png)
-10. ODSA 콘솔에서도 Active 상태를 확인할 수 있습니다.
-    ![ODSA Link account #6](/assets/img/dataplatform/2022/oracle-odsa-service-console-12.png)
-11. "Database Actions" 버튼을 클릭하여 ADW 서비스에 접속할 수 있습니다. (비밀번호는 설정한 관리자 비밀번호 활용)
-    ![ODSA Link account #6](/assets/img/dataplatform/2022/oracle-odsa-service-console-13.png)
-12. Oracle Database Actions 서비스 콘솔 접속 확인
-    ![ODSA Link account #6](/assets/img/dataplatform/2022/oracle-odsa-service-console-14.png)
-
-### Azure에서 로그 및 모니터링 하기 (확인중)
+### ODSA 콘솔 접속하기
+ODSA 서비스를 사용하기 위해 [https://console.multicloud.oracle.com/azure](https://console.multicloud.oracle.com/azure){:target="_blank" rel="noopener"} 링크를 클릭하여 콘솔에 접속 합니다.
+로그인시 사용할 ID는 전 단계에서 생성한 Azure 자체 도메인 사용자 계정 및 비밀번호를 입력합니다.
+1. Azure Portal에서 사용자 정보를 복사합니다.
+   ![Signin to ODSA Console #1](/assets/img/dataplatform/2022/oracle-odsa-signin-1.png)
+2. 로그인 화면에서 복사한 정보를 붙여넣기 합니다.
+   ![Signin to ODSA Console #2](/assets/img/dataplatform/2022/oracle-odsa-signin-2.png)
+3. 암호를 입력합니다
+   ![Signin to ODSA Console #3](/assets/img/dataplatform/2022/oracle-odsa-signin-3.png)
+4. ODSA 콘솔에 접속되었습니다.
+   ![Signin to ODSA Console #3](/assets/img/dataplatform/2022/oracle-odsa-signin-5.png)
