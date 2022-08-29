@@ -370,7 +370,7 @@ OCI GoldenGate 에서 캡쳐/추출 및 복제를 할 대상 Database 들에 대
 
     ![SREG-DB-2](/assets/img/dataplatform/2022/goldengate/30.oci-goldengate-register-database-input.png)
 
-      > 주의 : SOURCE DB 의 Connection String 입력 시 반드시 CDB 의 서비스명으로 입력을 합니다. 화면 입력 예) Database Connection string : srcggdb.sub07160235111.pslimvcn2021071.oraclevcn.com:1521/SRCGGDB_SRCGGDB.sub07160235111.pslimvcn2021071.oraclevcn.com
+      > 주의 : SOURCE DB 의 Connection String 입력 시 반드시 CDB 의 서비스명으로 입력을 합니다. <br> 화면 입력 예) Database Connection string : srcggdb.sub07160235111.pslimvcn2021071.oraclevcn.com:1521/SRCGGDB_SRCGGDB.sub07160235111.pslimvcn2021071.oraclevcn.com
 
     ![SREG-DB-3](/assets/img/dataplatform/2022/goldengate/31.oci-goldengate-register-database-input-2.png)
   
