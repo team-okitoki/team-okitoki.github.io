@@ -91,7 +91,7 @@ DBCS 생성은 매우 간단한 절차에 의해 자동으로 Oracle Database �
     ![Windows Preparation](/assets/img/dataplatform/2022/dbcs/quickstart/08.oci-dbcs-create-db-system-input-2-storage-3.png)
 
 - Configure the DB system 부분은 데이터베이스 서버 노드의 갯수를 지정할 수 있게 됩니다. Single 노드를 사용할 것인지, 2개의 노드로 RAC 환경으로 구성할 것인지 지정 후 스크롤 다운합니다. 지정된 노드의 갯수에 따라 Oracle Database software edition 이 자동으로 선택됩니다. (2노드 RAC 일 경우 Enterprise Edition Extreme Performance 가 자동으로 지정됨)
-- Oracle Database Software Edition 의 차이점 및 정보는 [DBCS 소개](/_posts/blog/dataplatform/2022-07-01-oracle-database-cloud-service-overview.md){:target="_blank" rel="noopener"} 를 참조합니다. 
+- Oracle Database Software Edition 의 차이점 및 정보는 [DBCS 소개](/dataplatform/oracle-database-cloud-service-overview/){:target="_blank" rel="noopener"} 를 참조합니다. 
 
     ![Windows Preparation](/assets/img/dataplatform/2022/dbcs/quickstart/09.oci-dbcs-create-db-system-input-2-configure-db.png)
 
