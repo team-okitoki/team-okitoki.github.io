@@ -301,17 +301,17 @@ SOURCE DB 와 TARGET DB 에 OCI GoldenGate 가 추출 및 복제를 수행하기
 
 ### STEP 6 : OCI GoldeGate 서비스 Deployment
 
-OCI GoldenGate 서비스를 사용하기 위해 서비스를 Deployment 해야 합니다. 
+OCI GoldenGate 서비스를 사용하기 위해 서비스를 Deploy 해야 합니다. 
 
 - 아래의 OCI 메인 메뉴에서 GoldenGate 를 찾아 선택합니다.
 
     ![GG NAVIGATION MENU](/assets/img/dataplatform/2022/goldengate/19.oci-goldengate-navigation-menu.png)
 
-- GoldenGate 의 좌측 메뉴 중에서 두번째 Deployments 메뉴를 선택 후 Compartment 를 선택합니다. 우측의 목록 상단의 Create Deployment 버튼을 클릭합니다.
+- GoldenGate 의 좌측 메뉴 중에서 두번째 Deployments 메뉴를 선택 후 Compartment 를 선택합니다. 우측의 목록 상단의 "Create Deployment" 버튼을 클릭합니다.
 
     ![GG DEPLOYMENT MENU](/assets/img/dataplatform/2022/goldengate/20.oci-goldengate-deployment-main.png)
 
-- 아래 화면과 같이 OCI GoldenGate Deployment 를 위한 입력 사항들을 입력해 후 Next 버튼을 클릭합니다. (※ AutoScaling 체크 시, 초기 설정한 OCPU 의 3배까지 자동 스켈링 수행)
+- 아래 화면과 같이 OCI GoldenGate Deploy 를 위한 입력 사항들을 입력해 후 Next 버튼을 클릭합니다. (※ AutoScaling 체크 시, 초기 설정한 OCPU 의 3배까지 자동 스켈링 수행)
     > 중요 : OCI GoldenGate Web Console 을 접근하기 위해서는 반드시 Public Subnet 을 선택하여 Deploy 합니다. Public Subnet 에 Deploy 를 하지만 Private IP 기반으로만 통신합니다.
 
     ![DEPLOYMENT INPUT](/assets/img/dataplatform/2022/goldengate/21.oci-goldengate-deployment-input-public.png)
@@ -472,7 +472,7 @@ OCI GoldenGate Admin 콘솔에서 EXTRACT(Capture) 프로세스를 추가하는 
 - Add Extract 의 두번째 화면에서는 Process Name 과 Trail File 이 저장될 Trail Name 을 아래와 같이 입력합니다.
     - Process Name : UAEXT (사용하고자 하는 프로세스 명)
     - Intent : Unidirectional 선택
-    - Train Name : E1 (반드시 2자만 입력)
+    - Trail Name : E1 (반드시 2자만 입력)
 
   ![PROCESS NAME](/assets/img/dataplatform/2022/goldengate/51.oci-goldengate-extract-process-name-trail.png)
 
