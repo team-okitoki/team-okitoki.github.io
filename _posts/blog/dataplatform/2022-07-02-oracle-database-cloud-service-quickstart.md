@@ -60,9 +60,9 @@ DBCS 생성은 매우 간단한 절차에 의해 자동으로 Oracle Database �
 
 - Create DB System 화면에서는 DBCS 생성을 위한 다음과 같은 사항들을 입력하거나 선택 후 아래로 스크롤 다운 합니다.
     - Select a compartment : DBCS 가 위치할 Compartment 가 잘 선택되어 있는지 확인
-    - Name your DB system : SRCGGDB (목록에 Display 될 DBCS 이름)
-    - Select an availability domain : AD-1 (AD domain 이 여러개 있는 Region 에서는 AD 를 지정, 선택할 수 있으나 한국의 Seoul, Chuncheon Region 은 Single AD 임)
-    - Select a shape type : Virtual Machine (VM, Bare Metal, Exadata 중 선택 - Bare Metal 은 RAC 미지원)
+    - Name your DB system : SRCGGDB (※ 목록에 Display 될 DBCS 이름)
+    - Select an availability domain : AD-1 (※ AD domain 이 여러개 있는 Region 에서는 AD 를 지정, 선택할 수 있으나 한국의 Seoul, Chuncheon Region 은 Single AD 임)
+    - Select a shape type : Virtual Machine (※ VM, Bare Metal, Exadata 중 선택 - Bare Metal 은 RAC 미지원)
     
     ![Windows Preparation](/assets/img/dataplatform/2022/dbcs/quickstart/03.oci-dbcs-create-db-system-input-1.png)
 
@@ -77,12 +77,12 @@ DBCS 생성은 매우 간단한 절차에 의해 자동으로 Oracle Database �
     ![Windows Preparation](/assets/img/dataplatform/2022/dbcs/quickstart/06.oci-dbcs-create-db-system-input-2-storage.png)
 
     - Storage Management Software 선택
-        - Oracle Grid Infrastructure : Oracle 에서 만든 Storage Software 로 RAC와 같은 Cluster 구성이 가능하도록 Grid를 지원하는 Storage Software 입니다. RAC 구성 시에는 반드시 선택해야 합니다. (기본 선택 사용)
+        - Oracle Grid Infrastructure : Oracle 에서 만든 Storage Software 로 RAC와 같은 Cluster 구성이 가능하도록 Grid를 지원하는 Storage Software 입니다. RAC 구성 시에는 반드시 선택해야 합니다. (※ 기본 선택 사용)
         - Local Volume Manager : Linux 기반의 Local Volume Manager Storage Software 를 사용하는 옵션으로 Single node 만 지원합니다.
 
     - Storage performance 선택
         - Balanced : 기본 성능 수준의 스토리지로 대부분의 워크로드에 대해 성능과 비용 절감을 감안하여 적절한 균형을 제공하는 스토리지 옵션입니다.
-        - Higher performance : 대용량 데이터베이스를 포함하여 최상의 성능을 요구하는 워크로드에 적합한 스토리지 옵션으로 많은 IO 성능을 요구하는 High Workload 에 권장되는 스토리지 옵션입니다. (기본 선택 사용)
+        - Higher performance : 대용량 데이터베이스를 포함하여 최상의 성능을 요구하는 워크로드에 적합한 스토리지 옵션으로 많은 IO 성능을 요구하는 High Workload 에 권장되는 스토리지 옵션입니다. (※ 기본 선택 사용)
 
     ![Windows Preparation](/assets/img/dataplatform/2022/dbcs/quickstart/07.oci-dbcs-create-db-system-input-2-storage-2.png)
 
@@ -90,7 +90,7 @@ DBCS 생성은 매우 간단한 절차에 의해 자동으로 Oracle Database �
   
     ![Windows Preparation](/assets/img/dataplatform/2022/dbcs/quickstart/08.oci-dbcs-create-db-system-input-2-storage-3.png)
 
-- Configure the DB system 부분은 데이터베이스 서버 노드의 갯수를 지정할 수 있게 됩니다. Single 노드를 사용할 것인지, 2개의 노드로 RAC 환경으로 구성할 것인지 지정 후 스크롤 다운합니다. 지정된 노드의 갯수에 따라 Oracle Database software edition 이 자동으로 선택됩니다. (2노드 RAC 일 경우 Enterprise Edition Extreme Performance 가 자동으로 지정됨)
+- Configure the DB system 부분은 데이터베이스 서버 노드의 갯수를 지정할 수 있게 됩니다. Single 노드를 사용할 것인지, 2개의 노드로 RAC 환경으로 구성할 것인지 지정 후 스크롤 다운합니다. 지정된 노드의 갯수에 따라 Oracle Database software edition 이 자동으로 선택됩니다. (※ 2노드 RAC 일 경우 Enterprise Edition Extreme Performance 가 자동으로 지정됨)
 - Oracle Database Software Edition 의 차이점 및 정보는 [DBCS 소개](/dataplatform/oracle-database-cloud-service-overview/){:target="_blank" rel="noopener"} 를 참조합니다. 
 
     ![Windows Preparation](/assets/img/dataplatform/2022/dbcs/quickstart/09.oci-dbcs-create-db-system-input-2-configure-db.png)
@@ -108,12 +108,12 @@ DBCS 생성은 매우 간단한 절차에 의해 자동으로 Oracle Database �
 
 - 다음 단계에서는 Database 정보를 입력하는 중요한 단계입니다. 아래 화면과 같이 생성할 DB 정보들을 입력 후 스크롤 다운합니다. 
     - Database Name : DB 의 이름 입력 (입력예 : SRCGGDB) 
-    - Database unique name suffix : Unique Name 입력 (입력예 : SRCGGDB)
-    - Database unique name 은 상기 Database Name 과 unique name suffix 를 조합하여 자동으로 생성됩니다. (입력예 : SRCGGDB_SRCGGDB)
+    - Database unique name suffix : Unique Name 입력 (※ 입력예 : SRCGGDB)
+    - Database unique name 은 상기 Database Name 과 unique name suffix 를 조합하여 자동으로 생성됩니다. (※ 입력예 : SRCGGDB_SRCGGDB)
 
     - Database image : 기본적으로 Oracle Database 19.0.0.0 버전이 선택됩니다. 19c 버전의 최신 patch 가 적용된 버전이나 기타 12c, 21c 버전을 사용하기를 원할 경우 아래 화면에서 "Change database image" 버튼을 누르면 database image 를 변경, 선택할 수 있는 화면이 나타납니다.
 
-    - PDB Name : 12c 이상의 버전에서는 Container 기반의 Pluggable 데이터베이스가 기본 구조입니다. PDB Name 은 Pluggable DB의 이름을 입력해 줍니다. (입력예 : PDB1)
+    - PDB Name : 12c 이상의 버전에서는 Container 기반의 Pluggable 데이터베이스가 기본 구조입니다. PDB Name 은 Pluggable DB의 이름을 입력해 줍니다. (※ 입력예 : PDB1)
 
         ![Windows Preparation](/assets/img/dataplatform/2022/dbcs/quickstart/13.oci-dbcs-create-input-3-db-information.png)
 
