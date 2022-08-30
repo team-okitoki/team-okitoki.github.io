@@ -126,12 +126,12 @@ Connection 을 클릭하여 설정한 SOURCE DB 로 연결이 잘 되는지 확�
   ![SEED User](/assets/img/dataplatform/2022/goldengate/09.oci-goldengate-sql-developer-seed-user.png)
 
 
-- 생성한 SRC_OCIGGLL 사용자로 SQLDeveloper 접속을 생성합니다. (생성한 SRC_OCIGGLL 사용자는 PDB 사용자로 반드시 아래의 서비스 이름에 PDB명을 입력해야 합니다. PDB명은 DB 생성 시 입력한 PDB명 입니다.)
+- 생성한 SRC_OCIGGLL 사용자로 SQLDeveloper 접속을 생성합니다. (※ 생성한 SRC_OCIGGLL 사용자는 PDB 사용자로 반드시 아래의 서비스 이름에 PDB명을 입력해야 합니다. PDB명은 DB 생성 시 입력한 PDB명 입니다.)
 
   ![SEED User](/assets/img/dataplatform/2022/goldengate/10.oci-goldengate-sql-developer-seed-user-connect.png)
 
 
-- 상기 생성한 SRC_OCIGGLL 사용자로 SQL Developer 에 접속 후 SQL 커맨드 창에서 아래의 SEED Data Load Script 를 수행합니다. SEED Data Load Script 는 [SOURCE-SEED-DATA.SQL](/assets/files/ocigg-sql/SOURCE-SEED-DATA.SQL) 를 다운받아 생성한 SRC_OCIGGLL 사용자의 Connection 을 이용해 접속 후 SQL 실행창에 복사하여 붙여놓고 SQL 문장들을 실행합니다. (아래 내용은 해당 스크립트의 일부입니다.)
+- 상기 생성한 SRC_OCIGGLL 사용자로 SQL Developer 에 접속 후 SQL 커맨드 창에서 아래의 SEED Data Load Script 를 수행합니다. SEED Data Load Script 는 [SOURCE-SEED-DATA.SQL](/assets/files/ocigg-sql/SOURCE-SEED-DATA.SQL) 를 다운받아 생성한 SRC_OCIGGLL 사용자의 Connection 을 이용해 접속 후 SQL 실행창에 복사하여 붙여놓고 SQL 문장들을 실행합니다. (※ 아래 내용은 해당 스크립트의 일부입니다.)
 
 
   ``` 
@@ -187,7 +187,7 @@ Connection 을 클릭하여 설정한 SOURCE DB 로 연결이 잘 되는지 확�
 
   ![SEED User](/assets/img/dataplatform/2022/goldengate/13.oci-goldengate-sql-developer-target-user-connect.png)
 
-- Target DB 에도 아래의 SEED Data Load Script 를 수행합니다. SEED Data Load Script 는 [TARGET-SEED-DATA.SQL](/assets/files/ocigg-sql/TARGET-SEED-DATA.SQL) 를 다운받아 생성한 SRCMIRROR_OCIGGLL 사용자의 Connection 을 이용해 접속 후 SQL 실행창에 복사하여 붙여놓고 SQL 문장들을 실행합니다. (아래 내용은 해당 스크립트의 일부입니다.)
+- Target DB 에도 아래의 SEED Data Load Script 를 수행합니다. SEED Data Load Script 는 [TARGET-SEED-DATA.SQL](/assets/files/ocigg-sql/TARGET-SEED-DATA.SQL) 를 다운받아 생성한 SRCMIRROR_OCIGGLL 사용자의 Connection 을 이용해 접속 후 SQL 실행창에 복사하여 붙여놓고 SQL 문장들을 실행합니다. (※ 아래 내용은 해당 스크립트의 일부입니다.)
 
 
 ``` 
@@ -231,7 +231,7 @@ SOURCE DB 의 SUPPLEMENT LOGGING 추가를 위해 SQL Developer 를 통해 SOURC
     ```
     ![ARCHIVELOG CHECK](/assets/img/dataplatform/2022/goldengate/15.oci-goldengate-sql-developer-archivelog-check.png)
 
-    ※ 만일, LOG_MODE 가 "NOARCHIVELOG" 모드로 설정이 되어 있다면 아래와 같이 SOURCE DB 인스턴스로 ssh 로그인하여 아래 절차대로 실행해 줍니다. (상기 화면과 같이 "ARCHIVELOG" 모드로 설정되어 있다면 아래 SCRIPT 는 수행하지 않습니다.)
+    ※ 만일, LOG_MODE 가 "NOARCHIVELOG" 모드로 설정이 되어 있다면 아래와 같이 SOURCE DB 인스턴스로 ssh 로그인하여 아래 절차대로 실행해 줍니다. (※ 상기 화면과 같이 "ARCHIVELOG" 모드로 설정되어 있다면 아래 SCRIPT 는 수행하지 않습니다.)
 
     ```
     $ sqlplus / as sysdba
@@ -485,7 +485,7 @@ OCI GoldenGate Admin 콘솔에서 EXTRACT(Capture) 프로세스를 추가하는 
   ![PROCESS CREDENTIAL](/assets/img/dataplatform/2022/goldengate/52.oci-goldengate-extract-process-credentiial-managed-option.png)
 
 
-- Add Extract 세번째 화면에서는 Parameter File 을 입력하는 절차입니다. Parameter 에는 추출할 대상 스키마의 대상 테이블 정보들을 정의해 줍니다. 아래의 Parameter 내용을 복사하여 Parameter File 란에 기존 정보를 지우고 붙여넣기를 합니다. "Create and Run" 버튼을 클릭합니다. (※ 맨 아래 Parameter 항목에 Capture 할 테이블에 대한 정보가 명기되어 있는 것을 확인할 수 있음)
+- Add Extract 세번째 화면에서는 Parameter File 을 입력하는 절차입니다. Parameter 에는 추출할 대상 스키마의 대상 테이블 정보들을 정의해 줍니다. 아래의 Parameter 내용을 복사하여 Parameter File 란에 기존 정보를 지우고 붙여넣기를 합니다. "Create and Run" 버튼을 클릭합니다. (※ 맨 아래 Parameter 항목에 Capture 할 테이블에 대한 정보가 명기되어 있는 것을 확인할 수 있습니다.)
 
     ```
     
@@ -557,7 +557,7 @@ OCI GoldenGate Admin 콘솔에서 EXTRACT(Capture) 프로세스를 추가하는 
   ![NONINTEGRATED REPLICAT](/assets/img/dataplatform/2022/goldengate/59.oci-goldengate-replicat-process-managed-options.png)
 
 - Add Replicat 의 세번째 화면은 Parameter File 을 입력하는 화면입니다. 
-Extract 프로세스의 Parmeter 를 입력하는 방식과 동일하게 아래의 내용을 Parameter 입력란에 붙여넣기로 기존 입력 항목을 대체 후 "Create and Run" 버튼을 클릭합니다. (※ 맨 마지막에 MAP 항목은 SOURCE DB 의 테이블을 TARGET DB 로 MAPPING 을 어떻게 할 것인지 정의해 주는 항목임)
+Extract 프로세스의 Parmeter 를 입력하는 방식과 동일하게 아래의 내용을 Parameter 입력란에 붙여넣기로 기존 입력 항목을 대체 후 "Create and Run" 버튼을 클릭합니다. (※ 맨 마지막에 MAP 항목은 SOURCE DB 의 테이블을 TARGET DB 로 MAPPING 을 어떻게 할 것인지 정의해 주는 항목입니다.)
 
     ```
     
@@ -645,7 +645,7 @@ OCI GoldenGate 를 통해 SOURCE DB 에서 TARGET DB 로의 복제 구성이 완
     ![TARGETDB CITYTABLE](/assets/img/dataplatform/2022/goldengate/67.oci-goldengate-target-table-src-city.png)
 
 
-- SQL Developer 를 통해 SOURCE DB 에 SRC_OCIGGLL 사용자로 PDB 에 접속하여 SQL 실행창에 아래의 Insert 쿼리를 복사 후 붙여넣기를 한 후 SCRIPT 를 실행합니다. (※ COMMIT 반드시 실행)
+- SQL Developer 를 통해 SOURCE DB 에 SRC_OCIGGLL 사용자로 PDB 에 접속하여 SQL 실행창에 아래의 Insert 쿼리를 복사 후 붙여넣기를 한 후 SCRIPT 를 실행합니다. (※ INSERT, UPDATE, DELETE 등의 SOURCE DB 변경 후 COMMIT 문 반드시 실행)
 
     ```
     
