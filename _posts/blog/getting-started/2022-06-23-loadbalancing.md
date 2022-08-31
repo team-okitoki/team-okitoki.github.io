@@ -150,7 +150,19 @@ Load Balancer가 분배할 서버 인스턴스를 선택합니다. 여기서는 
 * **Load Balancing 정책 지정(Specify a Load Balancing Policy):** 가중치 라운드 로빈 (Weighted Round Robin)
 * **백엔드 서버 선택:** **백엔드 추가** 버튼을 클릭하여 앞서 생성한 인스턴스를 추가합니다.
   ![](/assets/img/getting-started/2022/loadbalancing-6.png " ")
-#### 건전성 검사 정책 지정(Specify Health Check Policy): 기본으로 둡니다.
+
+#### 건전성 검사 정책 지정(Specify Health Check Policy)
+건전성 검사 정책은 백엔드 서버의 Health를 체크하여 Load Balancer의 상태를 보여주기 위한 부분입니다. 다음과 같이 설정합니다.
+
+* **프로토콜(Protocol):** HTTP
+* **포트(Port):** 80
+* **간격(밀리초)(Interval in milliseconds):** 10000
+* **시간 초과(밀리초)(Timeout in milliseconds):** 3000
+* **재시도 횟수(Number of Retries):** 3
+* **상태 코드(Status Code):** 200
+* **URL 경로(URI)(URL Path)(URI):** /
+
+![](/assets/img/getting-started/2022/loadbalancing-15.png " ")
 
 #### 리스너 구성
 리스너는 Load Balancer에 지정된 IP 주소로 트래픽을 수신하는 논리적인 요소라고 보면 됩니다. 기본적으로 TCP, HTTP 및 HTTPS 트래픽을 처리하려면 각 트래픽 유형당 하나 이상의 리스너를 구성해야 합니다. 여기서는 HTTP 리스너를 하나 추가합니다.
