@@ -5,7 +5,7 @@ layout: page-fullwidth
 #
 subheadline: "Networking"
 title: "OCI 로드 밸런서 사용해보기"
-teaser: "Oracle Cloud Infrastructure (OCI)에서 윈도우즈 인스턴스를 생성하는 과정을 설명합니다."
+teaser: "Oracle Cloud Infrastructure (OCI)에서 Load Balancer를 사용하는 방법에 대해서 알아봅니다."
 author: dankim
 date: 2022-06-23 00:00:02
 breadcrumb: true
