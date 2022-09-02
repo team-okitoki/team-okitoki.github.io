@@ -35,7 +35,7 @@ header: no
 
 ### 서비스 소개
 서비스 소개 및 ODSA 연결에 대한 정보는 아래 포스팅에서 참고해주세요
-> [Oracle Database Service for Azure 소개](/dataflatform/oracle-database-service-for-azure/)
+> [Oracle Database Service for Azure 소개](/dataplatform/oracle-database-service-for-azure/)
 
 ### ODSA를 통해 Oracle DBCS 생성을 위한 사전 준비사항
 #### Microsoft Azure 준비사항
