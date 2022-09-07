@@ -1,0 +1,33 @@
+{
+    "workshoptitle": "OCI Basic Workshop - Compute",
+	"tutorials": [
+        {
+            "title": "소개",
+            "filename": "labs/introduction/intro.md"
+        },
+        {
+            "title": "Free Trial 계정으로 시작하기",
+            "filename": "labs/cloud-login/pre-register-free-tier-account.md"
+        },
+        {
+            "title": "사전 준비 사항",
+            "filename": "labs/prerequisites/prerequisites.md"
+        },
+        {
+            "title": "Lab 1 : Compute Instance 생성 및 httpd 서버 설치",
+            "filename": "labs/lab-1/create-compute-instance.md"
+        },
+        {
+            "title": "Lab 2 : Load Balancer 생성",
+            "filename": "labs/lab-3/create-load-balancer.md"
+        },
+        {
+            "title": "Lab 3 : Instance Pool 구성 및 Auto Scaling 설정",
+            "filename": "labs/lab-4/create-instance-pool.md"
+        },
+        {
+            "title": "Lab 4 : Oracle DBCS 접속 실습 with SQL 워크시트 (Optional)",
+            "filename": "labs/lab-6/connect-dbcs-from-sqlworksheet.md"
+        }
+    ]
+}
