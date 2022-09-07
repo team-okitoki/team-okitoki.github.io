@@ -6,7 +6,7 @@ layout: page-fullwidth
 #
 # Content
 #
-subheadline: "OCI CLI를 이용한 HA시 IP 변경"
+subheadline: "Compute"
 title: "OCI CLI를 이용한 HA시 IP 변경"
 teaser: "OCI CLI를 이용한 HA시 IP 변경"
 author: "kskim"

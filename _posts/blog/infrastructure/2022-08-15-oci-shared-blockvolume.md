@@ -6,7 +6,7 @@ layout: page-fullwidth
 #
 # Content
 #
-subheadline: "OCI Shared Blockvolume 구성"
+subheadline: "Block Volume"
 title: "OCI Shared Blockvolume 구성"
 teaser: "OCI Shared Blockvolume 구성"
 author: "kskim"

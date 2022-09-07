@@ -6,7 +6,7 @@ layout: page-fullwidth
 #
 # Content
 #
-subheadline: "WAA 사용하여 웹페이지 응답속도 향상"
+subheadline: "Networking"
 title: "Web Application Acceleration (WAA) 사용하여 응답속도 향상"
 author: "ks.kim"
 breadcrumb: true
