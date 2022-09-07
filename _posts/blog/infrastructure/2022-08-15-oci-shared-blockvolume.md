@@ -40,6 +40,7 @@ OCI는 공유 볼륨은다음과 같은 3개 Clusterware를 지원합니다.
 - IBM Spectrum Scale
 
 
+
 > 제약사항
 ![](/assets/img/infrastructure/shared-blockvolume/7.png)
 

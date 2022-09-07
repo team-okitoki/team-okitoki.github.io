@@ -30,6 +30,7 @@ header: no
 ---
 
 
+
 ### CLI를 이용한 VNIC IP 변경 (HA구성)
 클라우드 환경에서 대표 IP를 기준으로 어플리케이션의 등의 문제로 HA 구성을 위해서 IP를  A라는 compute에서 B라는 compute로 
 변경하고자 하려면 기본적인 default IP로는 변경이 불가하다. 따라서 추가적인 VNIC을 생성해서 이 VNIC의 ip를 스위칭하여 
