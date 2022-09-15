@@ -5,7 +5,7 @@ layout: page-fullwidth
 #
 subheadline: "Storage"
 title: "OCI 전자메일 전송 서비스를 Java 코드를 통해 발송하기 (Javamail)"
-teaser: "OCI Java SDK를 이용하여 OCI ObjectStorage Bucket에 파일을 업로드하는 방법에 대해 알아봅니다."
+teaser: "OCI 전자메일 전송 서비스를 Javamail 라이브러리를 통해 Java 환경에서 이메일 발송 테스트 방법에 대해 알아봅니다."
 author: "yhcho"
 breadcrumb: true
 categories:
