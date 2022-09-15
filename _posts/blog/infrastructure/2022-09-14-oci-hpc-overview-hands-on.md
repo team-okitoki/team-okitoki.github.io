@@ -93,6 +93,7 @@ AMPERE 사의 알트라 프로세서, AMD 사의 EPYC 프로세서, 인텔의 Sk
 
 #### 사전 준비 사항
 OCI HPC 를 Provisioing 하려면 먼저, 사전에 아래와 같은 사항들이 준비되어야 합니다.
+- HPC 로 사용하는 BM.HPC2.36, BM.Optimized3.36, BM.GPU4.8 등의 자원들을 생성할 수 있도록 Service Limit 확인 및 부족 시 확장
 - HPC 가 위치하게 될 구획 (Compartment)
 - Bastion/Headnode Host Access 를 위한 SSH Public Key 와 Private Key (※ Key가 없을 경우, Provisioning 화면에서 key 다운로드가 가능함)
 
