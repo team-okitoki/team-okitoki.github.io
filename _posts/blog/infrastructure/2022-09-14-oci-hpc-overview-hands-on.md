@@ -4,12 +4,12 @@ layout: page-fullwidth
 # Content
 #
 subheadline: "HPC"
-title: "OCI HPC 소개 및 HPC Cluster 구성 따라하기"
+title: "OCI HPC 소개 및 HPC Cluster 구성 실습"
 teaser: "OCI 의 High Performance Computing (HPC) 를 위한 서비스들을 알아보고 손쉽게 Low Latancy 를 보장하는 RDMA 네트워크 기반의 HPC Cluster 구성을 실습해 봅니다."
 author: lim
 breadcrumb: true
 categories:
-  - dataplatform
+  - infrastructure
 tags:
   - [oci, hpc, cluster, rdma, cfd, healthcare, research]
 #
