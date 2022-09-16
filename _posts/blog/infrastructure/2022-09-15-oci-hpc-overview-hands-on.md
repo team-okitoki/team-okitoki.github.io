@@ -92,7 +92,7 @@ AMPERE 사의 알트라 프로세서, AMD 사의 EPYC 프로세서, 인텔의 Sk
 ### OCI HPC Cluster 구성 따라하기
 
 #### 사전 준비 사항
-OCI HPC 를 Provisioing 하려면 먼저, 사전에 아래와 같은 사항들이 준비되어야 합니다.
+OCI HPC 를 Provisioning 하려면 먼저, 사전에 아래와 같은 사항들이 준비되어야 합니다.
 - HPC 로 사용하는 BM.HPC2.36, BM.Optimized3.36, BM.GPU4.8 등의 자원들을 생성할 수 있도록 Service Limit 확인 및 부족 시 확장
 - HPC 가 위치하게 될 구획 (Compartment)
 - Bastion/Headnode Host Access 를 위한 SSH Public Key 와 Private Key (※ Key가 없을 경우, Provisioning 화면에서 key 다운로드가 가능함)
@@ -101,7 +101,7 @@ OCI HPC 를 Provisioing 하려면 먼저, 사전에 아래와 같은 사항들�
 
 ### OCI HPC 아키텍쳐 이해
 
-OCI 마켓플레이스에서 제공하는 HPC는 아래와 같은 아키텍쳐로 자동 Provisioing 을 수행합니다.
+OCI 마켓플레이스에서 제공하는 HPC는 아래와 같은 아키텍쳐로 자동 Provisioning 을 수행합니다.
 
 ![hpc-cluster-performance](/assets/img/infrastructure/2022/hpc/06.oci-hpc-architecture.png)
 
