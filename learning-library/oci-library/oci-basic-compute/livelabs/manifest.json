@@ -22,11 +22,15 @@
             "filename": "labs/lab-3/create-load-balancer.md"
         },
         {
-            "title": "Lab 3 : Instance Pool 구성 및 Auto Scaling 설정",
+            "title": "Lab 3 : Block Volume 생성 및 연결하기",
+            "filename": "labs/lab-bv/create-block-volume.md"
+        },
+        {
+            "title": "Lab 4 : Instance Pool 구성 및 Auto Scaling 설정",
             "filename": "labs/lab-4/create-instance-pool.md"
         },
         {
-            "title": "Lab 4 : Oracle DBCS 접속 실습 with SQL 워크시트 (Optional)",
+            "title": "Lab 5 : Oracle DBCS 접속 실습 with SQL 워크시트 (Optional)",
             "filename": "labs/lab-6/connect-dbcs-from-sqlworksheet.md"
         }
     ]
