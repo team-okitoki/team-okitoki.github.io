@@ -16,9 +16,9 @@ tags:
 # Styling
 #
 header: no
-# image:
-#     title: mediaplayer_js-title.jpg
-#     thumb: mediaplayer_js-thumb.jpg
+#  image:
+#    title: /assets/img/cloudnative-security/2022/weblogic_oke_0.png
+#     thumb: /assets/img/cloudnative-security/2022/weblogic_oke_0.png
 #     homepage: mediaplayer_js-home.jpg
 #     caption: Photo by Corey Blaz
 #     caption_url: https://blaz.photography/
@@ -86,9 +86,9 @@ WebLogic for OKE를 OCI 마켓플레이스에서 확인하려면, OCI 콘솔에 
 
 #### 스택 구성 - WebLogic Server on Container Cluster (OKE)
 WebLogic Server on Container Cluster (OKE) 부분에 다음과 같이 입력합니다.
-* Resouce Name Prefix: wlsoke
+* **Resouce Name Prefix:** wlsoke
   * 생성되는 모든 리소스(Compute, Network, Storage 등) 이름에 설정한 Prefix가 붙게 됩니다.
-* SSH Public Key
+* **SSH Public Key**
   * 인스턴스에 접속하기 위한 SSH Public키를 입력합니다. 가지고 있는 키가 있다면 해당 키를 사용하고, 없다면 ssh-keygen과 같은 도구를 활용하여 공개키를 생성합니다.
 
 ![](/assets/img/cloudnative-security/2022/weblogic_oke_4.png)
@@ -100,21 +100,21 @@ Network 설정에서는 VCN을 구성하게 됩니다. VCN 구성 시 미리 생
 
 [OCI에서 VCN Wizard를 활용하여 빠르게 VCN 생성하기](https://team-okitoki.github.io/getting-started/create-vcn/)
 
-* Virtual Cloud Network Strategy: Use Existing VCN
+* **Virtual Cloud Network Strategy:** Use Existing VCN
   * VCN이 없다면 Create New VCN을 선택합니다.
-* Network Compartment: 구획 선택
-* Existing Network: VCN을 선택
-* Bastion Host Subnet CIDR: 10.0.7.0/28
+* **Network Compartment:** 구획 선택
+* **Existing Network:** VCN을 선택
+* **Bastion Host Subnet CIDR:** 10.0.7.0/28
   * 주의: 기본값은 10.0.1.0/28 이지만, 보통 VCN Wizard로 생성한 VCN의 경우 10.0.1.0/24 블록을 갖는 서브넷이 기본으로 생성되어, 스택 실행 시 충돌로 인한 오류가 발생할 수 있기 때문에 10.0.7.0/28 블록을 갖도록 수정해야 합니다.
-* Administration Host Subnet CIDR: 10.0.2.0/28
-* File System and Mount Target Subnet CIDR: 10.0.3.0/28
-* Kubernetes Cluster Subnet CIDR: 10.0.4.0/28
-* Kubernetes API Endpoint Subnet CIDR: 10.0.5.0/28
-* Load Balancer Subnet CIDR: 10.0.6.0/28
-* Existing NAT Gateway: 기본 NAT 게이트웨이 선택
-* * Existing Service Gateway: 기본 서비스 게이트웨이 선택
-Minimum Bandwidth for Jenkins Load Balancer: 10
-* Maximum Bandwidth for Jenkins Load Balancer : 100
+* **Administration Host Subnet CIDR:** 10.0.2.0/28
+* **File System and Mount Target Subnet CIDR:** 10.0.3.0/28
+* **Kubernetes Cluster Subnet CIDR:** 10.0.4.0/28
+* **Kubernetes API Endpoint Subnet CIDR:** 10.0.5.0/28
+* **Load Balancer Subnet CIDR:** 10.0.6.0/28
+* **Existing NAT Gateway:** 기본 NAT 게이트웨이 선택
+* **Existing Service Gateway:** 기본 서비스 게이트웨이 선택
+* **Minimum Bandwidth for Jenkins Load Balancer:** 10
+* **Maximum Bandwidth for Jenkins Load Balancer:** 100
 
 ![](/assets/img/cloudnative-security/2022/weblogic_oke_5.png)
 ![](/assets/img/cloudnative-security/2022/weblogic_oke_6.png)
@@ -122,24 +122,24 @@ Minimum Bandwidth for Jenkins Load Balancer: 10
 #### 스택 구성 - Container Cluster (OKE) Configuration
 OKE 클러스터를 구성하기 위한 설정입니다. 다음과 같이 선택 및 입력합니다.
 
-* Kubernetes version: v1.22.5
+**Kubernetes version:** v1.22.5
   * Recommeded version인 1.22.5 버전을 선택
-* Non-WebLogic Node Pool Shape: VM.Standard.E4.Flex (1 OCPU, 16GB Memory)
+* **Non-WebLogic Node Pool Shape:** VM.Standard.E4.Flex (1 OCPU, 16GB Memory)
   * Jenkins와 같은 WebLogic과 직접적인 관련이 없는 Pod가 배포될 Node
-* Nodes in the Node Pool for non-WebLogic pods : 1
-* WebLogic Node Pool Shape: VM.Standard.E4.Flex (1 OCPU, 16GB Memory)
-  * * WebLogic Managed 서버 Pod가 배포될 Node
-* Nodes in the Node Pool for WebLogic pods: 3
-* PODs CIDR: 10.96.0.0/16
+* **Nodes in the Node Pool for non-WebLogic pods:** 1
+* **WebLogic Node Pool Shape:** VM.Standard.E4.Flex (1 OCPU, 16GB Memory)
+  * WebLogic Managed 서버 Pod가 배포될 Node
+* **Nodes in the Node Pool for WebLogic pods:** 3
+* **PODs CIDR:** 10.96.0.0/16
 
 ![](/assets/img/cloudnative-security/2022/weblogic_oke_7.png)
 
 #### 스택 구성 - Administration Instances
 WebLogic Admin 서버가 배포되는 노드를 설정합니다.
 
-* Availability Domain for compute instances: 배포될 AD를 선택
-* Administration Instance Compute Shape: VM.Standard.E4.Flex (1 OCPU, 16GB Memory)
-* Bastion Instance Shape: VM.Standard.E4.Flex (1 OCPU, 16GB Memory)
+* **Availability Domain for compute instances:** 배포될 AD를 선택
+* **Administration Instance Compute Shape:** VM.Standard.E4.Flex (1 OCPU, 16GB Memory)
+* **Bastion Instance Shape:** VM.Standard.E4.Flex (1 OCPU, 16GB Memory)
   * WebLogic 서버에 접속하기 위한 Bastion 서버 인스턴스
 
 ![](/assets/img/cloudnative-security/2022/weblogic_oke_8.png)
@@ -148,13 +148,13 @@ WebLogic Admin 서버가 배포되는 노드를 설정합니다.
 Network File Storage인 File System 설정, WebLogic Docker Image 저장소인 OCIR (Oracle Cloud Infrastructure Registry) 구성, OCI Policies 생성에 대한 설정을 합니다.
 
 **File System**  
-* Availability Domain for File system: 배포될 AD를 선택
+* **Availability Domain for File system:** 배포될 AD를 선택
 
 **Registry (OCIR)**
-* Registry User Name: OCI Console 우측 상단 프로파일에서 보이는 사용자 아이디
+* **Registry User Name:** OCI Console 우측 상단 프로파일에서 보이는 사용자 아이디
   * ex) oracleidentitycloudservice/dan.donghu.kim@gmail.com
-* OCIR Auth Token Compartment: OCIR Auth Token에 대한 Vault Secret이 위치한 구획
-* Validated Secret for OCIR Auth Token: OCIR Auth Token에 대한 Vault Secret 선택
+* **OCIR Auth Token Compartment:** OCIR Auth Token에 대한 Vault Secret이 위치한 구획
+* **Validated Secret for OCIR Auth Token:** OCIR Auth Token에 대한 Vault Secret 선택
 
   ```OCIR Auth Token 생성 및 Valut Secret 생성) ``` OCIR에 연결하기 위해서는 username과 password가 필요합니다. password의 경우는 인증 토큰(Auth Token)이라는 값을 활용하는데, 인증 토큰의 경우 우측 상단 프로파일에서 사용자를 클릭한 후 왼쪽에 있는 **인증 토큰** 메뉴를 통해서 토큰을 생성할 수 있습니다.
 
@@ -172,7 +172,7 @@ Network File Storage인 File System 설정, WebLogic Docker Image 저장소인 O
   ![](/assets/img/cloudnative-security/2022/weblogic_oke_8_4.png)
 
   **OCI Policies**
-  * OCI Policies: 체크
+  * **OCI Policies:** 체크
     * Resource Manager Stack 실행시에 앞서 생성한 Valut Secret과 Oracle Database등의 접근을 허용하기 위한 Policy를 자동으로 생성해줍니다.
 
   ![](/assets/img/cloudnative-security/2022/weblogic_oke_9.png)
@@ -193,7 +193,7 @@ Network File Storage인 File System 설정, WebLogic Docker Image 저장소인 O
 ### WebLogic 도메인 생성 
 OKE Cluster에 WebLogic가 완료되었습니다. 이제 Jenkins를 활용하여 WebLogic Domain을 구성해 보도록 하겠습니다. Jenkins 서버는 Private Subnet에 구성되어 있기 때문에 Bastion 서버를 활용하여 터널링을 통해 접속해야 합니다. 먼저 SOCKS Proxy 구성을 다음과 같이 진행합니다. (아래는 MacOS에서 SOCKS Proxy 설정한 화면)
 
-* SOCKS Proxy Server: localhost:1088
+* **SOCKS Proxy Server:** localhost:1088
 
 ![](/assets/img/cloudnative-security/2022/weblogic_oke_16.png)
 
@@ -201,7 +201,7 @@ OKE Cluster에 WebLogic가 완료되었습니다. 이제 Jenkins를 활용하여
 
 접속은 생성된 Private Load Balancer의 IP로 접속합니다. 생성된 Private Load Balancer의 Private IP는 **Networking > Load Balancer**에서 확인이 가능합니다. 다음과 같이 접속합니다.
 
-* Url: http://[Private Load Balancer IP]/jenkins
+* **Url:** http://[Private Load Balancer IP]/jenkins
 
 Jenkins 초기 화면에서 Admin 사용자를 생성합니다.
 ![](/assets/img/cloudnative-security/2022/weblogic_oke_17.png)
@@ -220,12 +220,12 @@ Jenkins 초기 화면에서 Admin 사용자를 생성합니다.
 ![](/assets/img/cloudnative-security/2022/weblogic_oke_29.png)
 
 이제 다시 Jenkins 파이프라인 화면에서 **create doamin** 을 선택한 후 다음과 같이 입력 및 선택합니다.
-* Domain_Name: okedomain(특수문자 허용하지 않습니다. 특수 문자가 들어간 경우 파이프라인 실행 시 오류 발생합니다.)
-*  Base_Image: Default
-* Administration_Username: weblogic
-* Administration_Password: welcome1
-* Managed_Server_Count: 2 (최대 9개)
-* Patch Automatically: 체크
+* **Domain_Name:** okedomain(특수문자 허용하지 않습니다. 특수 문자가 들어간 경우 파이프라인 실행 시 오류 발생합니다.)
+* **Base_Image:** Default
+* **Administration_Username:** weblogic
+* **Administration_Password:** welcome1
+* **Managed_Server_Count:** 2 (최대 9개)
+* **Patch Automatically:** 체크
 그 외 모두 기본으로 둔 상태에서 **빌드하기** 버튼을 클릭합니다.
 
 ![](/assets/img/cloudnative-security/2022/weblogic_oke_19.png)
@@ -239,9 +239,9 @@ Jenkins 초기 화면에서 Admin 사용자를 생성합니다.
 
 다음 정보로 웹로직 관리 콘솔에 로그인을 합니다.
 # Weblogic Server 로그인 정보
-* Url : http://[Private Load Balancer IP]/[WebLogic Domain Name]/console (ex. http://10.0.6.9/okedomain/console)
-* ID : weblogic
-* PW : welcome1
+* **Url:** http://[Private Load Balancer IP]/[WebLogic Domain Name]/console (ex. http://10.0.6.9/okedomain/console)
+* **ID:** weblogic
+* **PW:** welcome1
 
 ![](/assets/img/cloudnative-security/2022/weblogic_oke_23.png)
 
