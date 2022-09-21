@@ -26,6 +26,14 @@ header: no
 
 ---
 
+<div class="panel radius" markdown="1">
+**Table of Contents**
+{: #toc }
+*  TOC
+{:toc}
+</div>
+
+### 프로비저닝 리소스
 이번 포스팅에서는 실제 테라폼 코드를 사용하여 Oracle Infrastructure Cloud (이하 OCI)에 리소스를 프로비저닝해보도록 합니다.  
 OCI에 프로비저닝 리소스들은 다음과 같습니다.
 * IAM Group
