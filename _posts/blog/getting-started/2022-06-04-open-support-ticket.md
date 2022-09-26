@@ -36,9 +36,9 @@ header: no
 </div>
 
 ### OCI 지원 센터 (Support Center)
-OCI 지원 센터에서는 OCI를 사용하면서 생길 수 있는 여러 이슈(기술, 빌링, 리소스 요청등)에 대한 요청을 할 수 있는 공간입니다.
+OCI 지원 센터는 OCI를 사용하면서 생길 수 있는 여러 이슈(기술, 빌링, 리소스 요청등)에 대한 요청을 할 수 있는 공간입니다.
 
-> 지원 센터에서 SR 티켓을 생성하기 위해서는 Free Tier 계정을 유료 (Paid) 계정으로 업그레이드를 하여야 합니다.
+> 지원 센터에서 SR 티켓을 생성하기 위해서는 Free Tier 계정을 유료 (Pay-As-You-Go or Annual Universal Credit) 계정으로 업그레이드를 하여야 합니다.
 
 지원 센터는 메뉴에서 **거버넌스 & 관리 > 지원 센터**를 클릭하거나
 ![](/assets/img/getting-started/2022/open-support-ticket-1.png " ")
@@ -46,12 +46,12 @@ OCI 지원 센터에서는 OCI를 사용하면서 생길 수 있는 여러 이�
 오른쪽 상단의 **Help** 아이콘을 클릭한 후 **지원 센터 방문**을 클릭하면 이동합니다. 지원 센터에 들어가서 **지원 요청 신청**이나 **제한 증가 요청**을 할 수 있지만, **Help** 아이콘을 클릭하면 바로 요청 폼으로 이동도 가능합니다.
 ![](/assets/img/getting-started/2022/open-support-ticket-2.png " ")
 
-티켓 생성의 경우 OCI Tenancy를 생성할 때 만든 Tenancy 관리자 계정(Cloud Account Admin 권한을 갖는 사용자)은 기본적으로 생성 가능할 수 있지만, 다른 일반 사용자가 티켓을 생성하기 위해서는 오라클 서포트 계정을 프로비저닝하고 Tenancy 관리자로부터 승인을 받아야 합니다. OCI 일반 사용자 계정을 Oracle 지원 요청이 가능한 계정으로 사용하기 위해서는 관리자로 부터 승인을 받는 절차를 수행해야 합니다. 해당 절차는 다음 포스팅을 참고합니다.
+티켓 생성의 경우 OCI Tenancy를 생성할 때 만든 Tenancy 관리자 계정(Cloud Account Admin 권한을 갖는 사용자)은 기본적으로 생성 가능할 수 있지만, 다른 일반 OCI 사용자가 티켓을 생성하기 위해서는 오라클 서포트 계정으로 프로비저닝하고 Tenancy 관리자로부터 승인을 받는 절차를 수행해야 합니다. 해당 절차는 다음 포스팅을 참고합니다.
 
 [OCI와 MOS(My Oracle Support) 계정 연동, OCI의 일반 사용자에게 지원 요청(SR) 권한 할당 방법](https://team-okitoki.github.io/getting-started/configuring-support-account/)
 
 ### OCI 지원 센터를 통해서 요청할 수 있는 일반적인 사항들
-보통 OCI를 사용하면서 발생하는 다양한 기술 이슈에 대한 요청을 할 수 있지만, 이러한 지원 외에도 다음과 같은 지원 요청도 가능합니다.
+일반적으로 OCI를 사용하면서 생길수 있는 다양한 기술 이슈에 대한 요청을 할 수 있지만, 이러한 지원 요청외에도 다음과 같은 지원 요청도 가능합니다.
 * Tenancy 관리 계정 패스워드가 Lock이 된 경우
 * Tenancy 관리자를 추가하거나 변경이 필요한 경우
 * 빌링과 관련된 질문 요청
@@ -79,7 +79,7 @@ OCI 지원 센터에서는 OCI를 사용하면서 생길 수 있는 여러 이�
 
 ![](/assets/img/getting-started/2022/open-support-ticket-3.png " ")
 
-기술 지원 요청시에 근본 원인 분석(Request a root cause analysis (RCA)) 요청을 할 수 있습니다. RCA는 중대한 이슈가 발생(DB 셧다운, 인스턴스 셧다운)과 같은 이슈가 발생했을때 근본적인 원인에 대한 분석을 요청하는 경우라고 볼 수 있습니다. 이러한 요청이 필요한 경우에는 문제 요약 항목에 **Root Cause Analysis (RCA) Request** 라는 내용을 포함하여 생성합니다.
+기술 지원 요청시에 근본 원인 분석(Request a root cause analysis (RCA)) 요청을 할 수 있습니다. RCA는 중대한 이슈(DB 셧다운, 인스턴스 셧다운 등)가 발생했을때 근본적인 원인에 대한 분석을 요청하는 경우라고 볼 수 있습니다. 이러한 요청이 필요한 경우에는 문제 요약 항목에 **Root Cause Analysis (RCA) Request** 라는 내용을 포함하여 생성합니다.
 
 #### 청구 지원 (Billing Support)
 청구 지원에서는 청구된 비용에 대한 문의나 이슈에 대해서 요청할 수 있습니다.
@@ -102,7 +102,9 @@ OCI에서 제공되는 자원은 기본적으로 어느정도의 Limit이 설정
 
 ![](/assets/img/getting-started/2022/open-support-ticket-7.png " ")
 
-첨부는 왼쪽의 연결(Attachments)을 클릭하고 **업로드 파일(Upload File)**을 클릭하고 파일이나 이미지를 업로드 합니다.
+파일이나 이미지 첨부는 왼쪽의 연결(Attachments)을 클릭하고 **업로드 파일(Upload File)**을 클릭하여 업로드 할 수 있습니다.
+
+![](/assets/img/getting-started/2022/open-support-ticket-8.png " ")
 
 ### SR 티켓 닫기
-요청한 지원건이 모두 해결되면 지원 티켓을 닫아야 합니다. 지원 티켓을 닫기 위해서는 지원 티켓 목록에서 해당 지원을 클릭하고 **티켓 닫기** 버튼을 클릭하면 대화창이 표시됩니다. 간단히 이유를 입력하고 **닫기**를 클릭합니다.
+요청한 지원건이 모두 해결되면 지원 티켓을 닫아야 합니다. 지원 티켓을 닫기 위해서는 지원 티켓 목록에서 해당 지원을 클릭하고 **티켓 닫기** 버튼을 클릭하면 대화창이 오픈됩니다. 간단히 이유를 입력하고 **닫기**를 클릭합니다.
