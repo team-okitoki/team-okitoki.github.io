@@ -4,8 +4,8 @@ layout: page-fullwidth
 # Content
 #
 subheadline: "Support"
-title: "MOS(My Oracle Support) 가입, OCI와 MOS 계정 연동, OCI의 일반 사용자에게 지원 요청(SR) 권한 할당 방법"
-teaser: "OCI를 유료로 구독하는 경우 최초 관리자(Cloud Account Admin 권한을 갖는 사용자)는 OCI Console에서 지원 요청 티켓을 생성하여 오라클로부터 다양한 지원을 받을 수 있습니다. 이번 글에서는 관리자의 OCI 계정을 MOS(My Oracle Support) 계정과 연동하는 방법과, OCI 일반 사용자에게 지원 요청(SR)을 신청할 수 있는 권한을 부여하는 방법에 대해서 설명합니다."
+title: "OCI와 MOS(My Oracle Support) 계정 연동, OCI의 일반 사용자에게 지원 요청(SR) 권한 할당 방법"
+teaser: "OCI를 유료로 구독하는 경우 최초 관리자(Cloud Account Admin 권한을 갖는 사용자)는 OCI Console에서 지원 요청 티켓을 생성하여 오라클로부터 다양한 지원을 받을 수 있습니다. 이번 글에서는 관리자의 OCI 계정을 MOS(My Oracle Support) 계정과 연동하는 방법과, OCI 일반 사용자에게 지원 요청(SR)을 생성할 수 있는 권한을 부여하는 방법에 대해서 설명합니다."
 author: dankim
 date: 2022-06-03 00:00:02
 breadcrumb: true
