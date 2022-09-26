@@ -14,7 +14,6 @@ tags:
   - oci-release-notes-2022
   - may-2022
   - cloudnative
-  - security
 #
 # Styling
 #
