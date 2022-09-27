@@ -79,7 +79,7 @@ AMPERE 사의 알트라 프로세서, AMD 사의 EPYC 프로세서, 인텔의 Sk
 
 ![hpc-cluster-mp](/assets/img/infrastructure/2022/hpc/04.oci-hpc-cluster-marketplace.png)
 
-- OCI HPC 성능 비교 - 다음 그림은 OCI HPC vs. On-Premise Super Computer 에 대한 비교와 OCI HPC 와 타사 클라우드 Provider 의 HPC 에 대한 성능 비교 그래프입니다. 좌측 그래프는 오라클 HPC 와 On-Premise 수퍼컴퓨터들과 성능 측정을 한 그래프인데요. OCI HPC 가 On-Prem 수퍼 컴퓨터와 유사하게 나오는 것을 나타내는 것을 나타내고 있고, 오른쪽 그래프는 AWS, Azure 등과 성능 비교한 그래프인데 OCI HPC 가 가장 성능이 빠른 것을 나타내고 있습니다.
+- OCI HPC 성능 비교 - 다음 그림은 OCI HPC vs. On-Premise Super Computer 에 대한 비교와 OCI HPC 와 타사 클라우드 Provider 의 HPC 에 대한 성능 비교 그래프입니다. 좌측 그래프는 오라클 HPC 와 On-Premise 수퍼컴퓨터들과 성능 측정을 한 그래프인데요. OCI HPC 가 On-Prem 수퍼 컴퓨터와 유사한 성능을 보이 것을 나타내고 있고, 오른쪽 그래프는 AWS, Azure 등과 성능 비교한 그래프인데 OCI HPC 가 가장 성능이 빠른 것을 나타내고 있습니다.
 
 ![hpc-cluster-performance](/assets/img/infrastructure/2022/hpc/05.oci-hpc-performance.png)
 
@@ -140,9 +140,6 @@ OCI HPC Cluster 는 Marketplace 에서 검색을 통해 Terraform Stack 을 생�
         - Telegraf
         - Grafana
         - SLURM
-
-<br>
-
 ### OCI HPC Cluster Stack 생성
 
 - 마켓플레이스의 검색을 통해 찾은 HPC Cluster Automated Deployment 툴 화면에서 Stack 을 저장할 Compartment 를 선택 후 "스택 실행" 버튼을 클릭합니다.
