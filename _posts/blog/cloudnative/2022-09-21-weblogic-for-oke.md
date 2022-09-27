@@ -34,7 +34,7 @@ header: no
 </div>
 
 ### WebLogic for OCI, WebLogic for OKE
-엔터프라이즈 웹 애플리케이션 서버 시장에서 가장 인기가 높은 WebLogic 서버가 현재 OCI에서 관리형 서비스로 제공되고 있습니다. 제공되는 배포 모델은 VM에 직접 설치 구성되는 WebLogic for OCI와 OCI Container Engine인 OKE에 배포하는 WebLogic for OKE 모델 두 가지입니다. 둘 다 OCI의 마켓플레이스를 통해서 제공되며, OCI의 IaC 도구인 Resource Manager를 통해서 자동으로 배포가 가능합니다.
+엔터프라이즈 웹 애플리케이션 서버 시장에서 가장 인기가 높은 WebLogic 서버가 현재 OCI에서 관리형 서비스로 제공되고 있습니다. 제공되는 배포 모델은 VM에 직접 설치 구성되는 WebLogic for OCI와 OCI Container Engine인 OKE에 배포하는 WebLogic for OKE 모델 두 가지입니다. 모두 OCI의 마켓플레이스를 통해서 제공되며, OCI의 IaC 도구인 Resource Manager를 통해서 자동으로 배포가 가능합니다.
 
 ![](/assets/img/cloudnative-security/2022/weblogic_oke_0.png)
 
@@ -67,7 +67,7 @@ WebLogic for OKE를 OCI 마켓플레이스에서 확인하려면, OCI 콘솔에 
 
 ![](/assets/img/cloudnative-security/2022/weblogic_oke_0_2.png)
 
-검색 키워드를 ```weblogic oke```로 검색으로 하면 다음과 같이 4개의 애플리케이션이 검색됩니다. 이 중에서 필요한 애플리케이션을 선택합니다. 여기서는 **Oracle WebLogic Server Enterprise Edition for OKE BYOL**을 선택하여 진행하도록 합니다.
+검색 키워드를 ```weblogic oke```로 검색하면 다음과 같이 4개의 애플리케이션이 검색됩니다. 이 중에서 필요한 애플리케이션을 선택합니다. 여기서는 **Oracle WebLogic Server Enterprise Edition for OKE BYOL**을 선택하여 진행하도록 합니다.
 
 ![](/assets/img/cloudnative-security/2022/weblogic_oke_1.png)
 
