@@ -330,7 +330,7 @@ VCN을 자동으로 생성하면, 기본적으로 2개의 서브넷 (Private, Pu
       </td>
       <td class="entry" headers="About__entry__3"><span class="ph">Stateful</span>
       </td>
-      <td class="entry" headers="About__entry__4">10.0.0.0/30 (Kubernetes API Endpoint CIDR)</td>
+      <td class="entry" headers="About__entry__4">10.0.0.0/24 (Kubernetes API Endpoint CIDR)</td>
       <td class="entry" headers="About__entry__5">TCP/12250</td>
       <td class="entry" headers="About__entry__6"></td>
       <td class="entry" headers="About__entry__7"><span class="ph">Allow Kubernetes API endpoint to communicate with worker nodes.</span>
@@ -484,7 +484,7 @@ VCN을 자동으로 생성하면, 기본적으로 2개의 서브넷 (Private, Pu
       </td>
       <td class="entry" headers="About__entry__3"><span class="ph">Stateful</span>
       </td>
-      <td class="entry" headers="About__entry__4">10.0.0.0/30 (Kubernetes API Endpoint CIDR)</td>
+      <td class="entry" headers="About__entry__4">10.0.0.0/24 (Kubernetes API Endpoint CIDR)</td>
       <td class="entry" headers="About__entry__5">ALL/ALL</td>
       <td class="entry" headers="About__entry__6"></td>
       <td class="entry" headers="About__entry__7"><span class="ph">Allow Kubernetes API endpoint to communicate with pods.</span>
@@ -579,7 +579,7 @@ VCN을 자동으로 생성하면, 기본적으로 2개의 서브넷 (Private, Pu
       </td>
       <td class="entry" headers="About__entry__3"><span class="ph">Stateful</span>
       </td>
-      <td class="entry" headers="About__entry__4">10.0.0.0/30 (Kubernetes API Endpoint CIDR)</td>
+      <td class="entry" headers="About__entry__4">10.0.0.0/24 (Kubernetes API Endpoint CIDR)</td>
       <td class="entry" headers="About__entry__5">TCP/6443</td>
       <td class="entry" headers="About__entry__6"></td>
       <td class="entry" headers="About__entry__7"><span class="ph">Pod to Kubernetes API endpoint communication (when using VCN-native pod networking).</span>
@@ -592,7 +592,7 @@ VCN을 자동으로 생성하면, 기본적으로 2개의 서브넷 (Private, Pu
       </td>
       <td class="entry" headers="About__entry__3"><span class="ph">Stateful</span>
       </td>
-      <td class="entry" headers="About__entry__4">10.0.0.0/30 (Kubernetes API Endpoint CIDR)</td>
+      <td class="entry" headers="About__entry__4">10.0.0.0/24 (Kubernetes API Endpoint CIDR)</td>
       <td class="entry" headers="About__entry__5">TCP/12250</td>
       <td class="entry" headers="About__entry__6"></td>
       <td class="entry" headers="About__entry__7"><span class="ph">Pod to Kubernetes API endpoint communication (when using VCN-native pod networking).</span>
