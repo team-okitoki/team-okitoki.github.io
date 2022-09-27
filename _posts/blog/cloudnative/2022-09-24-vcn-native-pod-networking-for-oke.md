@@ -418,6 +418,32 @@ VCN을 자동으로 생성하면, 기본적으로 2개의 서브넷 (Private, Pu
       <td class="entry" headers="About__entry__7"><span class="ph">Allow worker nodes to communicate with OKE.</span>
       </td>
       </tr>
+      <tr class="row">
+      <td class="entry" headers="About__entry__1"><span class="ph">seclist-workernodes</span>
+      </td>
+      <td class="entry" headers="About__entry__2"><span class="ph">Egress</span>
+      </td>
+      <td class="entry" headers="About__entry__3"><span class="ph">Stateful</span>
+      </td>
+      <td class="entry" headers="About__entry__4">10.0.0.0/24</td>
+      <td class="entry" headers="About__entry__5">TCP/6443</td>
+      <td class="entry" headers="About__entry__6"></td>
+      <td class="entry" headers="About__entry__7"><span class="ph">Kubernetes worker to Kubernetes API endpoint communication.</span>
+      </td>
+      </tr>
+      <tr class="row">
+      <td class="entry" headers="About__entry__1"><span class="ph">seclist-workernodes</span>
+      </td>
+      <td class="entry" headers="About__entry__2"><span class="ph">Egress</span>
+      </td>
+      <td class="entry" headers="About__entry__3"><span class="ph">Stateful</span>
+      </td>
+      <td class="entry" headers="About__entry__4">10.0.0.0/24</td>
+      <td class="entry" headers="About__entry__5">TCP/12250</td>
+      <td class="entry" headers="About__entry__6"></td>
+      <td class="entry" headers="About__entry__7"><span class="ph">Kubernetes worker to Kubernetes API endpoint communication.</span>
+      </td>
+      </tr>
       </tbody>
 </table>
 </div>
