@@ -3,7 +3,7 @@ layout: page-fullwidth
 #
 # Content
 #
-subheadline: "Storage"
+subheadline: "Cloud Native"
 title: "OCI 전자메일 전송 서비스를 Java 코드를 통해 발송하기 (Javamail)"
 teaser: "OCI 전자메일 전송 서비스를 Javamail 라이브러리를 통해 Java 환경에서 이메일 발송 테스트 방법에 대해 알아봅니다."
 author: "yhcho"
