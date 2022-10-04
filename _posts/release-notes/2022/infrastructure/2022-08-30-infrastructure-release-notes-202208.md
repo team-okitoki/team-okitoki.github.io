@@ -81,6 +81,7 @@ VCN 내부 라우팅을 사용하면 VCN CIDR 블록에 포함된 IP 주소로 �
 
 > 서브넷 내 라우팅은 지원되지 않습니다. 발신 VNIC와 동일한 서브넷에 있는 대상 IP 주소가 있는 트래픽은 적절한 대상으로 직접 전달(라우팅되지 않음)됩니다.
 
+![](/assets/img/infrastructure/2022/08/vcn-intra.jpeg)
 
 ## Bare metal compute instances: reboot migration on demand and extend maintenance due date
 * **Services:** Compute
