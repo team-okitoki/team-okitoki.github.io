@@ -9,7 +9,7 @@ teaser: "OCI 전자메일 전송 서비스를 Javamail 라이브러리를 통해
 author: "yhcho"
 breadcrumb: true
 categories:
-  - infrastructure
+  - cloudnative
 tags:
   - [oci, sdk, java, email delivery, dns, javamail]
 #
