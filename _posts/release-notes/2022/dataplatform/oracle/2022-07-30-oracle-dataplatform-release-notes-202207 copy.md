@@ -55,7 +55,7 @@ Data Integration 은 데이터 엔지니어와 ETL 개발자가 다양한 데이
 [https://docs.oracle.com/en-us/iaas/Content/multicloud/intro.htm](https://docs.oracle.com/en-us/iaas/Content/multicloud/intro.htm){:target="_blank" rel="noopener"}
 
 ### 서비스 소개
-Oracle Database Service for Azure(ODSA))를 사용하면 Oracle Cloud Infrastructure의 데이터베이스 서비스를 Azure 클라우드 환경에 쉽게 통합할 수 있습니다. ODSA는 서비스 기반 접근 방식을 사용하며 애플리케이션 스택에 대한 복잡한 클라우드 간 배포를 수동으로 생성해야 하는 불편함을 해결할 수 있는 하난의 방법입니다. ODSA를 사용하여 지원되는 OCI와 Azure 지역 간의 프라이빗 터널 연결인 Microsoft Azure용 Oracle Interconnect를 사용하여 Azure 계정에 연결하는 Exadata, Oracle Base Database 및 Oracle Autonomous Database 리소스를 배포할 수 있습니다.
+Oracle Database Service for Azure(ODSA) 를 사용하면 Oracle Cloud Infrastructure의 데이터베이스 서비스를 Azure 클라우드 환경에 쉽게 통합할 수 있습니다. ODSA는 서비스 기반 접근 방식을 사용하며 애플리케이션 스택에 대한 복잡한 클라우드 간 배포를 수동으로 생성해야 하는 불편함을 해결할 수 있는 하난의 방법입니다. ODSA를 사용하여 지원되는 OCI와 Azure 지역 간의 프라이빗 터널 연결인 Microsoft Azure용 Oracle Interconnect를 사용하여 Azure 계정에 연결하는 Exadata, Oracle Base Database 및 Oracle Autonomous Database 리소스를 배포할 수 있습니다.
 
 * 자세한 Oracle Database Service for Azure 서비스 소개는 아래 링크 참조
 * [Oracle Database Service for Azure](/dataplatform/oracle-database-service-for-azure/){:target="_blank" rel="noopener"}
