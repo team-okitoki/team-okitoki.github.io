@@ -85,7 +85,7 @@ API 게이트웨이는 정책, 메트릭 및 로깅을 통해 Kubernetes, Comput
 1. PATH를 입력합니다. (e.g. `/movielist`)
 2. METHODS를 선택합니다. (e.g. `GET`)
 3. TYPE을 선택합니다. (e.g. `HTTP`)
-4. URL을 입력합니다. Lab 2에서 배포한 서비스의 **http://<EXTERNAL-IP>:30000/api/search/v1/movies*** 입니다.
+4. URL을 입력합니다. Lab 2에서 배포한 서비스의 **http://{EXTERNAL-IP}:30000/api/search/v1/movies** 입니다.
 5. **Next**를 클릭한 후 **Save Changes**를 클릭합니다.
 
     ![](images/oci-apigateway-6.png)

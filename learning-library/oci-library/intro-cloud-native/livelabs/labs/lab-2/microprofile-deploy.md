@@ -55,7 +55,8 @@ Microprofile 기반 (Oracle Helidon Framework)의 REST 서비스를 OKE 환경�
     ![OCI Tenancy Namespace](images/oci-tenancy-namespace.png)
     
     Sample Tag Namespace:  
-    > icn.ocir.io/cnpw4jstunvc/movie/helidon-movie-api-mp:1.0
+    **[중요]** 여러 사람이 같이 실습을 하므로, 레파지토리 이름이 겹치지 않게 하기 위해 애플리케이션 태그에 실습자의 이니셜을 붙여서 진행합니다.  
+    > icn.ocir.io/cn5ibtrkf0tc/movie/helidon-movie-api-mp:{이니셜}
 
     이미지 빌드 예시:
     ````shell
@@ -63,14 +64,14 @@ Microprofile 기반 (Oracle Helidon Framework)의 REST 서비스를 OKE 환경�
     ````
 
     ````shell
-    docker build -t icn.ocir.io/cnpw4jstunvc/movie/helidon-movie-api-mp:1.0 .
+    docker build -t icn.ocir.io/cn5ibtrkf0tc/movie/helidon-movie-api-mp:kdh .
     ````
 
 1. OCIR 로그인
     OCIR 로그인을 위해서는 Username과 Password가 필요합니다. Username은 {Object Storage Namespace}/{OCI 로그인 아이디}이며, Password는 Auth Token값입니다.
 
     OCIR Username 예시: 
-    > cnpw4jstunvc/oci.dan.kim@gmail.com
+    > cn5ibtrkf0tc/oci.dan.kim@gmail.com
 
     OCIR Password (Auth Token) 생성 (My Profile > Auth tokens > Generate token):
     > **Note**: Auth Token은 한번 생성 후 다시 확인이 불가능하기 때문에 복사해서 기록해놔야 합니다.
@@ -78,13 +79,13 @@ Microprofile 기반 (Oracle Helidon Framework)의 REST 서비스를 OKE 환경�
     
     OCIR 로그인 예시:
     ````shell
-    docker login icn.ocir.io -u cnpw4jstunvc/oci.dan.kim@gmail.com
+    docker login icn.ocir.io -u cn5ibtrkf0tc/oci.dan.kim@gmail.com
     ````
 
 1. OCIR에 이미지 푸시
     OCIR에 이미지 푸시 예시:
     ````shell
-    docker push icn.ocir.io/cnpw4jstunvc/movie/helidon-movie-api-mp:1.0
+    docker push icn.ocir.io/cn5ibtrkf0tc/movie/helidon-movie-api-mp:kdh
     ````
 
     이미지 확인
@@ -92,64 +93,76 @@ Microprofile 기반 (Oracle Helidon Framework)의 REST 서비스를 OKE 환경�
     
 ## Task 3: 서비스 배포
 
-1. 서비스 배포를 위한 Namespace와 secret 생성
+**[중요]** 하나의 OKE Cluster에서 실습을 진행하는 경우 Namespace 이름이 겹치지 않도록 Namespace에 다음과 같이 이니셜을 붙여서 생성합니다.
+> kubectl create ns movie-{이니셜}
+
+1. 서비스 배포를 위한 Namespace와 secret 생성 예시
     
     Namespace 생성:
     ````shell
     <copy>
-    kubectl create ns movie
+    kubectl create ns movie-kdh
     </copy>
     ````
 
     Secret 생성 :
     ````shell
     <copy>
-    kubectl create secret docker-registry ocirsecret --docker-server=icn.ocir.io --docker-username={Object Storage Namespace}/{OCI Username} --docker-password='{Auth Token}' --docker-email=oci.dan.kim@gmail.com -n movie
+    kubectl create secret docker-registry ocirsecret --docker-server=icn.ocir.io --docker-username={Object Storage Namespace}/{OCI Username} --docker-password='{Auth Token}' --docker-email={이메일} -n movie-{이니셜}
     </copy>
     ````
 
     Secret 생성 예시:
     ````shell
-    kubectl create secret docker-registry ocirsecret --docker-server=icn.ocir.io --docker-username=cnpw4jstunvc/oci.dan.kim@gmail.com --docker-password=';u}T!ExB&rq(R-(y3>f8' --docker-email=oci.dan.kim@gmail.com -n movie
+    kubectl create secret docker-registry ocirsecret --docker-server=icn.ocir.io --docker-username=cn5ibtrkf0tc/oci.dan.kim@gmail.com --docker-password=';u}T!ExB&rq(R-(y3>f8' --docker-email=oci.dan.kim@gmail.com -n movie-kdh
     ````
 
 1. Persistent Volume 생성
-    Pod내의 컨테이너에서 사용할 Persistent Volume Claim (PVC)을 생성합니다. Pod 생성 시 PVC를 활용하면 OCI의 Block Storage를 Persistent Volume으로 사용하여 마운트할 수 있습니다.
+    Pod내의 컨테이너에서 사용할 Persistent Volume Claim (PVC)을 생성합니다. Pod 생성 시 PVC를 활용하면 OCI의 Block Storage를 Persistent Volume으로 사용하여 마운트할 수 있습니다. PVC 생성을 위한 Manifest 파일을 열어서 Namespace를 다음과 같이 앞서 생성한 Namespace로 수정한 후에 PVC를 생성합니다.
+
+    PVC Manifest 파일 수정
+    ````shell
+    <copy>
+    vi csi-bvs-pvc.yaml
+    </copy>
+    ````
+    
+    ![Manifest 수정](images/oci-modify-csi-volume-plugin.png)
 
     PVC 생성:
-    ````shell
+    ```shell
     <copy>
     kubectl create -f csi-bvs-pvc.yaml
     </copy>
-    ````
+    ```
 
 1. Kubernetes Manifest 파일 수정
-    Kubernetes 배포를 위한 Manifest 파일의 내용중에서 **Object Storage Namespace**의 값을 변경하고 저장합니다.
+    Kubernetes 배포를 위한 Manifest 파일의 내용중에서 **Namespace**, **애플리케이션 태그**, **Object Storage Namespace**의 값을 변경하고 저장합니다.
 
-    ````shell
+    ```shell
     <copy>
     vi kube-helidon-movie-api-mp-config-direct.yml
     </copy>
-    ````
+    ```
 
     ![Manifest 수정](images/oci-microprofile-deploy.png)
     
 1. 서비스 배포
-    ````shell
+    ```shell
     <copy>
     kubectl apply -f kube-helidon-movie-api-mp-config-direct.yml
     </copy>
-    ````
+    ```
 
     배포된 리소스 확인:
-    ````shell
+    ```shell
     <copy>
-    kubectl get all -n movie
+    kubectl get all -n movie-{이니셜}
     </copy>
-    ````
+    ```
 
     Sample Response:
-    ````shell
+    ```shell
     NAME                                       READY   STATUS    RESTARTS   AGE
     pod/helidon-movie-api-mp-64cbd8448-7smqz   1/1     Running   0          4m34s
     pod/helidon-movie-api-mp-64cbd8448-hj99k   1/1     Running   0          4m33s
@@ -163,7 +176,7 @@ Microprofile 기반 (Oracle Helidon Framework)의 REST 서비스를 OKE 환경�
 
     NAME                                             DESIRED   CURRENT   READY   AGE
     replicaset.apps/helidon-movie-api-mp-64cbd8448   3         3         3       4m34s
-    ````
+    ```
 
 > **Note** : 배포된 백엔드 서비스는 Private Load Balancer만 적용이 된 상태로 외부로 노출이 되지 않은 상태입니다. 다음 랩에서는 API Gateway를 활용하여 백엔드 서비스를 외부에서 접근 가능한 엔드포인트로 노출하는 것을 실습합니다.
 
