@@ -90,12 +90,12 @@ opensearch 서비스에서 vcn의 리소스 접근을 위해 아래와 같이 �
    - 구획 : 개인별 환경에 맞는 구획을 선택해주세요. (정책의 경우 root 구획에 생성하셔도 됩니다.)
    - "수동 편집기 표시" 옵션 활성화
    - 아래 내용을 복사하여 "정책 작성기"에 붙여넣기 합니다. 
-   ````<policy>
+   ```
    Allow service opensearch to manage vcns in compartment [구획이름]
    Allow service opensearch to manage vnics in compartment [구획이름]
    Allow service opensearch to use subnets in compartment [구획이름]
    Allow service opensearch to use network-security-groups in compartment [구획이름]
-   ````
+   ```
 
    ![](/assets/img/cloudnative/2022/opensearch/policy-2.png " ")
 
@@ -108,7 +108,7 @@ opensearch 서비스에서 vcn의 리소스 접근을 위해 아래와 같이 �
    ![](/assets/img/cloudnative/2022/opensearch/opensearch-12.png " ")
 3. 클러스터 구성 화면에서 아래와 같이 입력 후 **"다음"**을 클릭합니다.
    - 이름 : **cluster-for-demo**
-   - 구획에 생성 : `VCN이 생성되어 있는 구획을 선택합니다. (개인별 환경에 맞는 구획을 선택해주세요.)`
+   - 구획에 생성 : <mark>VCN이 생성되어 있는 구획을 선택합니다. (개인별 환경에 맞는 구획을 선택해주세요.)</mark>
 
    ![](/assets/img/cloudnative/2022/opensearch/opensearch-13.png " ")
 4. 노드 구성 화면에서 상단 노드 최적화 옵션에서 **"개발"**을 선택합니다. 다른 옵션은 기본값으로 구성 후 "다음"을 클릭합니다.
@@ -136,7 +136,7 @@ OpenSearch 클러스터 생성 단계에서 언급한 내용과 같이 현재 OC
 3. 인스턴스 생성 화면에서 아래와 같이 입력합니다.
    - 이름 : bastionForOpensearch
    - 구획 : [VCN을 생성한 구획]
-   - 이미지, Shape : **`기본값을 그대로 사용합니다.`**
+   - 이미지, Shape : **기본값을 그대로 사용합니다.**
 
    ![](/assets/img/cloudnative/2022/opensearch/opensearch-19.png " ")
 4. 네트워크 섹션에서 아래와 같이 선택합니다.
@@ -156,28 +156,28 @@ Bastion 인스턴스를 생성 후 OpenSearch 클러스터가 생성되었는지
 2. 생성되었다면 Bastion VM에 접속합니다.
    - `ssh -i [키파일 경로] opc@[bastionVM PublicIP]`
 3. 접속된 VM에서 Opensearch Cluster에 입력할 Sample Json파일을 다운받습니다.
-   ````<downsample>
-   curl -O "https://raw.githubusercontent.com/oracle-livelabs/oci/main/oci-opensearch/files/OCI_services.json"
-   ````
+   ```terminal
+   $ curl -O "https://raw.githubusercontent.com/oracle-livelabs/oci/main/oci-opensearch/files/OCI_services.json"
+   ```
 
 4. 아래 명령어를 통해 다운로드 받은 샘플 데이터셋을 클러스터에 입력합니다.
    - 아래 <mark>cluster-api-end-point</mark>에 생성된 Opensearch의 API Endpoint를 복사하여 입력합니다.
-   ````<downsample>
-   curl -H 'Content-Type: application/x-ndjson' -XPOST "[cluster-api-end-point]/oci/_bulk?pretty" --data-binary @OCI_services.json
-   ````
+   ```terminal
+   $ curl -H 'Content-Type: application/x-ndjson' -XPOST "[cluster-api-end-point]/oci/_bulk?pretty" --data-binary @OCI_services.json
+   ```
 
 5. 아래 명령어를 통해 opensearch 클러스터에 indices를 확인합니다.
    - 아래 <mark>cluster-api-end-point</mark>에 생성된 Opensearch의 API Endpoint를 복사하여 입력합니다.
-   ````<downsample>
-   curl "[cluster-api-end-point]/_cat/indices"
+   ````terminal
+   $ curl "[cluster-api-end-point]/_cat/indices"
    ````
 
    ![](/assets/img/cloudnative/2022/opensearch/opensearch-22.png " ")   
 
 6. 아래 명령어를 통해 입력된 데이터를 간단하게 조회해 봅니다.
    - 아래 <mark>cluster-api-end-point</mark>에 생성된 Opensearch의 API Endpoint를 복사하여 입력합니다.
-   ````<downsample>
-   curl -X GET "[cluster-api-end-point]/oci/_search?q=title:Kubernetes&pretty"
+   ````terminal
+   $ curl -X GET "[cluster-api-end-point]/oci/_search?q=title:Kubernetes&pretty"
    ````
 
    ![](/assets/img/cloudnative/2022/opensearch/opensearch-23.png " ")
@@ -189,14 +189,14 @@ Bastion 인스턴스를 생성 후 OpenSearch 클러스터가 생성되었는지
    - your_opensearch_dashboards_private_IP : 클러스터 정보 화면에서 opensearch dashboard 전용(Private) IP를 복사하여 입력합니다.
    - your_instance_public_ip : Bastion VM 의 Public IP를 복사하여 입력합니다.
    - path_to_your_private_key : Bastion VM에 접속하기 위한 Key 파일의 로컬 경로를 입력합니다.
-   ````<downsample>
-     ssh -C -v -t -L 127.0.0.1:5601:<your_opensearch_dashboards_private_IP>:5601 opc@<your_instance_public_ip> -i <path_to_your_private_key>
+   ````terminal
+     $ ssh -C -v -t -L 127.0.0.1:5601:<your_opensearch_dashboards_private_IP>:5601 opc@<your_instance_public_ip> -i <path_to_your_private_key>
    ````
    
 2. 터널링 결과 예시
    ![](/assets/img/cloudnative/2022/opensearch/opensearch-24.png " ")
 3. 터널링 후 Opensearch Dashboard 접속을 위해 아래 링크로 이동합니다
-   ````<downsample>
+   ````terminal
    https://localhost:5601
    ````
 4. 만약 경고창이 뜬다면 아래와 같이 고급 옵션을 표시 후 안전하지 않은 사이트로 이동 버튼을 클릭합니다.

@@ -63,7 +63,7 @@ Fluent Bit을 OKE Cluster에 구성할 수 있게 Helm Chart가 제공됩니다.
 
 우선 Fluent Bit Helm 저장소를 추가합니다.
 
-```
+```terminal
 $ helm repo add fluent https://fluent.github.io/helm-charts
 "fluent" has been added to your repositories
 ```
@@ -71,9 +71,7 @@ $ helm repo add fluent https://fluent.github.io/helm-charts
 Fluentbit Helm Chart에서 사용할 values.yaml을 준비합니다. yaml 파일은 아래 Github 저장소에서 다운받을 수 있습니다.
 
 [Fluentbit_values.yaml](https://github.com/PA2702/OpenSearch-Log-Ingestion/blob/Fluentd%2BFluentbit/Fluentbit_values.yaml)
-
-***Fluentbit_values.yaml***
-```
+```yml
 # Default values for fluent-bit.
 
 # kind -- DaemonSet or Deployment
@@ -472,7 +470,7 @@ $ helm upgrade --install fluent-bit fluent/fluent-bit -f Fluentbit_values.yaml
 ```
 
 배포된 Fluent Bit을 확인합니다.
-```
+```terminal
 $ kubectl get all
 NAME                   READY   STATUS    RESTARTS   AGE
 pod/fluent-bit-cd7s4   1/1     Running   0          3m5s
@@ -493,9 +491,7 @@ Fluent Bit와 마찬가지로 Fluentd도 Helm Chart가 제공됩니다. Helm 레
 Fluentbit Helm Chart에서 사용할 values.yaml을 준비합니다. yaml 파일은 아래 Github 저장소에서 다운받을 수 있습니다.
 
 [Fluentd_values.yaml](https://github.com/PA2702/OpenSearch-Log-Ingestion/blob/Fluentd%2BFluentbit/Fluentd_values.yaml)
-
-***Fluentd_values.yaml***
-```
+```yml
 nameOverride: ""
 fullnameOverride: ""
 
@@ -885,7 +881,7 @@ Fluentd_values.yaml 파일내의 `<OPENSEARCH URL>`을 OCI OpenSearch URL로 변
 ![](/assets/img/cloudnative-security/2022/opensearch-fluentbit-fluentd-3.png)
 
 변경 예시
-```
+```text
 04_outputs.conf: |-
     <label @OUTPUT>
       <match **>
@@ -905,12 +901,12 @@ Fluentd_values.yaml 파일내의 `<OPENSEARCH URL>`을 OCI OpenSearch URL로 변
 ```
 
 이제 Fluentd Helm Chart를 활용하여 OKE 배포합니다.
-```
+```terminal
 $ helm upgrade --install fluentd fluent/fluentd -f Fluentd_values.yaml
 ```
 
 배포된 Fluentd를 확인합니다.
-```
+```terminal
 $ kubectl get all
 NAME                                  READY   STATUS    RESTARTS   AGE
 pod/fluent-bit-cd7s4                  1/1     Running   0          32m
@@ -938,15 +934,14 @@ replicaset.apps/fluent-fluentd-8668855d46   0         0         0       13m
 간단한 애플리케이션을 배포하여 모니터링 해보도록 합니다. 
 
 먼저 Ingress Controller를 생성합니다.
-```
+```terminal
 $ kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.1.3/deploy/static/provider/cloud/deploy.yaml
 ```
 
 간단한 애플리케이션 (docker-hello-world)을 배포하기 위해 다음 Manifest를 작성합니다.
 
 ***hello-world-ingress.yaml***
-```
-hello-world-ingress.yaml 
+```yml
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -984,14 +979,14 @@ spec:
 
 Deployment와 서비스를 생성합니다.
 
-```
+```terminal
 $ kubectl create -f hello-world-ingress.yaml
 ```
 
 Ingress Manifest 파일을 작성합니다
 
 ***ingress.yaml***
-```
+```yml
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
@@ -1012,12 +1007,12 @@ spec:
 ```
 
 Ingress를 생성합니다.
-```
+```terminal
 $ kubectl create -f ingress.yaml
 ````
 
 External IP를 확인합니다.
-```
+```terminal
 $ kubectl get svc -n ingress-nginx
 NAME                                 TYPE           CLUSTER-IP     EXTERNAL-IP    PORT(S)                      AGE
 ingress-nginx-controller             LoadBalancer   10.96.44.164   146.xx.xx.xx   80:31713/TCP,443:32598/TCP   11m
@@ -1025,7 +1020,7 @@ ingress-nginx-controller-admission   ClusterIP      10.96.44.45    <none>       
 ```
 
 curl을 사용해서 호출 테스트를 합니다.
-```
+```terminal
 $ curl -I http://146.xx.xx.xx
 HTTP/1.1 200 OK
 Date: Sat, 22 Oct 2022 07:56:06 GMT
