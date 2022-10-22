@@ -89,20 +89,20 @@ Process Automation은 OCI에서 비즈니스 프로세스를 신속하게 설계
 * **Documentation:** [https://docs.oracle.com/en-us/iaas/Content/ContEng/Tasks/contengcreatingloadbalancer.htm#contengcreatingnetworkloadbalancer_topic-Preserve_source_destination](https://docs.oracle.com/en-us/iaas/Content/ContEng/Tasks/contengcreatingloadbalancer.htm#contengcreatingnetworkloadbalancer_topic-Preserve_source_destination){:target="_blank" rel="noopener"} [https://docs.oracle.com/en-us/iaas/Content/ContEng/Tasks/contengcreatingloadbalancer.htm#contengcreatingnetworkloadbalancer_topic_Preserving_client_IP](https://docs.oracle.com/en-us/iaas/Content/ContEng/Tasks/contengcreatingloadbalancer.htm#contengcreatingnetworkloadbalancer_topic_Preserving_client_IP){:target="_blank" rel="noopener"} 
 
 ### 기능 소개
-OKE에서 Network Load Balancer를 사용하는 경우 이제 k8s 매니페스트 파일내에 externalTrafficPolicy 옵션을 사용할 수 있습니다. 이 옵션을 통해서 서비스가 노드 안에서만 응답할 것인지, 클러스터 전체로 나아가서 응답할 지를 결정할 수 있습니다. externalTrafficPolicy옵션의 기본 값은 ```cluster```이며, 모든 노드 전반에 걸쳐서 패킷을 전송하여 부하를 고르게 분산하게 할 수 있습니다. 다만 트래픽을 받는 Pod가 없는 노드로 전송되는 경우에는 추가적인 홉을 거쳐서 다른 노드로 이동하므로, 수천개의 노드를 운영하는 클러스터의 경우 성능이 저하될 수 있습니다.
+OKE에서 Network Load Balancer를 사용하는 경우 이제 k8s 매니페스트 파일내에 externalTrafficPolicy 옵션을 사용할 수 있습니다. 이 옵션을 통해서 서비스가 노드 안에서만 응답할 것인지, 클러스터 전체로 나아가서 응답할 지를 결정할 수 있습니다. externalTrafficPolicy옵션의 기본 값은 <mark>cluster</mark>이며, 모든 노드 전반에 걸쳐서 패킷을 전송하여 부하를 고르게 분산하게 할 수 있습니다. 다만 트래픽을 받는 Pod가 없는 노드로 전송되는 경우에는 추가적인 홉을 거쳐서 다른 노드로 이동하므로, 수천개의 노드를 운영하는 클러스터의 경우 성능이 저하될 수 있습니다.
 
-externalTrafficPolicy옵션을 ```local```로 설정하는 경우 kube-proxy가 전달받을 pod가 있는 노드로만 전송됩니다. (다른 노드로 전송 시 패킷 드랍) ```local```설정의 경우 노드 간의 트래픽을 제거하여 수천개의 노드를 운영하는 클러스터의 경우 성능을 향상 시킬 수 있습니다. 또한 로드발란서 Health Check를 통해서 Pod가 존재하는 노드로만 트래픽을 전송하므로 패킷 드랍도 발생하지 않습니다. 다만, 트래픽을 고르게 분산하지 못한다는 단점도 존재합니다.
+externalTrafficPolicy옵션을 <mark>local</mark>로 설정하는 경우 kube-proxy가 전달받을 pod가 있는 노드로만 전송됩니다. (다른 노드로 전송 시 패킷 드랍) <mark>local</mark> 설정의 경우 노드 간의 트래픽을 제거하여 수천개의 노드를 운영하는 클러스터의 경우 성능을 향상 시킬 수 있습니다. 또한 로드발란서 Health Check를 통해서 Pod가 존재하는 노드로만 트래픽을 전송하므로 패킷 드랍도 발생하지 않습니다. 다만, 트래픽을 고르게 분산하지 못한다는 단점도 존재합니다.
 
-```externalTrafficPolicy=local```로 설정하는 경우에는 추가적으로 IP 패킷 헤더에서 클라이언트 IP를 보존하거나 보존하지 않도록 지정할 수 있습니다. 이 경우 다른 노드로 네트워크 홉을 건너지 않기 때문에 클라이언트 IP가 보존될 수 있습니다. 여기서 추가적으로 매니페스트파일에 다음 annotation을 추가함으로써 클라이언트 IP를 보존하거나 보존하지 않도록 지정합니다.
+<mark>externalTrafficPolicy=local</mark>로 설정하는 경우에는 추가적으로 IP 패킷 헤더에서 클라이언트 IP를 보존하거나 보존하지 않도록 지정할 수 있습니다. 이 경우 다른 노드로 네트워크 홉을 건너지 않기 때문에 클라이언트 IP가 보존될 수 있습니다. 여기서 추가적으로 매니페스트파일에 다음 annotation을 추가함으로써 클라이언트 IP를 보존하거나 보존하지 않도록 지정합니다.
 
 
 **클라이언트 IP 보존**
-```
+```text
 oci-network-load-balancer.oraclecloud.com/is-preserve-source: "true"
 ```
 
 **클라이언트 IP 보존 방지**
-```
+```text
 oci-network-load-balancer.oraclecloud.com/is-preserve-source: "false"
 ```
 
@@ -122,7 +122,7 @@ oci-network-load-balancer.oraclecloud.com/is-preserve-source: "false"
 * XFS
 
 다음은 ext3 파일 시스템을 갖는 블록 볼륨을 지원하는 PVC를 생성하기 위해 Storage Class를 생성하는 메니페스트 예시입니다.
-```
+```yml
 apiVersion: storage.k8s.io/v1
 kind: StorageClass
 metadata:
@@ -136,7 +136,7 @@ volumeBindingMode: WaitForConsumer
 ```
 
 PVC 생성 시 위에서 작성한 Storage Class를 지정한 예시입니다.
-```
+```yml
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:

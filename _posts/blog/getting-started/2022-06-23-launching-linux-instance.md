@@ -142,7 +142,7 @@ $ chmod 400 <private_key_file>
 ```
 
 다음 SSH 명령어로 인스턴스에 접속합니다.
-```
+```terminal
 $ ssh -i <private_key_file> <username>@<public-ip-address>
 ```
 
@@ -242,13 +242,13 @@ iSCSI 방식으로 볼륨을 인스턴스에 연결해보도록 하겠습니다.
 
 인스턴스에 SSH로 접속합니다.
 
-```
+```terminal
 $ ssh -i <private_key_file> <username>@<public-ip-address>
 ```
 
 인스턴스에 SSH로 접속하면, 위에서 복사한 ```iscsiadm```명령어를 실행합니다. 다음은 예시입니다.
 
-```
+```terminal
 $ sudo iscsiadm -m node -o new -T iqn.2015-12.com.oracleiaas:ac4b3e1c-1a24-4dc9-88dc-280797acfb14 -p 169.254.2.2:3260
 $ sudo iscsiadm -m node -o update -T iqn.2015-12.com.oracleiaas:ac4b3e1c-1a24-4dc9-88dc-280797acfb14 -n node.startup -v automatic
 $ sudo iscsiadm -m node -T iqn.2015-12.com.oracleiaas:ac4b3e1c-1a24-4dc9-88dc-280797acfb14 -p 169.254.2.2:3260 -l
@@ -256,7 +256,7 @@ $ sudo iscsiadm -m node -T iqn.2015-12.com.oracleiaas:ac4b3e1c-1a24-4dc9-88dc-28
 
 다음과 같이 fdisk 명령어를 실행해 보면, **/dev/sdb** 디스크가 연결되어 있는 것을 확인할 수 있습니다. 이제 포멧 및 마운트 작업 수행이 가능합니다. 
 
-```
+```terminal
 $ sudo fdisk -l
 
 Disk /dev/sdb: 50 GiB, 53687091200 bytes, 104857600 sectors
@@ -267,19 +267,19 @@ I/O size (minimum/optimal): 4096 bytes / 1048576 bytes
 
 #### 블록 볼륨 포멧
 블록 볼륨 포멧을 할 때 원하는 파일 시스템 파일로 포멧할 수 있습니다. 다음은 ext3 파일 시스템으로 포멧하는 명령어 예시입니다.
-```
+```terminal
 $ sudo /sbin/mkfs.ext3 /dev/sdb
 ```
 
 위에서 지정한 장치 경로 (Device path)를 통해서도 포멧이 가능합니다.
-```
+```terminal
 $ sudo /sbin/mkfs.ext3 /dev/oracleoci/oraclevdb
 ```
 
 > 일관된 장치 경로(Consistent Device Path) 기능은 블록 볼륨이 둘 이상인 상태에서 장치의 이름으로 마운트할 경우 재부팅 시 장치 이름과 실제 장치의 대응 순서가 달라질 수 있는데, 이 순서를 보장하기 위한 기능입니다. 이 기능은 OCI에서 제공되는 특정 이미지에서만 제공되는데, 자세한 내용은 [https://docs.oracle.com/en-us/iaas/Content/Block/References/consistentdevicepaths.htm](https://docs.oracle.com/en-us/iaas/Content/Block/References/consistentdevicepaths.htm) 페이지에서 확인활 수 있습니다.
 
 다음 명령어로 파일 시스템을 조회해 볼 수 있습니다.
-```
+```terminal
 $ lsblk -f
 NAME               FSTYPE      LABEL UUID                                   MOUNTPOINT
 sda                                                                         
@@ -294,29 +294,30 @@ sdb                ext3              d9388269-e087-4d50-a058-f6d08b9772c5
 #### 블록 볼륨 마운트
 이제 마운트를 해보도록 하겠습니다. 여기서는 장치 경로를 통해 마운트를 합니다. 다음과 같이 마운트할 경로를 생성합니다.
 
-```
+```terminal
 $ sudo mkdir /mnt/vol1
 ```
 
 /etc/fstab 파일을 오픈하여 다음과 같이 제일 아래에 다음 라인을 추가합니다.
 > fstab에 추가하면, 인스턴스를 리부팅 하더라도 자동으로 마운트가 됩니다.
 
-```
+```terminal
 $ sudo vi /etc/fstab
 
 # 아래 라인 추가
 /dev/oracleoci/oraclevdb /mnt/vol1 ext3 defaults,_netdev,nofail 0 2
 ```
 
-> 디바이스은 연결된 블록 볼륨 화면에서도 확인 가능하지만, 다음 명령어로도 확인이 가능합니다. ```ls -la /dev/oracleoci/```
+> 디바이스은 연결된 블록 볼륨 화면에서도 확인 가능하지만, 다음 명령어로도 확인이 가능합니다. 
+<mark>ls -la /dev/oracleoci/</mark>
 
 이제 다음 명령어로 마운트합니다.
-```
+```terminal
 $ sudo mount -a
 ```
 
 마운트 된 것을 확인할 수 있습니다.
-```
+```terminal
 $ df -h
 Filesystem                  Size  Used Avail Use% Mounted on
 devtmpfs                    7.7G     0  7.7G   0% /dev

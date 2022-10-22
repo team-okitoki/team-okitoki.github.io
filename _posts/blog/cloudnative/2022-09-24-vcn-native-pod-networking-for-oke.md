@@ -121,7 +121,7 @@ VCN을 자동으로 생성하면, 기본적으로 2개의 서브넷 (Private, Pu
       </tbody>
 </table>
 
-```여기서 구성하는 환경에서는 Bastion은 제외합니다. 또한 문서에는 Route Table과 Internet Gateway, NAT Gateway, Service Gateway를 별도로 생성하는 것처럼 되어 있지만, 여기서는 VCN Quick Create로 생성된 것을 그대로 활용합니다.```
+<mark>여기서 구성하는 환경에서는 Bastion은 제외합니다. 또한 문서에는 Route Table과 Internet Gateway, NAT Gateway, Service Gateway를 별도로 생성하는 것처럼 되어 있지만, 여기서는 VCN Quick Create로 생성된 것을 그대로 활용합니다.</mark>
 
 ##### 3-2. Public Kubernetes API Endpoint 서브넷을 위한 보안 목록 규칙 생성
 보안 목록 생성은 앞서 생성한 VCN (OKEVCN)을 선택하고 왼쪽 리소스 메뉴에서 **보안 목록(Security Lists) 선택 > 보안 목록 생성 (Create Security List)**를 차례로 선택한 후 대화창에서 **다른 수신 규칙(Another Ingress Rule)**을 클릭하여 수신 규칙(Ingress Rule)을, **다른 송신 규칙(Another Egress Rule)**을 클릭하여 송신 규칙(Egress Rule)을 입력합니다. 
@@ -665,7 +665,7 @@ VCN을 자동으로 생성하면, 기본적으로 2개의 서브넷 (Private, Pu
 </table>
 </div>
 
-```Bastion환경을 구성하기 위한 보안 규칙은 [공식 문서](https://docs.oracle.com/en-us/iaas/Content/ContEng/Concepts/contengnetworkconfigexample.htm)를 참고합니다.```
+<mark>Bastion환경을 구성하기 위한 보안 규칙은 [공식 문서](https://docs.oracle.com/en-us/iaas/Content/ContEng/Concepts/contengnetworkconfigexample.htm)를 참고합니다.</mark>
 
 ##### 3-6. 생성된 보안 목록 규칙 확인
 아래와 같이 기본 2개의 보안목록 외에 4개의 보안 목록이 생성된 것을 확인할 수 있습니다.
@@ -840,7 +840,7 @@ anuwgljrvsea7yictl7tvbmk5luyjxncijtnmxpiwdrrlyeer36jpxvbbbpq   SUCCESS   COMPLET
 ```
 
 이 중에서 한개의 Pod Network에 대한 상세 정보를 조회해 보면, 조회한 Native Pod Networking과 관련된 노드와 Pod CIDR, 확보된 31개의 Pod IP 주소등을 확인할 수 있습니다.
-```
+```terminal
 $ kubectl describe NativePodNetwork (or npn) anuwgljrvsea7yica6kpvzhjeyan2w7s6riem2se4c43t5xvmefnntsrm2ra
 Name:         anuwgljrvsea7yica6kpvzhjeyan2w7s6riem2se4c43t5xvmefnntsrm2ra
 Namespace:    

@@ -73,79 +73,79 @@ iptables을 활용하여 관리할 수 있지만, Oracle Linux 7이상부터는 
 
 우선 ssh로 해당 인스턴스에 접속합니다.
 
-```
+```terminal
 $ ssh -i {ssh key} opc@{ip address}
 ```
 
 다음과 같이 Firewall을 설정합니다. 참고로 ***--permanent*** 옵션은 영구적으로 설정하는 옵션이지만, 반드시 ***--reload***를 방화벽을 재시작해줘야 합니다.
-```
+```terminal
 $ sudo firewall-cmd --permanent --zone=public --add-port=8080/tcp
 $ sudo firewall-cmd --reload
 ```
 
 다음 명령어로 열린 포트를 확인합니다.
-```
+```terminal
 $ sudo firewall-cmd --list-all
 ```
 
 이 외에 추가적으로 다음과 같은 명령어를 사용할 수 있습니다.
 
 **방화벽 실행 상태**
-```
+```terminal
 $ sudo firewall-cmd --state 
 ```
 
 **존 목록을 출력**
-```
+```terminal
 $ sudo firewall-cmd --get-zones
 ```
 
 **기본 존 출력**
-```
+```terminal
 $ sudo firewall-cmd --get-active-zones
 ```
 
 **zone을 지정해서 출력**
-```
+```terminal
 firewall-cmd --zone=public --list-all
 ```
 **임시로 포트 추가 / reload 없이 바로 반영되나 서버가 재부팅되면 설정도 사라짐**
-```
+```terminal
 $ sudo firewall-cmd --add-port=8080/tcp
 ```
 
 **포트 제거**
-```
+```terminal
 $ sudo firewall-cmd --remove-port=8080/tcp
 ```
 
 **서비스 추가**
-```
+```terminal
 $ sudo firewall-cmd --add-service=ftp
 ```
 
 **서비스 제거**
-```
+```terminal
 $ sudo firewall-cmd --remove-service=ftp
 ```
 
 **존을 지정해서 추가**
-```
+```terminal
 $ sudo firewall-cmd --zone=trusted --add-service=ftp
 ```
 
 **permanent 옵션으로 서비스 추가 / 영구적으로 추가되나 --reload 옵션으로 방화벽 재시작 필요**
-```
+```terminal
 $ sudo firewall-cmd --permanent --zone=public --add-service=ftp
 ```
 
 **permanent 옵션으로 포트 추가 / 영구적으로 추가되나 --reload 옵션으로 방화벽 재시작 필요**
-```
+```terminal
 $ sudo firewall-cmd --permanent --zone=public --add-port=8080/tcp
 ```
 
 방화벽을 완전히 해제하고 모든 포트를 오픈하는 경우에는 다음과 같이 명령어를 사용합니다.
-```
+```terminal
 $ sudo systemctl stop firewalld.service
 $ sudo systemctl disable firewalld.service
 ```

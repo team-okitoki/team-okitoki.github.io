@@ -39,12 +39,12 @@ header: no
 OCI CLI설치를 위한 오라클사의 공식 가이드는 [https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/cliinstall.htm](https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/cliinstall.htm) 링크를 참고합니다. 해당 가이드에는 여러 운영체에에서 OCICLI를 설치하는 가이드가 포함되어 있는데 여기서는 MacOS를 기준으로 설명합니다.
 
 MacOS에서는 다음곽 같이 HomeBrew를 통해서 설치할 수 있습니다.
-```
+```terminal
 $ brew update && brew install oci-cli
 ```
 
 설치 후 다음과 같이 버전을 확인합니다.
-```
+```terminal
 $ oci --version
 ```
 
@@ -56,7 +56,7 @@ OCI CLI를 구성하기 위해서는 사전에 다음과 같은 정보가 준비
     ![](/assets/img/getting-started/2022/oci-cli-2.png " ")
 
 다음 명령어를 실행합니다.
-```
+```terminal
 $ oci setup config
 
 Enter a location for your config [/Users/username/.oci/config]: 기본선택
@@ -72,7 +72,7 @@ Do you want to generate a new API Signing RSA key pair? (If you decline you will
 
 ### OCI CLI 연결 확인
 다음 명령어는 OCI의 Object Storage의 Namespace 값을 가져오는 OCICLI 명령입니다. 실행했을 때 오류 없이 다음과 비슷한 결과가 나오면 성공입니다. 
-```
+```terminal
 $ oci os ns get
 {
   "data": "cnrgtqg..."

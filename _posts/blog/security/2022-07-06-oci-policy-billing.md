@@ -41,7 +41,7 @@ OCI 클라우드 관리자가 아닌 일반 사용자에게 빌링 메뉴 접근
    ![](/assets/img/cloudnative-security/2022/oci-policy-billing-create.png)
 4. 수동 편집기에 아래와 같이 입력합니다.
    - 특정 그룹에 대한 정책 생성 
-    ```
+    ```text
     Allow group <group> to manage accountmanagement-family in tenancy
     ```
 5. "**생성**" 버튼을 클릭하여 정책을 생성을 마무리 합니다.

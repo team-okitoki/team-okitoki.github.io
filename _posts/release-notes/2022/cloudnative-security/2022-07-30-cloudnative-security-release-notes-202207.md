@@ -47,7 +47,7 @@ OCI에서는 GraalVM Enterprise를 추가 비용없이 사용할 수 있는데, 
 ### 빌드 파이프라인 구성
 GraalVM Enterprise에서 필요한 컴포넌트를 설치하는 명령어를 스탭에 추가할 수 있는데, 아래 예시는 GraalVM Native Image를 위한 컴포넌트를 설치하는 스탭입니다.
 
-```
+```yml
 steps:
   - type: Command
     name: "Install the latest GraalVM Enterprise 22.x for Java 17 - JDK and Native Image"
@@ -56,14 +56,14 @@ steps:
 ```
 
 환경 변수 JAVA_HOME에 GraalVM Home Path를 다음과 같이 정의할 수 있습니다.
-```
+```yml
 env:
   variables:
     "JAVA_HOME" : "/usr/lib64/graalvm/graalvm22-ee-java17"
 ```
 
 아래와 같이 Step에서 Path에 Java Home을 지정할 수 있습니다.
-```
+```yml
 env:
   variables:
     # PATH is a reserved variable and cannot be defined as a variable.
@@ -78,7 +78,7 @@ steps:
 
 아래 빌드 파이프라인은 Java 애플리케이션을 GraalVM과 Maven을 활용하여 Native Image로 빌드하는 예시입니다.
 
-```
+```yml
 version: 0.1
 component: build
 timeoutInSeconds: 600

@@ -80,7 +80,7 @@ SQL Developer 를 실행하면 아래와 같은 화면이 나타나며 상단의
 
 ![SQL Developer](/assets/img/dataplatform/2022/dbcs/quickstart/20.oci-dbcs-db-connection-string-copy.png)
 
-```
+```text
 * DB Connection 정보  : srcggdb.sub07160235111.pslimvcn2021071.oraclevcn.com:1521/SRCGGDB_SRCGGDB.sub07160235111.pslimvcn2021071.oraclevcn.com
 
 상기 Connection 정보에서 SQL Developer 의 Connection 에 입력할 항목들을 추출합니다.
@@ -111,7 +111,7 @@ Connection 을 클릭하여 설정한 SOURCE DB 로 연결이 잘 되는지 확�
 #### SOURCE DB에 SEED Data 생성
 - 복제를 수행할 Source 데이터베이스를 구성합니다. 먼저, Source DB 의 CDB ROOT 사용자인 sys 사용자로 Connection 을 연결 후, SRC_OCIGGLL 이라는 사용자를 생성해 줍니다. (※ password 항목은 사용할 password 로 대체 필요)
 
-  ```
+  ```sql
   ALTER SESSION SET CONTAINER=PDB1;
 
   CREATE USER "SRC_OCIGGLL" IDENTIFIED BY "<password>";
@@ -134,7 +134,7 @@ Connection 을 클릭하여 설정한 SOURCE DB 로 연결이 잘 되는지 확�
 - 상기 생성한 SRC_OCIGGLL 사용자로 SQL Developer 에 접속 후 SQL 커맨드 창에서 아래의 SEED Data Load Script 를 수행합니다. SEED Data Load Script 는 [SOURCE-SEED-DATA.SQL](/assets/files/ocigg-sql/SOURCE-SEED-DATA.SQL) 를 다운받아 생성한 SRC_OCIGGLL 사용자의 Connection 을 이용해 접속 후 SQL 실행창에 복사하여 붙여놓고 SQL 문장들을 실행합니다. (※ 아래 내용은 해당 스크립트의 일부입니다.)
 
 
-  ``` 
+  ```sql
   GRANT UNLIMITED TABLESPACE TO SRC_OCIGGLL;
   --------------------------------------------------------
   --  File created - @dsgray 3-07-2021   
@@ -168,7 +168,7 @@ Connection 을 클릭하여 설정한 SOURCE DB 로 연결이 잘 되는지 확�
 #### TARGET DB에 SEED Data 생성
 - 복제가 될 Target 데이터베이스를 구성합니다. 먼저, Target DB CDB ROOT 사용자인 sys 사용자로 Connection 을 연결 후, SRCMIRROR_OCIGGLL 이라는 사용자를 생성해 줍니다. (※ password 항목은 사용할 password 로 대체 필요)
 
-  ```SQL
+  ```sql
   ALTER SESSION SET CONTAINER=PDB1;
 
   CREATE USER "SRCMIRROR_OCIGGLL" IDENTIFIED BY "<password>";
@@ -190,7 +190,7 @@ Connection 을 클릭하여 설정한 SOURCE DB 로 연결이 잘 되는지 확�
 - Target DB 에도 아래의 SEED Data Load Script 를 수행합니다. SEED Data Load Script 는 [TARGET-SEED-DATA.SQL](/assets/files/ocigg-sql/TARGET-SEED-DATA.SQL) 를 다운받아 생성한 SRCMIRROR_OCIGGLL 사용자의 Connection 을 이용해 접속 후 SQL 실행창에 복사하여 붙여놓고 SQL 문장들을 실행합니다. (※ 아래 내용은 해당 스크립트의 일부입니다.)
 
 
-``` 
+```sql
 
 GRANT UNLIMITED TABLESPACE TO SRCMIRROR_OCIGGLL;
 --------------------------------------------------------
@@ -226,14 +226,14 @@ BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
 SOURCE DB 의 SUPPLEMENT LOGGING 추가를 위해 SQL Developer 를 통해 SOURCE DB 에 sys 계정으로 로그인 합니다.
 
 - SOURCE DB 에 sys (sysdba) 계정으로 "ARCHIVELOG" 모드로 DB 가 실행되고 있는지 확인합니다. 아래 화면과 같이 LOG_MODE 는 "ARCHIVELOG" 모드로 설정되어 있어야 합니다.
-    ```
+    ```sql
     SELECT log_mode FROM v$database;
     ```
     ![ARCHIVELOG CHECK](/assets/img/dataplatform/2022/goldengate/15.oci-goldengate-sql-developer-archivelog-check.png)
 
     ※ 만일, LOG_MODE 가 "NOARCHIVELOG" 모드로 설정이 되어 있다면 아래와 같이 SOURCE DB 인스턴스로 ssh 로그인하여 아래 절차대로 실행해 줍니다. (※ 상기 화면과 같이 "ARCHIVELOG" 모드로 설정되어 있다면 아래 SCRIPT 는 수행하지 않습니다.)
 
-    ```
+    ```terminal
     $ sqlplus / as sysdba
     SQL> SELECT log_mode FROM v$database;
 
@@ -251,7 +251,7 @@ SOURCE DB 의 SUPPLEMENT LOGGING 추가를 위해 SQL Developer 를 통해 SOURC
 
   SOURCE DB 의 DATA Capture 를 위해서는 중요한 설정 중 하나는 SUPPLEMENTAL LOG 를 ENABLE 하는 설정입니다. 이 설정이 ENABLE 되어야 SOURCE DB 의 변경 데이터가 Capture 됩니다. SQL Developer 로 sys 계정의 CDB$ROOT 로 접속하여 아래 SQL Script 를 실행합니다.
 
-    ```
+    ```sql
     
     ALTER SESSION SET CONTAINER=CDB$ROOT;
     ALTER SYSTEM SWITCH LOGFILE;
@@ -278,7 +278,7 @@ SOURCE DB 와 TARGET DB 에 OCI GoldenGate 가 추출 및 복제를 수행하기
 
   SOURCE DB 에 OCI GoldenGate Admin (C##GGADMIN) 계정 생성을 위해  SQL Developer 로 sys 계정의 CDB$ROOT 로 접속하여 아래 SQL SCRIPT 를 실행합니다. (※ password 항목은 사용할 password 로 대체 필요)
 
-    ```
+    ```sql
     ALTER SESSION SET CONTAINER=CDB$ROOT;
     CREATE USER C##GGADMIN IDENTIFIED BY "<password>";
     EXEC dbms_goldengate_auth.grant_admin_privilege('C##GGADMIN',container=>'ALL');
@@ -487,7 +487,7 @@ OCI GoldenGate Admin 콘솔에서 EXTRACT(Capture) 프로세스를 추가하는 
 
 - Add Extract 세번째 화면에서는 Parameter File 을 입력하는 절차입니다. Parameter 에는 추출할 대상 스키마의 대상 테이블 정보들을 정의해 줍니다. 아래의 Parameter 내용을 복사하여 Parameter File 란에 기존 정보를 지우고 붙여넣기를 합니다. "Create and Run" 버튼을 클릭합니다. (※ 맨 아래 Parameter 항목에 Capture 할 테이블에 대한 정보가 명기되어 있는 것을 확인할 수 있습니다.)
 
-    ```
+    ```text
     
     EXTRACT UAEXT
     USERIDALIAS SRCGGDB DOMAIN OracleGoldenGate
@@ -559,7 +559,7 @@ OCI GoldenGate Admin 콘솔에서 EXTRACT(Capture) 프로세스를 추가하는 
 - Add Replicat 의 세번째 화면은 Parameter File 을 입력하는 화면입니다. 
 Extract 프로세스의 Parmeter 를 입력하는 방식과 동일하게 아래의 내용을 Parameter 입력란에 붙여넣기로 기존 입력 항목을 대체 후 "Create and Run" 버튼을 클릭합니다. (※ 맨 마지막에 MAP 항목은 SOURCE DB 의 테이블을 TARGET DB 로 MAPPING 을 어떻게 할 것인지 정의해 주는 항목입니다.)
 
-    ```
+    ```text
     
     REPLICAT REP
     USERIDALIAS TRGGGDB DOMAIN OracleGoldenGate
@@ -647,7 +647,7 @@ OCI GoldenGate 를 통해 SOURCE DB 에서 TARGET DB 로의 복제 구성이 완
 
 - SQL Developer 를 통해 SOURCE DB 에 SRC_OCIGGLL 사용자로 PDB 에 접속하여 SQL 실행창에 아래의 Insert 쿼리를 복사 후 붙여넣기를 한 후 SCRIPT 를 실행합니다. (※ INSERT, UPDATE, DELETE 등의 SOURCE DB 변경 후 COMMIT 문 반드시 실행)
 
-    ```
+    ```sql
     
     Insert into SRC_OCIGGLL.SRC_REGION (REGION_ID,REGION,COUNTRY_ID,COUNTRY) values (1000,'Central Korea',10,'Korea');
     Insert into SRC_OCIGGLL.SRC_REGION (REGION_ID,REGION,COUNTRY_ID,COUNTRY) values (1001,'EastSouth Korea',10,'Korea');

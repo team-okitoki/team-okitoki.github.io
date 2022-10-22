@@ -62,11 +62,11 @@ header: no
 
  1. 소스코드 직접 다운로드 : 링크의 레파지토리 [최상위 폴더](https://github.com/oracle-samples/oci-data-science-ai-samples){:target="_blank" rel="noopener"}로 이동하여 **"CODE"** 버튼 클릭 -> **"Download ZIP"** 버튼을 클릭하여 다운로드 받습니다. 
  2. 레파지토리 클론 : 소스코드를 다운받으려는 위치에서 git clone 명령어를 통해 소스코드를 다운로드 받습니다.<br>
-    `$ git clone https://github.com/oracle-samples/oci-data-science-ai-samples.git`
+    <mark>$ git clone https://github.com/oracle-samples/oci-data-science-ai-samples.git</mark>
 
 #### 소스 코드별 역할 소개
 - **config.py** : 샘플 코드 실행을 위한 설정 정보를 작성하는 파일
-```
+```python
     # config file path
     CONFIG_FILE_PATH = "~/.oci/config"
     # config file profile
@@ -86,8 +86,8 @@ header: no
     # If ANNOTATION_TYPE is "CLASSIFICATION" edit classification_config.py
     # If ANNOTATION_TYPE is "BOUNDING_BOX" edit bounding_box__config.py
 ```
-- **classification_config.py** : config.py 파일에서 `ANNOTATION_TYPE` 을 `CLASSIFICATION` 으로 지정한 경우 사용되는 설정 파일
-```
+- **classification_config.py** : config.py 파일에서 <mark>ANNOTATION_TYPE</mark> 을 <mark>CLASSIFICATION</mark> 으로 지정한 경우 사용되는 설정 파일
+```text
     # maximum number of DLS Dataset records that can be retrieved from the list_records API operation for labeling
     # limit=1000 is the hard limit for list_records
     LIST_RECORDS_LIMIT = 1000
@@ -104,8 +104,8 @@ header: no
     # For CUSTOM_LABEL_MATCH specify the label map
     LABEL_MAP = {"dog/": ["dog", "pup"], "cat/": ["cat", "kitten"]}
 ```
-- **bounding_box_config.py** : config.py 파일에서 `ANNOTATION_TYPE` 을 `BOUNDING_BOX` 으로 지정한 경우 사용되는 설정 파일
-```
+- **bounding_box_config.py** : config.py 파일에서 <mark>ANNOTATION_TYPE</mark> 을 <mark>BOUNDING_BOX</mark> 으로 지정한 경우 사용되는 설정 파일
+```terminal
     # the path of the csv file
     PATH = "/Users/puneetmittal/Desktop/input_data.csv"
 ```
@@ -149,15 +149,15 @@ header: no
 #### 설정파일 변경
 1. config.py 파일의 내용을 변경합니다.
    - DATASET_ID : **위 단계에서 생성한 데이터 집합의 OCID를 입력합니다.**
-   - ANNOTATION_TYPE : `CLASSIFICATION`
+   - ANNOTATION_TYPE : <mark>CLASSIFICATION</mark>
    ![](/assets/img/aiml/2022/oci-bulk-dls-demo-11.png " ")
 2. classification_config.py 파일의 내용을 아래와 같이 변경합니다.
-   - LABELING_ALGORITHM : `FIRST_LETTER_MATCH`
+   - LABELING_ALGORITHM : <mark>FIRST_LETTER_MATCH</mark>
    ![](/assets/img/aiml/2022/oci-bulk-dls-demo-10.png " ")
 
 #### 실행 및 결과 확인
 - 터미널에서 아래와 같이 입력하여 Bulk Labeling 을 실행합니다.<br>
-  `$ python3 bulk_labeling_script.py`
+  <mark>$ python3 bulk_labeling_script.py</mark>
 - 실행 결과 예시 (200개 레코드 약 24초에 처리 완료)
   ![](/assets/img/aiml/2022/oci-bulk-dls-demo-12.png " ")
 - 라벨링 결과 확인

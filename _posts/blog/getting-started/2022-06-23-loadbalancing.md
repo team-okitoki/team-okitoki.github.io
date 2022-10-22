@@ -77,40 +77,40 @@ VCN을 생성할 때 앞서 생성한 구획인 SandBox를 선택하여야 합�
 
 ### 각 인스턴스에 웹 애플리케이션 설치 및 시작
 1. 인스턴스에 접속합니다.
-  ```
+  ```terminal
   $ ssh -i <private_key_file> <username>@<public-ip-address>
   ```
 
 2. yum 업데이트를 실행합니다.
-  ```
+  ```terminal
   $ sudo yum update
   ```
 
 3. Apache HTTP 서버를 설치합니다.
-  ```
+  ```terminal
   $ sudo yum -y install httpd
   ```
 
 4. 방화벽에서 HTTP(80), HTTPS(443) 포트 허용합니다.
-  ```
+  ```terminal
   $ sudo firewall-cmd --permanent --add-port=80/tcp
   $ sudo firewall-cmd --permanent --add-port=443/tcp
   ```
 
 
 5. 방화벽을 다시 로드 합니다.
-  ```
+  ```terminal
   $ sudo firewall-cmd --reload
   ```
 
 6. 웹서버 시작:
-  ```
+  ```terminal
   $ sudo systemctl start httpd
   ```
 
 7. 서버가 어떤 서버인지 보여주는 index.htm 파일을 각 서버에 추가합니다.  
   * **Webserver1**
-  ```
+  ```terminal
   $ sudo su
   $ echo 'WebServer1' >/var/www/html/index.html
   ```

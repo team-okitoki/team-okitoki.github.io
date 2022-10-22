@@ -69,7 +69,7 @@ OCI 에서는 베어메탈 또는 가상 머신기반의 단일 노드 Base Data
 ![DB Editions](/assets/img/dataplatform/2022/dbcs/02.blog-oracle-dbcs-editions.PNG)
 
 OCI 의 Oracle Base Database Cloud Service 는 모든 On-Prem Oracle Database 솔루션과 동일한 Full 기능 세트를 지원합니다.
-(`2 Node RAC 구성 시 EE Extreme Performance Edition 을 선택해야 구성이 가능`)
+(<mark>2 Node RAC 구성 시 EE Extreme Performance Edition 을 선택해야 구성이 가능</mark>)
 
 #### * Database Cloud Service Deployment Option 별 지원 Version 및 차이점
 다음 표는 OCI Oracle Database Cloud 서비스의 Deployment 옵션별 지원 버전 및 차이점들을 요약한 표입니다.
