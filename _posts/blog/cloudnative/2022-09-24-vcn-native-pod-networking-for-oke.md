@@ -4,7 +4,7 @@ layout: page-fullwidth
 # Content
 #
 subheadline: "CloudNative"
-title: "VCN-Native Pod Networking CNI 플러그인을 사용하여 OKE (Oracle Container Engine for Kubernetes) 클러스터 구성하기"
+title: "VCN-Native Pod Networking CNI 플러그인을 사용하여 OKE (Oracle Container Engine for Kubernetes) 클러스터 구성"
 teaser: "OKE (Oracle Container Engine for Kubernetes)에서는 기본 CNI(컨테이너 네트워크 인터페이스) 플러그인으로 Flannel을 사용하였지만, 이제는 VCN-Native Pod Networking이라는 새로운 CNI 플러그인을 사용할 수 있습니다. VCN-Native Pod Networking CNI에 대해서 알아보고, 이를 이용하여 OKE Cluster를 구성하는 방법에 대해서 알아봅니다."
 author: dankim
 breadcrumb: true
@@ -75,7 +75,7 @@ OKE Cluster를 Custom으로 구성할 때 아래 공식 문서를 참고하여 �
 #### 2. VCN 생성하기
 VCN 생성은 아래 포스트를 참고하여 생성합니다. 여기서는 VCN 이름을 ```OKEVCN```으로 지정하여 생성하도록 하겠습니다.
 
-[OCI에서 VCN Wizard를 활용하여 빠르게 VCN 생성하기](https://team-okitoki.github.io/getting-started/create-vcn/)
+[OCI에서 VCN Wizard를 활용하여 빠르게 VCN 생성하기](https://team-okitoki.github.io/getting-started/create-vcn/){:target="_blank" rel="noopener"}
 
 #### 3. 보안 목록(Security List) 생성
 VCN을 자동으로 생성하면, 기본적으로 2개의 서브넷 (Private, Public)과 2개의 보안 목록(Private 용도와 Public 용도)이 자동으로 생성됩니다. 여기서는 기본으로 생성되는 서브넷과 보안 목록은 두고, **VCN-Native Pod Networking** 구성을 위한 별도의 서브넷과 보안 목록을 생성할 것입니다.
