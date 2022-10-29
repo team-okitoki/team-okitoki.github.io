@@ -7,7 +7,7 @@ subheadline: "Identity & Security"
 title: "OCI 테넌시(계정) 생성 후 테넌시 설정을 위한 모범 사례 알아보기"
 teaser: "OCI 테넌시를 생성한 후 몇 가지 기본 설정 작업을 수행하고, 클라우드 리소스 및 사용자에 대한 조직 계획을 수립하는 작업이 필요한데, 이에 대해 설명합니다."
 author: dankim
-date: 2022-06-18 00:00:01
+date: 2022-06-18 00:00:02
 breadcrumb: true
 categories:
   - getting-started
