@@ -73,9 +73,9 @@ OCI PaaS 중에서는 사전에 미리 OCI에 특정 리소스를 구성해야 �
 
 > 일부 PaaS의 경우는 인스턴스 생성 시 이러한 리소스 중 일부를 자동으로 생성해 주기도 합니다.
 
-> OCI 테넌시에는 기본적으로 PaaS에서 <mark>ManagedCompartmentForPaaS</mark>라는 이름의 구획과 <mark>PSM-root-policy</mark>, <mark>PSM-mgd-comp-policy</mark> 정책이 생성되는데, PaaS를 위한 기본 구성이므로 삭제하거나 변경해서는 안됩니다.
+> OCI 테넌시에는 기본적으로 PaaS에서 <mark>ManagedCompartmentForPaaS</mark>라는 이름의 구획과 <mark>PSM-root-policy</mark>, <mark>PSM-mgd-comp-policy</mark> 정책이 생성되는데, PaaS를 위한 필수 구성이므로 삭제하거나 변경해서는 안됩니다.
 
-OCI PaaS에서 위에서 언급한 리소스에 접근하도록 허용하는 IAM 정책을 다음과 같이 추가할 수 있습니다. 기본으로 생성되는 정책(PSM-root-policy, PSM-mgd-comp-policy)이 아닌 별도의 추가 정책으로 생성합니다.
+OCI PaaS에서 위에서 언급한 리소스에 접근하도록 허용하는 IAM 정책을 다음과 같이 추가할 수 있습니다. 기본으로 생성되는 정책(PSM-root-policy, PSM-mgd-comp-policy)이 아닌 별도의 추가 정책으로 생성하는 것을 권장합니다.
 
 ***특정 구획에 있는 VCN에 접근***
 ```
@@ -110,7 +110,7 @@ Allow service PSM to inspect database-family in compartment <compartment_name>
 ```
 
 ### 지원되는 PaaS에 대한 정보
-제공되는 PaaS의 인스턴스를 생성하는 워크플로우는 서비스 별로 다를 수 있는데, 관련 정보는 다음 테이블을 참고합니다.
+제공되는 각 PaaS의 인스턴스를 프로비저닝 하는 워크플로우에 대한 정보는 다음 테이블을 참고합니다.
 
 <summary><b>지원되는 PaaS에 대한 정보</b></summary>
 <div markdown="1">
@@ -173,7 +173,6 @@ Allow service PSM to inspect database-family in compartment <compartment_name>
       </td>
       <td class="entry" headers="About__entry__2"><span class="ph"><a href='https://docs.oracle.com/en/cloud/paas/integration-cloud/int-get-started/welcome-oracle-integration.html'>Getting Started with Oracle Integration Generation 2</a><br><a href='https://docs.oracle.com/pls/topic/lookup?ctx=appint&id=INTRA-GUID-3FD7D407-DA8F-42C3-89DB-6E6E105E271E'>Getting Started with Oracle Integration 3</a></span>
       </td>
-      </tr>
       </tr>
       <tr class="row">
       <td class="entry" headers="About__entry__1"><span class="ph">Java Cloud Service</span>
