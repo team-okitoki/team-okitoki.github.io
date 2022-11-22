@@ -34,18 +34,6 @@ header: no
 {:toc}
 </div>
 
-## CSI volume plugin is initial default for clusters running Kubernetes version 1.24 (or later)
-* **Services:** Kubernetes용 Container Engine
-* **Release Date:** Aug. 2, 2022
-* **Documentation:** [https://docs.oracle.com/en-us/iaas/Content/ContEng/Tasks/contengcreatingpersistentvolumeclaim.htm#Provisioning_Persistent_Volume_Claims_on_the_Block_Volume_Service](https://docs.oracle.com/en-us/iaas/Content/ContEng/Tasks/contengcreatingpersistentvolumeclaim.htm#Provisioning_Persistent_Volume_Claims_on_the_Block_Volume_Service){:target="_blank" rel="noopener"} 
-
-### 기능 소개
-OKE Cluster에서는 Block Volume Storage를 연결하기 위한 플러그인으로 CSI(Container Storage Interface) Volume Plugin과 FlexVolume Volume Plugin을 지원합니다. FlexVolume Volume Plugin은 CSI가 나오기 전의 out-of-tree(플러그인 소스 코드를 쿠버네티스 레파지토리에 추가하지 않고도 Custom Plugin을 만들 수 있는 방식) Volume Plugin입니다. CSI는 메소스, 도커스웜등의 여러 컨테이너 오케스트레이션 커뮤니티들이 협력하여 스토리지 관리를 위한 공통 인터페이스인데, 쿠버네티스의 경우 1.3 이후부터 CSI를 지원하기 시작했습니다.
-
-기존에는 OKE의 기본 Volume Plugin(지정하지 않을 경우)으로 FlexVoume Volume Plugin (Storage Class=oci)을 사용하였지만, 이번에 OKE 1.24버전 지원과 함께 CSI Volume Plugin (Storage Calss=oci-bv)이 기본 플러그인으로 변경되었습니다.
-
----
-
 ## Support for multiple authentication servers for the same API deployment
 * **Services:** API Gateway
 * **Release Date:** Sept. 14, 2022
@@ -104,4 +92,4 @@ API 게이트웨이는 모든 OAuth 2.0 호환 토큰에 대한 JWT 유효성 �
 ### 기능 소개
 OCI DevOps 서비스는 외부 코드 저장소로 GitHub, GitLab, Bitbucket Cloud, Bitbucket Server, GitLab Server를 지원하였으며, 이번에 Visual Studio Builder Studio를 추가로 지원하게 되었습니다.
 
-![/assets/img/cloudnative-security/2022/oci-cloudnative-security-release-notes-09-1.png]
+![](/assets/img/cloudnative-security/2022/oci-cloudnative-security-release-notes-09-1.png)
