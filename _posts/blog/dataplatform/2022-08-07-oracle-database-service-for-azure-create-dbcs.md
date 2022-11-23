@@ -64,8 +64,8 @@ ODSA 서비스를 사용하기 위해 [https://console.multicloud.oracle.com/azu
    ![ODSA DBCS Create #2](/assets/img/dataplatform/2022/odsa-dbcs-create-2.png)
 3. Autonomous Database 생성화면에서 Azure 구독과 리소스 그룹을 선택하고 인스턴스 이름, 리전을 선택합니다.
    - Subscription, Resource Group, Name : 각자 계정 상황에 맞게 선택 및 입력합니다.
-      - `여기서 선택한 Resource Group으로 자동으로 OCI 구획이 생성됩니다.`
-      - `입력한 Name으로 OCI ADB 인스턴스 이름이 지정됩니다.`
+      - <mark>여기서 선택한 Resource Group으로 자동으로 OCI 구획이 생성됩니다.</mark>
+      - <mark>입력한 Name으로 OCI ADB 인스턴스 이름이 지정됩니다.</mark>
    - Region : **Korea Central** 을 선택합니다.
    - **"Next: Configuration"** 클릭
    ![ODSA DBCS Create #1](/assets/img/dataplatform/2022/odsa-dbcs-create-3.png)
@@ -75,7 +75,7 @@ ODSA 서비스를 사용하기 위해 [https://console.multicloud.oracle.com/azu
    - **"OK"** 클릭
    ![ODSA Link account #6](/assets/img/dataplatform/2022/odsa-dbcs-create-4.png)
 5. 다음과 같이 선택 및 입력합니다.
-   - Total Node Count : **1** `OCI 무료체험 계정에서는 1개 이상 생성되지 않습니다.`
+   - Total Node Count : **1** <mark>OCI 무료체험 계정에서는 1개 이상 생성되지 않습니다.</mark>
    - Available data storage(GB) : **256** / 기본값
    - Software Edition : **Standard Edition**
    - License Type : **License included**

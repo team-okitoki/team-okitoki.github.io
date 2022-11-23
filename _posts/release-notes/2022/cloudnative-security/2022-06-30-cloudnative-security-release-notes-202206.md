@@ -76,7 +76,7 @@ header: no
 
 
 1. Private Instace를 생성하는 테라폼 구성 작성
-  ```
+  ```terraform
   // Compute instance that our SSH connection will be established with.
   resource "oci_core_instance" "private_endpoint_instance" {
     compartment_id = "${var.compartment_ocid}"
@@ -109,7 +109,7 @@ header: no
   ```
 
 2. 테라폼 구성에 리소스 매니저의 Private Endpoint 생성을 위한 구성 작성
-  ```
+  ```terraform
   // The RMS private endpoint resource. Requires a VCN with a private subnet
   resource "oci_resourcemanager_private_endpoint" "rms_private_endpoint" {
     compartment_id = var.compartment_ocid
@@ -121,7 +121,7 @@ header: no
   ```
 
 3. 테라폼 구성으로 Private Endpoint에서 도달 가능한 IP(reachable IP) 데이터 작성
-  ```
+  ```terraform
   // Resolves the private IP of the customer's private endpoint to a NAT IP. Used as the host address in the "remote-exec" resource
   data "oci_resourcemanager_private_endpoint_reachable_ip" "test_private_endpoint_reachable_ips" {
     private_endpoint_id = oci_resourcemanager_private_endpoint.rms_private_endpoint.id
@@ -130,7 +130,7 @@ header: no
   ```
 
 4. Private Instance에 SSH 접속하여 명령어 실행
-  ```
+  ```terraform
   // Resource to establish the SSH connection. Must have the compute instance created first.
   resource "null_resource" "remote-exec" {
     depends_on = [oci_core_instance.private_endpoint_instance]
@@ -213,7 +213,7 @@ OCI Load Balancer 또는 Network Load Balancer로 들어오는 트래픽은 백�
 
 다음은 Load Balancer에 특정 Label(lbset=set1)을 갖는 Worker Node를 Backend Set으로 추가하는 예제입니다.
 
-```
+```yml
 apiVersion: v1
 kind: Service
 metadata:
@@ -233,7 +233,7 @@ spec:
 
 다음은 Network Load Balancer에 특정 Label(lbset=set1)을 갖는 Worker Node를 Backend Set으로 추가하는 예제입니다.
 
-```
+```yml
 apiVersion: v1
 kind: Service
 metadata:
@@ -252,7 +252,7 @@ spec:
 ```
 
 다음은 Label 값으로 set1 또는 set3 값을 갖는 Worker Node들을 Backend Set에 추가하는 Annotation 예시입니다.
-```
+```text
 # Load Balancer
 oci.oraclecloud.com/node-label-selector: lbset in (set1, set3)
 
@@ -261,7 +261,7 @@ oci-network-load-balancer.oraclecloud.com/node-label-selector: lbset in (set1, s
 ```
 
 Lable 값에 상관없이 특정 Label 키 (lbset)를 가진 Worker Node만 Backend Set에 추가할 수 있습니다.
-```
+```text
 # Load Balancer
 oci.oraclecloud.com/node-label-selector: lbset
 
@@ -270,7 +270,7 @@ oci-network-load-balancer.oraclecloud.com/node-label-selector: lbset
 ```
 
 env=prod 라는 Label을 갖고, set1 또는 set3 값을 갖는 Worker Node들을 할당한 예시입니다.
-```
+```text
 # Load Balancer
 oci.oraclecloud.com/node-label-selector: env=prod,lbset in (set1, set3)
 
@@ -279,7 +279,7 @@ oci-network-load-balancer.oraclecloud.com/node-label-selector: env=prod,lbset in
 ```
 
 Label env가 test라는 값을 갖지 않는 모든 노드를 포함합니다.
-```
+```text
 # Load Balancer
 oci.oraclecloud.com/node-label-selector: env!=test
 

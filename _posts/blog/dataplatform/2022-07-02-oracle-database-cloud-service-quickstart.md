@@ -167,7 +167,7 @@ DBCS 가 Public Subnet 에 생성되어 있을 경우, DBCS 가 생성된 후 �
 
     ![SQL Developer](/assets/img/dataplatform/2022/dbcs/quickstart/20.oci-dbcs-db-connection-string-copy.png)
 
-    ```
+    ```text
     * DB Connection 정보  : srcggdb.sub07160235111.pslimvcn2021071.oraclevcn.com:1521/SRCGGDB_SRCGGDB.sub07160235111.pslimvcn2021071.oraclevcn.com
 
     상기 Connection 정보에서 SQL Developer 의 Connection 에 입력할 항목들을 추출합니다.

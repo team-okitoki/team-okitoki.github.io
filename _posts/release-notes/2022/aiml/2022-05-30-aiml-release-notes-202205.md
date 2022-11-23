@@ -45,15 +45,15 @@ header: no
 Oracle ADS(Accelerated Data Science) SDK는 OCI Data Science 서비스의 일부로 포함된 Python 라이브러리입니다. ADS는 데이터 수집에서 모델 평가 및 해석에 이르기까지 기계 학습 모델의 수명 주기와 관련된 모든 단계를 다루는 개체 및 방법을 통해 친숙한 사용자 인터페이스를 제공합니다.
 
 ### OCI ADS 설치 방법
-```
-python3 -m pip install oracle-ads
+```terminal
+$ python3 -m pip install oracle-ads
 ```
 
 ### 업데이트 내용
-- 빅데이터 서비스에 연결하기 위한 `BDSSecretKeeper` 클래스에서 OCI Vault 서비스에 저장된 자격증명을 이용할 수 있도록 개선되었습니다.<br>[자세한 내용 확인](https://docs.oracle.com/en-us/iaas/tools/ads-sdk/latest/user_guide/big_data_service/connect.html#using-the-vault){:target="_blank" rel="noopener"}
-- 빅데이터 서비스에 연결하기 위해 OCI Vault 없이 수동으로 연결을 구성하기 위한 `krbcontext` 와 `refresh_ticket` 기능이 추가 되었습니다.<br>[자세한 내용 확인](https://docs.oracle.com/en-us/iaas/tools/ads-sdk/latest/user_guide/big_data_service/connect.html#without-using-the-vault){:target="_blank" rel="noopener"}
-- ADS Configuration 구성파일 경로를 지정할 수 있도록 `set_auth` 메서드가 추가 되었습니다. 이 기능을 통해 OCI ADS 구성파일의 경로를 변경할 수 있습니다.<br>[사용 예시 확인](https://docs.oracle.com/en-us/iaas/tools/ads-sdk/latest/user_guide/big_data_service/quick_start.html?highlight=set+auth){:target="_blank" rel="noopener"}
-- OCI CLI 요구사항을 `2.59.0` 버전이상으로 변경하였습니다.
+- 빅데이터 서비스에 연결하기 위한 <mark>BDSSecretKeeper</mark> 클래스에서 OCI Vault 서비스에 저장된 자격증명을 이용할 수 있도록 개선되었습니다.<br>[자세한 내용 확인](https://docs.oracle.com/en-us/iaas/tools/ads-sdk/latest/user_guide/big_data_service/connect.html#using-the-vault){:target="_blank" rel="noopener"}
+- 빅데이터 서비스에 연결하기 위해 OCI Vault 없이 수동으로 연결을 구성하기 위한 <mark>krbcontext</mark> 와 <mark>refresh_ticket</mark> 기능이 추가 되었습니다.<br>[자세한 내용 확인](https://docs.oracle.com/en-us/iaas/tools/ads-sdk/latest/user_guide/big_data_service/connect.html#without-using-the-vault){:target="_blank" rel="noopener"}
+- ADS Configuration 구성파일 경로를 지정할 수 있도록 <mark>set_auth</mark> 메서드가 추가 되었습니다. 이 기능을 통해 OCI ADS 구성파일의 경로를 변경할 수 있습니다.<br>[사용 예시 확인](https://docs.oracle.com/en-us/iaas/tools/ads-sdk/latest/user_guide/big_data_service/quick_start.html?highlight=set+auth){:target="_blank" rel="noopener"}
+- OCI CLI 요구사항을 <mark>2.59.0</mark> 버전이상으로 변경하였습니다.
 
 ---
 
@@ -64,7 +64,7 @@ python3 -m pip install oracle-ads
 * **Documentation:** [https://docs.oracle.com/en-us/iaas/releasenotes/changes/a569bbf6-4fb3-4f59-964b-cae816a3ccbd/](https://docs.oracle.com/en-us/iaas/releasenotes/changes/a569bbf6-4fb3-4f59-964b-cae816a3ccbd/){:target="_blank" rel="noopener"}
 
 ### 서비스 소개
-사용자가 직접 구성한 컨테이너 이미지를 사용하여 Data Science의 `Job` 또는 `Job Runs`를 실행할 수 있도록 기능이 추가 되었습니다.
+사용자가 직접 구성한 컨테이너 이미지를 사용하여 Data Science의 <mark>Job</mark> 또는 <mark>Job Runs</mark>를 실행할 수 있도록 기능이 추가 되었습니다.
 
 ### 사전 요구 사항
 - 사용자가 별도로 도커로 빌드한 이미지가 **OCI 컨테이너 레지스트리**에 업로드 되어 있어야 합니다.

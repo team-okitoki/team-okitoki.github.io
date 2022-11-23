@@ -53,24 +53,24 @@ OKE Cluster에 접속하기 위해서는 기본적으로 다음 두 개의 도�
 
 해당 명령어를 복사해서 로컬에서 실행합니다. 우선 첫 명령어로 kubeconfig 파일을 생성하기 위한 폴더를 생성합니다.
 
-```
+```terminal
 $ mkdir -p $HOME/.kube
 ```
 
 두 번째 명령어를 사용해서 kubeconfig 파일을 생성합니다. 다음 명령어를 실행하면 **.kube** 하위에 **config** 파일이 생성됩니다.
 
-```
+```terminal
 $ oci ce cluster create-kubeconfig --cluster-id ocid1.cluster.oc1.ap-seoul-1.aaaaaaaaulp............. --file $HOME/.kube/config --region ap-seoul-1 --token-version 2.0.0  --kube-endpoint PUBLIC_ENDPOINT
 ```
 
 만약 OKE Cluster 생성 시 API Endpoint를 Private으로 지정한 경우에는 3번째 명령어를 실행합니다. 
-```
+```terminal
 $ oci ce cluster create-kubeconfig --cluster-id ocid1.cluster.oc1.ap-seoul-1.aaaaaaaaulp............. --file $HOME/.kube/config --region ap-seoul-1 --token-version 2.0.0  --kube-endpoint PRIVATE_ENDPOINT
 ```
 
 Kubectl 명령어로 접속을 확인합니다.
 
-```
+```terminal
 $ kubectl cluster-info
 Kubernetes control plane is running at https://xxx.xxx.xxx.xxx:6443
 CoreDNS is running at https://xxx.xxx.xxx.xxx:6443/api/v1/namespaces/kube-system/services/kube-dns:dns/proxy

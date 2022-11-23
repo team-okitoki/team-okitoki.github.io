@@ -39,7 +39,7 @@
 2. 이동한 화면에서 "구획 생성" 버튼을 클릭합니다.
    ![Compartment Screen](images/oci-compartment-create-1.png " ")
 3. 다음과 같이 입력하여 실습 구획을 생성합니다.
-   - Name: Enter **oci-basic**
+   - Name: Enter **oci-basic-[이니셜]** / 예시) oci-basic-yhcho
    - Description: **OCI Basic 핸즈온 진행을 위한 구획입니다.**
    - Parent Compartment: **루트 구획 또는 특정 구획 선택**
    - **구획 생성(Create Compartment)** 클릭
@@ -63,7 +63,7 @@
    ![Compartment Screen](images/oci-vcn-create-2.png " ")
 
 1. 다음과 같이 입력:
-      - VCN Name: Enter **vcn-oci-basic**
+      - VCN Name: Enter **vcn-oci-basic-[이니셜]** / 예시) vcn-oci-basic-yhcho
       - VCN CIDR Block: **10.0.0.0/16** (기본값)
       - Public Subnet CIDR Block: **10.0.0.0/24** (기본값)
       - Private Subnet CIDR Block: **10.0.1.0/24** (기본값)
@@ -76,7 +76,7 @@
    ![VCN Create Review Screen](images/oci-vcn-create-4.png " ")
    ![VCN Create Complete Screen](images/oci-vcn-create-5.png " ")
 
-### Oracle Database (DBCS) 생성
+### Oracle Database (DBCS) 생성 (옵션)
 
 1. 좌측 상단의 **햄버거 아이콘**을 클릭하고, **Oracle Database**을 선택한 후 **Oracle 기본 위치 데이터베이스(VM,BM)**를 클릭합니다.
 
@@ -109,7 +109,7 @@
 6. 스토리지 구성 설정은 변경하지 않습니다.
 7. DB 시스템 구성에 아래와 같이 입력 및 선택 합니다.
    - 총 노드 수: **1**
-   - Oracle Database 소프트웨어 에디션: **Standard Edition**
+   - Oracle Database 소프트웨어 에디션: **Enterprise Edition**
 
    ![Oracle DBCS Create #6](images/oci-dbcs-create-6.png " ")
 

@@ -63,6 +63,9 @@ $code-border-size: 0px !default;
 $code-border-style: solid !default;
 $code-border-color: scale-color($code-background-color, $lightness: -10%) !default;
 $code-padding: rem-calc(2) rem-calc(5) rem-calc(1) !default;
+$code-bg-color: scale-color($secondary-color, $lightness: 70%) !default;
+$code-text-color: #567482 !default;
+$border-color: #dce6f0 !default;
 
 // We use these to style anchors
 $anchor-text-decoration: none !default;

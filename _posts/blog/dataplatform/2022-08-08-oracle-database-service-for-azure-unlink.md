@@ -57,7 +57,7 @@ header: no
 
 ### OCI CURL 스크립트 다운로드 및 설정하기
 1. [oci-curl.sh.zip](/assets/files/dataplatform/2022/oci-curl.sh.zip) 링크를 클릭하여 oci-curl.sh 압축 파일을 다운로드 하여 압축을 해제합니다.
-2. `oci-curl.sh` 파일 상단에 아래 변수에 API 키 등록 후 확인했던 값들을 변수에 설정하여 줍니다.
+2. <mark>oci-curl.sh</mark> 파일 상단에 아래 변수에 API 키 등록 후 확인했던 값들을 변수에 설정하여 줍니다.
    ![Setup oci-curl #1](/assets/img/dataplatform/2022/odsa-oci-curl-setup-1.png)
 3. 아래 명령어를 입력 후 실행하여 줍니다. _(참고로 아래 명령어는 아무결과도 반환되지 않습니다. "invalid method"가 나오는 경우 oci-curl.sh 파일을 다시 확인해야 합니다.'오타, 등등')_
    ```
@@ -69,7 +69,7 @@ header: no
    ![Setup oci-curl #2](/assets/img/dataplatform/2022/odsa-oci-curl-setup-2.png)
 5. oci-curl 파일이 위치한 경로에서 아래 구조로 명령어를 조합하여 실행 후 결과를 확인합니다.<br>
    **jq가 설치되어 있지 않은 경우 마지막 '| jq' 는 생략 가능합니다.**<br>
-   `$ oci-curl mchub-cloud-link.ap-seoul-1.oci.oraclecloud.com get "/20220401/cloudLinks?compartmentId=<루트 구획 OCID>&lifecycleState=ACTIVE" | jq`
+   <mark>$ oci-curl mchub-cloud-link.ap-seoul-1.oci.oraclecloud.com get "/20220401/cloudLinks?compartmentId=<루트 구획 OCID>&lifecycleState=ACTIVE" | jq</mark>
    ![Setup oci-curl #3](/assets/img/dataplatform/2022/odsa-oci-curl-setup-3.png)
 6. 위 OCI CURL을 통해 확인된 정보는 추후 cloudLink 를 삭제하는데 사용됩니다.
    
@@ -87,7 +87,7 @@ header: no
 
 #### OCI 리소스 삭제하기
 위 OCI CURL 설정이 정상적으로 완료되었다면, cloudlink에 대한 ID를 확인할 수 있습니다. 그 정보를 이용하여 아래와 같이 명령어를 조합 하여 cloudlink 리소스를 삭제할 수 있습니다.<br>
-`$ oci-curl mchub-cloud-link.ap-seoul-1.oci.oraclecloud.com delete "/20220401/cloudLinks/<CloudLink ID를 입력합니다.>" | jq`
+<mark>$ oci-curl mchub-cloud-link.ap-seoul-1.oci.oraclecloud.com delete "/20220401/cloudLinks/<CloudLink ID를 입력합니다.>" | jq</mark>
 - 삭제 명령 실행 후 조회를 다시한번 수행해보면 정상적으로 삭제된 것을 확인할 수 있습니다.
   ![ODSA Unlink Multicloud #5](/assets/img/dataplatform/2022/oracle-odsa-unlink-multicloud-5.png)
 

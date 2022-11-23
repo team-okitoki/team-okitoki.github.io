@@ -58,7 +58,7 @@ OCI DevOps의 빌드 파이프라인에서 Maven 프로젝트에 대한 취약�
 
 아래는 같이 OCI DevOps 빌드 파이프라인에 Vulnerability Audit(취약점 감사) 단계를 추가할 수 있습니다.
 
-```
+```yml
 ...
 - type: VulnerabilityAudit
   name: "Vulnerability Audit Step"
@@ -103,8 +103,8 @@ Function이 처음 호출될 때(**Cold Start** 라고 부름) Function 실행�
 ### 적용 방법
 프로비저닝된 동시성(provisioned concurrency)을 사용하기 위해서는 Function에 PCU (provisioned concurrency units)을 지정해야 합니다. PCU는 함수 OCICLI를 활용하여 Function을 생성하거나 업데이트 하는 시점에 다음과 같이 정하여 정의할 수 있습니다. 
 
-```
-oci fn function create --application-id ocid1.fnapp.oc1.phx.aaaaaaaaaf______r3ca --display-name helloworld-func --image phx.ocir.io/ansh81vru1zp/helloworld/helloworld-func:0.0.1 --memory-in-mbs 128 --provisioned-concurrency "{\"strategy\": \"CONSTANT\", \"count\": 40}"
+```terminal
+$ oci fn function create --application-id ocid1.fnapp.oc1.phx.aaaaaaaaaf______r3ca --display-name helloworld-func --image phx.ocir.io/ansh81vru1zp/helloworld/helloworld-func:0.0.1 --memory-in-mbs 128 --provisioned-concurrency "{\"strategy\": \"CONSTANT\", \"count\": 40}"
 ```
 
 * **strategy:** 프로비저닝된 동시성(provisioned concurrency) 사용여부 나타내는 것으로 **CONSTANT(지정), NONE(미지정)** 중 하나를 입력합니다.

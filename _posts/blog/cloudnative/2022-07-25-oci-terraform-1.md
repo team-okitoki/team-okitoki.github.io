@@ -81,7 +81,7 @@ resource "oci_core_instance" "test_instance" {
 
 ### 테라폼 설치
 그럼, 먼저 설치를 해보도록 합니다. macOS에서는 간단히 Homebrew를 사용해서 설치할 수 있습니다.
-```
+```terminal
 $ brew install terraform
 ```
 
@@ -124,7 +124,7 @@ variable "region" {}
 
 프로바이더에서 사용할 변수가 선언되어 있는데, 각 편수에 기본값을 직접 할당할 수도 있지만, 보통 환경 변수를 활용하거나, .tfvars 파일을 만들어서 관리할 수 있습니다. 환경 변수로 설정할 경우는 아래 내용을 ~/.bash_profile에 다음과 같이 설정하고 다시 적용하면 됩니다.
 
-```shell
+```terminal
 export TF_VAR_tenancy_ocid=<value>
 export TF_VAR_user_ocid=<value>
 export TF_VAR_fingerprint=<value>
@@ -132,13 +132,13 @@ export TF_VAR_private_key_path=<value>
 export TF_VAR_region=<value>
 ```
 
-```shell
+```
 $ source ~/.bas_profile
 ```
 
 .tfvars 라는 파일을 이용할수도 있는데 사용법은 다음과 같다. 우선 vars.tfvars 파일을 만든 후 다음과 같이 추가합니다.
 
-```terraform
+```terminal
 tenancy_ocid     = <value>
 user_ocid        = <value>
 fingerprint      = <value>
@@ -147,20 +147,20 @@ region           = <value>
 ```
 
 테라폼에서 .tfvars를 사용할 경우 실행 시 다음과 같이 옵션을 지정합니다. 아래는 plan을 실행할 때 vars.tfvars 환경 변수 파일을 사용한 예시입니다.
-```
+```terminal
 $ terraform plan -var-file=vars.tfvars
 ```
 
 ### 테라폼 초기화 (Terraform Init)
 프로바이더와 변수 설정이 완료되면 테라폼 초기화를 하는데, 구성한 Provider 설정으로 관련 플러그인을 .terraform 경로에 다운로드 받게 됩니다. Module 혹은 Workspace를 사용한 경우에도 관련된 필요한 파일을 .terraform 폴더에 생성합니다. 즉, Module이나 Workspace 관련 구성을 변경할 때마다 초기화를 해줘야 합니다. 초기화는 .tf 파일들이 있는 폴더에서 다음 명령어를 실행합니다.
 
-```terraform
+```terminal
 $ terraform init
 ```
 
 명령어를 실행하면 해당 폴더에 .terraform 폴더가 생성되며, plugins 폴더가 생성됩니다. terraform-provider-oci_v3.54.0_x4 즉 oci terraform plugin 버전이 3.54.0 인 것을 알수 있습니다.
 
-```
+```terminal
 drwxr-xr-x  3 DonghuKim  staff        96 12  4 18:31 ..
 -rwxr-xr-x  1 DonghuKim  staff  79132160 12  4 18:31 terraform-provider-oci_v3.54.0_x4
 -rwxr-xr-x  1 DonghuKim  staff  25457368 12  4 18:31 terraform-provider-random_v2.2.1_x4
@@ -173,7 +173,7 @@ drwxr-xr-x  6 DonghuKim  staff       192 12 12 16:51 .
 plan 명령어는 현재 정의되어있는 리소스들을 해당 프로바이더에 적용했을 때 테라폼에 의해서 수행될 작업에 대한 계획을 보여줍니다. .tf의 내용을 기반으로 구성 내용에 대한 유효성 검사및 리소스 생성, 수정, 삭제할 리소스들이 잘 반여될 수 있는지를 현재의 인프라 상태와 비교해서 보여주는데, plan을 통해서 실제 인프라에 영향을 주지 않으면서, 어떤 내용들이 변화되고 영향을 받는지 알 수 있습니다.
 실행 명령은 다음과 같습니다.
 
-```
+```terminal
 $ terraform plan
 
 $ terraform plan -var-file=vars.tfvars # tfvars 파일을 사용한 경우
@@ -182,14 +182,14 @@ $ terraform plan -var-file=vars.tfvars # tfvars 파일을 사용한 경우
 ### 테라폼 적용 (Terraform apply)
 plan을 통해서 예상한 plan 결과를 확인하게 되면, 실제 반영을 해서 인프라의 정보를 구성 파일(.tf)의 정보와 일치되도록 실제 인프라에 반영하는데 이 과정이 apply 다. 실행 명령은 다음과 같습니다. apply를 실행하면 중간에 approve 하는 과정이 있는데, apply를 실행한 후에 plan 결과를 먼저 보여준 후 그 결과에 대해 승인(yes)해야 apply를 진행하게 됩니다.
 
-```
+```terminal
 $ terraform apply
 
 $ terraform apply -var-file=vars.tfvars # tfvars 파일을 사용한 경우
 ```
 
 > 참고로 apply를 실행할 때 다음 옵션을 통해 auto approve를 할 수 있습니다.  
-> ```
+> ```terminal
 > $ terraform apply --auto-approve
 > ```
 
@@ -197,7 +197,7 @@ $ terraform apply -var-file=vars.tfvars # tfvars 파일을 사용한 경우
 ### workspace 생성/선택/삭제
 앞서 설명한 workspace를 생성, 목록, 선택, 삭제하는 명령어입니다. new 명령어로 프로젝트 폴더에서 workspace를 생성하면 **terraform.tfstate.d** 폴더가 자동으로 생성되며, 하위에 workspace 이름으로 폴더가 생성됩니다. 각 workspace 폴더안에 .tfstate 파일이 생성됩니다.
 
-```
+```terminal
 $ terraform workspace new <workspace 이름> # workspace 생성
 
 $ terraform workspace list # workspace 목록

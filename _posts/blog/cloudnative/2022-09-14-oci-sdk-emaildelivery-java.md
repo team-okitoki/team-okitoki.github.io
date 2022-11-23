@@ -195,7 +195,7 @@ OCI Java SDK를 사용하기 위해서는 아래와 같이 사전에 준비해�
 4. 소스코드 설명
    - java/com/example/**OCIemail.java** : Javamail을 라이브러리를 사용하여 OCI Email Delivery 서버를 통해 이메일을 발송하는 샘플 소스 코드 입니다.
 5. pom.xml 파일에 Javamail을 사용하기 위해 dependency를 추가 합니다.
-```<pom.xml작성예시>
+```xml
     <dependency>
         <groupId>com.sun.mail</groupId>
         <artifactId>javax.mail</artifactId>

@@ -47,7 +47,7 @@ ODSA 는 서비스 기반 접근 방식을 사용하여 기존의 복잡한 클�
 - 영업 담당자와 별도의 UC 계약을 체결 하고 테넌시 생성 후 ODSA 콘솔 접속하여 계정을 연동합니다.
 
 **Case 3. Azure를 사용하는 고객 중 OCI 계정이 있는 경우에는?**
-- OCI 계정은 `IDCS` 기반이 아닌 `Identity Domain` 적용되어 있는 계정만 연동 가능함. (만약 IDCS 기반인 경우 새로운 OCI 계정 생성이 필요합니다.)
+- OCI 계정은 <mark>IDCS</mark> 기반이 아닌 <mark>Identity Domain</mark> 적용되어 있는 계정만 연동 가능함. (만약 IDCS 기반인 경우 새로운 OCI 계정 생성이 필요합니다.)
   ![Diff IDCS vs Identity Domain #4](/assets/img/dataplatform/2022/oci-idcs-identity-domain-ui-diff.png)
 
 #### 사용 가능한 Oracle 데이터베이스 시스템
@@ -55,7 +55,7 @@ Azure용 Oracle Database Service 는 다음 제품을 제공합니다.
 - **Oracle Exadata Database** : 프로비저닝 후 언제든지 시스템에 데이터베이스 컴퓨팅 서버 및 스토리지 서버를 추가할 수 있는 유연한 Exadata 시스템을 프로비저닝할 수 있습니다.
 - **Shared Exadata Infra 의 Autonomous Database** : Autonomous Database 는 탄력적으로 확장되고 빠른 쿼리 성능을 제공하며 데이터베이스 관리가 필요 없는 사용하기 쉽고 완전 자율적인 데이터베이스를 제공합니다.
 - **기본 데이터베이스** : ODSA 를 사용하여 가상 머신 DB 시스템에 Oracle Enterprise Edition 또는 Oracle Standard Edition 데이터베이스를 배포할 수 있습니다.<br> 
-(`※ RAC 를 이용하여 2 node 데이터베이스를 구성하는 경우, Enterise Edition Extreme Performance 버전만 지원`)
+(<mark>※ RAC 를 이용하여 2 node 데이터베이스를 구성하는 경우, Enterise Edition Extreme Performance 버전만 지원</mark>)
 
 #### Azure용 Database Service(ODSA)와 OCI-Azure Interconnect의 차이점?
 
