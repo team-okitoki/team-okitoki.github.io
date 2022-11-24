@@ -121,5 +121,5 @@ Trail 파일은 시간 경과에 따라 축적될 수 있으므로 사용되지 
 
     ![](/assets/img/database/2022/09/08_GoldenGate_Trail_Purge_Task.png)
 
-
+ 
 ---
