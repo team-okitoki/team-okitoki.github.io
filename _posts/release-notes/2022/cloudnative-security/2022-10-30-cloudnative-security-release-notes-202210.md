@@ -49,16 +49,21 @@ header: no
 
 #### 사용 예시
 * **App Server Dashboard Drilldown:**  
+```text
 /apm/apm-traces/dashboards?dashId=OOBD-APM-app_server_dashboard_001&activeCompartmentId=ocid1.compartment.oc1.XXXX&dashFilter.apmDomain=ocid1.apmdomain.oc1.XXXX&dashFilter.compartmentId=ocid1.compartment.oc1.XXXX&dashFilter.DisplayName=<DisplayName>&region=us-ashburn-1
-
-* **Database Management Performance Hub Drilldown:**  
+```
+* **Database Management Performance Hub Drilldown:**
+```text
 /dbmgmt-ui/perfhub?ocid=ocid1.database.oc1.XXXX&perfhubContext={"dateTime":{"period":"LAST_24_HOUR"},"viewPort":{"startDate":"<StartTimeInMs>","endDate":"<EndTimeInMs>"},"selectedTab":{"name":"activityTab","filters": [{"key":"filter_list","value":"{\"sqlid\":{\"value\":\"<DbOracleSqlId>\",\"disabled\":true}}"}]}}
-
-* **Operations Insights SQL ID Drilldown:**  
+```
+* **Operations Insights SQL ID Drilldown:**
+```text
 /opsi/sql-warehouse?sqlId=<DbOracleSqlId>&region=us-ashburn-1&compartmentId=ocid1.compartment.oc1.XXXX
-
-* **Jira Error Message Drilldown:**  
+```
+* **Jira Error Message Drilldown:**
+```text
 https://jira.oci.oraclecorp.com/issues/?jql=text ~ "<ErrorMessage>"
+```
  
 ---
 
