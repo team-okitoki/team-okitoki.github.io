@@ -110,6 +110,7 @@ Operations Insights는 이제 Solaris 및 Windows 호스트 플랫폼 유형을 
 
 ### 서비스 소개
 신규 버전의 GoldenGate 서비스가 Release 되었습니다. 새로운 GoldenGate Release 에는 Oracle 데이터베이스, MySQL 및 Bigdata Deployment 유형과 이러한 Deployment 를 지원하는 다양한 DB Connection 유형이 추가되었습니다.
+추가된 Deployment Type 인 MySQL 과 BigData 도 GoldenGate 구성이 가능해졌습니다.
 
 ![](/assets/img/database/2022/10/01_New-GoldenGate.png)
 
