@@ -133,6 +133,6 @@ MariaDB 10.4, 10.5)
 OCI Streaming
 OCI Object Storage (target only))
     - GoldenGate microservices deployments
-
+ 
 
 ---
