@@ -50,6 +50,7 @@ header: no
 * 고급 진단 (Advanced diagnostics) : Performance Hub 및 AWR Explorer와 같은 진단 도구를 사용할 수 있는 고급 권한입니다. 고급 진단 자격 증명이 관리되는 데이터베이스에 대해 설정된 경우 진단 기능을 자동으로 사용하고 관리되는 데이터베이스의 읽기 작업에 사용할 수 있습니다.
 * 관리 (Administrator) : 테이블스페이스 생성 및 데이터베이스 매개변수 편집과 같은 관리 작업을 수행할 수 있는 관리 권한입니다. 관리되는 데이터베이스에 대해 관리 자격 증명이 설정된 경우 관리되는 데이터베이스에서 쓰기 작업을 수행하기 위해 사용할 수 있습니다.
 
+![](/assets/img/database/2022/09/09_database_management_overview.png)
 
 ## Data Flow now supports Spark 3.2.1, Conda Packs, and Delta Lakes
 * **Services:**  Data Flow
