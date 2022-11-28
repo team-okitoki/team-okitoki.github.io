@@ -70,7 +70,9 @@ AI Language 서비스에 번역기능이 추가되었습니다. 번역기능은 
 - 가격정책
   - 최초 1,000 Transaction 무료, 이후 1,000 Transaction 마다 $10 과금. (AWS는 $15, GCP는 $20)
   - 1개의 Transaction은 최대 1,000개의 글자지원 (공백포함)
-  - 타사의 경우 월간 요청 문자수 총계를 계산하여 과금함. **(OCI의 경우 자세한 케이스 문의중 / 추후 업데이트 예정)**
+  - OCI는 Transaction을 기반으로 요금이 책정되어 있습니다. (1,000글자 보다 적게 요청해도 1개의 Transaction으로 간주함)
+  - 예1) 1,010개의 문자 번역 요청 -> 2개 Transaction 발생
+  - 예2) 500개의 문자 번역 요청 -> 1개 Transaction 발생
 
 #### Language Custom Model 기능 추가 (사용자 정의 모델 기능 추가)
 OCI AI Language 서비스에 Custom Model 훈련 기능이 추가되었습니다.
@@ -92,3 +94,4 @@ Custom Model의 경우 Text Classification 과 Named Entity Recognition (NER) �
 - **가격정책**
   - 최초 15시간 사용자정의 모델 훈련 무료
   - 이후 시간당 $1.50 비용 발생함
+  - Custom Model의 경우 1,000개의 Transaction당 $3.5 비용이 발생함
