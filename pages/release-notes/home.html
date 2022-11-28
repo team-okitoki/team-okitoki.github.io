@@ -45,7 +45,7 @@ permalink: "release-notes-2022/"
 		<h2>Oracle Database 관련</h2>
 		<dl class="accordion" data-accordion>
 			{% assign counter = 1 %}
-			{% for post in site.categories.release-notes-2022-database limit:1000 %}
+			{% for post in site.categories.release-notes-2022-dataplatform limit:1000 %}
 			<dd class="accordion-navigation">
 			<a href="#panel{{ counter }}"><span class="iconfont"></span> {% if post.subheadline %}{{ post.subheadline }} › {% endif %}<strong>{{ post.title }}</strong></a>
 				<div id="panel{{ counter }}" class="content">
