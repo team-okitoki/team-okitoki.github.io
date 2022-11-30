@@ -4,8 +4,8 @@ layout: page-fullwidth
 # Content
 #
 subheadline: "Networking"
-title: "OCI Local Peering - 동일 리전에서 서로 다른 VCN 연결하기"
-teaser: "OCI 동일 리전에서 서로 다른 VCN을 연결하는 Local Peering에 대해서 설명합니다."
+title: "OCI Local Peering - 동일 리전에서 서로 다른 VCN간 연결하기"
+teaser: "OCI의 동일 리전에서 서로 다른 VCN을 연결하는 Local Peering에 대해서 설명합니다."
 author: "dankim"
 breadcrumb: true
 categories:
@@ -29,7 +29,9 @@ header: no
 ### Local Peering Gateway
 Local Peering Gateway(이하 LPG) 은 동일한 리전에서 서로 다른 VCN을 연결할 때 사용하는 Gateway입니다. 클라우드 계정 (OCI에서는 Tenancy라 부름)이 서로 다르더라도 동일한 리전의 경우 연결을 위해서는 **Local Peering Gateway**를 사용합니다.
 
-서로 다른 리전의 VCN을 연결하는 경우에는 **Remote Peering Gateway**를 사용합니다. **Remote Peering Gateway**에 대해서는 다음에 다루도록 하겠습니다.
+서로 다른 리전의 VCN을 연결하는 경우에는 **Remote Peering Gateway**를 사용합니다. **Remote Peering Gateway**에 대해서는 다음 포스트를 참고합니다.
+
+[OCI Remote Peering - 서로 다른 리전간의 VCN 연결하기](https://team-okitoki.github.io/infrastructure/oci-remote-peering/)
 
 다음 다이어그램은 **LPG**를 사용하여 동일 리전의 서로 다른 VCN을 연결하는 다이어그램입니다.
 ![](https://docs.oracle.com/en-us/iaas/Content/Resources/Images/network_local_peering_basic.png)
@@ -41,7 +43,7 @@ Peering은 일반적으로 두 개의 VCN을 연결하는 단일 Peering 관계�
 ### 수락자 및 요청자
 만일 두 개의 VCN을 관리하는 관리자가 서로 다른 경우에는 수락자는 수락자의 구획에 있는 LPG에 연결할 수 있는 권한을 요청자에게 부여 하는 특정 IAM 정책을 생성해야 합니다. 해당 정책이 없으면 요청자의 연결 요청이 실패합니다. IAM 설정과 관련해서는 다음 링크를 참고합니다.
 
-[https://docs.oracle.com/en-us/iaas/Content/Network/Tasks/localVCNpeering.htm](https://docs.oracle.com/en-us/iaas/Content/Network/Tasks/localVCNpeering.htm)
+[https://docs.oracle.com/en-us/iaas/Content/Network/Tasks/localVCNpeering.htm#Step1](https://docs.oracle.com/en-us/iaas/Content/Network/Tasks/localVCNpeering.htm#Step1)
 
 > 여기서는 한 명의 관리자가 모든 VCN을 관리한다는 전제하에 구성할 예정이므로, 별도의 IAM 정책을 구성하지 않습니다.
 
