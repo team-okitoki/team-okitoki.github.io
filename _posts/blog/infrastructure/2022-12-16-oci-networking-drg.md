@@ -4,7 +4,7 @@ layout: page-fullwidth
 # Content
 #
 subheadline: "Networking"
-title: "Dyanmic Routing Gateway(DRG)"
+title: "Dynamic Routing Gateway(DRG)"
 teaser: "OCI Networking의 Dynamic Routing Gateway(DRG)에 대해 설명합니다."
 author: dankim
 breadcrumb: true
