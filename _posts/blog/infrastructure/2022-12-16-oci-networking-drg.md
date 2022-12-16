@@ -142,7 +142,7 @@ Import Route Distribution을 통해서 가져온 경로 규칙은 자동으로 D
 ### Import Route Distribution 사용 시 주의할 점
 Import Route Distribution은 자동으로 DRG에 연결된 Attachment로 부터 각 네트워크에 대한 경로를 자동으로 구성해준다는 점에서 매우 좋은 기능이지만, 잘못 사용하면 원하지 않는 경로가 추가될 수도 있기 때문에 주의해서 사용해야 합니다. 예를 들면 Seoul VCN S에서 ON-PREMISE로 가야하는 경우가 있습니다. 이때 Seoul VCN S Attachment에 있는 DRG Route Table에 Import Route Distribution을 사용하고 있고, Import Route Distribution Statement에 IPSec이 포함되어 있을 수 있습니다. 이렇게 되면 VCN S는 원래 의도했던 Seoul VCN H의 Network Firewall로 이동하지 않고 바로 IPSec Tunnel Attachment를 통해서 ON-PREMISE로 이동해 버립니다. 물론 이경우에는 Import Route Distribution Statement에 IPSec을 제외하면 해결 되겠지만,  Import Route Distribution을 어쩔 수 없이 사용해야 하고, 또 특정 Attachment를 꼭 포함해야 하는 상황도 있을 수 있습니다. Dynamic 경로 규칙은 Import Route Distribution Statement에서 제외하지 않는한 제거가 불가능하므로, 이런 경우에는 수작업으로 Static 경로를 추가하여 해결할 수 있습니다. Static 경로는 Dynamic 경로보다 우선하여 동작하며, 목적지가 충돌나서 우선순위에 밀린 경로는 그림처럼 **Conflict**로 표기됩니다.
 
-![](/assets/img/infrastructure/2022/oci-networking-drg-13.png)
+![](/assets/img/infrastructure/2022/oci-networking-drg-16.png)
 
 ### 요약
 지금까지 DRG와 Transit Routing 구성을 위한 Route Table들에 대해서 알아보았습니다. OCI에서는 이러한 복잡한 네트워크 구성을 위해서 DRG와 관련 Route Table에 대해서 잘 이해하고 있어야 합니다. 요약하면 DRG Route Table은 DRG내의 Attachment 이동을 위한 경로 규칙이 포함될 수 있습니다. VCN Route Table은 VCN Attachment를 통해서 VCN으로 들어가는 경로 규칙이 포함됩니다. 보통 Hub VCN에 Network Firewall과 같은 특정 타겟을 지정하는 경우에 사용됩니다. Import Route Distribution은 DRG Route Table 구성을 동적으로 구성하도록 도와줍니다. 이 기능은 자동화 라는 장점이 있지만, 세세한 제어가 어렵기 때문에 예상하지 못한 경로가 포함될 수 있으며, 이런 부분을 Static 규칙을 포함하거나, 적절하게 Import Route Distribution Statement를 구성하여 해결할 수 있습니다. 
