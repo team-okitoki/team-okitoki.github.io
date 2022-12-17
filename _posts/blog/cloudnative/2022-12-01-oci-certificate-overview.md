@@ -164,7 +164,7 @@ CRL(인증서 해지 목록)은 CA에서 발행하며 발행 CA가 만료 날짜
 - [https://www.oracle.com/security/cloud-security/ssl-tls-certificates/faq/](https://www.oracle.com/security/cloud-security/ssl-tls-certificates/faq/){:target="_blank" rel="noopener"}
 
 #### 인증서 서비스관련 포스팅
-- OCI 인증서 서비스의 인증기관 생성 및 Load Balancer 적용하기
 - [Let’s Encrypt로 생성한 인증서를 OCI 인증서 서비스에 Import 하기](/cloudnative/oci-certificate-import-letsencrypt-cert/){:target="_blank" rel="noopener"}
 - OCI 인증서를 Load Balancer에 적용하기
 - OCI 인증서를 API Gateway에 적용하기
+- OCI 인증서 서비스의 인증기관 생성 및 Load Balancer 적용하기

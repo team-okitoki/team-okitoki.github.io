@@ -11,7 +11,7 @@ breadcrumb: true
 categories:
   - cloudnative
 tags:
-  - [oci, certificates, CA]
+  - [oci, certificates, CA, lets encrypt, certbot]
 #
 # Styling
 #
@@ -184,6 +184,7 @@ certbot 프로그램에서 OCI DNS 서비스 접근을 위한 별도의 플러�
 - **isrgrootx1.txt** : root_ca Let's Encrypt의 root ca 파일 [Root CA 파일 다운로드](/assets/files/cloudnative/isrgrootx1.txt){:target="_blank" rel="noopener"}
 - **privkey.pem** : 생성한 인증서 파일에 대한 개인키 파일
 <br>
+
 1. 전체 메뉴에서 **"ID & 보안"** -> **"인증서"** -> **"인증서"** 메뉴를 클릭합니다.
    ![](/assets/img/cloudnative/2022/certificates/letsencrypt-11.png " ")
 2. "인증서 생성" 버튼을 클릭합니다
@@ -199,6 +200,7 @@ certbot 프로그램에서 OCI DNS 서비스 접근을 위한 별도의 플러�
    - 전용키 암호 : 입력하지 않음.
    - "다음" 버튼을 클릭합니다.
      ![](/assets/img/cloudnative/2022/certificates/letsencrypt-14.png " ")
+
 6. 규칙 단계는 "임포트됨" 유형에서는 해당 없기 때문에 "다음" 버튼을 눌러서 다음단계로 이동합니다.
 7. 입력한 내용을 검포 후 "인증서 생성"버튼을 클릭합니다.
    ![](/assets/img/cloudnative/2022/certificates/letsencrypt-15.png " ")
@@ -209,7 +211,7 @@ certbot 프로그램에서 OCI DNS 서비스 접근을 위한 별도의 플러�
 ### 마무리 하며...
 이번 포스팅에서는 certbot을 이용하여 간편하게 인증서를 발급받고 OCI 인증서 서비스에 등록하는 과정에 대해 살펴보았습니다.
 다음에는 OCI 인증서 서비스를 다른 OCI 서비스 (로드밸런서, API Gateway)에 통합하는 과정도 살펴볼 예정입니다.
-아래 유용한 포스팅의 링크를 참조하세요.
+아래 인증서 서비스관련 포스팅의 링크를 참조하세요.
 
 ### 참고 자료
 #### References
@@ -221,6 +223,6 @@ certbot 프로그램에서 OCI DNS 서비스 접근을 위한 별도의 플러�
 - [https://www.oracle.com/security/cloud-security/ssl-tls-certificates/faq/](https://www.oracle.com/security/cloud-security/ssl-tls-certificates/faq/){:target="_blank" rel="noopener"}
 
 #### 인증서 서비스관련 포스팅
-- OCI 인증서 서비스의 인증기관 생성 및 Load Balancer 적용하기
 - OCI 인증서를 Load Balancer에 적용하기
 - OCI 인증서를 API Gateway에 적용하기
+- OCI 인증서 서비스의 인증기관 생성 및 Load Balancer 적용하기
