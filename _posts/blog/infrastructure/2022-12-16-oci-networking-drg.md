@@ -130,7 +130,7 @@ Import Route Distribution을 구성할 때에는 기본적으로 어느 Attachme
 **Import Route Distribution 생성 화면**
 ![](/assets/img/infrastructure/2022/oci-networking-drg-12.png)
 
-Import Route Distribution은 DRG에 생성하고, DRG Route Table에 적용합니다. 아래 그림과 같이 DRG Route Table에서 지정할 수 있습니다.
+Import Route Distribution은 DRG에 생성한 후 다음과 같이 DRG Route Table에 적용합니다.
 
 ![](/assets/img/infrastructure/2022/oci-networking-drg-13.png)
 
