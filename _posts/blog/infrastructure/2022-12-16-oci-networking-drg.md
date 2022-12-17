@@ -49,7 +49,7 @@ DRG에 연결할 수 있는 유형에는 VCN(Virtual Cloud Network), IPSec Tunne
 ![](/assets/img/infrastructure/2022/oci-networking-drg-1.png)
 
 ### Transit Routing
-Transit Routing은 대문 역할을 하는 VCN(보통 Hub VCN이라 부름)을 통해서 다른 VCN(보통 Spoke VCN이라 부름)이나 온프레미스 네트워크로 트래픽을 라우팅하는 개념입니다. 일반적으로 부서별로 각각 자체 VCN을 가지는 큰 조직이 있을 수 있고, 온프레미스 네트워크에서는 각 부서의 VCN에 액세스를 할 수 있어야 합니다. 이 때 각 부서가 관리하는 VCN에서 보안과 관련된 부분도 직접 관리할 수 있겠지만, 보안을 담당하는 부서가 따로 있는 경우라면 중앙에서 직접 관리하기를 원할 수 있는데 이럴 때 구성하는 방식이 Transit Routing입니다. 여기서 중앙에서 보안을 관리하는 부분을 Hub VCN에서 담당하게 됩니다. 이러한 Transit Routing 구성을 위해 가장 중요하게 사용되는 요소가 바로 DRG입니다.
+Transit Routing은 중개자 역할을 하는 VCN(보통 Hub VCN이라 부름)을 통해서 다른 VCN(보통 Spoke VCN이라 부름)이나 온프레미스 네트워크로 트래픽을 라우팅하는 개념입니다. 일반적으로 부서별로 각각 자체 VCN을 가지는 큰 조직이 있을 수 있고, 온프레미스 네트워크에서 각 부서의 VCN, 즉 Spoke VCN에 액세스를 할 수 있어야 합니다. 이 때 각 Spoke VCN에서 보안과 관련된 부분도 직접 관리할 수 있겠지만, 보안을 담당하는 부서가 따로 있는 경우라면 중앙에서 직접 관리 및 통제하기를 원할 수 있는데 이럴 때 구성하는 방식이 Transit Routing입니다. 여기서 중앙에서 보안을 관리하는 부분을 Hub VCN에서 담당하게 됩니다. 이러한 Transit Routing 구성을 위해 가장 중요하게 사용되는 요소가 바로 DRG입니다.
 
 ![](/assets/img/infrastructure/2022/oci-networking-drg-2.png)
 
