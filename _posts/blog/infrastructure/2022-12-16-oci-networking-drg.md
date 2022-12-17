@@ -4,8 +4,8 @@ layout: page-fullwidth
 # Content
 #
 subheadline: "Networking"
-title: "Dynamic Routing Gateway(DRG)"
-teaser: "OCI Networking의 Dynamic Routing Gateway(DRG)에 대해 설명합니다."
+title: "Dynamic Routing Gateway(DRG) and Transit Routing inside a hub VCN"
+teaser: "OCI Networking의 Dynamic Routing Gateway(DRG)와 Transit Routing 구성을 위한 Route Table들에 대해서 설명합니다."
 author: dankim
 breadcrumb: true
 categories:
@@ -34,7 +34,7 @@ header: no
 </div>
 
 ### 이 글을 읽기전에
-이 글을 일기 전에 OCI Networking에 용어나 기본 구성에 대한 이해를 위해서 아래 포스팅을 미리 읽어보는 것을 추천드립니다.
+이 글을 읽기 전에 OCI Networking과 관련된 용어나 기본 구성에 대한 이해를 위해서 아래 포스팅을 미리 읽어보는 것을 추천드립니다.
 
 * [OCI 주요 컨셉 및 용어 정리](https://team-okitoki.github.io/getting-started/key-concepts/)
 * [OCI에서 VCN Wizard를 활용하여 빠르게 VCN 생성하기](https://team-okitoki.github.io/getting-started/create-vcn/)
@@ -42,9 +42,9 @@ header: no
 * [OCI Remote Peering - 서로 다른 리전간의 VCN 연결하기](https://team-okitoki.github.io/infrastructure/oci-remote-peering/)
 
 ### Dynamic Routing Gateway (DRG)
-Dynamic Routing Gateway (이하 DRG)는 OCI의 특정 VCN에서 동일 리전의 다른 VCN이나 다른 리전의 VCN, 혹은 온프레미스 네트워크와의 연결을 지원하기 위한 가상 라우터입니다. 
+Dynamic Routing Gateway (이하 DRG)는 OCI의 특정 VCN에서 동일 리전의 VCN이나 다른 리전의 VCN, 혹은 온프레미스 네트워크와의 연결을 지원하기 위한 가상 라우터입니다. 
 
-DRG에 연결할 수 있는 유형에는 VCN(Virtual Cloud Network), IPSec Tunnel, Fast Connection, RPC(Remote Peering Connection)가 있는데, 각 유형별로 Attachment라고 오브젝트를 생성하여 DRG에 붙일 수 있습니다. 예를 들면 특정 VCN을 DRG를 통해 연결하고자 한다면 VCN Attachment를 생성하여 연결하고, IPSec Tunnel을 DRG를 통해 연결하고자 한다면 IPSec Tunnel Attachment를 생성하여 연결할 수 있습니다. DRG에  연결된 각 Attachment는 기본적으로 서로 통신이 가능한 상태가 됩니다. 여기에 각 Attachment에는 DRG를 위한 Route Table을 구성할 수 있습니다. 이 DRG Route Table은 DRG내에 연결된 다른 Attachment로 이동할 수 있는 경로 규칙을 정의할 수 있습니다. 예를 들면 아래 그림에서 트래픽이 VCN A를 나와 IPSec Tunnel(온프렘)으로 이동한다고 가정했을 때, VCN A는 VCN A Attachment를 통해서 DRG로 들어오고, DRG Route Table의 규칙을 통해서 IPSec Attachment로 이동할 수 있게 구성할 수 있습니다.
+DRG에 연결할 수 있는 유형에는 VCN(Virtual Cloud Network), IPSec Tunnel, FastConnect(전용선 서비스), RPC(Remote Peering Connection)가 있는데, 각 유형별로 Attachment라는 오브젝트를 생성하여 DRG에 붙일 수 있습니다. 예를 들면 특정 VCN을 DRG를 통해 연결하고자 한다면 VCN Attachment를 생성하여 연결하고, IPSec Tunnel을 DRG를 통해 연결하고자 한다면 IPSec Tunnel Attachment를 생성하여 연결할 수 있습니다. DRG에  연결된 각 Attachment는 기본적으로 서로 통신이 가능한 상태가 됩니다. 여기에 각 Attachment에는 DRG를 위한 Route Table을 구성할 수 있습니다. 이 DRG Route Table은 DRG내에 연결된 다른 Attachment로 이동할 수 있는 경로 규칙을 정의할 수 있습니다. 예를 들면 아래 그림에서 트래픽이 VCN A를 나와 IPSec Tunnel(온프렘)으로 이동한다고 가정했을 때, VCN A는 VCN A Attachment를 통해서 DRG로 들어오고, DRG Route Table의 규칙을 통해서 IPSec Attachment로 이동할 수 있게 구성할 수 있습니다.
 
 ![](/assets/img/infrastructure/2022/oci-networking-drg-1.png)
 
