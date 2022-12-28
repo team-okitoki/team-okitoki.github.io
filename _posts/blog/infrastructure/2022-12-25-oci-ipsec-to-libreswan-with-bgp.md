@@ -34,7 +34,7 @@ header: no
 </div>
 
 ### 사전 준비사항
-본 과정을 실습해보려면, 사전에 다음과 같이 서로 다른 두 리전에 VCN을 준비해야 합니다.  
+사전에 다음과 같이 서로 다른 두 리전에 VCN과 VM 인스턴스가 필요합니다. 
 VCN 생성은 아래 블로그 포스트를 참고합니다.
 
 [OCI에서 VCN Wizard를 활용하여 빠르게 VCN 생성하기](https://team-okitoki.github.io/getting-started/create-vcn/)
