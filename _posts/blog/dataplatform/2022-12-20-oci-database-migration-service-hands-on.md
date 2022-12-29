@@ -11,7 +11,7 @@ breadcrumb: true
 categories:
   - dataplatform
 tags:
-  - [oci, oracle, goldengate, dbcs, replication, cdc]
+  - [oci, oracle, migration, zerodowntime, goldengate, dbcs, replication]
 #
 # Styling
 #
