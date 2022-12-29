@@ -374,11 +374,11 @@ SOURCE DB 와 TARGET DB 에 Migration 을 수행하기 위한 설정을 수행�
 
     ![Marketplace](/assets/img/dataplatform/2022/migration/38.oci-marketplace-goldengate-stack-create-2.png)
 
-- Instance 가 Depoly 될 AD 를 선택해 주고 필요시 GoldenGate 가 사용할 컴퓨트 Shape 을 변경해 줍고 Create OGG Deployment 영역으로 스크롤 다운합니다.
+- Instance 가 Depoly 될 AD 를 선택해 주고 필요시 GoldenGate 가 사용할 컴퓨트 Shape 을 변경해 주고 Create OGG Deployment 영역으로 스크롤 다운합니다.
 
     ![Marketplace](/assets/img/dataplatform/2022/migration/39.oci-marketplace-goldengate-stack-create-3.png)
 
-- OGG Depolyment 이름과 SSH Access Key 를 입력 후 Next 버튼을 클릭합니다. Deployment 이름은 추후 DMS 서비스를 사용하고 이용하는데 사용되므로 잘 기억합니다. 저는 DMSTEST 라고 입력을 하도록 하겠습니다.
+- OGG Depolyment 이름과 SSH Access Key 를 입력 후 Next 버튼을 클릭합니다. Deployment 이름은 추후 DMS 서비스를 생성하고 DMS 서비스를 이용하는데 사용되므로 기억하거나 메모하여 잘 보관해 둡니다. 저는 DMSTEST 라고 입력을 하도록 하겠습니다.
 
     ![Marketplace](/assets/img/dataplatform/2022/migration/40.oci-marketplace-goldengate-stack-create-4.png)
 
@@ -390,7 +390,7 @@ SOURCE DB 와 TARGET DB 에 Migration 을 수행하기 위한 설정을 수행�
 
     ![Marketplace](/assets/img/dataplatform/2022/migration/42.oci-marketplace-goldengate-stack-create-6.png)
 
-- Stack 이 생성한 결과 Log 맨 하단을 보면 Deploy 한 ogg_public_ip 라는 항목에 Public IP 가 발급된 것을 확인할 수 있습니다. 해당 IP 와 Private Key 를 Putty 에 등록하여 생성된 GoldenGate 서버에 접속합니다.
+- Stack 이 생성한 결과 Log의 맨 하단을 보면 Deploy 한 ogg_public_ip 라는 항목에 Public IP 가 발급된 것을 확인할 수 있습니다. 해당 IP 와 Private Key 를 Putty 에 등록하여 생성된 GoldenGate 서버에 접속합니다.
 
     ![Marketplace](/assets/img/dataplatform/2022/migration/44.oci-marketplace-goldengate-server-putty.png)
 
@@ -495,7 +495,7 @@ SOURCE DB 가 PDB 이기 때문에 "Database is pluggable database (PDB)" 체크
 
     ![REG DB](/assets/img/dataplatform/2022/migration/64.oci-migration-create-migration-4.png)
 
-- 다음은 Migration Option 을 선택해 주는 단계입니다. 초기 데이터 로드 방법을 database link 를 사용하여 직접 전송할 수도 있고, Object Storage 를 통해 로드를 할 수 있는 database link 를 이용해 직접 전송을 해 보도록 하겠습니다. GoldenGate 를 이용하여 Online Replication 을 수행할 것이기 때문에 아래 "Use online replication" 을 선택합니다.
+- 다음은 Migration Option 을 선택해 주는 단계입니다. 초기 데이터 로드 방법을 database link 를 사용하여 직접 전송할 수도 있고, Object Storage 를 통해 로드를 할 수 있습니다. 이번 실습에서는  database link 를 이용해 직접 전송을 해 보도록 하겠습니다. GoldenGate 를 이용하여 Online Replication 을 수행할 것이기 때문에 아래 "Use online replication" 을 선택합니다.
 
     ![REG DB](/assets/img/dataplatform/2022/migration/65.oci-migration-create-migration-5.png)
 
