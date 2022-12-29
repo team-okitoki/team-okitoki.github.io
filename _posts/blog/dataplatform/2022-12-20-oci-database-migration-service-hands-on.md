@@ -43,8 +43,6 @@ Oracle Database 를 Migration 할 수 있는 방법은 전통적인 Offline 기�
 
 ![OCI Migration](/assets/img/dataplatform/2022/migration/02.oci_database_migration_overview.png)
 
-(※ OCI DMS 는 내부적으로 Parallelism 을 수행하지 않고 Data Pump 를 통해 Data 를 export 받기 때문에 Data Pump 의 성능 및 export 저장 공간등을 감안해야 합니다.)
-
 <br>
 
 OCI DMS 서비스는 사용자의 테넌시 및 리소스와 별도로 관리되는 클라우드 서비스로 실행됩니다. 이 서비스는 DMS 서비스 테넌시에서 다중 테넌트 서비스로 작동하며 PE(Private Endpoint)를 사용하여 사용자의 리소스와 통신합니다. 
