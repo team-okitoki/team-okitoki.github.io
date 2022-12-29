@@ -5,7 +5,7 @@ layout: page-fullwidth
 #
 subheadline: "DataPlatform"
 title: "OCI Database Migration Service Hands-On"
-teaser: "On-Premise 혹은 타 Cloud 에서 운영 중인 Oracle Database 를 무중단으로 OCI 로 이전할 수 있는 OCI Database Migration Service 에 대해서 알아 Hands-On 실습 가이드입니다."
+teaser: "On-Premise 혹은 타 Cloud 에서 운영 중인 Oracle Database 를 무중단으로 OCI 로 이전할 수 있는 OCI Database Migration Service 에 대한 Hands-On 실습 가이드입니다."
 author: lim
 breadcrumb: true
 categories:
@@ -43,7 +43,7 @@ Oracle Database 를 Migration 할 수 있는 방법은 전통적인 Offline 기�
 
 ![OCI Migration](/assets/img/dataplatform/2022/migration/02.oci_database_migration_overview.png)
 
-(※ 다만, OCI DMS 는 내부적으로 Parallelism 을 수행하지 않고 Data Pump 를 통해 Data 를 export 받기 때문에 Data Pump 의 성능 및 export 저장 공간등을 감안해야 함)
+(※ OCI DMS 는 내부적으로 Parallelism 을 수행하지 않고 Data Pump 를 통해 Data 를 export 받기 때문에 Data Pump 의 성능 및 export 저장 공간등을 감안해야 합니다.)
 
 <br>
 
@@ -693,11 +693,41 @@ Monitor replication lag 단계는 SOURCE DB 로 부터 데이터를 Export 하�
 
     ![REG DB](/assets/img/dataplatform/2022/migration/101.oci-migration-goldengate-switchover.png)
 
+- 이 상태는 Application 이 TARGET DB 쪽으로 전환된 상태 및 GoldenGate 의 복제가 멈춰있는 상태이기 때문에 SOURCE DB 에 데이터가 추가되어도 TARGET DB 쪽으로 반영되지 않습니다. 아래 쿼리를 SOURCE DB 의 PDB 에 실행하여 신규 데이터를 입력합니다.
+
+    ```sql
+    ALTER SESSION SET CONTAINER='PDB1';
+    Insert into SRC_OCIGGLL.SRC_REGION (REGION_ID,REGION,COUNTRY_ID,COUNTRY) values (1002,'WestSouth Korea',10,'Korea');
+
+    COMMIT;
+    ```
+
+    ![REG DB](/assets/img/dataplatform/2022/migration/102.oci-migration-goldengate-switchover-check.png)
 
 
------------------------ 여기서 부터
+- SOURCE DB 와 TARGET DB 의 건수를 비교하면 SOURCE DB 에 방금 전 생성한 데이터가 TARGET DB 에 반영되지 않는 것을 확인할 수 있습니다.
 
+    ```sql
+    SELECT COUNT(*) FROM SRC_OCIGGLL.SRC_REGION;
+    ```
 
+    ![REG DB](/assets/img/dataplatform/2022/migration/103.oci-migration-goldengate-switchover-check-2.png)
+
+- 마지막으로 Cleanup 을 수행해서 마이그레이션을 마무리합니다. Migration Job 화면으로 돌아가 Job 의 Resume 버튼을 클릭합니다.
+
+    ![REG DB](/assets/img/dataplatform/2022/migration/104.oci-migration-migration-job-resume-cleanup.png)
+
+    ![REG DB](/assets/img/dataplatform/2022/migration/105.oci-migration-migration-job-resume-cleanup-2.png)
+
+- Migration Job 의 Cleanup 단계가 마무리되면 아래와 같이 Job 의 상태가 SUCCEEDED 상태로 전환이 됩니다.
+
+    ![REG DB](/assets/img/dataplatform/2022/migration/106.oci-migration-migration-job-resume-cleanup-3.png)
+
+- Cleanup 을 통해 GoldenGate 의 추출, 복제 프로세스가 정리가 되었는지 확인합니다. GoldenGate 서비스의 "성능 측정항목 서비스" 의 관리 서비스 탭을 선택하면 아래와 같이 추출, 복제 프로세스가 모두 정리된 것을 확인할 수 있습니다.
+
+    ![REG DB](/assets/img/dataplatform/2022/migration/107.oci-migration-migration-job-resume-cleanup-4.png)
+
+축하합니다. 이로써 마이그레이션 작업이 모두 완료가 되었습니다. 이렇듯 On-Premise, Clooud 상의 오라클 데이터베이스를 OCI 로 이전할 때 손쉽게 무료로 사용할 수 있는 서비스가 OCI Database Migration 서비스입니다. 
 
 ---
 
