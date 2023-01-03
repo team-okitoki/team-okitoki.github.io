@@ -82,7 +82,7 @@ Let's Encrypt에 대해 더 자세히 알고 싶은 경우 [Let's Encrypt 소개
 이번 실습에서는 OCI에서 아래와 같은 구성으로 Compute Instance를 생성하여 인증서를 발급 받을 예정입니다. 생성한 VM에서 CLI를 사용할 수 있도록 OCI CLI설정을 진행합니다. 
 Compute Instance 생성이나 접속, CLI 설정관련 자세한 내용은 아래 포스팅을 통해 확인하실 수 있으며, 이번 포스팅에서는 자세한 내용을 다루지 않습니다.
 
-- [OCI Certificates 서비스 살펴보기](/cloudnative/oci-certificate-overview/){:target="_blank" rel="noopener"}
+- [OCI CLI 도구 살펴보기](/getting-started/ocicli-config/){:target="_blank" rel="noopener"}
 - [OCI에서 리눅스 인스턴스 생성 튜토리얼](/getting-started/launching-linux-instance/){:target="_blank" rel="noopener"}
 
 * Compute Instance 생성정보
@@ -223,6 +223,6 @@ certbot 프로그램에서 OCI DNS 서비스 접근을 위한 별도의 플러�
 - [https://www.oracle.com/security/cloud-security/ssl-tls-certificates/faq/](https://www.oracle.com/security/cloud-security/ssl-tls-certificates/faq/){:target="_blank" rel="noopener"}
 
 #### 인증서 서비스관련 포스팅
-- OCI 인증서를 Load Balancer에 적용하기
+- [OCI 인증서를 Load Balancer에 적용하기](/cloudnative/oci-certificate-with-lb/){:target="_blank" rel="noopener"}
 - OCI 인증서를 API Gateway에 적용하기
 - OCI 인증서 서비스의 인증기관 생성 및 Load Balancer 적용하기
