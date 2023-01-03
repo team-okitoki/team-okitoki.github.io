@@ -86,9 +86,11 @@ Compute Instance 생성이나 접속, CLI 설정관련 자세한 내용은 아�
 - [OCI에서 리눅스 인스턴스 생성 튜토리얼](/getting-started/launching-linux-instance/){:target="_blank" rel="noopener"}
 
 * Compute Instance 생성정보
-  * OS : **Oracle-Linux-8.6**
+  * OS : **Oracle-Linux-Cloud-Developer 8.0** (※ 아래 이미지 참고)
   * Shape : **VM.Standard.E4.Flex** / 1 OCPU, 16GB Memory
   * Network / Subnet : **공용 서브넷**
+
+   ![](/assets/img/cloudnative/2022/certificates/letsencrypt-20.png " ")
 <br>
 
 1. OCI 콘솔의 우측 상단의 프로파일 아이콘을 클릭 후 "내 프로파일" 메뉴를 클릭합니다.
@@ -116,13 +118,19 @@ Compute Instance 생성이나 접속, CLI 설정관련 자세한 내용은 아�
    MIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQCgVVZGDQWv9ljq
    +sI5ITtfaBjRn6Ir45OFjGu2O1A..............
    ```
-   - **oci-api-key.pem**
+   - **oci-api-pub.pem**
    ```config
    -----BEGIN PUBLIC KEY-----
    MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAoFVWRg0Fr/ZY6vrCOSE7
    X2gY0Z+iK+OThYxrtjtQE7w6vY..............
    ```
-8. API 키 화면에서 Action 버튼을 통해 확인하능한 구성파일 정보를 아래와 같이 내용을 입력합니다. key_file의 경로는 업로드한 api-key 파일의 위치 및 파일명으로 지정합니다. 
+8. API 키 화면에서 Action 버튼을 통해 확인했던 구성 정보를 ~/.oci/config 파일로 생성해 줍니다. key_file의 경로는 업로드한 api-key 파일의 위치 및 파일명으로 지정합니다. 
+
+   ```
+   $ cd ~/.oci
+   $ vi config
+   ```
+
    ```config
    [DEFAULT]
    user=ocid1.user.oc1..aaaaaaaaeaacd7afudut..............
