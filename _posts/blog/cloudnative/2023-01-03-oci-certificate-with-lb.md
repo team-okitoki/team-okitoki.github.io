@@ -211,9 +211,9 @@ Let's Encrypt 인증서 발급 방법 및 OCI 인증서 서비스에 등록하�
 1. 좌측 상단의 **햄버거 아이콘**을 클릭하고, **네트워킹(Networking)**을 선택한 후 **로드 밸런서(Load Balancer)**를 클릭합니다.
    ![Load Balancer Menu](/assets/img/cloudnative/2023/certificate-lb/oci-loadbalancer-1.png " ")
 2. 이동한 화면에서 현재 구획을 확인 후 **로드 밸런서 생성** 버튼을 클릭합니다.
-   ![Load Balancer Create - 1](/assets/img/cloudnative/2023/certificate-lb/oci-loadbalancer-2 " ")
+   ![Load Balancer Create - 1](/assets/img/cloudnative/2023/certificate-lb/oci-loadbalancer-2.png " ")
 3. 로드 밸런서 유형 선택 화면에서 상단의 Layer-7 **로드 밸런서**를 선택 후 **로드 밸런서 생성** 버튼을 클릭합니다.
-   ![Load Balancer Create - 2](/assets/img/cloudnative/2023/certificate-lb/oci-loadbalancer-3 " ")
+   ![Load Balancer Create - 2](/assets/img/cloudnative/2023/certificate-lb/oci-loadbalancer-3.png " ")
 4. 로드 밸런서 생성 화면에서 아래와 같이 입력 및 선택 합니다.
     - 로드 밸런서 이름: **lb_demo**
     - 가시성 유형 선택: **공용**
