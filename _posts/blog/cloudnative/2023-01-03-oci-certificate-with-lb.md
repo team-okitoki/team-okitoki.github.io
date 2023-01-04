@@ -42,7 +42,9 @@ Let's Encrypt 인증서 발급 방법 및 OCI 인증서 서비스에 등록하�
 > [OCI Certificates - Let’s Encrypt로 생성한 인증서를 OCI 인증서 서비스에 Import 하기](/cloudnative/oci-certificate-import-letsencrypt-cert/){:target="_blank" rel="noopener"}
 
 ### OCI 인증서를 OCI Load Balancer(Application)에 적용 실습 안내
-이전 포스팅 (Let's Encrypt)의 내용을 성공적으로 진행하셨다면, 등록한 인증서를 OCI 서비스중 LB에 연결하기 위한  
+이전 포스팅 (Let's Encrypt)의 내용을 성공적으로 진행하셨다면, 등록한 인증서를 OCI 서비스중 LB에 연결하기 위한 과정을 소개하기 위한 내용을 준비하였습니다.
+일반적인 VM위에 웹서버를 설치하고 간단한 페이지를 생성한 후 LB를 생성하여 SSL 도메인 인증서를 적용하는 실습을 진행합니다.
+마지막으로 http로 호출한 요청을 https로 리다이렉트하는 설정 방법을 소개 드릴 예정입니다.
 
 #### 사전 준비 사항
 - Public Domain 구입
@@ -56,6 +58,7 @@ Let's Encrypt 인증서 발급 방법 및 OCI 인증서 서비스에 등록하�
 4. Application Load Balancer 생성 및 설정하기
 5. OCI DNS 서비스에서 Record 생성하기
 6. 도메인을 접속 및 인증서 적용 확인
+7. OCI 로드밸런서에서 http - https 리다이렉트 구성하기
 
 
 #### 1. 실습 Compartment 생성
@@ -130,17 +133,13 @@ Let's Encrypt 인증서 발급 방법 및 OCI 인증서 서비스에 등록하�
    - 상세내용은 링크를 통해 확인 가능 합니다. [접속 가이드 링크](https://docs.oracle.com/en-us/iaas/Content/Compute/Tasks/accessinginstance.htm#linux__putty)
 - MacOS 사용자
    - 다운로드 받은 키파일의 권한을 조정합니다.
-     ````shell
-       <copy>
+     ```terminal
         chmod 400 <private_key_file> #엑세스 하려는 키 파일의 전체 경로 와 이름을 입력합니다.
-       </copy>
-      ````
+     ```
    - 다음 명령어를 입력하여 인스턴스에 접속합니다.
-     ````shell
-       <copy>
+     ```terminal
         ssh -i <private_key_file> opc@<public-ip-address>
-       </copy>
-      ````
+     ```
 
 ##### Task 3: OCI 보안목록 (Security List) 설정
 
@@ -167,41 +166,33 @@ Let's Encrypt 인증서 발급 방법 및 OCI 인증서 서비스에 등록하�
 
 ##### Task 4: Apache httpd 서버 설치 및 접속 확인
 1. Install Apache httpd 서버
-      ````shell
-      <copy>
-      sudo yum install httpd -y
-      </copy>
-      ````
+      ```terminal
+         sudo yum install httpd -y
+      ```
+
 2. Apache 서버 시작 및 재부팅시 자동으로 서비스가 활성화 되도록 설정 합니다.
-      ````shell
-      <copy>
-      sudo apachectl start
-      sudo systemctl enable httpd
-      </copy>
-      ````
+      ```terminal
+         sudo apachectl start
+         sudo systemctl enable httpd
+      ```
 3. Apache 설정 테스트 명령을 실행합니다.
-      ````shell
-      <copy>
-      sudo apachectl configtest
-      </copy>
-      ````
+      ```terminal
+         sudo apachectl configtest
+      ```
+
 4. 아래 명령어를 입력하여 웹 브라우저에서 확인할 index.html 파일을 생성합니다.
-      ````shell
-      <copy>
-      sudo bash -c 'echo This is my Web-Server running on Oracle Cloud Infrastructure >> /var/www/html/index.html'
-      </copy>
-      ````
+      ```terminal
+         sudo bash -c 'echo This is my Web-Server running on Oracle Cloud Infrastructure >> /var/www/html/index.html'
+      ```
 
    ![install Apache httpd server](/assets/img/cloudnative/2023/certificate-lb/oci-compute-install-httpd.png " ")
 
 5. OS 방화벽 사용 해제
    기본으로 OS에 적용되어 있는 방화벽을 중지 시키기 위해 아래 명령어를 순차적으로 입력 합니다.
-      ````shell
-      <copy>
+      ```terminal
       sudo systemctl disable firewalld
       sudo systemctl stop firewalld
-      </copy>
-      ````
+      ```
 6. 웹서버 접속 및 응답 확인
    인스턴스의 공용 IP로 접속하여 생성한 index.html파일의 내용을 브라우저에서 확인합니다.
 
@@ -269,6 +260,51 @@ Let's Encrypt 인증서 발급 방법 및 OCI 인증서 서비스에 등록하�
    ![](/assets/img/cloudnative/2023/certificate-lb/oci-certificate-dns-5.png " ")
 4. 인증서도 정상적으로 적용된것을 확인할 수 있습니다.
    ![](/assets/img/cloudnative/2023/certificate-lb/oci-certificate-dns-6.png " ")
+
+#### 7. OCI 로드밸런서에서 http - https 리다이렉트 구성하기
+
+##### Task 1: OCI 로드밸런서 http 리스너 생성 및 접속 테스트
+1. http 리스너를 추가로 생성하기 위해 (4) 단계에서 생성한 로드밸런서 세부정보 화면으로 이동합니다.
+   ![](/assets/img/cloudnative/2023/certificate-lb/oci-lb-redirect-1.png " ")
+2. 좌측 하단 리소스 패널에서 "리스너"를 클릭하고 "리스너 생성" 버튼을 클릭하여 아래와 같이 입력 및 선택하여 리스너를 생성합니다.
+   - 이름 : **listener_http**
+   - 프로토콜 : **HTTP**
+   - 포트 : **80**
+   - 백엔드 집합 : **기존에 생성되어 있는 백엔드 집합 선택**
+   - <mark>나머지 옵션을 입력하지 않습니다.</mark>
+   - **"리스너 생성"** 버튼 클릭하여 리스너를 생성합니다.
+
+   ![](/assets/img/cloudnative/2023/certificate-lb/oci-lb-redirect-2.png " ")
+3. 생성한 http 리스너로 접속하여 정상 접속 여부를 확인합니다.
+   ![](/assets/img/cloudnative/2023/certificate-lb/oci-lb-redirect-3.png " ")
+
+##### Task 2: OCI 로드밸런서 https 리다이렉트 규칙 집합 생성하기 (URL 재지정)
+1. 로드밸런서 세부 화면에서 좌측 하단 리소스 패널에서 "규칙 집합"를 클릭하고 "규칙 집합 생성" 버튼을 클릭하여 아래와 같이 입력 및 선택하여 규칙 집합을 생성합니다
+   - 이름 : **httpTohttps**
+   - **URL 재지정 규칙 지정** 체크박스 선택 
+   - 소스 경로 : **/**
+   - 일치 유형 : **강제로 가장 긴 접두어 일치**
+   - 재지정 대상 
+     - 프로토콜 : **HTTPS**
+     - 포트 : **443**
+     - <mark>다른 설정은 기본 값을 유지합니다.</mark>
+   - "생성" 버튼을 클릭하여 규칙 집합을 생성합니다.
+
+    ![](/assets/img/cloudnative/2023/certificate-lb/oci-lb-redirect-4.png " ")
+
+##### Task 3: OCI 로드밸런서 https 리다이렉트 규칙 적용 및 접속 테스트
+1. http 리스너를 수정하기 위해 로드밸런서 세부정보 화면으로 이동합니다.
+2. 좌측 하단 리소스 패널에서 "리스너"를 클릭하고 "listener_http" 리스너 우측의 "Action 버튼"을 클릭 후 "편집" 메뉴를 클릭합니다.
+   ![](/assets/img/cloudnative/2023/certificate-lb/oci-lb-redirect-5.png " ")
+3. 하단 규칙 집합 섹션에서 "추가 규칙 집합" 버튼을 클릭합니다.
+   ![](/assets/img/cloudnative/2023/certificate-lb/oci-lb-redirect-6.png " ")
+4. 생성한 "httpTohttps" 규칙 집합을 선택 후 "변경사항 저장" 버튼을 클릭합니다.
+   ![](/assets/img/cloudnative/2023/certificate-lb/oci-lb-redirect-7.png " ")
+5. 설정이 적용된 후 브라우저에서 실제 redirect 과정을 확인합니다.
+   - http 도메인으로 접속 후 개발자 도구에서 http 요청이 상태코드 <mark>[302 Moned Temporarily]</mark>로 리턴 받음을 확인합니다.
+     ![](/assets/img/cloudnative/2023/certificate-lb/oci-lb-redirect-8.png " ")
+   - OCI 로드밸런서 리스너에 지정한 규칙 집합에 의해 https로 redirect 되었고 <mark>[302 OK]</mark>로 리턴 받음을 확인합니다.
+     ![](/assets/img/cloudnative/2023/certificate-lb/oci-lb-redirect-9.png " ")
 
 ### 마무리 하며...
 이번 포스팅에서는 OCI 인증서 서비스에 등록된 인증서를 OCI 로드밸런서에 연결하는 실습을 진행했습니다.
