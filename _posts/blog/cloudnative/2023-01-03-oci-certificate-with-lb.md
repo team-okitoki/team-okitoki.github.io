@@ -313,6 +313,10 @@ OCI 인증서 서비스를 사용하면 OCI 로드밸런서, API Gateway 서비�
 아래 인증서 서비스관련 포스팅의 링크를 참조하세요.
 
 ### 참고 자료
+
+#### 참고 블로그
+- [https://blogs.oracle.com/cloud-infrastructure/post/http-url-redirect-on-oracle-cloud-infrastructure](https://blogs.oracle.com/cloud-infrastructure/post/http-url-redirect-on-oracle-cloud-infrastructure){:target="_blank" rel="noopener"}
+
 #### Oracle 공식 문서
 - [https://docs.oracle.com/en-us/iaas/Content/certificates/home.htm](https://docs.oracle.com/en-us/iaas/Content/certificates/home.htm){:target="_blank" rel="noopener"}
 - [https://www.oracle.com/security/cloud-security/ssl-tls-certificates/](https://www.oracle.com/security/cloud-security/ssl-tls-certificates/){:target="_blank" rel="noopener"}
