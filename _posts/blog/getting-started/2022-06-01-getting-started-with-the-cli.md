@@ -1574,6 +1574,7 @@ C:\> oci compute instance get-windows-initial-creds --instance-id $Env:instance_
           ```
         {::options parse_block_html="true" /}
         <details><summary><h5 style="color:cornflowerblue;">- <b>연결된 블록볼륨 리스트 조회</b> 예제 및 결과예시 (클릭하여 보기)</h5></summary>
+
           - <mark><b>명령어 샘플의 환경변수에 대입된 각 리소스 ID는 실제 본인의 환경에 맞는 값으로 교체하여 실행해야 합니다. 아래 값은 샘플 입니다.</b></mark>
     
           - 명령어 샘플 (리눅스 계열)
@@ -1660,6 +1661,7 @@ C:\> oci compute instance get-windows-initial-creds --instance-id $Env:instance_
           ```
         {::options parse_block_html="true" /}
         <details><summary><h5 style="color:cornflowerblue;">- <b>연결된 블록볼륨 해제하기</b> 예제 및 결과예시 (클릭하여 보기)</h5></summary>
+
           - <mark><b>명령어 샘플의 환경변수에 대입된 각 리소스 ID는 실제 본인의 환경에 맞는 값으로 교체하여 실행해야 합니다. 아래 값은 샘플 입니다.</b></mark>
     
           - 명령어 샘플 (리눅스 계열)
@@ -1690,6 +1692,7 @@ C:\> oci compute instance get-windows-initial-creds --instance-id $Env:instance_
           ```
         {::options parse_block_html="true" /}
         <details><summary><h5 style="color:cornflowerblue;">- <b>블록볼륨 삭제하기</b> 예제 및 결과예시 (클릭하여 보기)</h5></summary>
+
           - <mark><b>명령어 샘플의 환경변수에 대입된 각 리소스 ID는 실제 본인의 환경에 맞는 값으로 교체하여 실행해야 합니다. 아래 값은 샘플 입니다.</b></mark>
         
           - 명령어 샘플 (리눅스 계열)
@@ -1724,6 +1727,7 @@ C:\> oci compute instance get-windows-initial-creds --instance-id $Env:instance_
     ```
   {::options parse_block_html="true" /}
   <details><summary><h5 style="color:cornflowerblue;">- <b>인스턴스 종료 명령어</b> 예제 및 결과예시 (클릭하여 보기)</h5></summary>
+
     - <mark><b>명령어 샘플의 환경변수에 대입된 각 리소스 ID는 실제 본인의 환경에 맞는 값으로 교체하여 실행해야 합니다. 아래 값은 샘플 입니다.</b></mark>
   
     - 명령어 샘플 (리눅스 계열)
@@ -1766,6 +1770,7 @@ C:\> oci compute instance get-windows-initial-creds --instance-id $Env:instance_
             ```
           {::options parse_block_html="true" /}
           <details><summary><h5 style="color:cornflowerblue;">- <b>VCN의 서브넷 삭제 명령어</b> 예제 및 결과예시 (클릭하여 보기)</h5></summary>
+
             - <mark><b>명령어 샘플의 환경변수에 대입된 각 리소스 ID는 실제 본인의 환경에 맞는 값으로 교체하여 실행해야 합니다. 아래 값은 샘플 입니다.</b></mark>
 
             - 명령어 샘플 (리눅스 계열)
@@ -1798,6 +1803,7 @@ C:\> oci compute instance get-windows-initial-creds --instance-id $Env:instance_
           ```
         {::options parse_block_html="true" /}
         <details><summary><h5 style="color:cornflowerblue;">- <b>경로 테이블 규칙 삭제 명령어</b> 예제 및 결과예시 (클릭하여 보기)</h5></summary>
+
           - <mark><b>명령어 샘플의 환경변수에 대입된 각 리소스 ID는 실제 본인의 환경에 맞는 값으로 교체하여 실행해야 합니다. 아래 값은 샘플 입니다.</b></mark>
         
           - 명령어 샘플 (리눅스 계열)
@@ -1851,6 +1857,7 @@ C:\> oci compute instance get-windows-initial-creds --instance-id $Env:instance_
           ```
         {::options parse_block_html="true" /}
         <details><summary><h5 style="color:cornflowerblue;">- <b>인터넷 게이트웨이 삭제 명령어</b> 예제 및 결과예시 (클릭하여 보기)</h5></summary>
+
           - <mark><b>명령어 샘플의 환경변수에 대입된 각 리소스 ID는 실제 본인의 환경에 맞는 값으로 교체하여 실행해야 합니다. 아래 값은 샘플 입니다.</b></mark>
         
           - 명령어 샘플 (리눅스 계열)
@@ -1883,6 +1890,7 @@ C:\> oci compute instance get-windows-initial-creds --instance-id $Env:instance_
           ```
         {::options parse_block_html="true" /}
         <details><summary><h5 style="color:cornflowerblue;">- <b>보안목록 삭제 명령어</b> 예제 및 결과예시 (클릭하여 보기)</h5></summary>
+
           - <mark><b>명령어 샘플의 환경변수에 대입된 각 리소스 ID는 실제 본인의 환경에 맞는 값으로 교체하여 실행해야 합니다. 아래 값은 샘플 입니다.</b></mark>
         
           - 명령어 샘플 (리눅스 계열)
@@ -1913,6 +1921,7 @@ C:\> oci compute instance get-windows-initial-creds --instance-id $Env:instance_
           ```
         {::options parse_block_html="true" /}
         <details><summary><h5 style="color:cornflowerblue;">- <b>가상클라우드 네트워크 삭제 명령어</b> 예제 및 결과예시 (클릭하여 보기)</h5></summary>
+
           - <mark><b>명령어 샘플의 환경변수에 대입된 각 리소스 ID는 실제 본인의 환경에 맞는 값으로 교체하여 실행해야 합니다. 아래 값은 샘플 입니다.</b></mark>
         
           - 명령어 샘플 (리눅스 계열)
